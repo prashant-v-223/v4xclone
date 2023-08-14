@@ -2,7 +2,7 @@ import SectionHeading from "../../../components/SectionHeading";
 
 const SecPartners = ({ data }) => {
   return (
-    <section className="partners">
+    <section className="partners pt-5">
       <SectionHeading
         title="Infinity.AI Partners"
         text="We have some of our faithful partners in the cryptocurrency market, who has been getting benifits of Infinity.AI digital platforms and services."
