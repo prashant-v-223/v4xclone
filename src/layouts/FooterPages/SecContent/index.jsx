@@ -8,19 +8,10 @@ const SecContent = () => {
           data-wow-delay="0.2s"
         >
           <h5>Useful Links</h5>
-          <a href>
-            <p>Infinity.AI Exchange</p>
-          </a>
-          <a href>
-            <p>Infinity.AI Wallet</p>
-          </a>
-          <a href>
-            <p>Infinity.AI NFT Marketplace</p>
-          </a>
-          <a href='/login?login'>
+          <a href="/login?login">
             <p>Login</p>
           </a>
-          <a href='/login'>
+          <a href="/login">
             <p>Sign Up</p>
           </a>
         </div>
@@ -30,10 +21,10 @@ const SecContent = () => {
           data-wow-delay="0.3s"
         >
           <h5>Privacy</h5>
-          <a href="/Termsandconditions" target={'_blank'}>
+          <a href="/Termsandconditions" target={"_blank"}>
             <p>Terms & Conditions</p>
           </a>
-          <a href='/DISCLAIMER' target={'_blank'}>
+          <a href="/DISCLAIMER" target={"_blank"}>
             <p>Disclaimer</p>
           </a>
           <a href="#about">

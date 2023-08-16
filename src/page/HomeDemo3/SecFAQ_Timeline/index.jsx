@@ -22,7 +22,7 @@ const SecFAQ_Timeline = ({ FQAInfo, DocElementTitle }) => {
                 data-aos="fade-up"
               >
                 <div class="accordion" id="accordionExample">
-                  <div class="accordion-item">
+                  <div class="accordion-item py-3">
                     <h2 class="accordion-header mt-0" id="headingOne">
                       <button
                         class="accordion-button"
@@ -44,13 +44,13 @@ const SecFAQ_Timeline = ({ FQAInfo, DocElementTitle }) => {
                       <div class="accordion-body">
                         <strong>Infinity.AI COIN</strong>
                         IS VICTORY FOR EXTREME. THIS CRYPTOCURRENCY WAS
-                        SYMBOLIZED AS Infinity.AI COIN. <strong>Infinity.AI COIN</strong>IS ON
+                        SYMBOLIZED AS Infinity.AI COIN. <strong>Infinity.AIinity.ai COIN</strong>IS ON
                         BSCSCAN WITH BEP 20 NETWORK. THIS CRYPTOCURRENCY IS
                         ACCEPTABLE IN BUSD/USDT.
                       </div>
                     </div>
                   </div>
-                  <div class="accordion-item">
+                  <div class="accordion-item py-3">
                     <h2 class="accordion-header" id="headingTwo">
                       <button
                         class="accordion-button collapsed"
@@ -78,7 +78,7 @@ const SecFAQ_Timeline = ({ FQAInfo, DocElementTitle }) => {
                       </div>
                     </div>
                   </div>
-                  <div class="accordion-item">
+                  <div class="accordion-item py-3">
                     <h2 class="accordion-header" id="headingThree">
                       <button
                         class="accordion-button collapsed"
@@ -107,7 +107,7 @@ const SecFAQ_Timeline = ({ FQAInfo, DocElementTitle }) => {
                       </div>
                     </div>
                   </div>
-                  <div class="accordion-item">
+                  <div class="accordion-item py-3">
                     <h2 class="accordion-header" id="headingThree1">
                       <button
                         class="accordion-button collapsed"
@@ -132,7 +132,7 @@ const SecFAQ_Timeline = ({ FQAInfo, DocElementTitle }) => {
                       </div>
                     </div>
                   </div>
-                  <div class="accordion-item">
+                  <div class="accordion-item py-3">
                     <h2 class="accordion-header" id="headingThree122">
                       <button
                         class="accordion-button collapsed"

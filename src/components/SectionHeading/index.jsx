@@ -8,11 +8,11 @@ const SectionHeading = ({ title, text }) => {
         data-aos="fade-up"
         data-aos-delay="200"
       >
-        {Array(7)
+        {/* {Array(7)
           .fill()
           .map((item, key) => (
             <Span key={key} />
-          ))}
+          ))} */}
       </div>
       <h2 data-aos="fade-up" data-aos-delay="300">
         {title}

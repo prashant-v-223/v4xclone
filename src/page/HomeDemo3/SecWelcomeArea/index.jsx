@@ -41,62 +41,25 @@ const SecWelcomeArea = () => {
                     </span>
                   </div>
                 </div>
-                <h1>World's Topmost Digital Cryptocurrency Infinity.AI Is here</h1>
-                <p>
-                  Infinity.AI is a web3 platform which is focused  Infinity.AI
-                  Coin Blockchain, Decentralised Wallet, NFT Marketplace, P2E
-                  Gaming, Infinity.AI Centralised Exchange & Multi-utility Applications.
+                <h1>
+                  World's Topmost Digital Cryptocurrency Infinity.AI Is here
+                </h1>
+                <p style={{ fontSize: "13px", color: "rgb(1, 231, 254)" }}>
+                  <b>
+                    Infinity.AI is a web3 platform which is focused Infinity.AI
+                    Coin Blockchain, Decentralised Wallet, NFT Marketplace, P2E
+                    Gaming, Infinity.AI Centralised Exchange & Multi-utility
+                    Applications.
+                  </b>
                 </p>
                 <div className="dream-btn-group">
-                  <div class="copytehcode">
-                    <div class="parent">
-                      <span class="tlt">Copt to Clipboard</span>
-                      <div class="left">
-                        0xffF17D90Fe37E9933407fD11c9a64A3dA2D69781
-                      </div>
-                      <div
-                        class="right copy-tooltip"
-                        onClick={() => {
-                          navigator.clipboard.writeText(
-                            "https://bscscan.com/token/0xfff17d90fe37e9933407fd11c9a64a3da2d69781"
-                          );
-                          toast.success("contract address copy successfully.");
-                        }}
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="20"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="#000"
-                          stroke-width="2"
-                          stroke-linecap="square"
-                          stroke-linejoin="arcs"
-                        >
-                          <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
-                          <rect
-                            x="8"
-                            y="2"
-                            width="8"
-                            height="4"
-                            rx="1"
-                            ry="1"
-                          ></rect>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
                   {/* <a href="#" className="btn dream-btn mr-3">Contract</a> */}
+                  <a className="btn dream-btn mt-3 mx-2">Contract address</a>
                   <a
                     className="btn dream-btn mt-3 mx-2"
-                    onClick={() => {
-                      setModal2Open(!modal2Open);
-                    }}
+                    href="https://pancakeswap.finance/swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=BNB"
                   >
-                    QR code
-                  </a>
-                  <a className="btn dream-btn mt-3 mx-2" href="#BuyInfinity.AICoins">
-                    Buy Infinity.AI Coin
+                    Buy on pancakeswap
                   </a>
                   {/* {modal2Open && (
                     <div className="modal1">
@@ -169,8 +132,8 @@ const SecWelcomeArea = () => {
                           }}
                         >
                           <p className="m-0 text-center">
-                            Scan this QR to import <br /> Infinity.AI Coins to your
-                            wallet
+                            Scan this QR to import <br /> Infinity.AI Coins to
+                            your wallet
                           </p>
                         </button>
                       </div>

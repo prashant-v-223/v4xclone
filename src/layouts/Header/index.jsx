@@ -95,18 +95,13 @@ const Header = () => {
                           navigation("Roadmap");
                         }}
                         href="#contact"
-                        style={{ fontWeight: 900, fontSize: "11px" }}
+                        style={{
+                          fontWeight: 900,
+                          fontSize: "11px",
+                          color: "#fff",
+                        }}
                       >
                         Roadmap
-                      </a>
-                    </li>
-                    <li className="d-block d-lg-none">
-                      <a
-                        style={{ fontWeight: 900, fontSize: "11px" }}
-                        href="https://firebasestorage.googleapis.com/v0/b/svdxv-xcv.appspot.com/o/v4x%20whitepaper%20(2).pdf?alt=media&token=7ff19001-f8f8-4033-beb2-e4c44bd610b1"
-                        target={"_blank"}
-                      >
-                        Whitepaper
                       </a>
                     </li>
                     <li className="d-block d-lg-none">
@@ -146,25 +141,11 @@ const Header = () => {
                         style={{
                           fontWeight: 900,
                           fontSize: "11px",
-                          color: "rgba(255, 255, 255, 0.7)",
+                          color: "rgba(255, 255, 255, 1)",
                         }}
                         target={"_blank"}
                       >
                         Roadmap
-                      </a>
-                    </li>
-                    <li className="d-none d-lg-inline-block">
-                      <a
-                        onClick={moveSmooth}
-                        style={{
-                          fontWeight: 900,
-                          fontSize: "11px",
-                          color: "rgba(255, 255, 255, 0.7)",
-                        }}
-                        href="https://firebasestorage.googleapis.com/v0/b/svdxv-xcv.appspot.com/o/v4x%20whitepaper%20(2).pdf?alt=media&token=7ff19001-f8f8-4033-beb2-e4c44bd610b1"
-                        target={"_blank"}
-                      >
-                        Whitepaper
                       </a>
                     </li>
                   </ul>

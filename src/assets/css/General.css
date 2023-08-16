@@ -43,11 +43,8 @@
 body {
   font-family: "Poppins", sans-serif !important;
   background: rgba(72, 52, 212, 0.95);
-  background: linear-gradient(
-    to left,
-    rgba(60, 37, 210, 0.95),
-    rgba(17, 114, 218, 0.95)
-  );
+
+  background: linear-gradient(to right, #091640, #061852);
 }
 .darker-blue {
   background: linear-gradient(
@@ -87,7 +84,7 @@ li {
 
 p {
   line-height: 1.9;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 1);
   font-size: 15px;
 }
 
@@ -154,10 +151,10 @@ ol {
   z-index: 99999;
   top: 0;
   left: 0;
-  background: #4834d4;
-  background: -webkit-linear-gradient(to right, #4834d4, #341f97);
-  background: -webkit-linear-gradient(left, #4834d4, #341f97);
-  background: linear-gradient(to right, #4834d4, #341f97);
+  background: #04113c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .preload-content {

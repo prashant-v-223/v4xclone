@@ -1,55 +1,26 @@
 import { useEffect } from "react";
 import "./style/HomeDemo3.scss";
 import { Modal } from "react-bootstrap";
-import { Button, Input, Select } from "antd";
-import { getWeb3, handelTitle } from "../../utils";
-import bep20Abi from "../../Helpers/bep20Abi.json";
-import BUSDTestNet from "../../Helpers/BUSDTestNet.json";
 import Web3 from "web3";
 import { Injected, WalletConnect } from "../../Helpers/Injected";
 import "../../assets/css/General.css";
-import { TbArrowsLeftRight } from "react-icons/tb";
-import { BsFillBagFill } from "react-icons/bs";
-import { FaArrowAltCircleDown } from "react-icons/fa";
 import { toast } from "react-toastify";
 import {
-  VerticalSocial,
-  HowItWorksInfo,
-  SingleCoolFact,
   service_single_content,
-  timelineInfo,
-  ServiceBlock,
-  SocialListIco,
   FQAInfo,
   DocElementTitle,
   TokenText,
-  TeamMember,
-  PartnersData,
 } from "../../data/data-containers/data-HomeDemo3.js";
 
-import {
-  HomeDemo3About1,
-  HomeDemo3Solution,
-  HomeDemo3VideoBg4,
-  HomeDemo3ImgPhone,
-  HomeDemo3RingsBg,
-  HomeDemo3Allocation,
-  HomeDemo3BgRoadmap,
-} from "../../utils/allImgs";
+import { HomeDemo3About1, HomeDemo3Allocation } from "../../utils/allImgs";
 
 import Header from "../../layouts/Header";
 import Footer from "../../layouts/FooterPages";
 import { Spin, Table, Tooltip } from "antd";
 import SecWelcomeArea from "./SecWelcomeArea";
-import SecVerticalSocial from "./SecVerticalSocial";
-import SecHowItWorks from "./SecHowItWorks";
-import SecTrust from "./SecTrust";
 import SecAboutUsClient from "./SecAboutUsClient";
-import SecAboutUs from "./SecAboutUs";
-import SecDemoVideo from "./SecDemoVideo";
 import SecOurServices from "./SecOurServices";
 import Slider from "react-slick";
-import SecOurFeatures from "./SecOurFeatures";
 import SecFAQ_Timeline from "./SecFAQ_Timeline";
 import axios from "axios";
 import SecDistribution from "./SecDistribution";
@@ -57,11 +28,12 @@ import SecPartners from "./SecPartners";
 import { useWeb3React } from "@web3-react/core";
 import React from "react";
 import { useState } from "react";
+import SectionHeading from "../../components/SectionHeading";
 const BASECOINGEKO = "https://www.coingecko.com/api/";
 function Homepage3() {
   const { active, account, library, connector, activate, deactivate } =
     useWeb3React();
-  const [COINStList, setCOINStList] = useState([]);
+  const [coinstList, setCoinstList] = useState([]);
   const [show, setShow] = useState(false);
   const [alldata, setalldata] = useState([]);
   const handleClose = () => setShow(false);
@@ -78,8 +50,40 @@ function Homepage3() {
     Cryptoname: "",
     purchasedAmount: "",
   });
+  const settings11 = {
+    autoplay: true,
+    autoplaySpeed: 0,
+    speed: 8000,
+    pauseOnHover: false,
+    cssEase: "linear",
+    arrows: !true,
+    dots: !true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: !true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: !true,
+        },
+      },
+    ],
+  };
   useEffect(() => {
     Alldata();
+    loadCOINSList();
     // axios
     //   .get(process.env.REACT_APP_API_URL + "api/registration/livaprice")
     //   .than((res) => {
@@ -93,7 +97,7 @@ function Homepage3() {
         `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=true`
       )
       .then((response) => {
-        setCOINStList(response.data);
+        setCoinstList(response.data);
       })
       .catch((e) => {});
     axios
@@ -245,6 +249,20 @@ function Homepage3() {
       console.log("error", error);
     }
   };
+  let priceValue = (price) => {
+    let value = parseFloat(price).toFixed(2);
+    return value;
+  };
+  const loadCoinsList = async () => {
+    axios
+      .get(
+        `${BASECOINGEKO}/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=true`
+      )
+      .then((response) => {
+        setCoinstList(response.data);
+      })
+      .catch((e) => {});
+  };
   const columns = [
     {
       title: "Sr No",
@@ -330,7 +348,10 @@ function Homepage3() {
       ),
     },
   ];
-
+  let percentageChange = (data) => {
+    let value = parseFloat(data?.market_cap_change_percentage_24h).toFixed(2);
+    return value > 0 ? `+${value}` : value;
+  };
   // const init1 = async (to_address, token_amount) => {
   //   const myContract = new web3.eth.Contract(
   //     JSON.parse(ContractAbi),
@@ -442,7 +463,7 @@ function Homepage3() {
           <Header />
           <div className="HomeDemo3">
             <SecWelcomeArea />
-            <SecVerticalSocial data={VerticalSocial} />
+            {/* <SecVerticalSocial data={VerticalSocial} /> */}
             <div className="container pt-5" id="BuyV4XCoins">
               {alldata.length > 0 && (
                 <div className="py-5">
@@ -464,13 +485,13 @@ function Homepage3() {
                   </div>
                 </div>
               )}
-              <div className="py-5">
+              {/* <div className="py-5">
                 <div className="row">
                   <div className="col-12 col-md-6 d-flex justify-content-center align-items-center">
                     <img
-                      src={require("../../assets/img/crypto-mobile-app.PNG")}
+                      src={require("../../assets/img/ATM-Cryptocurrency-e1621840563990.png")}
                       alt=""
-                      className="img-fluid w-75"
+                      className="img-fluid "
                     />
                   </div>
                   <div
@@ -483,14 +504,7 @@ function Homepage3() {
                       <h3 className="text-start text-light pb-4">
                         Buy Infinity.ai COINS
                       </h3>
-                      <div className="img-inputs my-3">
-                        <img
-                          src="https://firebasestorage.googleapis.com/v0/b/svdxv-xcv.appspot.com/o/4687%201.png?alt=media&token=6920cb6a-ab79-437f-802c-7a8b76e0bc7b"
-                          alt=""
-                          style={{
-                            top: "18px",
-                          }}
-                        />
+                      <div class="awc_inpt">
                         <input
                           type="text"
                           name="purchasedAmount"
@@ -502,9 +516,17 @@ function Homepage3() {
                           }}
                           onBlur={validateOne}
                         />
+                        <span class="awc_coin d-flex justify-content-center align-items-center">
+                          <img
+                            src="https://firebasestorage.googleapis.com/v0/b/svdxv-xcv.appspot.com/o/4687%201.png?alt=media&token=6920cb6a-ab79-437f-802c-7a8b76e0bc7b"
+                            width={35}
+                            height={35}
+                          />
+                          <b className="ps-3">BUSDT</b>
+                        </span>
                       </div>
                       {validations.purchasedAmount && (
-                        <p className="error text-left mb-0 mt-4 pt-3">
+                        <p className="error text-left mb-0 ">
                           {validations.purchasedAmount}
                         </p>
                       )}
@@ -517,23 +539,23 @@ function Homepage3() {
                           }}
                         />
                       </div>
-                      <div className="img-inputs my-3">
-                        <img
-                          src="https://firebasestorage.googleapis.com/v0/b/svdxv-xcv.appspot.com/o/images%2FPHOTO-2023-04-03-23-24-26-modified%201%20(1).png?alt=media&token=07779ea9-33a4-4746-9d4e-38c317426429"
-                          alt=""
-                          style={{
-                            top: "24px",
-                          }}
-                        />
+                      <div class="awc_inpt">
                         <input
                           type="text"
                           value={values.purchasedAmount / Amount}
                           name="AmountTopay"
                           placeholder="Enter Amount of infinity.ai COINS to Buy"
-                          className="py-2 my-2"
                           onChange={handleChange}
                           onBlur={validateOne}
                         />
+                        <span class="awc_coin d-flex justify-content-center align-items-center">
+                          <img
+                            src={require("../../assets/img/icon.png")}
+                            width={35}
+                            height={35}
+                          />
+                          <b className="ps-3">Infinity.ai</b>
+                        </span>
                       </div>
                       {account ? (
                         <button
@@ -555,7 +577,7 @@ function Homepage3() {
                             className="mx-2 "
                             style={{ color: "#fff" }}
                           />
-                          BUY infinity.ai COIN
+                          BUY COIN
                         </button>
                       ) : (
                         <button
@@ -582,46 +604,96 @@ function Homepage3() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
               <div className="py-5">
-                <Table
+                <div className="container py-5">
+                  <SectionHeading
+                    title="Get latest market updates on Infinity.AI"
+                    text=""
+                  />
+
+                  <div className="row w-100 py-5 m-0">
+                    <div
+                      data-aos="fade-down"
+                      className="row m-1 py-2 px-0 my-2"
+                      style={{
+                        background: "rgba(41, 28, 56, 0.63)",
+                        background:
+                          "linear-gradient(180deg, #04113c  0%, #09113c  100%)",
+                        borderRadius: "21px",
+                      }}
+                    >
+                      <Slider {...settings11}>
+                        {coinstList &&
+                          coinstList.map((data, i) => {
+                            return (
+                              <div key={data?.id} className="coin-img px-5">
+                                {/* <div className="p-0 md:p-6 rounded-md"> */}
+                                <div className="bg-[#1f232e] rounded-[20px] p-6 md:p-4 lg:p-8 grid grid-row-4 gap-1">
+                                  <img
+                                    src={data?.image}
+                                    className="rounded-full w-10"
+                                    alt=""
+                                    width={40}
+                                  />
+                                  <div className="grid grid-cols-6">
+                                    <div className="mt-4 col-span-4 text-light d-flex align-items-center">
+                                      {data?.symbol?.toUpperCase()}
+                                      <div
+                                        className={`mx-3 p-2 ${
+                                          percentageChange(data) < 0
+                                            ? "bg-danger"
+                                            : " bg-success"
+                                        }`}
+                                        style={{
+                                          borderRadius: "14px",
+                                        }}
+                                      >
+                                        {" "}
+                                        {percentageChange(data)}%
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="mt-4 text-light">
+                                    {priceValue(data?.current_price)} USD
+                                  </div>
+                                </div>
+                                {/* </div> */}
+                              </div>
+                            );
+                          })}
+                      </Slider>
+                    </div>
+                  </div>
+                </div>
+                {/* <Table
                   columns={columns}
                   dataSource={COINStList}
                   title={() => "Top 10 Crypto COINS"}
                   scroll={{ x: "calc(1400px)" }}
-                />
+                /> */}
               </div>
             </div>{" "}
-            <div
+            {/* <div
               className="hero-content2 pb-5"
               style={{
                 background:
                   "linear-gradient(to right, rgba(72, 52, 212, 0.95), rgba(52, 31, 151, 0.75))",
               }}
-            >
-              <SecHowItWorks
+            > */}
+            {/* <SecHowItWorks
                 data={HowItWorksInfo}
                 imgPhone={HomeDemo3ImgPhone}
-              />
-            </div>
-            <SecTrust data={SingleCoolFact} />
+              /> */}
+            {/* </div> */}
+            {/* <SecTrust data={SingleCoolFact} /> */}
             <SecAboutUsClient img={HomeDemo3About1} />
-            <div
-              className="hero-content2"
-              style={{
-                background:
-                  "linear-gradient(to right, rgba(72, 52, 212, 0.95), rgba(52, 31, 151, 0.75))",
-              }}
-            >
-              <SecAboutUs img={HomeDemo3Solution} />
-            </div>
-            <SecDemoVideo img={HomeDemo3VideoBg4} />{" "}
-            <div className="clearfix pb-5" />
+            {/* <SecDemoVideo img={HomeDemo3VideoBg4} />{" "} */}
+            {/* <div className="clearfix pb-5" /> */}
             <div
               className="hero-content2 pb-5"
               style={{
-                background:
-                  "linear-gradient(to right, rgba(72, 52, 212, 0.95), rgba(52, 31, 151, 0.75))",
+                background: "#04113c",
               }}
             >
               <SecOurServices data={service_single_content} />
@@ -638,8 +710,7 @@ function Homepage3() {
             <div
               className="hero-content2 pb-5"
               style={{
-                background:
-                  "linear-gradient(to right, rgba(72, 52, 212, 0.95), rgba(52, 31, 151, 0.75))",
+                background: "#04113c",
               }}
             >
               <SecDistribution img={HomeDemo3Allocation} data={TokenText} />
@@ -689,7 +760,7 @@ function Homepage3() {
           <div class="footer-bottom-content-copy">
             <p
               className="text-center m-0 py-2 px-4"
-              style={{ borderTop: "1px solid #fff" }}
+              style={{ borderTop: "1px solid #fff", fontSize: 12 }}
             >
               This websites Met the Guidelines of Bodies, Developed Under the
               laws. NFTs and Tokenizations are subject to Market Risk. All

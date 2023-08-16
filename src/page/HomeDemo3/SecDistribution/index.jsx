@@ -15,7 +15,7 @@ const SecDistribution = ({img , data}) => {
             <div className="col-lg-6 col-md-6 col-sm-12">
                 <h2 className="text-center mb-30">Token Allocation</h2>
                 <div className="token-allocation">
-                    <img src={require('../../../assets/img/tokenomicsv4x.PNG')} className="center-block img-fluid py-4 mt-3" alt="" />
+                    {/* <img src={require('../../../assets/img/tokenomicsv4x.PNG')} className="center-block img-fluid py-4 mt-3" alt="" /> */}
                 </div>
             </div>
             <div className="col-lg-6 col-md-6 col-sm-12">

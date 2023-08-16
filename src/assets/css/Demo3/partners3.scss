@@ -4,8 +4,8 @@
     padding: 0 0 70px;
   }
   .partner-box {
-    border: 1px solid #25cbd3;
-    border-radius: 10px;
+    border: 2px solid #25cbd3;
+    border-radius: 30px 10px;
     padding: 20px 10px;
     text-align: center;
     vertical-align: middle;
@@ -14,7 +14,8 @@
     transition: all 0.3s ease-in-out;
   }
   .partner-box:hover {
-    background: #d325c1;
+    background: #25cbd3;
     cursor: pointer;
   }
+  
 }

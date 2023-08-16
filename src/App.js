@@ -46,8 +46,10 @@ import Withdrdatadata1 from "./page/Admin/Withdrdatadata1";
 const Spinner = () => {
   return (
     <div className="body">
-      <div id="loading-wrapper">
-        {/* <div id="loading-content"></div> */}
+      <div class="spinner-box">
+        <div class="circle-border">
+          <div class="circle-core"></div>
+        </div>
       </div>
     </div>
   );
@@ -92,7 +94,7 @@ function App() {
               <Route path="/Totaltrem" element={<Daireacttermpage />} />
               <Route path="/staking/income" element={<StackingRepors />} />
               <Route path="/admin/all_income" element={<Allicome />} />
-              <Route path="/userallincome" element={<Allcome1 />} />  
+              <Route path="/userallincome" element={<Allcome1 />} />
               <Route path="/mian/Withdrawal" element={<Mainwallate />} />
               <Route path="/v4x/Withdrawal" element={<Ewallate />} />
               <Route path="/Withdrdata" element={<Withdrdatadata1 />} />

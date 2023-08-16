@@ -33,7 +33,7 @@
 
 .classynav ul li a {
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 1);
     padding: 0px 6px;
     display: block;
     height: 35px;
@@ -68,7 +68,7 @@
 }
 
 .classy-nav-container.sticky{
-    background-color: #3D1F94 !important;
+    background-color: #04113c !important;
 }
 
 @media(max-width: 991px) {

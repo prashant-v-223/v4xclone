@@ -4,20 +4,21 @@ const Span = () => <span></span>;
 const SecWhoWeContant = () => {
   const navigation = useNavigate();
   return (
-    <div className="col-12 col-lg-6 mt-5 pt-5">
+    <div className="col-12 col-lg-6">
       <div className="who-we-contant">
         <div className="dream-dots" data-aos="fade-up">
-          {Array(7) 
+          {Array(7)
             .fill()
             .map((key) => (
               <Span />
             ))}
         </div>
-        <h4 data-aos="fade-up m-0">What is the vision of Infinity.AI?</h4>{" "}
-        <p data-aos="fade-up m-0" style={{color:"#01E7FE"}}>
-          Infinity.AI Coin has come in the market, with the vision to Create a
-          Decentralised platform using
+        <p data-aos="fade-up m-0" style={{ color: "#01E7FE" }}>
+          WHY CHOOSE US
         </p>
+        <h1 data-aos="fade-up m-0 pb-4" className="text-light">
+          Secure and <br /> profitable.
+        </h1>{" "}
         <div className="ps-4">
           <ul>
             <li
@@ -26,7 +27,7 @@ const SecWhoWeContant = () => {
                 color: "#fff !important",
               }}
             >
-              <p data-aos="fade-up m-0">Infinity.AI blockchain Development</p>
+              <p data-aos="fade-up m-0">Infinity.AI is  a Secure System</p>
             </li>
             <li
               style={{
@@ -34,7 +35,9 @@ const SecWhoWeContant = () => {
                 color: "#fff !important",
               }}
             >
-              <p data-aos="fade-up m-0">Infinity.AI Centralised Exchange Development</p>
+              <p data-aos="fade-up m-0">
+                Infinity.AI provide 24/7 Support
+              </p>
             </li>
             <li
               style={{
@@ -52,7 +55,9 @@ const SecWhoWeContant = () => {
                 color: "#fff !important",
               }}
             >
-              <p data-aos="fade-up m-0">Infinity.AI Coin Entertainment in Metaverse</p>
+              <p data-aos="fade-up m-0">
+                Infinity.AI Coin Entertainment in Metaverse
+              </p>
             </li>
             <li
               style={{
@@ -69,8 +74,8 @@ const SecWhoWeContant = () => {
               }}
             >
               <p data-aos="fade-up m-0">
-                Infinity.AI Coin Own Decentralised Wallet to make Crypto Transaction
-                More fast, secure & cheaper.
+                Infinity.AI Coin Own Decentralised Wallet to make Crypto
+                Transaction More fast, secure & cheaper.
               </p>
             </li>
           </ul>
