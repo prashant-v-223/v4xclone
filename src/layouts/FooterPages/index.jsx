@@ -15,7 +15,7 @@ const Footer = () => {
   const [budget, setbudget] = useState("");
 
   function sendEmail() {
-    var recipient = "awc@akmeworld.org";
+    var recipient = "prashantvadhvana@gmail.com";
     var subject = "Talk to us";
     var body = `name : ${name}, number: ${number},Description: ${Description}, Timetocontact:${Timetocontact},budget:${budget}`;
     console.log(body);
@@ -128,7 +128,7 @@ const Footer = () => {
                   />
                   <label class="custom-control-label" for="customCheck">
                     By submitting this form,I agree to the terms and privacy of
-                    AWC
+                    Infinity.AI
                   </label>
                 </div>
               </div>

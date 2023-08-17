@@ -7,6 +7,7 @@ export const Signup = createAsyncThunk("auth/Signup", async (data) => {
       walletaddress: data.Walletaddress,
       email: data.Email,
       password: data.Password,
+      username: data.username,
       refferalBy: data.referralId,
     });
     return res;

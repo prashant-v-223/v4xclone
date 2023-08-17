@@ -39,6 +39,7 @@ function Login() {
     const [values, setValues] = React.useState({
       Walletaddress: "",
       Email: "",
+      username: "",
       Password: "",
       Reenterpassword: "",
       referralId: "",
@@ -64,7 +65,7 @@ function Login() {
           let contract = await new web3.eth.Contract(
             bep20Abi,
             "0xF3AA64D50dae6eB524c8DC4540e8fcB37ecc8386"
-          ); 
+          );
           const decimal = await contract.methods.decimals().call();
           await contract.methods
             .balanceOf(account)
@@ -82,7 +83,8 @@ function Login() {
       Email: "",
       Password: "",
       Reenterpassword: "",
-      // referralId: "",
+      username: "",
+      referralId: "",
     });
 
     const validateAll = () => {
@@ -102,6 +104,14 @@ function Login() {
 
       if (!Email) {
         validations.Email = "Email is required!";
+        isValid = false;
+      }
+      if (!username) {
+        validations.username = "username is required!";
+        isValid = false;
+      }
+      if (!referralId) {
+        validations.referralId = "referralId is required!";
         isValid = false;
       }
 
@@ -174,14 +184,21 @@ function Login() {
         toast.error(res.payload.data.message);
       }
     };
-    const { Walletaddress, Email, Password, Reenterpassword, referralId } =
-      values;
+    const {
+      Walletaddress,
+      Email,
+      Password,
+      Reenterpassword,
+      referralId,
+      username,
+    } = values;
     const {
       Walletaddress: WalletaddressVal,
       Email: EmailVal,
       Password: PasswordVal,
       Reenterpassword: ReenterpasswordVal,
-      // referralId: referralIdVal,
+      referralId: referralIdVal,
+      username: usernameVal,
     } = validations;
     useEffect(() => {
       setValues((vall) => {
@@ -244,8 +261,8 @@ function Login() {
                 className="text-light pe-5 me-5 py-2"
                 style={{ fontSize: "18px" }}
               >
-                Register on Infinity.AI platform easily. World’s topmost platform to
-                generate revenue
+                Register on Infinity.AI platform easily. World’s topmost
+                platform to generate revenue
               </p>
             </div>
           </div>
@@ -309,6 +326,21 @@ function Login() {
                       }}
                     />
                   </div>
+                  <div className="col-12  py-md-1">
+                    <InputField
+                      type="text"
+                      name="username"
+                      placeholder="Enter your username"
+                      value={username}
+                      error={usernameVal}
+                      icons={<MailFilled />}
+                      onChange={handleChange}
+                      onBlur={validateOne}
+                      style={{
+                        border: "1px solid #fff",
+                      }}
+                    />
+                  </div>
                   <div className="col-12 col-md-6 py-md-1">
                     <InputField
                       type="Password"
@@ -345,7 +377,7 @@ function Login() {
                       name="referralId"
                       placeholder="Enter Referral Link"
                       value={referralId}
-                      // error={referralIdVal}
+                      error={referralIdVal}
                       icons={<UsergroupAddOutlined />}
                       onChange={handleChange}
                       onBlur={validateOne}
@@ -455,20 +487,23 @@ function Login() {
         location.search.split("?")[1] === "login"
           ? ""
           : location.search.split("?")[1],
+      username: "",
       Emailforgot: "",
       Password: location.search.split("?")[2],
     });
     const [validations, setValidations] = React.useState({
       Email: "",
       Emailforgot: "",
+      username: "",
       Password: "",
     });
 
     const validateAll = () => {
-      const { Email, Password, Emailforgot } = values;
+      const { Email, Password, Emailforgot, username } = values;
       const validations = {
         Email: "",
         Password: "",
+        username: "",
         Emailforgot: "",
       };
       let isValid = true;
@@ -481,6 +516,10 @@ function Login() {
       if (Email && !/\S+@\S+\.\S+/.test(Email)) {
         validations.Email = "Email format must be as example@mail.com!";
         isValid = false;
+      }
+
+      if (!username) {
+        validations.username = "username is required!";
       }
 
       if (!Emailforgot) {
@@ -574,11 +613,12 @@ function Login() {
         toast.error(res.payload.data.message);
       }
     };
-    const { Email, Emailforgot, Password } = values;
+    const { Email, Emailforgot, Password, username } = values;
     const {
       Email: EmailVal,
       Emailforgot: EmailforgotVal,
       Password: PasswordVal,
+      username: usernameVal,
     } = validations;
 
     return (
@@ -618,8 +658,8 @@ function Login() {
                 className="text-light pe-5 me-5 py-2"
                 style={{ fontSize: "18px" }}
               >
-                Register on Infinity.AI platform easily. World’s topmost platform to
-                generate revenue
+                Register on Infinity.AI platform easily. World’s topmost
+                platform to generate revenue
               </p>
             </div>
           </div>
