@@ -159,14 +159,14 @@ function Withdrawal() {
                 <div className="col-12 col-md-6 pb-4 pb-md-0">
                   <div className="Boxcard p-4">
                     <h6 className="text-light d-flex ">
-                      Transfer V4X Coins
+                      Transfer Infinity.AI Coins
                       <img
                         src={require("../../assets/img/Vector (28).png")}
                         alt=""
                         className="img-fluid mx-3"
                       />{" "}
                     </h6>
-                    <div className="Withdrawalbox px-3 py-4 my-3 d-sm-flex">
+                    <div className="Withdrawalbox px-3 py-4 my-4 d-sm-flex">
                       <div className="d-flex justify-content-center align-items-center img-div1">
                         <img
                           src={require("../../assets/img/Vector (26).png")}
@@ -183,7 +183,7 @@ function Withdrawal() {
                       </div>
                     </div>
                     <div className="row">
-                      <div className="col-12 col-lg-6">
+                      <div className="col-12 col-lg-6  py-2">
                         <Select
                           style={{ width: "100%" }}
                           name="Walletoname"
@@ -201,7 +201,7 @@ function Withdrawal() {
                           onChange={onChange}
                         />
                       </div>
-                      <div className="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center w-100">
+                      <div className="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center w-100  py-2">
                         <div className="w-100">
                           <CreatableSelect
                             isClearable
@@ -216,7 +216,7 @@ function Withdrawal() {
                           )}
                         </div>
                       </div>
-                      <div className="col-12 ">
+                      <div className="col-12 py-2">
                         <InputField
                           type="number"
                           name="Amount"
@@ -231,7 +231,7 @@ function Withdrawal() {
                           onBlur={validateOne}
                         />
                       </div>
-                      <div className="col-12 ">
+                      <div className="col-12 py-2 ">
                         <InputField
                           type="text"
                           name="Walletaddress"
@@ -246,12 +246,12 @@ function Withdrawal() {
                           disabled={true}
                         />
                       </div>
-                      <div className="col-12 pt-3">
+                      <div className="col-12 pt-4">
                         <Button
                           className={" w-100 text-light"}
                           Stake={!false}
                           style={{
-                            background: "#166ff5e8",
+                            background: "#02a2c4",
                             height: 60,
                             border: "none",
                           }}
@@ -261,7 +261,7 @@ function Withdrawal() {
                       </div>
                     </div>
                   </div>
-                  <div className="Boxcard p-4 my-4">
+                  {/* <div className="Boxcard p-4 my-4">
                     <h6 className="text-light d-flex pb-3">
                       View your transfer reports here
                     </h6>
@@ -269,28 +269,28 @@ function Withdrawal() {
                       className={" w-100 text-light my-2"}
                       Stake={!false}
                       style={{
-                        background: "#166ff5e8",
+                        background: "#02a2c4",
                         height: 60,
                         border: "none",
                       }}
-                      label={"V4X Coins Transfer Report "}
+                      label={"Infinity.AI Coins Transfer Report "}
                       onClick={() => {
                         navigation("/transfer/income");
                       }}
                     />
-                  </div>
+                  </div> */}
                 </div>
                 <div className="col-12 col-md-6 pb-4 pb-md-0">
                   <div className="Boxcard p-4">
                     <h6 className="text-light d-flex ">
-                      Withdraw V4X Coins
+                      Withdraw Infinity.AI Coins
                       <img
                         src={require("../../assets/img/Vector (28).png")}
                         alt=""
                         className="img-fluid mx-3"
                       />{" "}
                     </h6>
-                    <div className="Withdrawalbox px-3 py-4 my-3 d-sm-flex">
+                    <div className="Withdrawalbox px-4 py-5 my-3 d-sm-flex">
                       <div className="d-flex justify-content-center align-items-center img-div1">
                         <img
                           src={require("../../assets/img/Vector (26).png")}
@@ -301,12 +301,12 @@ function Withdrawal() {
                       <div className="img-div2">
                         <p className="m-0 text-light">
                           V4X Withdrawals are activated after 15days of your
-                          staking. V4X coins are released as bonus in withdrawal
+                          staking. Infinity.AI coins are released as bonus in withdrawal
                           process. You can withdraw your rewards everyday.
                         </p>
                       </div>
                     </div>
-                    <div className="Withdrawalbox px-3 py-4 mt-3">
+                    <div className="Withdrawalbox px-4 py-4 mt-4">
                       <div className="d-lg-flex justify-content-around">
                         <div className="px-3 py-2 py-lg-0">
                           <h6 className="m-0 text-light text-center">
@@ -321,7 +321,7 @@ function Withdrawal() {
                       </div>
                     </div>
                     <div className="row">
-                      <div className="col-12 col-lg-6 my-3">
+                      <div className="col-12 col-lg-6 my-4">
                         <div
                           className="Withdrawalboxp py-3 d-flex justify-content-center"
                           onClick={() => {
@@ -339,7 +339,7 @@ function Withdrawal() {
                           </h6>
                         </div>
                       </div>
-                      <div className="col-12 col-lg-6 mb-3 mt-lg-3 ">
+                      <div className="col-12 col-lg-6 mb-3 mt-lg-4 ">
                         <div
                           className="Withdrawalboxp py-3 d-flex justify-content-center"
                           onClick={() => {
@@ -409,7 +409,7 @@ function Withdrawal() {
                           className={" w-100 text-light"}
                           Stake={!false}
                           style={{
-                            background: "#166ff5e8",
+                            background: "#02a2c4",
                             height: 65,
                             border: "none",
                           }}
@@ -435,21 +435,21 @@ function Withdrawal() {
                       </div>
                     </div>
                   </div>
-                  <div className="Boxcard p-4 my-4">
+                  {/* <div className="Boxcard p-4 my-4">
                     <h6 className="text-light d-flex pb-3">
-                      Withdraw V4X Coins
+                      Withdraw Infinity.AI Coins
                     </h6>
                     <Button
                       className={" w-100 text-light"}
                       Stake={!false}
                       style={{
-                        background: "#166ff5e8",
+                        background: "#02a2c4",
                         height: 60,
                         border: "none",
                       }}
                       label={"V4X Main Wallet Withdrawal Report"}
                     />
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -479,7 +479,7 @@ function Withdrawal() {
               className={" w-100 text-light"}
               Stake={!false}
               style={{
-                background: "#166ff5e8",
+                background: "#02a2c4",
                 height: 60,
                 border: "none",
               }}

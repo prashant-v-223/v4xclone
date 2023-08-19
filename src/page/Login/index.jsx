@@ -281,7 +281,7 @@ function Login() {
             <div className="Box">
               <form onSubmit={handleSubmit}>
                 <div className="row px-2 px-sm-4">
-                  <h1 className="px-4  pb-4 text-light">Sign up</h1>
+                  <h1 className="px-4  pb-2 text-light">Sign up</h1>
                   <div className="col-12 col-md-9 py-md-1">
                     <InputField
                       type="text"
@@ -387,7 +387,7 @@ function Login() {
                     />{" "}
                   </div>
                   <div
-                    className="d-flex align-items-center pt-3 text-light"
+                    className="d-flex align-items-center  text-light"
                     style={{ alignItems: "center" }}
                   >
                     <Checkbox
@@ -403,7 +403,7 @@ function Login() {
                       <a
                         href="/Termsandconditions"
                         target="_blank"
-                        className="px-1"
+                        className="px-1 text-dark"
                       >
                         Terms and Conditions
                       </a>
@@ -413,7 +413,7 @@ function Login() {
                   <p className="">
                     <b>{!check && "Terms and conditions is required"}</b>
                   </p>
-                  <div className="col-12 pt-4">
+                  <div className="col-12 ">
                     <button
                       type="submit"
                       className={" w-100 text-light"}
@@ -425,7 +425,7 @@ function Login() {
                   </div>
                 </div>
               </form>
-              <div className=" px-2 px-sm-4 pt-4">
+              <div className=" px-2 px-sm-4 pt-3">
                 <button
                   className={"text-light "}
                   onClick={() => {
@@ -678,7 +678,7 @@ function Login() {
             <div className="Box">
               <form onSubmit={handleSubmit}>
                 <div className="row px-2 px-sm-4">
-                  <h1 className="px-4  pb-4 text-light">Login</h1>
+                  <h1 className="px-4  pb-2 text-light">Login</h1>
                   <div className="col-12  py-md-1">
                     <InputField
                       type="text"

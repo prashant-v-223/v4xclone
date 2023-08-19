@@ -51,7 +51,7 @@ function Navbar1() {
         <div className="">
           <BiLogInCircle
             className="mx-3"
-            style={{ color: "#45F4FF", fontSize: "28px", cursor: "pointer" }}
+            style={{ color: "#02a2c4", fontSize: "28px", cursor: "pointer" }}
             onClick={() => {
               navigation("/");
             }}
@@ -69,7 +69,7 @@ function Navbar1() {
           >
             <FaUserCircle
               className="me-2"
-              style={{ color: "#45F4FF", fontSize: "23px" }}
+              style={{ color: "#02a2c4", fontSize: "23px" }}
             />
             Profile
           </button>
@@ -97,7 +97,7 @@ function Navbar1() {
               <BiLogInCircle
                 className="mx-1 mx-lg-3"
                 style={{
-                  color: "#45F4FF",
+                  color: "#02a2c4",
                   fontSize: "28px",
                   cursor: "pointer",
                 }}
@@ -115,9 +115,9 @@ function Navbar1() {
             }}
           >
             {open ? (
-              <BiMenu style={{ color: "#45F4FF", fontSize: "28px" }} />
+              <BiMenu style={{ color: "#02a2c4", fontSize: "28px" }} />
             ) : (
-              <IoMdClose style={{ color: "#45F4FF", fontSize: "28px" }} />
+              <IoMdClose style={{ color: "#02a2c4", fontSize: "28px" }} />
             )}
           </Navbar.Toggle>
         </div>
@@ -132,7 +132,7 @@ function Navbar1() {
             >
               <MdDashboard
                 className="ms-2 me-3"
-                style={{ color: "#45F4FF", fontSize: "20px" }}
+                style={{ color: "#02a2c4", fontSize: "20px" }}
               />
               Dashboard
             </Nav.Link>
@@ -145,7 +145,7 @@ function Navbar1() {
             >
               <FaWallet
                 className="ms-2 me-3"
-                style={{ color: "#45F4FF", fontSize: "20px" }}
+                style={{ color: "#02a2c4", fontSize: "20px" }}
               />
               Wallet & Withdrawal
             </Nav.Link>
@@ -158,7 +158,7 @@ function Navbar1() {
             >
               <RiCoinsFill
                 className="ms-2 me-3"
-                style={{ color: "#45F4FF", fontSize: "20px" }}
+                style={{ color: "#02a2c4", fontSize: "20px" }}
               />
               Stake Infinity.AI Coin
             </Nav.Link>
@@ -171,7 +171,7 @@ function Navbar1() {
             >
               <FaUsers
                 className="ms-2 me-3"
-                style={{ color: "#45F4FF", fontSize: "20px" }}
+                style={{ color: "#02a2c4", fontSize: "20px" }}
               />
               My Infinity.AI Team
             </Nav.Link>
@@ -184,10 +184,11 @@ function Navbar1() {
             >
               <FaUserFriends
                 className="ms-2 me-3"
-                style={{ color: "#45F4FF", fontSize: "20px" }}
+                style={{ color: "#02a2c4", fontSize: "20px" }}
               />
               Infinity.AI Direct Team
             </Nav.Link>
+            {Profile?.Roll === "admin" && (
               <Dropdown>
                 <Dropdown.Toggle
                   variant="none"
@@ -197,7 +198,7 @@ function Navbar1() {
                 >
                   <FaUserFriends
                     className="ms-2 me-3"
-                    style={{ color: "#45F4FF", fontSize: "20px" }}
+                    style={{ color: "#02a2c4", fontSize: "20px" }}
                   />
                   Admin
                 </Dropdown.Toggle>
@@ -212,7 +213,7 @@ function Navbar1() {
                   >
                     <MdDashboard
                       className="ms-2 me-3"
-                      style={{ color: "#45F4FF", fontSize: "20px" }}
+                      style={{ color: "#02a2c4", fontSize: "20px" }}
                     />
                     User All Details
                   </Dropdown.Item>
@@ -225,7 +226,7 @@ function Navbar1() {
                   >
                     <TiArrowRepeatOutline
                       className="ms-2 me-3"
-                      style={{ color: "#45F4FF", fontSize: "20px" }}
+                      style={{ color: "#02a2c4", fontSize: "20px" }}
                     />
                     Wallet Transfer Report
                   </Dropdown.Item>
@@ -238,23 +239,11 @@ function Navbar1() {
                   >
                     <RiCoinsFill
                       className="ms-2 me-3"
-                      style={{ color: "#45F4FF", fontSize: "20px" }}
+                      style={{ color: "#02a2c4", fontSize: "20px" }}
                     />
                     Withdraw Details
                   </Dropdown.Item>
-                  <Dropdown.Item
-                    className="py-2"
-                    onClick={() => {
-                      navigation("/admin/all_income");
-                    }}
-                    style={{ border: "none", fontSize: "15px" }}
-                  >
-                    <FaDollarSign
-                      className="ms-2 me-3"
-                      style={{ color: "#45F4FF", fontSize: "20px" }}
-                    />
-                    All Income
-                  </Dropdown.Item>
+
                   <Dropdown.Item
                     className="py-2"
                     onClick={() => {
@@ -264,7 +253,7 @@ function Navbar1() {
                   >
                     <FaDollarSign
                       className="ms-2 me-3"
-                      style={{ color: "#45F4FF", fontSize: "20px" }}
+                      style={{ color: "#02a2c4", fontSize: "20px" }}
                     />
                     Infinity.AI Coin Live Price
                   </Dropdown.Item>
@@ -277,7 +266,7 @@ function Navbar1() {
                   >
                     <FaDollarSign
                       className="ms-2 me-3"
-                      style={{ color: "#45F4FF", fontSize: "20px" }}
+                      style={{ color: "#02a2c4", fontSize: "20px" }}
                     />
                     Transfer Infinity.AI Coins
                   </Dropdown.Item>
@@ -290,7 +279,7 @@ function Navbar1() {
                   >
                     <FaDollarSign
                       className="ms-2 me-3"
-                      style={{ color: "#45F4FF", fontSize: "20px" }}
+                      style={{ color: "#02a2c4", fontSize: "20px" }}
                     />
                     Add Banners
                   </Dropdown.Item>
@@ -303,7 +292,7 @@ function Navbar1() {
                   >
                     <FaDollarSign
                       className="ms-2 me-3"
-                      style={{ color: "#45F4FF", fontSize: "20px" }}
+                      style={{ color: "#02a2c4", fontSize: "20px" }}
                     />
                     Staking Active
                   </Dropdown.Item>
@@ -316,12 +305,13 @@ function Navbar1() {
                   >
                     <FaDollarSign
                       className="ms-2 me-3"
-                      style={{ color: "#45F4FF", fontSize: "20px" }}
+                      style={{ color: "#02a2c4", fontSize: "20px" }}
                     />
                     Infinity.AI Support Details
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
+            )}
 
             <Dropdown>
               <Dropdown.Toggle
@@ -332,7 +322,7 @@ function Navbar1() {
               >
                 <FaDollarSign
                   className="ms-2 me-3"
-                  style={{ color: "#45F4FF", fontSize: "20px" }}
+                  style={{ color: "#02a2c4", fontSize: "20px" }}
                 />
                 My Income
               </Dropdown.Toggle>
@@ -346,7 +336,7 @@ function Navbar1() {
                 >
                   <FaDollarSign
                     className="ms-2 me-3"
-                    style={{ color: "#45F4FF", fontSize: "20px" }}
+                    style={{ color: "#02a2c4", fontSize: "20px" }}
                   />
                   Main Withdrawal Report
                 </Dropdown.Item>
@@ -358,7 +348,7 @@ function Navbar1() {
                 >
                   <FaDollarSign
                     className="ms-2 me-3"
-                    style={{ color: "#45F4FF", fontSize: "20px" }}
+                    style={{ color: "#02a2c4", fontSize: "20px" }}
                   />
                   E-Withdrawal Report
                 </Dropdown.Item>
@@ -370,7 +360,7 @@ function Navbar1() {
                 >
                   <FaDollarSign
                     className="ms-2 me-3"
-                    style={{ color: "#45F4FF", fontSize: "20px" }}
+                    style={{ color: "#02a2c4", fontSize: "20px" }}
                   />
                   Staking Bonus
                 </Dropdown.Item>
@@ -382,7 +372,7 @@ function Navbar1() {
                 >
                   <FaDollarSign
                     className="ms-2 me-3"
-                    style={{ color: "#45F4FF", fontSize: "20px" }}
+                    style={{ color: "#02a2c4", fontSize: "20px" }}
                   />
                   Refer And Earn
                 </Dropdown.Item>
@@ -394,21 +384,9 @@ function Navbar1() {
                 >
                   <FaDollarSign
                     className="ms-2 me-3"
-                    style={{ color: "#45F4FF", fontSize: "20px" }}
+                    style={{ color: "#02a2c4", fontSize: "20px" }}
                   />
                   Infinity.AI Community Reward
-                </Dropdown.Item>
-                <Dropdown.Item
-                  className="py-2 "
-                  onClick={() => {
-                    navigation("/Passivebouns/Building/income");
-                  }}
-                >
-                  <FaDollarSign
-                    className="ms-2 me-3"
-                    style={{ color: "#45F4FF", fontSize: "20px" }}
-                  />
-                  Infinity.AI Passive Club Reward
                 </Dropdown.Item>
                 <Dropdown.Item
                   className="py-2"
@@ -418,22 +396,9 @@ function Navbar1() {
                 >
                   <FaDollarSign
                     className="ms-2 me-3"
-                    style={{ color: "#45F4FF", fontSize: "20px" }}
+                    style={{ color: "#02a2c4", fontSize: "20px" }}
                   />
                   Infinity.AI Achievement Reward
-                </Dropdown.Item>
-
-                <Dropdown.Item
-                  className="py-2"
-                  onClick={() => {
-                    navigation("/userallincome");
-                  }}
-                >
-                  <FaDollarSign
-                    className="ms-2 me-3"
-                    style={{ color: "#45F4FF", fontSize: "20px" }}
-                  />
-                  Infinity.AI All Income
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
@@ -446,7 +411,7 @@ function Navbar1() {
             >
               <MdSupportAgent
                 className="ms-2 me-3"
-                style={{ color: "#45F4FF", fontSize: "20px" }}
+                style={{ color: "#02a2c4", fontSize: "20px" }}
               />
               Support
             </Nav.Link>
@@ -463,7 +428,7 @@ function Navbar1() {
                 >
                   <FaUserCircle
                     className="me-2"
-                    style={{ color: "#45F4FF", fontSize: "23px" }}
+                    style={{ color: "#02a2c4", fontSize: "23px" }}
                   />
                   Profile
                 </button>

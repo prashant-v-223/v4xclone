@@ -135,7 +135,17 @@ function Adminlogin() {
             position: "relative",
           }}
         >
+          {" "}
           <div className="p-4">
+            <img
+              src={require("../../assets/img/Logo.png")}
+              alt=""
+              width={200}
+              onClick={() => {
+                navigation("/");
+              }}
+              style={{ cursor: "pointer" }}
+            />
           </div>
           <div
             className=""
@@ -155,8 +165,8 @@ function Adminlogin() {
                 className="text-light pe-5 me-5 py-2"
                 style={{ fontSize: "18px" }}
               >
-                Register on Infinity.AI platform easily. World’s topmost platform to
-                generate revenue
+                Register on Infinity.AI platform easily. World’s topmost
+                platform to generate revenue
               </p>
             </div>
           </div>

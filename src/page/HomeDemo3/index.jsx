@@ -465,7 +465,7 @@ function Homepage3() {
             <SecWelcomeArea />
             {/* <SecVerticalSocial data={VerticalSocial} /> */}
             <div className="container pt-5" id="BuyV4XCoins">
-              {alldata.length > 0 && (
+              {
                 <div className="py-5">
                   <div>
                     <Slider {...settings}>
@@ -484,7 +484,7 @@ function Homepage3() {
                     </Slider>
                   </div>
                 </div>
-              )}
+              }
               {/* <div className="py-5">
                 <div className="row">
                   <div className="col-12 col-md-6 d-flex justify-content-center align-items-center">

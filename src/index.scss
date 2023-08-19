@@ -16,8 +16,8 @@
 .Box {
   background: linear-gradient(
     to right,
-    rgba(72, 52, 212, 1),
-    rgba(52, 31, 151, 1)
+    #8c45ff,
+    #02a2c4
   );
   border-radius: 12px;
   padding: 35px 5px;
@@ -93,7 +93,7 @@ input {
 .ant-table-tbody {
   > tr {
     .ant-table-cell {
-      background: #3961e4 !important;
+      background: #02a2c4!important;
       color: #fff !important;
       border-bottom: 2px solid !important;
       border-color: #323232 !important;
@@ -125,7 +125,7 @@ input {
   color: #fff !important;
 }
 .ant-pagination-item-link {
-  background: #1456ba !important;
+  background: #02a2c4 !important;
   color: #fff !important;
   display: flex !important;
   justify-content: center;
@@ -164,14 +164,14 @@ input {
   text-transform: uppercase;
 }
 .accordion-header {
-  background: #1456ba !important;
+  background: #02a2c4 !important;
   border: none !important;
   outline: none !important;
   > button {
     border: none !important;
     outline: none !important;
     padding: 16px !important;
-    background: #1456ba !important;
+    background: #02a2c4 !important;
   }
 }
 .accordion-body {

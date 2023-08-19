@@ -31,9 +31,9 @@ function Staking() {
   const [page, setpage] = React.useState(1);
   const [pageSize, setpageSize] = React.useState(10);
   const [values, setValues] = React.useState({
-    Mainwalletstacking: 50,
-    ewalletstacking: 50,
-    dappwalletstacking: 50,
+    Mainwalletstacking: 40,
+    ewalletstacking: 40,
+    dappwalletstacking: 40,
   });
   const [validations, setValidations] = React.useState({
     Mainwalletstacking: "",
@@ -90,7 +90,7 @@ function Staking() {
         let web3 = await getWeb3();
         let contract = await new web3.eth.Contract(
           v4x,
-          "0xffF17D90Fe37E9933407fD11c9a64A3dA2D69781"
+          "0x0a786CDc660C437f5F286548221232a8d4e53441"
         );
         const decimal = await contract.methods.decimals().call();
         await contract.methods
@@ -170,35 +170,26 @@ function Staking() {
       validations.Mainwalletstacking =
         "Main Wallet Stacking Amount is required!";
       isValid = false;
-    } else if ((Mainwalletstacking / 50).toString().includes(".")) {
+    } else if (Mainwalletstacking < 40) {
       validations.Mainwalletstacking =
-        "You must stake the amount in the multiple of 50..!!!";
-      isValid = false;
-    } else if (!(Mainwalletstacking / 50).toString().includes(".")) {
-      validations.Mainwalletstacking = "";
+        "You must stake the amount in the Greater than  of 40..!!!";
       isValid = false;
     }
     if (!ewalletstacking) {
       validations.ewalletstacking = "E-Wallet Stacking Amount is required!";
       isValid = false;
-    } else if ((ewalletstacking / 50).toString().includes(".")) {
-      validations.ewalletstacking =
-        "You must stake the amount in the multiple of 50..!!!";
-      isValid = false;
-    } else if (!(ewalletstacking / 50).toString().includes(".")) {
-      validations.ewalletstacking = "";
+    } else if (Mainwalletstacking < 40) {
+      validations.Mainwalletstacking =
+        "You must stake the amount in the Greater than  of 40..!!!";
       isValid = false;
     }
     if (!dappwalletstacking) {
       validations.dappwalletstacking =
         "dapp Wallet Stacking Amount is required!";
       isValid = false;
-    } else if ((dappwalletstacking / 50).toString().includes(".")) {
-      validations.dappwalletstacking =
-        "You must stake the amount in the multiple of 50..!!!";
-      isValid = false;
-    } else if (!(dappwalletstacking / 50).toString().includes(".")) {
-      validations.dappwalletstacking = "";
+    } else if (Mainwalletstacking < 40) {
+      validations.Mainwalletstacking =
+        "You must stake the amount in the Greater than  of 40..!!!";
       isValid = false;
     }
     if (!isValid) {
@@ -213,51 +204,51 @@ function Staking() {
     if (validateAll()[e] === "") {
       if (e === "dappwalletstacking") {
         if (account) {
-          // if (
-          //   account ===
-          //   JSON.parse(localStorage.getItem("data"))?.data?.profile
-          //     ?.walletaddress
-          // ) {
-          setloding(true);
-          let web3 = await getWeb3();
-          let contract = await new web3.eth.Contract(
-            v4x,
-            "0xffF17D90Fe37E9933407fD11c9a64A3dA2D69781"
-          );
-          const decimal = await contract.methods.decimals().call();
-          await contract.methods
-            .transfer(
-              process.env.REACT_APP_OWNER_ADDRESS,
-              web3.utils.toBN(values[e] * Math.pow(10, decimal))
-            )
-            .send({
-              from: account,
-            })
-            .on("receipt", async (receipt) => {
-              const res = await dispatch(
-                BuyStacking({
-                  WalletType: e.toString(),
-                  Amount: values[e],
-                  V4xTokenPrice: livaratev4xtoken,
-                  Token:
-                    JSON.parse(localStorage.getItem("data")) &&
-                    JSON.parse(localStorage.getItem("data")).data.token,
-                  transactionHash: receipt,
-                })
-              );
-              if (res.payload.data.isSuccess) {
-                toast.success(res.payload.data.message);
-                getalldata();
-                getalldata1();
-                setloding(!true);
-              } else {
-                toast.error(res.payload.data.message);
-                setloding(!true);
-              }
-            });
-          // } else {
-          // toast.error("please connect your register wallet account");
-          // }
+          if (
+            account ===
+            JSON.parse(localStorage.getItem("data"))?.data?.profile
+              ?.walletaddress
+          ) {
+            setloding(true);
+            let web3 = await getWeb3();
+            let contract = await new web3.eth.Contract(
+              v4x,
+              "0x0a786CDc660C437f5F286548221232a8d4e53441"
+            );
+            const decimal = await contract.methods.decimals().call();
+            await contract.methods
+              .transfer(
+                process.env.REACT_APP_OWNER_ADDRESS,
+                web3.utils.toBN(values[e] * Math.pow(10, decimal))
+              )
+              .send({
+                from: account,
+              })
+              .on("receipt", async (receipt) => {
+                const res = await dispatch(
+                  BuyStacking({
+                    WalletType: e.toString(),
+                    Amount: values[e],
+                    V4xTokenPrice: livaratev4xtoken,
+                    Token:
+                      JSON.parse(localStorage.getItem("data")) &&
+                      JSON.parse(localStorage.getItem("data")).data.token,
+                    transactionHash: receipt,
+                  })
+                );
+                if (res.payload.data.isSuccess) {
+                  toast.success(res.payload.data.message);
+                  getalldata();
+                  getalldata1();
+                  setloding(!true);
+                } else {
+                  toast.error(res.payload.data.message);
+                  setloding(!true);
+                }
+              });
+          } else {
+            toast.error("please connect your register wallet account");
+          }
         } else {
           await connect();
         }
@@ -278,6 +269,7 @@ function Staking() {
           getalldata1();
         } else {
           toast.error(res.payload.data.message);
+          getalldata();
         }
       }
     }
@@ -381,19 +373,15 @@ function Staking() {
         showTitle: false,
       },
       render: (text, record, index) => {
-        var date1 = new Date(record.createdAt);
-        var date2 = new Date();
-        const diffTime = Math.abs(date2 - date1);
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
         return (
-          <Tooltip placement="topLeft" title={diffDays * record.DailyReword}>
-            {diffDays * record.DailyReword}
+          <Tooltip placement="topLeft" title={730 * record.DailyReword}>
+            {730 * record.DailyReword}
           </Tooltip>
         );
       },
     },
     {
-      title: "V4X Token Price",
+      title: "Infinity.Ai Token Price",
       dataIndex: "V4xTokenPrice",
       key: "V4xTokenPrice",
       width: "200px",
@@ -443,7 +431,7 @@ function Staking() {
                           />
                         </div>
                         <div className="px-3">
-                          <p className="m-0">V4X Main wallet Staking</p>
+                          <p className="m-0">Infinity.Ai Main wallet Staking</p>
                         </div>
                       </div>
                       <div className="">
@@ -484,14 +472,14 @@ function Staking() {
                       value={values.Mainwalletstacking}
                       error={validations.Mainwalletstacking}
                       onChange={handleChange}
-                      min={50}
-                      defaultValue={50}
-                      step={50}
+                      min={40}
+                      defaultValue={40}
+                      step={40}
                       style={{
                         border: "1px solid #fff",
                       }}
                     />
-                    <h6 className="pt-2 ps-1">Amount in V4X</h6>
+                    <h6 className="pt-2 ps-1">Amount in Infinity.Ai</h6>
                     <div
                       className="d-flex px-2 ant-input"
                       style={{
@@ -517,7 +505,7 @@ function Staking() {
                         className={" w-100 text-light"}
                         Stake={false}
                         style={{
-                          background: "#166ff5e8",
+                          background: "#02a2c4",
                           height: 52,
                           border: "none",
                         }}
@@ -539,7 +527,7 @@ function Staking() {
                           />
                         </div>
                         <div className="px-3">
-                          <p className="m-0">V4X E-Wallet Staking</p>
+                          <p className="m-0">Infinity.Ai E-Wallet Staking</p>
                         </div>
                       </div>
                       <div className="">
@@ -578,14 +566,14 @@ function Staking() {
                       value={values.ewalletstacking}
                       error={validations.ewalletstacking}
                       onChange={handleChange}
-                      min={50}
-                      defaultValue={50}
-                      step={50}
+                      min={40}
+                      defaultValue={40}
+                      step={40}
                       style={{
                         border: "1px solid #fff",
                       }}
                     />
-                    <h6 className="pt-2 ps-1">Amount in V4X</h6>
+                    <h6 className="pt-2 ps-1">Amount in Infinity.Ai</h6>
                     <div
                       className="d-flex px-2 ant-input"
                       style={{
@@ -611,7 +599,7 @@ function Staking() {
                         className={" w-100 text-light"}
                         Stake={false}
                         style={{
-                          background: "#166ff5e8",
+                          background: "#02a2c4",
                           height: 52,
                           border: "none",
                         }}
@@ -677,14 +665,14 @@ function Staking() {
                       value={values.dappwalletstacking}
                       error={validations.dappwalletstacking}
                       onChange={handleChange}
-                      min={50}
-                      defaultValue={50}
-                      step={50}
+                      min={40}
+                      defaultValue={40}
+                      step={40}
                       style={{
                         border: "1px solid #fff",
                       }}
                     />
-                    <h6 className="pt-2 ps-1">Amount in V4X</h6>
+                    <h6 className="pt-2 ps-1">Amount in Infinity.Ai</h6>
                     <div
                       className="d-flex px-2 ant-input"
                       style={{
@@ -710,7 +698,7 @@ function Staking() {
                         className={" w-100 text-light"}
                         Stake={false}
                         style={{
-                          background: "#166ff5e8",
+                          background: "#02a2c4",
                           height: 52,
                           border: "none",
                         }}
@@ -777,14 +765,14 @@ function Staking() {
           <Modal.Body>
             <p>
               Your % return will be calculated based on amount of tokens staked.
-              You can see the V4X slab details below.
+              You can see the Infinity.Ai slab details below.
             </p>
             <div className="d-flex">
               <div className="w-50">
                 <h6 className="m-0 py-2 text-light text-center">
                   Range in BUSD
                 </h6>
-                <p className="m-0 py-1 text-center">50 - 2500</p>
+                <p className="m-0 py-1 text-center">40 - 2500</p>
                 <p className="m-0 py-1 text-center">2550 - 10000</p>
                 <p className="m-0 py-1 text-center">10050 - 25000</p>
                 <p className="m-0 py-1 text-center">25050 - Above</p>
@@ -811,7 +799,7 @@ function Staking() {
               }}
             >
               <img
-                src={require("../../assets/img/WalletConnect.png")}
+                src={require("../../assets/img/partners/WalletConnect.13798276a43e02957131.png")}
                 alt="Wallet Connect Logo"
                 width={70}
                 height={70}
@@ -829,7 +817,7 @@ function Staking() {
               }}
             >
               <img
-                src={require("../../assets/img/MetaMask Fox.png")}
+                src={require("../../assets/img/partners/MetaMask Fox.900b5bef784601bc0be8.png")}
                 alt="Metamask Logo"
                 width={70}
                 height={70}

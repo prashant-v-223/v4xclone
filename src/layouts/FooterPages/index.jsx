@@ -34,7 +34,7 @@ const Footer = () => {
     <footer className="footer-area bg-img">
       {/* <SecContact /> */}
 
-      <div className="" id="Contact_us">
+      <div className="" id="contact">
         <div class="Contact_us">
           <div class="container py-5">
             <div class="contact_us_title mt-4">

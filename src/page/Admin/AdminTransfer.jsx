@@ -98,7 +98,19 @@ function AdminTransfer() {
       },
       render: (text, record, index) => (
         <Tooltip placement="topLeft" title={record.Note}>
-          {record.Note + " "} {record.Usernameby}
+          {record.Note + " "}
+        </Tooltip>
+      ),
+    },  {
+      title: "username",
+      dataIndex: "username",
+      key: "username",
+      ellipsis: {
+        showTitle: false,
+      },
+      render: (text, record, index) => (
+        <Tooltip placement="topLeft" title={record.username}>
+          {record.username + " "}
         </Tooltip>
       ),
     },
@@ -170,7 +182,7 @@ function AdminTransfer() {
               <div className="col-12 py-4">
                 <button
                   style={{
-                    background: "#166ff5e8",
+                    background: "#02a2c4",
                     color: "#fff",
                     height: 60,
                     width: 180,

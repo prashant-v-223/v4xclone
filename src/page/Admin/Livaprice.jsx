@@ -152,7 +152,7 @@ function Livaprice() {
               <div className="col-12 col-md-2 p-2 p-lg-3">
                 <button
                   style={{
-                    background: "#166ff5e8",
+                    background: "#02a2c4",
                     color: "#fff",
                     height: 60,
                     width: 180,

@@ -90,7 +90,7 @@ function StakingActive() {
               <div className="col-12 py-4">
                 <button
                   style={{
-                    background: "#166ff5e8",
+                    background: "#02a2c4",
                     color: "#fff",
                     height: 60,
                     width: 180,

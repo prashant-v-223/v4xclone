@@ -32,7 +32,6 @@ const Dashboard = () => {
   const dispatch = useDispatch();
   const navigation = useNavigate();
   useEffect(() => {
-    getalldata1();
     getalldata();
   }, []);
   const flatNumbers = StackingSlice.Wallatedata?.data?.ReffData;
@@ -78,14 +77,14 @@ const Dashboard = () => {
                   </div>
                   <div className=" d-flex h-50 h-md-100 flex-column justify-content-center">
                     <h4 className="pt-2 pt-lg-0 pb-4 mb-2 text-center">
-                      Referral Link
+                      Referral Code
                     </h4>
                     <button
                       className="text-light d-flex justify-content-center align-items-center px-4 py-2 "
-                      style={{ background: "#1868E2", position: "inherit" }}
+                      style={{ background: "#02a2c4", position: "inherit" }}
                       onClick={() => {
                         navigator.clipboard.writeText(Profile[0]?.username);
-                        toast.success("Referral Link copy successfully.");
+                        toast.success("Referral Code copy successfully.");
                       }}
                     >
                       <MdContentCopy
@@ -111,10 +110,10 @@ const Dashboard = () => {
                     </h4>
                     <button
                       className="text-light d-flex justify-content-center align-items-center px-4 py-2 "
-                      style={{ background: "#1868E2", position: "inherit" }}
+                      style={{ background: "#02a2c4", position: "inherit" }}
                       onClick={() => {
                         navigator.clipboard.writeText(Profile[0]?.username);
-                        toast.success("Referral Link copy successfully.");
+                        toast.success("Username copy successfully.");
                       }}
                     >
                       <MdContentCopy
@@ -160,7 +159,7 @@ const Dashboard = () => {
                   <div className="d-flex flex-wrap  ps-3">
                     <button
                       className="text-light d-flex align-items-center px-4 py-2 m-1"
-                      style={{ background: "#1868E2", position: "inherit" }}
+                      style={{ background: "#02a2c4", position: "inherit" }}
                       onClick={() => {
                         navigation("/Staking");
                       }}
@@ -173,7 +172,7 @@ const Dashboard = () => {
                     </button>
                     <button
                       className="text-light d-flex align-items-center px-4 py-2 m-1"
-                      style={{ background: "#1868E2", position: "inherit" }}
+                      style={{ background: "#02a2c4", position: "inherit" }}
                       onClick={() => {
                         navigation("/mian/Withdrawal");
                       }}
@@ -205,7 +204,7 @@ const Dashboard = () => {
                   <div className="d-flex flex-wrap  ps-3">
                     <button
                       className="text-light d-flex align-items-center px-4 py-2 m-1"
-                      style={{ background: "#1868E2", position: "inherit" }}
+                      style={{ background: "#02a2c4", position: "inherit" }}
                       onClick={() => {
                         navigation("/Staking");
                       }}
@@ -218,7 +217,7 @@ const Dashboard = () => {
                     </button>
                     <button
                       className="text-light d-flex align-items-center px-4 py-2 m-1"
-                      style={{ background: "#1868E2", position: "inherit" }}
+                      style={{ background: "#02a2c4", position: "inherit" }}
                       onClick={() => {
                         navigation("/v4x/Withdrawal");
                       }}
@@ -251,7 +250,7 @@ const Dashboard = () => {
                   <div className="d-flex flex-wrap  ps-3">
                     <button
                       className="text-light d-flex align-items-center px-4 py-2 m-1"
-                      style={{ background: "#1868E2", position: "inherit" }}
+                      style={{ background: "#02a2c4", position: "inherit" }}
                       onClick={() => {
                         navigation("/Staking");
                       }}
@@ -319,7 +318,7 @@ const Dashboard = () => {
                     </div>
                     <button
                       className="text-light d-flex justify-content-center align-items-center px-4 py-2 "
-                      style={{ background: "#1868E2", position: "inherit" }}
+                      style={{ background: "#02a2c4", position: "inherit" }}
                       onClick={() => {
                         navigator.clipboard.writeText(
                           Profile[0]?.walletaddress
@@ -390,12 +389,12 @@ const Dashboard = () => {
                   <div className="d-flex h-50 h-md-100 flex-column justify-content-center">
                     <h6 className="pt-0 text-center">Airdrop Coins</h6>
                     <h6 className="text-center">
-                      {Profile && Profile[0]?.Airdropped} V4X COINS
+                      {Profile && Profile[0]?.Airdropped} Infinity.AI COINS
                     </h6>
                     <button
                       className="text-light"
                       style={{
-                        background: "#166ff5e8",
+                        background: "#02a2c4",
                         height: 60,
                         border: "none",
                       }}
@@ -534,7 +533,7 @@ const Dashboard = () => {
                   className={" w-100 text-light"}
                   Stake={!false}
                   style={{
-                    background: "#166ff5e8",
+                    background: "#02a2c4",
                     height: 60,
                     border: "none",
                   }}
@@ -616,11 +615,11 @@ export default Dashboard;
 //           <div className="">
 //             <MdNotificationsActive
 //               className="mx-3"
-//               style={{ color: "#45F4FF", fontSize: "28px" }}
+//               style={{ color: "#02a2c4", fontSize: "28px" }}
 //             />
 //             <BiLogInCircle
 //               className="mx-3"
-//               style={{ color: "#45F4FF", fontSize: "28px", cursor: "pointer" }}
+//               style={{ color: "#02a2c4", fontSize: "28px", cursor: "pointer" }}
 //               onClick={() => {
 //                 navigation("/");
 //               }}
@@ -636,7 +635,7 @@ export default Dashboard;
 //             <button className="Username m-2 py-2 px-3">
 //               <FaUserCircle
 //                 className="me-2"
-//                 style={{ color: "#45F4FF", fontSize: "23px" }}
+//                 style={{ color: "#02a2c4", fontSize: "23px" }}
 //               />
 //               Profile
 //             </button>
@@ -664,12 +663,12 @@ export default Dashboard;
 //               <>
 //                 <MdNotificationsActive
 //                   className="mx-1 mx-lg-3"
-//                   style={{ color: "#45F4FF", fontSize: "28px" }}
+//                   style={{ color: "#02a2c4", fontSize: "28px" }}
 //                 />
 //                 <BiLogInCircle
 //                   className="mx-1 mx-lg-3"
 //                   style={{
-//                     color: "#45F4FF",
+//                     color: "#02a2c4",
 //                     fontSize: "28px",
 //                     cursor: "pointer",
 //                   }}
@@ -683,7 +682,7 @@ export default Dashboard;
 //               aria-controls="basic-navbar-nav"
 //               className="mx-2 mx-lg-3"
 //             >
-//               <BiMenu style={{ color: "#45F4FF", fontSize: "28px" }} />
+//               <BiMenu style={{ color: "#02a2c4", fontSize: "28px" }} />
 //             </Navbar.Toggle>
 //           </div>
 //           <Navbar.Collapse id="responsive-navbar-nav">
@@ -694,7 +693,7 @@ export default Dashboard;
 //               >
 //                 <MdDashboard
 //                   className="ms-2 me-3"
-//                   style={{ color: "#45F4FF", fontSize: "20px" }}
+//                   style={{ color: "#02a2c4", fontSize: "20px" }}
 //                 />
 //                 Dashboard
 //               </Nav.Link>
@@ -704,7 +703,7 @@ export default Dashboard;
 //               >
 //                 <FaWallet
 //                   className="ms-2 me-3"
-//                   style={{ color: "#45F4FF", fontSize: "20px" }}
+//                   style={{ color: "#02a2c4", fontSize: "20px" }}
 //                 />
 //                 Wallet & Withdrawal
 //               </Nav.Link>
@@ -714,7 +713,7 @@ export default Dashboard;
 //               >
 //                 <RiCoinsFill
 //                   className="ms-2 me-3"
-//                   style={{ color: "#45F4FF", fontSize: "20px" }}
+//                   style={{ color: "#02a2c4", fontSize: "20px" }}
 //                 />
 //                 Stake Infinity.AI Coin
 //               </Nav.Link>
@@ -724,7 +723,7 @@ export default Dashboard;
 //               >
 //                 <FaUsers
 //                   className="ms-2 me-3"
-//                   style={{ color: "#45F4FF", fontSize: "20px" }}
+//                   style={{ color: "#02a2c4", fontSize: "20px" }}
 //                 />
 //                 My Infinity.AI Team
 //               </Nav.Link>
@@ -734,7 +733,7 @@ export default Dashboard;
 //               >
 //                 <FaUserFriends
 //                   className="ms-2 me-3"
-//                   style={{ color: "#45F4FF", fontSize: "20px" }}
+//                   style={{ color: "#02a2c4", fontSize: "20px" }}
 //                 />
 //                 Infinity.AI Direct Team
 //               </Nav.Link>
@@ -747,7 +746,7 @@ export default Dashboard;
 //                 >
 //                   <FaDollarSign
 //                     className="ms-2 me-3"
-//                     style={{ color: "#45F4FF", fontSize: "20px" }}
+//                     style={{ color: "#02a2c4", fontSize: "20px" }}
 //                   />
 //                   Dropdown Button
 //                 </Dropdown.Toggle>
@@ -768,7 +767,7 @@ export default Dashboard;
 //               >
 //                 <MdSupportAgent
 //                   className="ms-2 me-3"
-//                   style={{ color: "#45F4FF", fontSize: "20px" }}
+//                   style={{ color: "#02a2c4", fontSize: "20px" }}
 //                 />
 //                 Support
 //               </Nav.Link>
@@ -780,7 +779,7 @@ export default Dashboard;
 //                   <button className="Username m-2 py-2 px-3">
 //                     <FaUserCircle
 //                       className="me-2"
-//                       style={{ color: "#45F4FF", fontSize: "23px" }}
+//                       style={{ color: "#02a2c4", fontSize: "23px" }}
 //                     />
 //                     Profile
 //                   </button>
@@ -812,7 +811,7 @@ export default Dashboard;
 //                 <div className="d-flex flex-wrap  ps-3">
 //                   <button
 //                     className="text-light d-flex align-items-center px-4 py-2 m-1"
-//                     style={{ background: "#1868E2", position: "inherit" }}
+//                     style={{ background: "#02a2c4", position: "inherit" }}
 //                   >
 //                     <BsDropletFill
 //                       className="me-2"
@@ -822,7 +821,7 @@ export default Dashboard;
 //                   </button>
 //                   <button
 //                     className="text-light d-flex align-items-center px-4 py-2 m-1"
-//                     style={{ background: "#1868E2", position: "inherit" }}
+//                     style={{ background: "#02a2c4", position: "inherit" }}
 //                   >
 //                     <BiTransferAlt
 //                       className="me-2"
@@ -852,7 +851,7 @@ export default Dashboard;
 //                 <div className="d-flex flex-wrap  ps-3">
 //                   <button
 //                     className="text-light d-flex align-items-center px-4 py-2 m-1"
-//                     style={{ background: "#1868E2", position: "inherit" }}
+//                     style={{ background: "#02a2c4", position: "inherit" }}
 //                   >
 //                     <BsDropletFill
 //                       className="me-2"
@@ -862,7 +861,7 @@ export default Dashboard;
 //                   </button>
 //                   <button
 //                     className="text-light d-flex align-items-center px-4 py-2 m-1"
-//                     style={{ background: "#1868E2", position: "inherit" }}
+//                     style={{ background: "#02a2c4", position: "inherit" }}
 //                   >
 //                     <BiTransferAlt
 //                       className="me-2"
@@ -892,7 +891,7 @@ export default Dashboard;
 //                 <div className="d-flex flex-wrap  ps-3">
 //                   <button
 //                     className="text-light d-flex align-items-center px-4 py-2 m-1"
-//                     style={{ background: "#1868E2", position: "inherit" }}
+//                     style={{ background: "#02a2c4", position: "inherit" }}
 //                   >
 //                     <BsDropletFill
 //                       className="me-2"
@@ -902,7 +901,7 @@ export default Dashboard;
 //                   </button>
 //                   <button
 //                     className="text-light d-flex align-items-center px-4 py-2 m-1"
-//                     style={{ background: "#1868E2", position: "inherit" }}
+//                     style={{ background: "#02a2c4", position: "inherit" }}
 //                   >
 //                     <BiTransferAlt
 //                       className="me-2"
@@ -923,7 +922,7 @@ export default Dashboard;
 //                 <div className="">
 //                   <button
 //                     className="text-light d-flex align-items-center px-4 py-2 "
-//                     style={{ background: "#1868E2", position: "inherit" }}
+//                     style={{ background: "#02a2c4", position: "inherit" }}
 //                   >
 //                     <MdContentCopy
 //                       className="me-2"
@@ -942,7 +941,7 @@ export default Dashboard;
 //                 <div className="">
 //                   <button
 //                     className="text-light d-flex align-items-center px-4 py-2 "
-//                     style={{ background: "#1868E2", position: "inherit" }}
+//                     style={{ background: "#02a2c4", position: "inherit" }}
 //                   >
 //                     <MdContentCopy
 //                       className="me-2"
@@ -973,7 +972,7 @@ export default Dashboard;
 
 //                 <button
 //                   className="text-light d-flex align-items-center justify-content-between px-4 py-2 my-3 w-100"
-//                   style={{ background: "#1868E2", position: "inherit" }}
+//                   style={{ background: "#02a2c4", position: "inherit" }}
 //                 >
 //                   <div className="">
 //                     <img
@@ -991,7 +990,7 @@ export default Dashboard;
 //                 </button>
 //                 <button
 //                   className="text-light d-flex align-items-center justify-content-between px-4 py-2 mt-3 w-100"
-//                   style={{ background: "#1868E2", position: "inherit" }}
+//                   style={{ background: "#02a2c4", position: "inherit" }}
 //                 >
 //                   <div className="">
 //                     <img
@@ -1031,7 +1030,7 @@ export default Dashboard;
 //                       <div className="w-50">
 //                         <button
 //                           className="text-light d-flex align-items-center px-4 py-2 m-1"
-//                           style={{ background: "#1868E2", position: "inherit" }}
+//                           style={{ background: "#02a2c4", position: "inherit" }}
 //                         >
 //                           <AiFillEye
 //                             className="me-2"
@@ -1086,7 +1085,7 @@ export default Dashboard;
 //                       <div className="w-50">
 //                         <button
 //                           className="text-light d-flex align-items-center px-4 py-2 m-1"
-//                           style={{ background: "#1868E2", position: "inherit" }}
+//                           style={{ background: "#02a2c4", position: "inherit" }}
 //                         >
 //                           <AiFillEye
 //                             className="me-2"
@@ -1121,7 +1120,7 @@ export default Dashboard;
 //                       <div className="w-50">
 //                         <button
 //                           className="text-light d-flex align-items-center px-4 py-2 m-1"
-//                           style={{ background: "#1868E2", position: "inherit" }}
+//                           style={{ background: "#02a2c4", position: "inherit" }}
 //                         >
 //                           <BiTransferAlt
 //                             className="me-2"
