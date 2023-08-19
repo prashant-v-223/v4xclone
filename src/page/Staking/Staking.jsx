@@ -479,27 +479,6 @@ function Staking() {
                         border: "1px solid #fff",
                       }}
                     />
-                    <h6 className="pt-2 ps-1">Amount in Infinity.Ai</h6>
-                    <div
-                      className="d-flex px-2 ant-input"
-                      style={{
-                        border: "1px solid rgb(96 97 97)",
-                        borderRadius: "8px",
-                        border: "1px solid rgb(255, 255, 255)",
-                        backgroundColor: "transparent !important",
-                        textAlign: "left",
-                        fontWeight: "100 !important",
-                        height: "55px !important",
-                        color: "#fff !important",
-                        borderRadius: " 9px !important",
-                      }}
-                    >
-                      <div className="d-flex align-items-center">
-                        <p className="m-0 px-1" style={{ fontSize: "16px" }}>
-                          {values.Mainwalletstacking * livaratev4xtoken}
-                        </p>
-                      </div>
-                    </div>
                     <div className=" mt-3 d-flex align-items-center">
                       <Button
                         className={" w-100 text-light"}
@@ -573,27 +552,7 @@ function Staking() {
                         border: "1px solid #fff",
                       }}
                     />
-                    <h6 className="pt-2 ps-1">Amount in Infinity.Ai</h6>
-                    <div
-                      className="d-flex px-2 ant-input"
-                      style={{
-                        border: "1px solid rgb(96 97 97)",
-                        borderRadius: "8px",
-                        border: "1px solid rgb(255, 255, 255)",
-                        backgroundColor: "transparent !important",
-                        textAlign: "left",
-                        fontWeight: "100 !important",
-                        height: "55px !important",
-                        color: "#fff !important",
-                        borderRadius: " 9px !important",
-                      }}
-                    >
-                      <div className="d-flex align-items-center">
-                        <p className="m-0 px-1" style={{ fontSize: "16px" }}>
-                          {values.ewalletstacking * livaratev4xtoken}
-                        </p>
-                      </div>
-                    </div>
+
                     <div className=" mt-3 d-flex align-items-center">
                       <Button
                         className={" w-100 text-light"}
@@ -672,27 +631,6 @@ function Staking() {
                         border: "1px solid #fff",
                       }}
                     />
-                    <h6 className="pt-2 ps-1">Amount in Infinity.Ai</h6>
-                    <div
-                      className="d-flex px-2 ant-input"
-                      style={{
-                        border: "1px solid rgb(96 97 97)",
-                        borderRadius: "8px",
-                        border: "1px solid rgb(255, 255, 255)",
-                        backgroundColor: "transparent !important",
-                        textAlign: "left",
-                        fontWeight: "100 !important",
-                        height: "55px !important",
-                        color: "#fff !important",
-                        borderRadius: " 9px !important",
-                      }}
-                    >
-                      <div className="d-flex align-items-center">
-                        <p className="m-0 px-1" style={{ fontSize: "16px" }}>
-                          {values.dappwalletstacking * livaratev4xtoken}
-                        </p>
-                      </div>
-                    </div>
                     <div className=" mt-3 d-flex align-items-center">
                       <Button
                         className={" w-100 text-light"}

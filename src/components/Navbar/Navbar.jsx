@@ -243,8 +243,7 @@ function Navbar1() {
                     />
                     Withdraw Details
                   </Dropdown.Item>
-
-                  <Dropdown.Item
+                  {/* <Dropdown.Item
                     className="py-2"
                     onClick={() => {
                       navigation("/admin/price");
@@ -256,7 +255,7 @@ function Navbar1() {
                       style={{ color: "#02a2c4", fontSize: "20px" }}
                     />
                     Infinity.AI Coin Live Price
-                  </Dropdown.Item>
+                  </Dropdown.Item> */}
                   <Dropdown.Item
                     className="py-2"
                     onClick={() => {
