@@ -166,11 +166,12 @@ function Staking() {
       dappwalletstacking: "",
     };
     let isValid = true;
+    console.log({ Mainwalletstacking, ewalletstacking, dappwalletstacking });
     if (!Mainwalletstacking) {
       validations.Mainwalletstacking =
         "Main Wallet Stacking Amount is required!";
       isValid = false;
-    } else if (Mainwalletstacking < 40) {
+    } else if (Mainwalletstacking <= 39) {
       validations.Mainwalletstacking =
         "You must stake the amount in the Greater than  of 40..!!!";
       isValid = false;
@@ -178,8 +179,8 @@ function Staking() {
     if (!ewalletstacking) {
       validations.ewalletstacking = "E-Wallet Stacking Amount is required!";
       isValid = false;
-    } else if (Mainwalletstacking < 40) {
-      validations.Mainwalletstacking =
+    } else if (ewalletstacking <= 39) {
+      validations.ewalletstacking =
         "You must stake the amount in the Greater than  of 40..!!!";
       isValid = false;
     }
@@ -187,9 +188,9 @@ function Staking() {
       validations.dappwalletstacking =
         "dapp Wallet Stacking Amount is required!";
       isValid = false;
-    } else if (Mainwalletstacking < 40) {
-      validations.Mainwalletstacking =
-        "You must stake the amount in the Greater than  of 40..!!!";
+    } else if (dappwalletstacking <= 39) {
+      validations.dappwalletstacking =
+        "You must stake the amount in the Greater than of 40..!!!";
       isValid = false;
     }
     if (!isValid) {
@@ -200,7 +201,6 @@ function Staking() {
   };
   const Mainwalletstacking = async (e) => {
     validateAll();
-    console.log("ddvghcgfchv");
     if (validateAll()[e] === "") {
       if (e === "dappwalletstacking") {
         if (account) {
@@ -272,6 +272,11 @@ function Staking() {
           getalldata();
         }
       }
+      setValidations({
+        Mainwalletstacking: "",
+        ewalletstacking: "",
+        dappwalletstacking: "",
+      });
     }
   };
   const handleChange = (e) => {

@@ -176,9 +176,9 @@ function Withdrawal() {
                       </div>
                       <div className="img-div2">
                         <p className="m-0 text-light">
-                          You can transfer your V4X wallet coins to your
+                          You can transfer your Infinity.AI wallet coins to your
                           downline team members. Transfers will be deposited in
-                          V4X-E-Wallet only.
+                          Infinity.AI E-Wallet only.
                         </p>
                       </div>
                     </div>
@@ -300,7 +300,7 @@ function Withdrawal() {
                       </div>
                       <div className="img-div2">
                         <p className="m-0 text-light">
-                          V4X Withdrawals are activated after 15days of your
+                          Infinity.AI Withdrawals are activated after 15days of your
                           staking. Infinity.AI coins are released as bonus in withdrawal
                           process. You can withdraw your rewards everyday.
                         </p>
@@ -310,7 +310,7 @@ function Withdrawal() {
                       <div className="d-lg-flex justify-content-around">
                         <div className="px-3 py-2 py-lg-0">
                           <h6 className="m-0 text-light text-center">
-                            V4X Main Wallet Balance
+                            Infinity.AI Main Wallet Balance
                           </h6>
                         </div>
                         <div className="px-3 py-2 py-lg-0">
