@@ -64,12 +64,15 @@ const SecPartners = ({ data }) => {
             </div>
           </div>
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="partner-box">
+            <div class="partner-box d-flex justify-content-center align-content-center">
               <img
-                src={require("../../../assets/img/partners/WALLETCONNECT.png")}
+                src={require("../../../assets/img/partners/WalletConnect.13798276a43e02957131.png")}
                 alt=""
-                class="center-bock  px-5 px-md-3"
+                class="center-bock  w-25"
               />
+              <h5 className=" m-0 d-flex align-items-center text-light">
+                <b>WalletConnect</b>
+              </h5>
             </div>
           </div>
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
