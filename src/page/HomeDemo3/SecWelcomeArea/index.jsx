@@ -54,7 +54,13 @@ const SecWelcomeArea = () => {
                 </p>
                 <div className="dream-btn-group">
                   {/* <a href="#" className="btn dream-btn mr-3">Contract</a> */}
-                  <a className="btn dream-btn mt-3 mx-2">Contract address</a>
+                  <a
+                    className="btn dream-btn mt-3 mx-2"
+                    href="https://bscscan.com/address/0x0a786cdc660c437f5f286548221232a8d4e53441#code"
+                  >
+                    {" "}
+                    Contract address
+                  </a>
                   <a
                     className="btn dream-btn mt-3 mx-2"
                     href="https://pancakeswap.finance/swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=BNB"
