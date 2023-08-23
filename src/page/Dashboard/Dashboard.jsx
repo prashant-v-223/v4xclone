@@ -33,6 +33,7 @@ const Dashboard = () => {
   const navigation = useNavigate();
   useEffect(() => {
     getalldata();
+    getalldata1();
   }, []);
   const flatNumbers = StackingSlice.Wallatedata?.data?.ReffData;
 
