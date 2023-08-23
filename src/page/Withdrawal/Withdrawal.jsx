@@ -221,7 +221,7 @@ function Withdrawal() {
                           type="number"
                           name="Amount"
                           min={0}
-                          placeholder="Enter Amount of V4X Coin to Transfer"
+                          placeholder="Enter Amount of IAT Coin to Transfer"
                           value={Amount}
                           pattern="[0-9]*"
                           error={AmountVal}
@@ -235,7 +235,7 @@ function Withdrawal() {
                         <InputField
                           type="text"
                           name="Walletaddress"
-                          placeholder="V4X Balance in Main Wallet"
+                          placeholder="IAT Balance in Main Wallet"
                           value={
                             Wallet === "Main Wallet"
                               ? WallatedatSlice.Wallatedata?.data?.data[0]
@@ -315,7 +315,7 @@ function Withdrawal() {
                         </div>
                         <div className="px-3 py-2 py-lg-0">
                           <h6 className="m-0 text-light text-center">
-                            {Alldata[0]?.mainWallet} V4X
+                            {Alldata[0]?.mainWallet} IAT
                           </h6>
                         </div>
                       </div>
@@ -447,7 +447,7 @@ function Withdrawal() {
                         height: 60,
                         border: "none",
                       }}
-                      label={"V4X Main Wallet Withdrawal Report"}
+                      label={"IAT Main Wallet Withdrawal Report"}
                     />
                   </div> */}
                 </div>
