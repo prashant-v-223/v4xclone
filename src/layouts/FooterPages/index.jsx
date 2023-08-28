@@ -15,7 +15,7 @@ const Footer = () => {
   const [budget, setbudget] = useState("");
 
   function sendEmail() {
-    var recipient = "prashantvadhvana@gmail.com";
+    var recipient = "infinityai759@gmail.com";
     var subject = "Talk to us";
     var body = `name : ${name}, number: ${number},Description: ${Description}, Timetocontact:${Timetocontact},budget:${budget}`;
     console.log(body);
