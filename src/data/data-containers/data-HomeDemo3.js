@@ -377,7 +377,7 @@ export const TokenText = [
     // img:HomeDemo3TokenIcon1
   },
   {
-    text: "Infinity.AI Symbol : Infinity.AI COIN",
+    text: "Infinity.AI Symbol : IAT COIN",
     // img:HomeDemo3TokenIcon1
   },
   {
@@ -385,7 +385,7 @@ export const TokenText = [
     // img:HomeDemo3TokenIcon1
   },
   {
-    text: "Decimals : 8",
+    text: "Decimals : 9",
     // img:HomeDemo3TokenIcon1
   },
   {
