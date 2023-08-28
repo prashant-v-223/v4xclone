@@ -90,8 +90,8 @@ function Staking() {
       if (account) {
         let web3 = await getWeb3();
         let contract = await new web3.eth.Contract(
-          bep20Abi,
-          "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56"
+          v4x,
+          "0x0a786CDc660C437f5F286548221232a8d4e53441"
         );
         const decimal = await contract.methods.decimals().call();
         await contract.methods
