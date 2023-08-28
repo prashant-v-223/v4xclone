@@ -386,6 +386,17 @@ function Navbar1() {
                     style={{ color: "#02a2c4", fontSize: "20px" }}
                   />
                   Infinity.AI Community Reward
+                </Dropdown.Item>  <Dropdown.Item
+                  className="py-2 "
+                  onClick={() => {
+                    navigation("/Passivebouns/Building/income");
+                  }}
+                >
+                  <FaDollarSign
+                    className="ms-2 me-3"
+                    style={{ color: "#45F4FF", fontSize: "20px" }}
+                  />
+                  Infinity.AI passive club reward
                 </Dropdown.Item>
                 <Dropdown.Item
                   className="py-2"
