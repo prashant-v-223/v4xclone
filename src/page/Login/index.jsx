@@ -17,11 +17,15 @@ import { Foegotpassword, Signin, Signup } from "../../Redux/authSlice";
 import { toast } from "react-toastify";
 import { Checkbox, Spin } from "antd";
 import bep20Abi from "../../Helpers/bep20Abi.json";
-
+import {
+  WalletConnectModalAuth,
+  useSignIn,
+} from "@walletconnect/modal-auth-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Login.scss";
 import Web3 from "web3";
 function Login() {
+  const { signIn } = useSignIn({ statement: "Sign In to My Dapp" });
   const location = useLocation();
   console.log(location.search.split("?")[1]);
   const [type, settype] = useState(!location.search ? true : false);
@@ -29,12 +33,23 @@ function Login() {
   const dispatch = useDispatch();
   const authSlice = useSelector((state) => state.authSlice);
   const navigation = useNavigate();
+  const projectId = "3c1bcc6fff554daf64cfdfe6e5d967db";
   useEffect(() => {
     localStorage.clear();
   }, []);
+
   const SignupUser = () => {
     const { active, account, library, connector, activate, deactivate, error } =
       useWeb3React();
+    async function onSignIn() {
+      try {
+        const data = await signIn();
+        console.info(data);
+      } catch (err) {
+        console.error(err);
+      } finally {
+      }
+    }
     const [show, setShow] = useState(false);
     const [values, setValues] = React.useState({
       Walletaddress: "",
@@ -444,7 +459,7 @@ function Login() {
             <div
               className="p-3 d-flex align-items-center"
               onClick={() => {
-                activate(WalletConnect);
+                onSignIn();
                 handleClose();
               }}
             >
@@ -795,6 +810,15 @@ function Login() {
           {type ? <SignupUser /> : <SignInUser />}
         </div>
       </div>
+      <WalletConnectModalAuth
+        projectId={projectId}
+        metadata={{
+          name: "My Dapp",
+          description: "My Dapp description",
+          url: "https://my-dapp.com",
+          icons: ["https://my-dapp.com/logo.png"],
+        }}
+      />
     </Spin>
   );
 }
