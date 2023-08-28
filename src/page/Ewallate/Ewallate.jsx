@@ -33,18 +33,53 @@ function Ewallate() {
       ),
     },
     {
-      title: "Credited/Debited",
+      title: "Credited",
       dataIndex: "Amount",
       key: "Amount",
       ellipsis: {
         showTitle: false,
       },
-      width: "180px",
+      width: "230px",
       render: (text, record, index) => (
         <Tooltip placement="topLeft" title={record.Amount}>
+          {record.type !== 0 ? record.Amount.toFixed(8) : "-"}
+        </Tooltip>
+      ),
+    },
+    {
+      title: "Debited",
+      dataIndex: "Amount",
+      key: "Amount",
+      ellipsis: {
+        showTitle: false,
+      },
+      width: "230px",
+      render: (text, record, index) => (
+        <Tooltip placement="topLeft" title={record.Amount}>
+          {record.type === 0 ? record.Amount.toFixed(8) : "-"}
+        </Tooltip>
+      ),
+    },
+    {
+      title: "Balance",
+      dataIndex: "balace",
+      key: "balace",
+      ellipsis: {
+        showTitle: false,
+      },
+      width: "180px",
+      render: (text, record, index) => (
+        <Tooltip
+          placement="topLeft"
+          title={
+            record.type !== 0
+              ? Number(record.balace + record.Amount).toFixed(8)
+              : Number(record.balace - record.Amount).toFixed(8)
+          }
+        >
           {record.type !== 0
-            ? record.Amount + "  " + "Credited"
-            : record.Amount + "  " + "Debited"}
+            ? Number(record.balace + record.Amount).toFixed(8)
+            : Number(record.balace - record.Amount).toFixed(8)}
         </Tooltip>
       ),
     },
@@ -58,22 +93,6 @@ function Ewallate() {
       render: (text, record, index) => (
         <Tooltip placement="topLeft" title={record.Note}>
           {record.Note + " "} {record.Usernameby}
-        </Tooltip>
-      ),
-    },
-    {
-      title: "Balace",
-      dataIndex: "balace",
-      key: "balace",
-      ellipsis: {
-        showTitle: false,
-      },
-      width: "180px",
-      render: (text, record, index) => (
-        <Tooltip placement="topLeft" title={record.balace - record.Amount}>
-          {record.type !== 0
-            ? record.balace + record.Amount
-            : record.balace - record.Amount}
         </Tooltip>
       ),
     },

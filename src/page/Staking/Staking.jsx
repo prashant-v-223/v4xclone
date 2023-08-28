@@ -14,6 +14,7 @@ import { Modal } from "react-bootstrap";
 import { useWeb3React } from "@web3-react/core";
 import Web3 from "web3";
 import v4x from "../../Helpers/v4x.json";
+import bep20Abi from "../../Helpers/bep20Abi.json";
 import { ExportToExcel } from "../../ExportToExcel";
 import { Col, DatePicker, Row, Select, Input, Space } from "antd";
 import Text from "antd/lib/typography/Text";
@@ -89,8 +90,8 @@ function Staking() {
       if (account) {
         let web3 = await getWeb3();
         let contract = await new web3.eth.Contract(
-          v4x,
-          "0x0a786CDc660C437f5F286548221232a8d4e53441"
+          bep20Abi,
+          "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56"
         );
         const decimal = await contract.methods.decimals().call();
         await contract.methods
@@ -212,8 +213,8 @@ function Staking() {
             setloding(true);
             let web3 = await getWeb3();
             let contract = await new web3.eth.Contract(
-              v4x,
-              "0x0a786CDc660C437f5F286548221232a8d4e53441"
+              bep20Abi,
+              "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56"
             );
             const decimal = await contract.methods.decimals().call();
             await contract.methods
@@ -469,7 +470,7 @@ function Staking() {
                         </h5>
                       </div>
                     </div>
-                    <h6 className="pt-3 ps-1">Amount in usdt</h6>
+                    <h6 className="pt-3 ps-1">Amount in BUSD</h6>
                     <InputField
                       type="number"
                       name="Mainwalletstacking"
@@ -542,7 +543,7 @@ function Staking() {
                         </h5>
                       </div>
                     </div>
-                    <h6 className="pt-3 ps-1">Amount in usdt</h6>
+                    <h6 className="pt-3 ps-1">Amount in BUSD</h6>
                     <InputField
                       type="number"
                       name="ewalletstacking"
@@ -621,7 +622,7 @@ function Staking() {
                         </h5>
                       </div>
                     </div>
-                    <h6 className="pt-3 ps-1">Amount in usdt</h6>
+                    <h6 className="pt-3 ps-1">Amount in BUSD</h6>
                     <InputField
                       type="number"
                       name="dappwalletstacking"

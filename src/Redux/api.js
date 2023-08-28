@@ -33,5 +33,5 @@ export const apiList = {
   daireactteam: baseURL + "api/user/daireactteam",
   indaireactteam: baseURL + "api/user/indaireactteam",
   Mainwallate: baseURL + "api/Withdraw/mainWallet",
-  V4X: baseURL + "api/WV4Xdraw/V4XWallet",
+  V4X: baseURL + "api/Withdraw/V4XWallet",
 };

@@ -214,7 +214,7 @@ function Login() {
           if (typeof window.ethereum !== "undefined") {
             handleShow();
           } else {
-            await activate(WalletConnect);
+            handleShow();
           }
         } else {
           deactivate();
