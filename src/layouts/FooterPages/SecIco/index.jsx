@@ -20,19 +20,19 @@ const SecIco = ({ logo }) => {
               className="footer-social-info wow fadeInUp"
               data-wow-delay="0.4s"
             >
-              <a href="https://www.facebook.com/@V4X-COIN-100091423535722/">
+              <a href="">
                 <i className="fa fa-facebook" aria-hidden="true" />
               </a>
-              <a href="https://t.me/V4Xofficial">
+              <a href="">
                 <i class="fa fa-telegram" aria-hidden="true"></i>
               </a>
-              <a href="https://twitter.com/V4Xcoin?s=21&t=q4PgRWbQnOeYwKXzLtJlEw">
+              <a href="">
                 <i className="fa fa-twitter" aria-hidden="true" />
               </a>
-              <a href="https://www.youtube.com/channel/UCEoqBqtYzvG2H2F_0sy4ujw">
+              <a href="">
                 <i className="fa fa fa-youtube" aria-hidden="true" />
               </a>
-              <a href="https://twitter.com/Infinity.AIinity.aiinity.aiinity.aicoin?s=21&t=q4PgRWbQnOeYwKXzLtJlEw">
+              <a href="">
                 <i className="fa fa-instagram" aria-hidden="true" />
               </a>
             </div>

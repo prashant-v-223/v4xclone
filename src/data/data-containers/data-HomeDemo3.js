@@ -49,14 +49,14 @@ import exchange from "../../assets/img/crypto-exchange.PNG";
 import decentralised from "../../assets/img/decentralised wallet.PNG";
 import userfriendly from "../../assets/img/userfriendly.png";
 export const VerticalSocial = [
-  { nameIco: "fa fa-telegram", link: "https://t.me/V4Xofficial" },
+  { nameIco: "fa fa-telegram", link: "" },
   {
     nameIco: "fa fa-facebook",
     link: "https://www.facebook.com/@V4Xinity.ai-COIN-100091423535722/",
   },
   {
     nameIco: "fa fa-twitter",
-    link: "https://twitter.com/V4Xcoin?s=21&t=q4PgRWbQnOeYwKXzLtJlEw",
+    link: "",
   },
   {
     nameIco: "fa fa-instagram",
@@ -64,7 +64,7 @@ export const VerticalSocial = [
   },
   {
     nameIco: "fa fa-youtube",
-    link: "https://www.youtube.com/channel/UCEoqBqtYzvG2H2F_0sy4ujw",
+    link: "",
   },
 ];
 
