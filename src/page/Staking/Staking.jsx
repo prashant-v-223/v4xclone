@@ -470,7 +470,7 @@ function Staking() {
                         </h5>
                       </div>
                     </div>
-                    <h6 className="pt-3 ps-1">Amount in BUSD</h6>
+                    <h6 className="pt-3 ps-1">Amount in USDT</h6>
                     <InputField
                       type="number"
                       name="Mainwalletstacking"
@@ -543,7 +543,7 @@ function Staking() {
                         </h5>
                       </div>
                     </div>
-                    <h6 className="pt-3 ps-1">Amount in BUSD</h6>
+                    <h6 className="pt-3 ps-1">Amount in USDT</h6>
                     <InputField
                       type="number"
                       name="ewalletstacking"
@@ -622,7 +622,7 @@ function Staking() {
                         </h5>
                       </div>
                     </div>
-                    <h6 className="pt-3 ps-1">Amount in BUSD</h6>
+                    <h6 className="pt-3 ps-1">Amount in USDT</h6>
                     <InputField
                       type="number"
                       name="dappwalletstacking"

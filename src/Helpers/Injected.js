@@ -9,6 +9,5 @@ export const WalletConnect = new WalletConnectConnector({
 });
 
 export const Injected = new InjectedConnector({
-  // supportedChainIds: [97], //chain ids for ethereum, goerli, bsc test net , bsc main net
-  supportedChainIds: [56, 97], //chain ids for ethereum, goerli, bsc test net , bsc main net
+  supportedChainIds: [56], //chain ids for ethereum, goerli, bsc test net , bsc main net
 });
