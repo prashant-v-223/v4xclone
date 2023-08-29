@@ -267,44 +267,44 @@ function Daireacttermpage() {
                         label: "DIRECT",
                       },
                       {
-                        value: "EXECUTIVE",
-                        label: "EXECUTIVE",
+                        value: "COMMUNITY ⭐",
+                        label: "COMMUNITY ⭐",
                       },
                       {
-                        value: "MANAGER",
-                        label: "MANAGER",
+                        value: "COMMUNITY ⭐⭐",
+                        label: "COMMUNITY ⭐⭐",
                       },
                       {
-                        value: "SENIOR MANAGER",
-                        label: "SENIOR MANAGER",
+                        value: "COMMUNITY ⭐⭐⭐",
+                        label: "COMMUNITY ⭐⭐⭐",
                       },
                       {
-                        value: "BUSINESS HEAD",
-                        label: "BUSINESS HEAD",
+                        value: "COMMUNITY ⭐⭐⭐⭐",
+                        label: "COMMUNITY ⭐⭐⭐⭐",
                       },
                       {
-                        value: "GOLD MANAGER",
-                        label: "GOLD MANAGER",
+                        value: "COMMUNITY ⭐⭐⭐⭐⭐",
+                        label: "COMMUNITY ⭐⭐⭐⭐⭐",
                       },
                       {
-                        value: "DIAMOND MANAGER",
-                        label: "DIAMOND MANAGER",
+                        value: "COMMUNITY ⭐⭐⭐⭐⭐⭐",
+                        label: "COMMUNITY ⭐⭐⭐⭐⭐⭐",
                       },
                       {
-                        value: "CROWN 1",
-                        label: "CROWN 1",
+                        value: "COMMUNITY ⭐B",
+                        label: "COMMUNITY ⭐B",
                       },
                       {
-                        value: "CROWN 2",
-                        label: "CROWN 2",
+                        value: "COMMUNITY ⭐A",
+                        label: "COMMUNITY ⭐A",
                       },
                       {
-                        value: "CROWN 3",
-                        label: "CROWN 3",
+                        value: "COMMUNITY ⭐TRUST",
+                        label: "COMMUNITY ⭐TRUST",
                       },
                       {
-                        value: "AMBASSADOR",
-                        label: "AMBASSADOR",
+                        value: "CORE TEAM",
+                        label: "CORE TEAM",
                       },
                     ]}
                     placeholder="User Rank"
