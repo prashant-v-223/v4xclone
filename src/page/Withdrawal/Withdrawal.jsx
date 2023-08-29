@@ -159,7 +159,7 @@ function Withdrawal() {
                 <div className="col-12 col-md-6 pb-4 pb-md-0">
                   <div className="Boxcard p-4">
                     <h6 className="text-light d-flex ">
-                      Transfer Infinity.AI Coins
+                      Transfer Infinity.AI Tokens
                       <img
                         src={require("../../assets/img/Vector (28).png")}
                         alt=""
@@ -273,7 +273,7 @@ function Withdrawal() {
                         height: 60,
                         border: "none",
                       }}
-                      label={"Infinity.AI Coins Transfer Report "}
+                      label={"Infinity.AI Tokens Transfer Report "}
                       onClick={() => {
                         navigation("/transfer/income");
                       }}
@@ -283,7 +283,7 @@ function Withdrawal() {
                 <div className="col-12 col-md-6 pb-4 pb-md-0">
                   <div className="Boxcard p-4">
                     <h6 className="text-light d-flex ">
-                      Withdraw Infinity.AI Coins
+                      Withdraw Infinity.AI Tokens
                       <img
                         src={require("../../assets/img/Vector (28).png")}
                         alt=""
@@ -301,7 +301,7 @@ function Withdrawal() {
                       <div className="img-div2">
                         <p className="m-0 text-light">
                           Infinity.AI Withdrawals are activated after 15days of your
-                          staking. Infinity.AI coins are released as bonus in withdrawal
+                          staking. Infinity.AI Tokens are released as bonus in withdrawal
                           process. You can withdraw your rewards everyday.
                         </p>
                       </div>
@@ -437,7 +437,7 @@ function Withdrawal() {
                   </div>
                   {/* <div className="Boxcard p-4 my-4">
                     <h6 className="text-light d-flex pb-3">
-                      Withdraw Infinity.AI Coins
+                      Withdraw Infinity.AI Tokens
                     </h6>
                     <Button
                       className={" w-100 text-light"}

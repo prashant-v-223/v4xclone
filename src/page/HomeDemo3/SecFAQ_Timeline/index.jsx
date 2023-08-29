@@ -32,7 +32,7 @@ const SecFAQ_Timeline = ({ FQAInfo, DocElementTitle }) => {
                         aria-expanded="true"
                         aria-controls="collapseOne"
                       >
-                        What is Infinity.AI Coin?
+                        What is Infinity.AI Token?
                       </button>
                     </h2>
                     <div
@@ -42,9 +42,9 @@ const SecFAQ_Timeline = ({ FQAInfo, DocElementTitle }) => {
                       data-bs-parent="#accordionExample"
                     >
                       <div class="accordion-body">
-                        <strong>Infinity.AI COIN</strong>
+                        <strong>Infinity.AI Token</strong>
                         IS VICTORY FOR EXTREME. THIS CRYPTOCURRENCY WAS
-                        SYMBOLIZED AS Infinity.AI COIN. <strong>Infinity.AIinity.ai COIN</strong>IS ON
+                        SYMBOLIZED AS Infinity.AI Token. <strong>Infinity.AIinity.ai COIN</strong>IS ON
                         BSCSCAN WITH BEP 20 NETWORK. THIS CRYPTOCURRENCY IS
                         ACCEPTABLE IN BUSD/USDT.
                       </div>
@@ -70,7 +70,7 @@ const SecFAQ_Timeline = ({ FQAInfo, DocElementTitle }) => {
                       data-bs-parent="#accordionExample"
                     >
                       <div class="accordion-body">
-                        <strong>Infinity.AI COIN</strong> IS TOTALLY DECENTRALIZED AND
+                        <strong>Infinity.AI Token</strong> IS TOTALLY DECENTRALIZED AND
                         WORK THROUGH THE SMART CONTRACT WHERE NO INDIVIDUAL OR
                         GROUP OR ANY ADMIN INVOLVED. THIS PLATFORM IS HIGHLY
                         SECURE BECAUSE IT IS MADE THROUGH THE PROCESS OF
@@ -100,8 +100,8 @@ const SecFAQ_Timeline = ({ FQAInfo, DocElementTitle }) => {
                       <div class="accordion-body">
                         {" "}
                         YES, WE DO HAVE A WHITEPAPER WHERE ANYONE CAN HAVE A
-                        BRIEF IDEA ABOUT<strong>Infinity.AI COIN</strong> THE{" "}
-                        <strong>Infinity.AI COIN</strong> WHITEPAPER IS EXPLAINED IN
+                        BRIEF IDEA ABOUT<strong>Infinity.AI Token</strong> THE{" "}
+                        <strong>Infinity.AI Token</strong> WHITEPAPER IS EXPLAINED IN
                         DETAIL ABOUT THE WHOLE PROJECT AS WELL AS THE UPCOMING
                         FEATURES AND PROVISIONS.
                       </div>
@@ -153,7 +153,7 @@ const SecFAQ_Timeline = ({ FQAInfo, DocElementTitle }) => {
                     >
                       <div class="accordion-body">
                         YES, WE DO HAVE A REFERRAL PROGRAM WHERE A USER CAN
-                        EASILY EARN REWARD BY BUILDING THE Infinity.AI COIN COMMUNITY.
+                        EASILY EARN REWARD BY BUILDING THE Infinity.AI Token COMMUNITY.
                       </div>
                     </div>
                   </div>

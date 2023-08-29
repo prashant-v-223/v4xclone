@@ -142,7 +142,7 @@ function Livaprice() {
                   type="number"
                   name="Amount"
                   min={0}
-                  placeholder="Enter Amount of Infinity.AI Coin to amount"
+                  placeholder="Enter Amount of Infinity.AI Token to amount"
                   value={values.Amount}
                   onChange={(e) => {
                     handleChange(e);

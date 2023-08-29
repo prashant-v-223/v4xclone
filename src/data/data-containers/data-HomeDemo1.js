@@ -140,7 +140,7 @@ export const ServiceBlock = [
     {
         classIco:"icon ti-widget",
         title:"Refer Friends and Family to Earn more",
-        subtita:'You can refer your friends and family on Infinity.AI to get more benifits. Everytime your referral stakes Infinity.AI coins, referrer gets rewards.'
+        subtita:'You can refer your friends and family on Infinity.AI to get more benifits. Everytime your referral stakes Infinity.AI Tokens, referrer gets rewards.'
     },
     {
         classIco:"icon ti-settings",

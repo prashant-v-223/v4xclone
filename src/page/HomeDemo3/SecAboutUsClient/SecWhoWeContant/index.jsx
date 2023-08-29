@@ -46,7 +46,7 @@ const SecWhoWeContant = () => {
               }}
             >
               <p data-aos="fade-up m-0">
-                Infinity.AI Coin Play to earn & Utility Application
+                Infinity.AI Token Play to earn & Utility Application
               </p>
             </li>
             <li
@@ -56,7 +56,7 @@ const SecWhoWeContant = () => {
               }}
             >
               <p data-aos="fade-up m-0">
-                Infinity.AI Coin Entertainment in Metaverse
+                Infinity.AI Token Entertainment in Metaverse
               </p>
             </li>
             <li
@@ -74,7 +74,7 @@ const SecWhoWeContant = () => {
               }}
             >
               <p data-aos="fade-up m-0">
-                Infinity.AI Coin Own Decentralised Wallet to make Crypto
+                Infinity.AI Token Own Decentralised Wallet to make Crypto
                 Transaction More fast, secure & cheaper.
               </p>
             </li>

@@ -390,7 +390,7 @@ const Dashboard = () => {
                   <div className="d-flex h-50 h-md-100 flex-column justify-content-center">
                     <h6 className="pt-0 text-center">Airdrop Coins</h6>
                     <h6 className="text-center">
-                      {Profile && Profile[0]?.Airdropped} Infinity.AI COINS
+                      {Profile && Profile[0]?.Airdropped} Infinity.AI TokenS
                     </h6>
                     <button
                       className="text-light"
@@ -434,7 +434,7 @@ const Dashboard = () => {
                   </div>
                   <div className="d-flex h-50 h-md-100 flex-column justify-content-center">
                     <h6 className="pt-3 text-center">
-                      Infinity.AI COIN CURRENT PRICE
+                      Infinity.AI Token CURRENT PRICE
                     </h6>
                     <h6 className="text-center">
                       {/* {StackingSlice.Wallatedata?.data?.v4x.AItokenprice.toFixed(
@@ -716,7 +716,7 @@ export default Dashboard;
 //                   className="ms-2 me-3"
 //                   style={{ color: "#02a2c4", fontSize: "20px" }}
 //                 />
-//                 Stake Infinity.AI Coin
+//                 Stake Infinity.AI Token
 //               </Nav.Link>
 //               <Nav.Link
 //                 href="#features"
@@ -1111,7 +1111,7 @@ export default Dashboard;
 //                         />
 //                       </div>
 //                       <div className="">
-//                         <p>Airdropped Infinity.AI Coins</p>
+//                         <p>Airdropped Infinity.AI Tokens</p>
 //                       </div>
 //                     </div>
 //                     <div className="d-flex flex-wrap justify-content-center align-items-center">

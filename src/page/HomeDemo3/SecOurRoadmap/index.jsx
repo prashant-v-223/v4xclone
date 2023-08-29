@@ -21,7 +21,7 @@ const SecOurRoadmap = ({ data, img }) => {
       >
         <SectionHeading
           title="Infinity.AI Project Roadmap"
-          text="Infinity.AI Has planned its roadmap till the year March 2025. Users will get multiple platforms to invest, trade and earn using Infinity.AI Coins."
+          text="Infinity.AI Has planned its roadmap till the year March 2025. Users will get multiple platforms to invest, trade and earn using Infinity.AI Tokens."
         />
         <div className="container-fluid">
           <div className="row">
