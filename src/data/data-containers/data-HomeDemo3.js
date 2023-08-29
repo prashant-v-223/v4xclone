@@ -373,7 +373,7 @@ export const DocElementTitle = [
 
 export const TokenText = [
   {
-    text: "Infinity.AI Total Supply : 180,000,000",
+    text: "Infinity.AI Total Supply : 21 CR",
     // img:HomeDemo3TokenIcon1
   },
   {

@@ -119,8 +119,6 @@ function Profile() {
     }
   };
   const handleSubmit = async (e) => {
-    e.preventDefault();
-
     const isValid = validateAll();
 
     if (!isValid) {

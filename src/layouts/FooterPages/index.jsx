@@ -110,11 +110,11 @@ const Footer = () => {
                     }}
                   >
                     <option>Investment budget</option>
-                    <option> ₹ 1000-Rs.5000</option>
-                    <option> ₹ 5000-Rs.10000</option>
-                    <option> ₹ 10000-Rs.25000</option>
-                    <option> ₹ 25000-Rs.50000</option>
-                    <option> ₹ 50000+</option>
+                    <option> 1000IAT-5000IAT</option>
+                    <option> 5000IAT-10000IAT</option>
+                    <option> 10000IAT-25000IAT</option>
+                    <option> 25000IAT-50000IAT</option>
+                    <option> 50000IAT+</option>
                   </select>
                 </div>
               </div>

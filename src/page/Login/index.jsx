@@ -185,7 +185,6 @@ function Login() {
     };
 
     const handleSubmit = async (e) => {
-      e.preventDefault();
       const isValid = validateAll();
 
       if (!isValid) {
@@ -586,8 +585,6 @@ function Login() {
       setValues({ ...values, [name]: value });
     };
     const handleSubmit1 = async (e) => {
-      e.preventDefault();
-
       const validations = {
         Email: "",
         Password: "",
@@ -612,8 +609,6 @@ function Login() {
       }
     };
     const handleSubmit = async (e) => {
-      e.preventDefault();
-
       const isValid = validateAll();
 
       if (!isValid) {
