@@ -101,6 +101,8 @@ function Adminlogin() {
       setValues({ ...values, [name]: value });
     };
     const handleSubmit = async (e) => {
+      e.preventDefault();
+
       const isValid = validateAll();
 
       if (!isValid) {
@@ -181,7 +183,7 @@ function Adminlogin() {
                     <InputField
                       type="text"
                       name="Email"
-                      placeholder="Enter E-Mail Or Username"
+                      placeholder="Enter E-Mail"
                       value={Email}
                       error={EmailVal}
                       icons={<MailFilled />}

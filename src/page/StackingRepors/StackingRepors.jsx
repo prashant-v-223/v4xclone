@@ -91,19 +91,8 @@ function StackingRepors() {
         showTitle: false,
       },
       render: (address) => (
-        <Tooltip
-          placement="topLeft"
-          title={
-            new Date(address).getTime() < 1682621117814
-              ? new Date(
-                  new Date(address).getTime() + 5 * 60000
-                ).toLocaleString()
-              : new Date(address).toLocaleString()
-          }
-        >
-          {new Date(address).getTime() < 1682621117814
-            ? new Date(new Date(address).getTime() + 5 * 60000).toLocaleString()
-            : new Date(address).toLocaleString()}
+        <Tooltip placement="topLeft" title={new Date(address).toDateString()}>
+          {new Date(address).toDateString()}
         </Tooltip>
       ),
     },
