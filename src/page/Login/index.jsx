@@ -35,7 +35,7 @@ function Login() {
   const dispatch = useDispatch();
   const authSlice = useSelector((state) => state.authSlice);
   const navigation = useNavigate();
-  const projectId = "3c1bcc6fff554daf64cfdfe6e5d967db";
+  const projectId = "542464957793e9ac764c03d5f58d44db";
   useEffect(() => {
     localStorage.clear();
   }, []);
