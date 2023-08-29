@@ -345,7 +345,7 @@ function Login() {
                     <InputField
                       type="text"
                       name="username"
-                      placeholder="Enter your username"
+                      placeholder="Enter your Full name"
                       value={username}
                       error={usernameVal}
                       icons={<MailFilled />}
