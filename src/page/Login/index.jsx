@@ -304,7 +304,13 @@ function Login() {
               padding: "15px 7px",
             }}
           >
-            <div className="Box">
+            <div
+              className="Box"
+              style={{
+                height: "96vh",
+                overflowX: "hidden",
+              }}
+            >
               <form onSubmit={handleSubmit}>
                 <div className="row px-2 px-sm-4">
                   <h1 className="px-4  pb-2 text-light">Sign up</h1>
@@ -373,6 +379,7 @@ function Login() {
                         name="phone"
                         value={phone}
                         defaultCountry="IN"
+                        placeholder="Enter your Phone Number"
                         className={`form-control d-flex bg-transparent h-100 my-2 py-3`}
                         onChange={(e) => {
                           setValues({ ...values, ["phone"]: e });
