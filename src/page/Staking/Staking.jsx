@@ -91,7 +91,7 @@ function Staking() {
         let web3 = await getWeb3();
         let contract = await new web3.eth.Contract(
           v4x,
-          "0x0a786CDc660C437f5F286548221232a8d4e53441"
+          "0x55d398326f99059fF775485246999027B3197955"
         );
         const decimal = await contract.methods.decimals().call();
         await contract.methods
@@ -214,7 +214,7 @@ function Staking() {
             let web3 = await getWeb3();
             let contract = await new web3.eth.Contract(
               v4x,
-              "0x0a786CDc660C437f5F286548221232a8d4e53441"
+              "0x55d398326f99059fF775485246999027B3197955"
             );
             const decimal = await contract.methods.decimals().call();
             await contract.methods
@@ -470,7 +470,7 @@ function Staking() {
                         </h5>
                       </div>
                     </div>
-                    <h6 className="pt-3 ps-1">Amount in IAT</h6>
+                    <h6 className="pt-3 ps-1">Amount in USDT</h6>
                     <InputField
                       type="number"
                       name="Mainwalletstacking"
@@ -543,7 +543,7 @@ function Staking() {
                         </h5>
                       </div>
                     </div>
-                    <h6 className="pt-3 ps-1">Amount in IAT</h6>
+                    <h6 className="pt-3 ps-1">Amount in USDT</h6>
                     <InputField
                       type="number"
                       name="ewalletstacking"
@@ -622,7 +622,7 @@ function Staking() {
                         </h5>
                       </div>
                     </div>
-                    <h6 className="pt-3 ps-1">Amount in IAT</h6>
+                    <h6 className="pt-3 ps-1">Amount in USDT</h6>
                     <InputField
                       type="number"
                       name="dappwalletstacking"
@@ -714,7 +714,7 @@ function Staking() {
             <div className="d-flex">
               <div className="w-50">
                 <h6 className="m-0 py-2 text-light text-center">
-                  Range in IAT
+                  Range in USDT
                 </h6>
                 <p className="m-0 py-1 text-center">40 - 2500</p>
                 <p className="m-0 py-1 text-center">2550 - 10000</p>
