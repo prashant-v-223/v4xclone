@@ -616,8 +616,6 @@ function Login() {
       setValues({ ...values, [name]: value });
     };
     const handleSubmit1 = async (e) => {
-      e.preventDefault();
-
       const validations = {
         Email: "",
         Password: "",
