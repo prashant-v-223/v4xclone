@@ -185,6 +185,7 @@ function Login() {
     };
 
     const handleSubmit = async (e) => {
+      e.preventDefault();
       const isValid = validateAll();
 
       if (!isValid) {
@@ -527,10 +528,7 @@ function Login() {
         isValid = false;
       }
 
-      if (Email && !/\S+@\S+\.\S+/.test(Email)) {
-        validations.Email = "Email format must be as example@mail.com!";
-        isValid = false;
-      }
+     
 
       if (!username) {
         validations.username = "username is required!";
@@ -568,9 +566,7 @@ function Login() {
           message = `Email is required!`;
         }
       }
-      if (value && name === "Email" && !/\S+@\S+\.\S+/.test(value)) {
-        message = "Email format must be as example@mail.com!";
-      }
+      
       if (value && name === "Emailforgot" && !/\S+@\S+\.\S+/.test(value)) {
         message = "Email format must be as example@mail.com!";
       }
@@ -585,6 +581,8 @@ function Login() {
       setValues({ ...values, [name]: value });
     };
     const handleSubmit1 = async (e) => {
+      e.preventDefault();
+
       const validations = {
         Email: "",
         Password: "",
@@ -609,6 +607,8 @@ function Login() {
       }
     };
     const handleSubmit = async (e) => {
+      e.preventDefault();
+
       const isValid = validateAll();
 
       if (!isValid) {
@@ -693,7 +693,7 @@ function Login() {
                     <InputField
                       type="text"
                       name="Email"
-                      placeholder="Enter e-mail address"
+                      placeholder="Enter E-Mail Or Username"
                       value={Email}
                       error={EmailVal}
                       icons={<MailFilled />}

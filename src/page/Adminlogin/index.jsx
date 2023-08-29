@@ -54,11 +54,6 @@ function Adminlogin() {
         isValid = false;
       }
 
-      if (Email && !/\S+@\S+\.\S+/.test(Email)) {
-        validations.Email = "Email format must be as example@mail.com!";
-        isValid = false;
-      }
-
       if (!Emailforgot) {
         validations.Emailforgot = "Email is required!";
       }
@@ -91,9 +86,7 @@ function Adminlogin() {
           message = `Email is required!`;
         }
       }
-      if (value && name === "Email" && !/\S+@\S+\.\S+/.test(value)) {
-        message = "Email format must be as example@mail.com!";
-      }
+
       if (value && name === "Emailforgot" && !/\S+@\S+\.\S+/.test(value)) {
         message = "Email format must be as example@mail.com!";
       }
@@ -108,7 +101,6 @@ function Adminlogin() {
       setValues({ ...values, [name]: value });
     };
     const handleSubmit = async (e) => {
-
       const isValid = validateAll();
 
       if (!isValid) {
@@ -189,7 +181,7 @@ function Adminlogin() {
                     <InputField
                       type="text"
                       name="Email"
-                      placeholder="Enter e-mail address"
+                      placeholder="Enter E-Mail Or Username"
                       value={Email}
                       error={EmailVal}
                       icons={<MailFilled />}
