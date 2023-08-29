@@ -446,7 +446,7 @@ function Homepage3() {
   //               console.log(hash);
   //             });
   //             tran.on("receipt", async (receipt) => {
-  //               toast.success("You have successfully purchased Infinity.AI Tokens");
+  //               toast.success("You have successfully purchased Infinity.AI Token");
   //               setloding(true);
   //             });
   //             tran.on("error", console.error);
@@ -502,7 +502,7 @@ function Homepage3() {
                   >
                     <div className="p-4 my-5 ps-5">
                       <h3 className="text-start text-light pb-4">
-                        Buy Infinity.AI TokenS
+                        Buy Infinity.AI Token
                       </h3>
                       <div class="awc_inpt">
                         <input
@@ -544,7 +544,7 @@ function Homepage3() {
                           type="text"
                           value={values.purchasedAmount / Amount}
                           name="AmountTopay"
-                          placeholder="Enter Amount of Infinity.AI TokenS to Buy"
+                          placeholder="Enter Amount of Infinity.AI Token to Buy"
                           onChange={handleChange}
                           onBlur={validateOne}
                         />

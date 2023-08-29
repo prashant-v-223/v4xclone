@@ -390,7 +390,7 @@ const Dashboard = () => {
                   <div className="d-flex h-50 h-md-100 flex-column justify-content-center">
                     <h6 className="pt-0 text-center">Airdrop Coins</h6>
                     <h6 className="text-center">
-                      {Profile && Profile[0]?.Airdropped} Infinity.AI TokenS
+                      {Profile && Profile[0]?.Airdropped} Infinity.AI Token
                     </h6>
                     <button
                       className="text-light"
@@ -1111,7 +1111,7 @@ export default Dashboard;
 //                         />
 //                       </div>
 //                       <div className="">
-//                         <p>Airdropped Infinity.AI Tokens</p>
+//                         <p>Airdropped Infinity.AI Token</p>
 //                       </div>
 //                     </div>
 //                     <div className="d-flex flex-wrap justify-content-center align-items-center">

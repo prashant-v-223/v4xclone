@@ -267,7 +267,7 @@ function Navbar1() {
                       className="ms-2 me-3"
                       style={{ color: "#02a2c4", fontSize: "20px" }}
                     />
-                    Transfer Infinity.AI Tokens
+                    Transfer Infinity.AI Token
                   </Dropdown.Item>
                   <Dropdown.Item
                     className="py-2"

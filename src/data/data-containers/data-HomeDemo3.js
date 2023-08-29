@@ -81,7 +81,7 @@ export const HowItWorksInfo = [
     title: "Refer Friends and Family to Earn more",
     img: superfastmatchengine,
     subtita:
-      "You can refer your friends and family on Infinity.AI to get more benifits. Everytime your referral stakes Infinity.AI Tokens, referrer gets rewards.",
+      "You can refer your friends and family on Infinity.AI to get more benifits. Everytime your referral stakes Infinity.AI Token, referrer gets rewards.",
   },
   {
     classIco: "icon ti-settings",
@@ -339,11 +339,11 @@ export const FQAInfo = [
     ID: "Q3",
   },
   {
-    text: "How Can I Buy Infinity.AI Tokens?",
+    text: "How Can I Buy Infinity.AI Token?",
     ID: "Q4",
   },
   {
-    text: "How Can I Trade Infinity.AI Tokens?",
+    text: "How Can I Trade Infinity.AI Token?",
     ID: "Q5",
   },
   {
