@@ -34,6 +34,7 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^4.4.0",
     "react-organizational-chart": "^2.2.0",
+    "react-phone-number-input": "^3.3.5",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",

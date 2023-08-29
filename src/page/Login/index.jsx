@@ -24,6 +24,8 @@ import {
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Login.scss";
 import Web3 from "web3";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 function Login() {
   const { signIn } = useSignIn({ statement: "Sign In to My Dapp" });
   const location = useLocation();
@@ -54,6 +56,7 @@ function Login() {
     const [values, setValues] = React.useState({
       Walletaddress: "",
       Email: "",
+      phone: "",
       username: "",
       Password: "",
       Reenterpassword: "",
@@ -97,6 +100,7 @@ function Login() {
       Walletaddress: "",
       Email: "",
       Password: "",
+      phone: "",
       Reenterpassword: "",
       username: "",
       referralId: "",
@@ -108,6 +112,7 @@ function Login() {
         Walletaddress: "",
         Email: "",
         Password: "",
+        phone: "",
         Reenterpassword: "",
       };
       let isValid = true;
@@ -116,13 +121,16 @@ function Login() {
         validations.Walletaddress = "Wallet Address is required!";
         isValid = false;
       }
-
+      if (!phone) {
+        validations.phone = "PhoneNumber is required!";
+        isValid = false;
+      }
       if (!Email) {
         validations.Email = "Email is required!";
         isValid = false;
       }
       if (!username) {
-        validations.username = "username is required!";
+        validations.username = "Fullname is required!";
         isValid = false;
       }
       if (!referralId) {
@@ -191,6 +199,7 @@ function Login() {
       if (!isValid) {
         return false;
       }
+      console.log(values);
       const res = await dispatch(Signup(values));
       if (res.payload.data.isSuccess) {
         toast.success(res.payload.data.message);
@@ -206,6 +215,7 @@ function Login() {
       Reenterpassword,
       referralId,
       username,
+      phone,
     } = values;
     const {
       Walletaddress: WalletaddressVal,
@@ -214,6 +224,7 @@ function Login() {
       Reenterpassword: ReenterpasswordVal,
       referralId: referralIdVal,
       username: usernameVal,
+      phone: phoneVal,
     } = validations;
     useEffect(() => {
       setValues((vall) => {
@@ -355,6 +366,25 @@ function Login() {
                         border: "1px solid #fff",
                       }}
                     />
+                  </div>{" "}
+                  <div className="col-12 py-md-1">
+                    <div className="form-group  ">
+                      <PhoneInput
+                        name="phone"
+                        value={phone}
+                        defaultCountry="IN"
+                        className={`form-control d-flex bg-transparent h-100 my-2 py-3`}
+                        onChange={(e) => {
+                          setValues({ ...values, ["phone"]: e });
+                        }}
+                        onBlur={validateOne}
+                      />
+                      {phoneVal ? (
+                        <span className="error">
+                          {"PhoneNumber is required!"}
+                        </span>
+                      ) : null}
+                    </div>
                   </div>
                   <div className="col-12 col-md-6 py-md-1">
                     <InputField
@@ -528,10 +558,8 @@ function Login() {
         isValid = false;
       }
 
-     
-
       if (!username) {
-        validations.username = "username is required!";
+        validations.username = "Fullname is required!";
       }
 
       if (!Emailforgot) {
@@ -566,7 +594,7 @@ function Login() {
           message = `Email is required!`;
         }
       }
-      
+
       if (value && name === "Emailforgot" && !/\S+@\S+\.\S+/.test(value)) {
         message = "Email format must be as example@mail.com!";
       }

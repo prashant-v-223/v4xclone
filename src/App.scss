@@ -277,7 +277,7 @@ span.awc_coin {
   from {
     transform: rotate(0);
   }
-  to{
+  to {
     transform: rotate(359deg);
   }
 }
@@ -383,7 +383,11 @@ span.call_icon {
 .contact_form .custom-checkbox .custom-control-label::before {
   border-radius: 100%;
 }
-
+.PhoneInputInput {
+  background: transparent !important;
+  border: 0px;
+  outline: 0px;
+}
 .contact_form .custom-control-label {
   font-size: 18px;
   font-weight: 600;

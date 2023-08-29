@@ -9,6 +9,7 @@ export const Signup = createAsyncThunk("auth/Signup", async (data) => {
       password: data.Password,
       Fullname: data.username,
       refferalBy: data.referralId,
+      PhoneNumber: data.phone
     });
     return res;
   } catch (e) {
