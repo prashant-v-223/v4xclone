@@ -300,9 +300,10 @@ function Withdrawal() {
                       </div>
                       <div className="img-div2">
                         <p className="m-0 text-light">
-                          Infinity.AI Withdrawals are activated after 15days of your
-                          staking. Infinity.AI Token are released as bonus in withdrawal
-                          process. You can withdraw your rewards everyday.
+                          Infinity.AI Withdrawals are activated after 15days of
+                          your staking. Infinity.AI Token are released as bonus
+                          in withdrawal process. You can withdraw your rewards
+                          everyday.
                         </p>
                       </div>
                     </div>
@@ -315,7 +316,7 @@ function Withdrawal() {
                         </div>
                         <div className="px-3 py-2 py-lg-0">
                           <h6 className="m-0 text-light text-center">
-                            {Alldata[0]?.mainWallet} IAT
+                            {Alldata[0]?.mainWallet} USDT
                           </h6>
                         </div>
                       </div>

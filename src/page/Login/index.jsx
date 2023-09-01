@@ -17,17 +17,17 @@ import { Foegotpassword, Signin, Signup } from "../../Redux/authSlice";
 import { toast } from "react-toastify";
 import { Checkbox, Spin } from "antd";
 import bep20Abi from "../../Helpers/bep20Abi.json";
-import {
-  WalletConnectModalAuth,
-  useSignIn,
-} from "@walletconnect/modal-auth-react";
+// import {
+//   WalletConnectModalAuth,
+//   useSignIn,
+// } from "@walletconnect/modal-auth-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Login.scss";
 import Web3 from "web3";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 function Login() {
-  const { signIn } = useSignIn({ statement: "Sign In to My Dapp" });
+  // const { signIn } = useSignIn({ statement: "Sign In to My Dapp" });
   const location = useLocation();
   console.log(location.search.split("?")[1]);
   const [type, settype] = useState(!location.search ? true : false);
@@ -44,13 +44,13 @@ function Login() {
     const { active, account, library, connector, activate, deactivate, error } =
       useWeb3React();
     async function onSignIn() {
-      try {
-        const data = await signIn();
-        console.info(data);
-      } catch (err) {
-        console.error(err);
-      } finally {
-      }
+      // try {
+      //   const data = await signIn();
+      //   console.info(data);
+      // } catch (err) {
+      //   console.error(err);
+      // } finally {
+      // }
     }
     const [show, setShow] = useState(false);
     const [values, setValues] = React.useState({
@@ -838,7 +838,7 @@ function Login() {
           {type ? <SignupUser /> : <SignInUser />}
         </div>
       </div>
-      <WalletConnectModalAuth
+      {/* <WalletConnectModalAuth
         projectId={projectId}
         metadata={{
           name: "My Dapp",
@@ -846,7 +846,7 @@ function Login() {
           url: "https://my-dapp.com",
           icons: ["https://my-dapp.com/logo.png"],
         }}
-      />
+      /> */}
     </Spin>
   );
 }

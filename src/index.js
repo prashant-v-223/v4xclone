@@ -11,8 +11,8 @@ import { Provider } from "react-redux";
 import './assets/css/General.css';
 import './assets/css/bootstrap.min.css';
 import './assets/css/responsive.css';
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
+// import "slick-carousel/slick/slick.css"; 
+// import "slick-carousel/slick/slick-theme.css";
 
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 const root = ReactDOM.createRoot(document.getElementById("root"));

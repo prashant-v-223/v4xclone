@@ -1,7 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authSlice from "./Redux/authSlice";
 import StackingSlice from "./Redux/StackingSlice";
-import logger from "redux-logger";
 import WallatedatSlice from "./Redux/WallatedatSlice";
 import StackingbounsSlice from "./Redux/Stackingbouns";
 import TransferdataSlice from "./Redux/TranfarSlice";

@@ -1,4 +1,3 @@
-import CountUp from "react-countup";
 
 const SecWelcomeMeter = ({ img }) => {
   return (
