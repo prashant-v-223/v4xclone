@@ -129,39 +129,76 @@
 // }
 
 // export default App;
-import { ConnectWallet, useContract, useTransferToken, Web3Button } from "@thirdweb-dev/react";
-
-const contractAddress = "0x0a786CDc660C437f5F286548221232a8d4e53441";
-const toAddress = "0xA5BFD1F06E394B7901D587A1a96002C1548F915f";
-const amount = "0.1";
+import { ConnectWallet, useAddress, useContract, useTransferToken, Web3Button } from "@thirdweb-dev/react";
+import v4x from "./Helpers/v4x.json";
+import Web3 from "web3";
+import Button from "./components/ButtonField";
 
 function App() {
-  // Contract must be an ERC-20 contract
-  const { contract } = useContract(contractAddress);
-  const {
-    mutate: transferTokens,
-    isLoading,
-    error,
-  } = useTransferToken(contract);
-
+  const getWeb3 = async () => {
+    try {
+      const web3 = new Web3(Web3.givenProvider);
+      return web3;
+    } catch (err) {
+      console.log("error", err);
+    }
+  };
+  const account = useAddress();
+  const Mainwalletstacking = async (e) => {
+    if (e === "dappwalletstacking") {
+      if (account) {
+        let web3 = await getWeb3();
+        let contract = await new web3.eth.Contract(
+          v4x,
+          "0x55d398326f99059fF775485246999027B3197955"
+        );
+        const decimal = await contract.methods.decimals().call();
+        await contract.methods
+          .transfer(
+            process.env.REACT_APP_OWNER_ADDRESS,
+            web3.utils.toBN(0.1 * Math.pow(10, decimal))
+          )
+          .send({
+            from: account,
+          })
+          .on("receipt", async (receipt) => {
+            console.log(receipt);
+          });
+      } else {
+      }
+    }
+  };
   return (<>
     <ConnectWallet
       theme={"light"}
       btnTitle="Connect Your Wallate"
       style={{
       }}
+    />  <Button
+      className={" w-100 text-light"}
+      Stake={false}
+      style={{
+        background: "#02a2c4",
+        height: 52,
+        border: "none",
+      }}
+      onClick={() => {
+        Mainwalletstacking("dappwalletstacking");
+      }}
+      label={"Stake Using DAPP Wallet"}
     />
-    <Web3Button
+    {/* <Web3Button
       contractAddress={contractAddress}
-      action={() =>
-        transferTokens({
-          to: toAddress, // Address to transfer to
-          amount: amount, // Amount to transfer
-        })
-      }
-    >
-      Transfer
-    </Web3Button>
+      action={async () => {
+        // await transferTokens({
+        //   to: toAddress,
+        //   amount: amount,
+        // });
+      } */}
+    {/* } */}
+    {/* > */}
+    {/* Transfer
+  </Web3Button > */}
   </>
   );
 }
