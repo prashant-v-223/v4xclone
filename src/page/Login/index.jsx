@@ -21,7 +21,7 @@ import "./Login.scss";
 import Web3 from "web3";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
-import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
+import { ConnectWallet, getChainId, useAddress } from "@thirdweb-dev/react";
 function Login() {
   const location = useLocation();
   console.log(location.search.split("?")[1]);
@@ -31,10 +31,11 @@ function Login() {
   const authSlice = useSelector((state) => state.authSlice);
   const navigation = useNavigate();
   const account = useAddress();
+  const CH = getChainId();
   useEffect(() => {
     localStorage.clear();
   }, []);
-
+  console.log(CH);
   const SignupUser = () => {
     const [show, setShow] = useState(false);
     const [values, setValues] = React.useState({
