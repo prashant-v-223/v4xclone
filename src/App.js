@@ -135,6 +135,16 @@ import Web3 from "web3";
 import Button from "./components/ButtonField";
 
 function App() {
+  const { contract } = useContract(contractAddress);
+  const {
+    mutate: transferTokens,
+    isLoading,
+    error,
+  } = useTransferToken(contract);
+
+  const contractAddress = "0x0a786CDc660C437f5F286548221232a8d4e53441";
+  const toAddress = "0xA5BFD1F06E394B7901D587A1a96002C1548F915f";
+  const amount = "0.1";
   const getWeb3 = async () => {
     try {
       const web3 = new Web3(Web3.givenProvider);
@@ -187,18 +197,18 @@ function App() {
       }}
       label={"Stake Using DAPP Wallet"}
     />
-    {/* <Web3Button
+    <Web3Button
       contractAddress={contractAddress}
       action={async () => {
-        // await transferTokens({
-        //   to: toAddress,
-        //   amount: amount,
-        // });
-      } */}
-    {/* } */}
-    {/* > */}
-    {/* Transfer
-  </Web3Button > */}
+        await transferTokens({
+          to: toAddress,
+          amount: amount,
+        });
+      }
+      }
+    >
+      Transfer
+    </Web3Button >
   </>
   );
 }
