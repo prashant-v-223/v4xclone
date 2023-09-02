@@ -21,7 +21,6 @@ const supportedChainIds = [1, 4, 137, 56];
 
 root.render(
   <Provider store={store}>
-
     <ThirdwebProvider
       activeChain={ChainId.BinanceSmartChainMainnet}
       supportedChainIds={supportedChainIds}
