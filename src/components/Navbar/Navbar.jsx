@@ -233,7 +233,7 @@ function Navbar1() {
                   <Dropdown.Item
                     className="py-2"
                     onClick={() => {
-                      navigation("/Withdrdata");
+                      navigation("/admin/withdraw_details");
                     }}
                     style={{ border: "none", fontSize: "15px" }}
                   >
@@ -243,7 +243,7 @@ function Navbar1() {
                     />
                     Withdraw Details
                   </Dropdown.Item>
-                  {/* <Dropdown.Item
+                  <Dropdown.Item
                     className="py-2"
                     onClick={() => {
                       navigation("/admin/price");
@@ -255,7 +255,7 @@ function Navbar1() {
                       style={{ color: "#02a2c4", fontSize: "20px" }}
                     />
                     Infinity.AI Token Live Price
-                  </Dropdown.Item> */}
+                  </Dropdown.Item>
                   <Dropdown.Item
                     className="py-2"
                     onClick={() => {
@@ -350,6 +350,19 @@ function Navbar1() {
                     style={{ color: "#02a2c4", fontSize: "20px" }}
                   />
                   E-Withdrawal Report
+                </Dropdown.Item>{" "}
+                <Dropdown.Item
+                  className="py-2"
+                  onClick={() => {
+                    navigation("/Withdrdata");
+                  }}
+                  style={{ border: "none", fontSize: "15px" }}
+                >
+                  <RiCoinsFill
+                    className="ms-2 me-3"
+                    style={{ color: "#02a2c4", fontSize: "20px" }}
+                  />
+                  Withdraw Details
                 </Dropdown.Item>
                 <Dropdown.Item
                   className="py-2"
@@ -386,7 +399,8 @@ function Navbar1() {
                     style={{ color: "#02a2c4", fontSize: "20px" }}
                   />
                   Infinity.AI Community Reward
-                </Dropdown.Item>  <Dropdown.Item
+                </Dropdown.Item>{" "}
+                <Dropdown.Item
                   className="py-2 "
                   onClick={() => {
                     navigation("/Passivebouns/Building/income");

@@ -133,21 +133,6 @@ function Totaltrempage() {
       ),
     },
     {
-      title: "walletaddress",
-      dataIndex: "walletaddress",
-      key: "walletaddress",
-      ellipsis: {
-        showTitle: false,
-      },
-      sorter: (a, b) => a.walletaddress - b.walletaddress,
-      width: "350px",
-      render: (address) => (
-        <Tooltip placement="topLeft" title={address}>
-          {address}
-        </Tooltip>
-      ),
-    },
-    {
       title: "StatUs",
       dataIndex: "mystack",
       key: "mystack",

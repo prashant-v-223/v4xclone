@@ -1,4 +1,4 @@
-const baseURL = process.env.REACT_APP_API_URL;
+const baseURL = "http://localhost:8080/";
 export const apiList = {
   Signup: baseURL + "api/registration/signUp",
   Signin: baseURL + "api/registration/signIn",
@@ -24,7 +24,7 @@ export const apiList = {
   adminwallateblock: baseURL + "api/admin/userwallateblock",
   userRemove: baseURL + "api/admin/userRemove",
   adminalltranfor: baseURL + "api/admin/alltranfor",
-  adminprice: baseURL + "api/admin/priceV4Xinity.ai",
+  adminprice: baseURL + "api/admin/priceV4X",
   adminsensamount: baseURL + "api/admin/sendamonut",
   Adminsupport: baseURL + "api/admin/supportdata",
   AdminBuystack: baseURL + "api/admin/Buystack",
@@ -34,4 +34,7 @@ export const apiList = {
   indaireactteam: baseURL + "api/user/indaireactteam",
   Mainwallate: baseURL + "api/Withdraw/mainWallet",
   V4X: baseURL + "api/Withdraw/V4XWallet",
+  AllBuystack: baseURL + "api/admin/AllBuystack",
+  Withdrawdata: baseURL + "api/admin/Withdrawdata",
+  Withdrdatadatauser: baseURL + "api/Withdraw/Withdrdatadatauser",
 };

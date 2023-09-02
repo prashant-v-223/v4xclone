@@ -145,11 +145,6 @@ function Alltranfrorreport() {
     if (value !== "") {
       let data = Alldata.filter((truck) => {
         return (
-          truck?.walletaddress
-            .toString()
-            .toString()
-            .toLowerCase()
-            .match(value.toLowerCase()) ||
           truck?.email
             .toString()
             .toString()
@@ -230,7 +225,10 @@ function Alltranfrorreport() {
                 lg={12}
               >
                 <RangePicker size="large" onChange={handleChange1} />
-                <ExportToExcel apiData={Fillter} fileName={"WalletTransferReport"} />
+                <ExportToExcel
+                  apiData={Fillter}
+                  fileName={"WalletTransferReport"}
+                />
               </Col>
               <div className="col-12 p-2 p-lg-3">
                 <Table

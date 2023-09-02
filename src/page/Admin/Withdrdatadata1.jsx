@@ -13,6 +13,8 @@ import {
   AdminsendAmount,
   Admintranfor,
   Withdrdatadata,
+  Withdrdatadata12,
+  Withdrdatadatauser,
 } from "../../Redux/admin";
 import InputField from "../../components/InputField";
 import { toast } from "react-toastify";
@@ -39,7 +41,7 @@ function Withdrdatadata1() {
   }, []);
   const getalldata = async () => {
     const res = await dispatch(
-      Withdrdatadata({
+      Withdrdatadatauser({
         Token:
           JSON.parse(localStorage.getItem("data")) &&
           JSON.parse(localStorage.getItem("data")).data.token,
@@ -68,7 +70,7 @@ function Withdrdatadata1() {
       title: "Sr No",
       dataIndex: "sno",
       key: "sno",
-      width: "120px",
+      width: "80px",
       render: (value, item, index) =>
         page === 1 ? index + 1 : (page - 1) * pageSize + (index + 1),
     },
@@ -101,6 +103,20 @@ function Withdrdatadata1() {
       ),
     },
     {
+      title: "walletaddress",
+      dataIndex: "walletaddress",
+      key: "walletaddress",
+      ellipsis: {
+        showTitle: false,
+      },
+      width: "400px",
+      render: (text, record, index) => (
+        <Tooltip placement="topLeft" title={record?.walletaddress}>
+          {record?.walletaddress}
+        </Tooltip>
+      ),
+    },
+    {
       title: "withdrawalAmount",
       dataIndex: "withdrawalAmount",
       key: "withdrawalAmount",
@@ -109,8 +125,8 @@ function Withdrdatadata1() {
       },
       width: "230px",
       render: (text, record, index) => (
-        <Tooltip placement="topLeft" title={record.withdrawalAmount}>
-          {record.withdrawalAmount}
+        <Tooltip placement="topLeft" title={record?.withdrawalAmount}>
+          {record?.withdrawalAmount}
         </Tooltip>
       ),
     },
@@ -124,6 +140,35 @@ function Withdrdatadata1() {
       render: (text, record, index) => (
         <Tooltip placement="topLeft" title={record.Note}>
           {record.Admincharges}
+        </Tooltip>
+      ),
+    },
+    {
+      title: "startus",
+      dataIndex: "transactionshsh",
+      key: "transactionshsh",
+      ellipsis: {
+        showTitle: false,
+      },
+      width: "140px",
+      render: (text, record, index) => (
+        <Tooltip placement="topLeft" title={record.Note}>
+          <p
+            className={
+              record.transactionshsh === "no"
+                ? "btn btn-danger p-2 text-center"
+                : record.transactionshsh === "yes"
+                ? "btn btn-success p-2  text-center"
+                : "btn btn-warning p-2  text-center"
+            }
+            style={{ width: 90 }}
+          >
+            {record.transactionshsh === "no"
+              ? "failed"
+              : record.transactionshsh === "yes"
+              ? "success"
+              : "pending"}
+          </p>
         </Tooltip>
       ),
     },

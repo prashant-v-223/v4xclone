@@ -213,7 +213,7 @@ function Profile() {
                     </div>
                   </div>
                 </div>
-                <div
+                {/* <div
                   className="row py-3"
                   style={{
                     borderTop: "1px solid rgb(112 100 100)",
@@ -239,7 +239,7 @@ function Profile() {
                       />
                     </div>
                   </div>
-                </div>
+                </div> */}
                 <div
                   className="row py-3"
                   style={{

@@ -135,11 +135,7 @@ function AdminSupport() {
     if (value !== "") {
       let data = Alldata.filter((truck) => {
         return (
-          truck?.walletaddress
-            .toString()
-            .toString()
-            .toLowerCase()
-            .match(value.toLowerCase()) ||
+     
           truck?.email
             .toString()
             .toString()

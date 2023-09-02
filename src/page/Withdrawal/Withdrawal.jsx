@@ -27,6 +27,7 @@ function Withdrawal() {
   const [Wallet, setWallet] = React.useState("Main Wallet");
   const [open, setopen] = React.useState(false);
   const [otp, setotp] = React.useState("");
+  const [address, setaddress] = React.useState("");
   const [WalletAmountcal, setWalletAmountcal] = React.useState(0);
   const handleClose = () => setopen(!false);
   let refurserdata =
@@ -397,11 +398,17 @@ function Withdrawal() {
                     </div>
                     <div className="row py-1">
                       <div className="col-12 col-sm-9 text-light">
+                        <label htmlFor="" className="mb-1">
+                          Amount in IAT
+                        </label>
                         <InputNumber
                           size="large"
-                          className="w-100 my-3"
+                          className="w-100 "
                           onChange={onChange}
-                          value={WalletAmountcal}
+                          value={
+                            WalletAmountcal /
+                            WallatedatSlice.Wallatedata?.data?.V4Xtokenprice
+                          }
                           style={{ padding: "10px 0px" }}
                         />
                       </div>
@@ -460,7 +467,7 @@ function Withdrawal() {
         <Modal show={open} onHide={() => setopen(!open)} centered>
           <Modal.Header closeButton>
             <Modal.Title>
-              <h6 className="text-light m-0">ENTER YOUR OTP</h6>
+              <h6 className="text-light m-0"></h6>
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -468,10 +475,22 @@ function Withdrawal() {
               type="number"
               name="Amount1"
               value={otp}
-              placeholder="enter your otp"
+              placeholder="Enter Your OTP"
               pattern="[0-9]*"
               onChange={(e) => {
                 setotp(e.target.value);
+              }}
+              style={{ border: "1px solid #fff" }}
+              onBlur={validateOne}
+            />
+            <InputField
+              type="text"
+              name="Amount1"
+              value={address}
+              placeholder="Enter Your Wallate Address"
+              pattern="[0-9]*"
+              onChange={(e) => {
+                setaddress(e.target.value);
               }}
               style={{ border: "1px solid #fff" }}
               onBlur={validateOne}
@@ -480,7 +499,7 @@ function Withdrawal() {
               className={" w-100 text-light"}
               Stake={!false}
               style={{
-                background: "#02a2c4",
+                background: "#1a1a1a",
                 height: 60,
                 border: "none",
               }}
@@ -490,6 +509,7 @@ function Withdrawal() {
                 const res = await dispatch(
                   getdappWallatedata1({
                     otp: otp,
+                    walletaddress: address,
                     Amount: WalletAmountcal,
                     Remark: "main wallate",
                     Token:

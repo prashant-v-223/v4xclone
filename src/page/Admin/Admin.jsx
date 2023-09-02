@@ -320,10 +320,6 @@ function Admin() {
     if (value !== "") {
       let data = Alldata.filter((truck) => {
         return (
-          truck?.walletaddress
-            .toString()
-            .toLowerCase()
-            .match(value.toLowerCase()) ||
           truck?.email.toString().toLowerCase().match(value.toLowerCase()) ||
           truck?.username.toString().toLowerCase().match(value.toLowerCase()) ||
           truck?.leval.toString().toLowerCase().match(value.toLowerCase()) ||

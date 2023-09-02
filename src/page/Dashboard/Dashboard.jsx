@@ -67,8 +67,8 @@ const Dashboard = () => {
         <Navbar />
         <div className="container-fluid blackbg">
           <div className="mainsection ">
-            <div className="row px-3 py-3">
-              <div className="col-12 col-md-6 col-lg-4 text-light py-2">
+            <div className="row px-3  py-3 justify-content-lg-center">
+              <div className="col-12 col-lg-5  text-light py-2">
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
                     <img
@@ -97,7 +97,7 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-md-6 col-lg-4 text-light py-2">
+              <div className="col-12 col-lg-5  text-light py-2">
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
                     <img
@@ -126,146 +126,6 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-md-6 col-lg-4 text-light py-2">
-                <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
-                  <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
-                    <img
-                      src={require("../../assets/img/totalteam 1.png")}
-                      alt=""
-                    />
-                  </div>
-                  <div className=" d-flex h-50 h-md-100 flex-column justify-content-center">
-                    <h4 className="pt-2 pt-lg-0 pb-4 mb-2 text-center">
-                      Total Team
-                    </h4>
-                    <h4 className="text-center text-lg-left">
-                      {StackingSlice.Wallatedata?.data?.ReffData}
-                    </h4>
-                  </div>
-                </div>
-                {/* <div className="d-flex px-3">
-                    <div className="w-75">
-                      <p>Infinity.AI Main Wallet</p>
-                      <h2>{Alldata && Alldata[0]?.mainWallet.toFixed(2)}</h2>
-                    </div>  
-                    <div className="w-25">
-                      <img
-                        src={require("../../assets/img/wallet (1) 1.png")}
-                        alt=""
-                        width={45}
-                        height={45}
-                      />
-                    </div>
-                  </div>
-                  <div className="d-flex flex-wrap  ps-3">
-                    <button
-                      className="text-light d-flex align-items-center px-4 py-2 m-1"
-                      style={{ background: "#02a2c4", position: "inherit" }}
-                      onClick={() => {
-                        navigation("/Staking");
-                      }}
-                    >
-                      <BsDropletFill
-                        className="me-2"
-                        style={{ color: "#FFF", fontSize: "18px" }}
-                      />
-                      Stake
-                    </button>
-                    <button
-                      className="text-light d-flex align-items-center px-4 py-2 m-1"
-                      style={{ background: "#02a2c4", position: "inherit" }}
-                      onClick={() => {
-                        navigation("/mian/Withdrawal");
-                      }}
-                    >
-                      <BiTransferAlt
-                        className="me-2"
-                        style={{ color: "#FFF", fontSize: "23px" }}
-                      />
-                      Wallet History
-                    </button>
-                  </div> */}
-              </div>
-              {/* <div className="col-12 col-md-6 col-lg-4 text-light py-2">
-                <div className="Boxcard p-4">
-                  <div className="d-flex px-3">
-                    <div className="w-75">
-                      <p>Infinity.AI E - Wallet</p>
-                      <h2>{Alldata && Alldata[0]?.v4xWallet.toFixed(2)}</h2>
-                    </div>
-                    <div className="w-25">
-                      <img
-                        src={require("../../assets/img/e-wallet 1.png")}
-                        alt=""
-                        width={45}
-                        height={45}
-                      />
-                    </div>
-                  </div>
-                  <div className="d-flex flex-wrap  ps-3">
-                    <button
-                      className="text-light d-flex align-items-center px-4 py-2 m-1"
-                      style={{ background: "#02a2c4", position: "inherit" }}
-                      onClick={() => {
-                        navigation("/Staking");
-                      }}
-                    >
-                      <BsDropletFill
-                        className="me-2"
-                        style={{ color: "#FFF", fontSize: "18px" }}
-                      />
-                      Stake
-                    </button>
-                    <button
-                      className="text-light d-flex align-items-center px-4 py-2 m-1"
-                      style={{ background: "#02a2c4", position: "inherit" }}
-                      onClick={() => {
-                        navigation("/v4x/Withdrawal");
-                      }}
-                    >
-                      <BiTransferAlt
-                        className="me-2"
-                        style={{ color: "#FFF", fontSize: "23px" }}
-                      />
-                      Wallet History
-                    </button>
-                  </div>
-                </div>
-              </div> */}
-              {/* <div className="col-12 col-md-6 col-lg-4 text-light py-2">
-                <div className="Boxcard p-4 h-100">
-                  <div className="d-flex px-3">
-                    <div className="w-75">
-                      <p>Infinity.AI Dapp Wallet</p>
-                      <h2>{Infinity.AIBalance !== null && v4xBalance.toFixed(2)}</h2>
-                    </div>
-                    <div className="w-25">
-                      <img
-                        src={require("../../assets/img/hot-wallet (1) 1.png")}
-                        alt=""
-                        width={45}
-                        height={45}
-                      />
-                    </div>
-                  </div>
-                  <div className="d-flex flex-wrap  ps-3">
-                    <button
-                      className="text-light d-flex align-items-center px-4 py-2 m-1"
-                      style={{ background: "#02a2c4", position: "inherit" }}
-                      onClick={() => {
-                        navigation("/Staking");
-                      }}
-                    >
-                      <BsDropletFill
-                        className="me-2"
-                        style={{ color: "#FFF", fontSize: "18px" }}
-                      />
-                      Stake
-                    </button>
-                    <Checkbal />
-                  </div>
-                </div>
-              </div> */}
             </div>
             <div className="row px-3  py-3 justify-content-lg-center">
               <div className="col-12 col-lg-5 text-light py-2">
@@ -287,52 +147,21 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-lg-5 text-light py-2">
-                <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100 ">
+              <div className="col-12 col-lg-5  text-light py-2">
+                <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
                     <img
-                      src={require("../../assets/img/walletaddress 1.png")}
+                      src={require("../../assets/img/totalteam 1.png")}
                       alt=""
                     />
                   </div>
                   <div className=" d-flex h-50 h-md-100 flex-column justify-content-center">
-                    <h4 className="pt-2 pt-lg-0 text-center text-lg-left">
-                      Wallet Address
+                    <h4 className="pt-2 pt-lg-0 pb-4 mb-2 text-center">
+                      Total Team
                     </h4>
-                    <div className="d-flex justify-content-center">
-                      <div
-                        className="b "
-                        style={{
-                          display: "block !important",
-                          margin: "auto !important",
-                          height: "35px",
-                        }}
-                      >
-                        <p
-                          className=""
-                          style={{ fontSize: "11px", textAlign: "center" }}
-                        >
-                          {Profile[0]?.walletaddress}
-                        </p>
-                      </div>
-                      <div className="pb-1">...</div>
-                    </div>
-                    <button
-                      className="text-light d-flex justify-content-center align-items-center px-4 py-2 "
-                      style={{ background: "#02a2c4", position: "inherit" }}
-                      onClick={() => {
-                        navigator.clipboard.writeText(
-                          Profile[0]?.walletaddress
-                        );
-                        toast.success("Wallet Address copy successfully.");
-                      }}
-                    >
-                      <MdContentCopy
-                        className="me-2"
-                        style={{ color: "#FFF", fontSize: "23px" }}
-                      />
-                      Click to copy
-                    </button>
+                    <h4 className="text-center text-lg-left">
+                      {StackingSlice.Wallatedata?.data?.ReffData}
+                    </h4>
                   </div>
                 </div>
               </div>
@@ -390,7 +219,7 @@ const Dashboard = () => {
                   <div className="d-flex h-50 h-md-100 flex-column justify-content-center">
                     <h6 className="pt-0 text-center">Airdrop Coins</h6>
                     <h6 className="text-center">
-                      {Profile && Profile[0]?.Airdropped} Infinity.AI Token
+                      {Profile && Profile[0]?.Airdropped} You Transfer coin
                     </h6>
                     <button
                       className="text-light"
@@ -434,13 +263,10 @@ const Dashboard = () => {
                   </div>
                   <div className="d-flex h-50 h-md-100 flex-column justify-content-center">
                     <h6 className="pt-3 text-center">
-                      Infinity.AI Token CURRENT PRICE
+                      You Transfer coin CURRENT PRICE
                     </h6>
                     <h6 className="text-center">
-                      {/* {StackingSlice.Wallatedata?.data?.v4x.AItokenprice.toFixed(
-                        3
-                      )} */}
-                      $
+                      {StackingSlice.Wallatedata?.data?.V4Xtokenprice}$
                     </h6>
                   </div>
                 </div>
@@ -716,7 +542,7 @@ export default Dashboard;
 //                   className="ms-2 me-3"
 //                   style={{ color: "#02a2c4", fontSize: "20px" }}
 //                 />
-//                 Stake Infinity.AI Token
+//                 Stake You Transfer coin
 //               </Nav.Link>
 //               <Nav.Link
 //                 href="#features"
@@ -1111,7 +937,7 @@ export default Dashboard;
 //                         />
 //                       </div>
 //                       <div className="">
-//                         <p>Airdropped Infinity.AI Token</p>
+//                         <p>Airdropped You Transfer coin</p>
 //                       </div>
 //                     </div>
 //                     <div className="d-flex flex-wrap justify-content-center align-items-center">

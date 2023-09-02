@@ -103,20 +103,6 @@ function Livaprice() {
       ),
     },
     {
-      title: "ipAddress",
-      dataIndex: "ipAddress",
-      key: "ipAddress",
-      ellipsis: {
-        showTitle: false,
-      },
-      minwidth: "200px",
-      render: (address) => (
-        <Tooltip placement="topLeft" title={address}>
-          {address}
-        </Tooltip>
-      ),
-    },
-    {
       title: "Created At",
       dataIndex: "createdAt",
       key: "createdAt",
@@ -142,7 +128,7 @@ function Livaprice() {
                   type="number"
                   name="Amount"
                   min={0}
-                  placeholder="Enter Amount of Infinity.AI Token to amount"
+                  placeholder="Enter Amount"
                   value={values.Amount}
                   onChange={(e) => {
                     handleChange(e);

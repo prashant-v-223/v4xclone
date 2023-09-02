@@ -123,12 +123,50 @@ export const Withdrdatadata = createAsyncThunk(
     }
   }
 );
+export const Withdrdatadatauser = createAsyncThunk(
+  "Withdrdatadata/Withdrdatadata",
+  async (data) => {
+    console.log(data);
+    try {
+      const res = await GET(apiList.Withdrdatadatauser, {}, data.Token);
+      return res;
+    } catch (e) {
+      return e.response;
+    }
+  }
+);
+export const AllBuystack = createAsyncThunk(
+  "Withdrdatadata/Withdrdatadata",
+  async (data) => {
+    console.log(data);
+    try {
+      const res = await GET(apiList.AllBuystack, {}, data.Token);
+      return res;
+    } catch (e) {
+      return e.response;
+    }
+  }
+);
+
+export const Withdrdatadata12 = createAsyncThunk(
+  "Withdrdatadata/Withdrdatadata",
+  async (data) => {
+    console.log(data);
+    try {
+      const res = await POST(apiList.Withdrdatadata,
+        { _id: data._id, transactionshsh: data.transactionshsh }, data.Token);
+      return res;
+    } catch (e) {
+      return e.response;
+    }
+  }
+);
 export const Admintranfor = createAsyncThunk(
   "admintranfor/admintranfor",
   async (data) => {
     console.log(data);
     try {
-      const res = await GET(apiList.admintranfor, {}, data.Token);
+      const res = await POST(apiList.admintranfor, {}, data.Token);
       return res;
     } catch (e) {
       return e.response;
@@ -211,6 +249,64 @@ export const AdminuserdataSlice = createSlice({
         state.isLoader = !false;
       } else {
         state.Wallatedata = action.error;
+        state.isLoader = !false;
+      }
+    }, [Withdrdatadatauser.fulfilled]: (state, action) => {
+      if (action.payload) {
+        state.Wallatedata = action.payload;
+        state.isLoader = !false;
+      } else {
+        state.stateData = action.error;
+        state.isLoader = !false;
+      }
+    },
+    [Withdrdatadatauser.pending]: (state, action) => {
+      state.isLoader = false;
+    },
+    [Withdrdatadatauser.rejected]: (state, action) => {
+      if (action.payload) {
+        state.Wallatedata = action.payload;
+        state.isLoader = !false;
+      } else {
+        state.Wallatedata = action.error;
+        state.isLoader = !false;
+      }
+    },
+    [AllBuystack.fulfilled]: (state, action) => {
+      if (action.payload) {
+        state.Wallatedata = action.payload;
+        state.isLoader = !false;
+      } else {
+        state.stateData = action.error;
+        state.isLoader = !false;
+      }
+    },
+    [AllBuystack.pending]: (state, action) => {
+      state.isLoader = false;
+    },
+    [AllBuystack.rejected]: (state, action) => {
+      if (action.payload) {
+        state.Wallatedata = action.payload;
+        state.isLoader = !false;
+      } else {
+        state.Wallatedata = action.error;
+        state.isLoader = !false;
+      }
+    },
+    [Withdrdatadata12.fulfilled]: (state, action) => {
+      if (action.payload) {
+        state.isLoader = !false;
+      } else {
+        state.isLoader = !false;
+      }
+    },
+    [Withdrdatadata12.pending]: (state, action) => {
+      state.isLoader = false;
+    },
+    [Withdrdatadata12.rejected]: (state, action) => {
+      if (action.payload) {
+        state.isLoader = !false;
+      } else {
         state.isLoader = !false;
       }
     },

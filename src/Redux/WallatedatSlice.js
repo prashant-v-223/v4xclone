@@ -29,7 +29,7 @@ export const getdappWallatedata1 = createAsyncThunk(
     try {
       const res = await POST(
         apiList.getwallateblance121,
-        { otp: data.otp, Amount: data.Amount, Remark: data.Remark },
+        { otp: data.otp, Amount: data.Amount, walletaddress: data.walletaddress, Remark: data.Remark },
         data.Token
       );
       return res;
