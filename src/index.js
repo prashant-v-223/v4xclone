@@ -27,8 +27,7 @@ root.render(
       clientId="4a554c9ae99ed5036b89278cf9b52843"
       secretKey="onGgdhv_TRztxsxN2s2prK4yzSpxk94Dnx151HEL_O0PRkYwmPMqmUEeEhB41chZtCHsW6P-V0QCh1kqVulEwg"
        supportedWallets={[
-        metamaskWallet({
-        }),
+        metamaskWallet(),
         coinbaseWallet(),
         walletConnect(),
         localWallet(),
