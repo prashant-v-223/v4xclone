@@ -3,7 +3,6 @@ import InputField from "../../components/InputField";
 import Button from "../../components/ButtonField";
 import { useWeb3React } from "@web3-react/core";
 import { Modal } from "react-bootstrap";
-import { Injected, WalletConnect } from "../../Helpers/Injected";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import {
@@ -17,17 +16,13 @@ import { Foegotpassword, Signin, Signup } from "../../Redux/authSlice";
 import { toast } from "react-toastify";
 import { Checkbox, Spin } from "antd";
 import bep20Abi from "../../Helpers/bep20Abi.json";
-// import {
-//   WalletConnectModalAuth,
-//   useSignIn,
-// } from "@walletconnect/modal-auth-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Login.scss";
 import Web3 from "web3";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
+import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
 function Login() {
-  // const { signIn } = useSignIn({ statement: "Sign In to My Dapp" });
   const location = useLocation();
   console.log(location.search.split("?")[1]);
   const [type, settype] = useState(!location.search ? true : false);
@@ -35,23 +30,14 @@ function Login() {
   const dispatch = useDispatch();
   const authSlice = useSelector((state) => state.authSlice);
   const navigation = useNavigate();
-  const projectId = "542464957793e9ac764c03d5f58d44db";
+  const account = useAddress();
+  console.log({});
   useEffect(() => {
-    localStorage.clear();
-  }, []);
+    console.log(account);
+    // localStorage.clear();
+  }, [account]);
 
   const SignupUser = () => {
-    const { active, account, library, connector, activate, deactivate, error } =
-      useWeb3React();
-    async function onSignIn() {
-      // try {
-      //   const data = await signIn();
-      //   console.info(data);
-      // } catch (err) {
-      //   console.error(err);
-      // } finally {
-      // }
-    }
     const [show, setShow] = useState(false);
     const [values, setValues] = React.useState({
       Walletaddress: "",
@@ -234,22 +220,6 @@ function Login() {
     }, [account]);
 
     const handleShow = () => setShow(true);
-    const connect = async () => {
-      try {
-        if (!account) {
-          if (typeof window.ethereum !== "undefined") {
-            handleShow();
-          } else {
-            handleShow();
-          }
-        } else {
-          deactivate();
-        }
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
-    const handleClose = () => setShow(false);
     return (
       <>
         <div
@@ -331,16 +301,12 @@ function Login() {
                     />
                   </div>
                   <div className="col-12 col-md-3 py-md-1">
-                    <Button
-                      className={" w-100 text-light mb-1"}
-                      Stake={!false}
+                    <ConnectWallet
+                      theme={"light"}
                       style={{
-                        background: "#062156",
-                        height: 60,
-                        border: "none",
+                        width: "100%",
+                        height: "61px",
                       }}
-                      label={"Connect"}
-                      onClick={connect}
                     />
                   </div>
                   <div className="col-12  py-md-1">
@@ -491,44 +457,6 @@ function Login() {
             </div>
           </div>
         </div>
-        <Modal show={show} onHide={handleClose} centered>
-          <Modal.Body>
-            <div
-              className="p-3 d-flex align-items-center"
-              onClick={() => {
-                onSignIn();
-                handleClose();
-              }}
-            >
-              <img
-                src={require("../../assets/img/partners/WalletConnect.13798276a43e02957131.png")}
-                alt="Wallet Connect Logo"
-                width={70}
-                height={70}
-                style={{ objectFit: "contain", margin: "5px" }}
-                borderRadius="3px"
-              />
-              <h6 className="text-light m-0">Wallet Connect</h6>
-            </div>
-            <div
-              className="p-3 d-flex align-items-center"
-              onClick={() => {
-                activate(Injected);
-                handleClose();
-              }}
-            >
-              <img
-                src={require("../../assets/img/partners/MetaMask Fox.900b5bef784601bc0be8.png")}
-                alt="Metamask Logo"
-                width={70}
-                height={70}
-                style={{ objectFit: "contain", margin: "5px" }}
-                borderRadius="3px"
-              />
-              <h6 className="text-light m-0"> Metamask</h6>
-            </div>
-          </Modal.Body>
-        </Modal>
       </>
     );
   };
