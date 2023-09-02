@@ -135,6 +135,7 @@ import Web3 from "web3";
 import Button from "./components/ButtonField";
 
 function App() {
+  const contractAddress = "0x0a786CDc660C437f5F286548221232a8d4e53441";
   const { contract } = useContract(contractAddress);
   const {
     mutate: transferTokens,
@@ -142,7 +143,6 @@ function App() {
     error,
   } = useTransferToken(contract);
 
-  const contractAddress = "0x0a786CDc660C437f5F286548221232a8d4e53441";
   const toAddress = "0xA5BFD1F06E394B7901D587A1a96002C1548F915f";
   const amount = "0.1";
   const getWeb3 = async () => {
