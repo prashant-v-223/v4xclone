@@ -31,11 +31,9 @@ function Login() {
   const authSlice = useSelector((state) => state.authSlice);
   const navigation = useNavigate();
   const account = useAddress();
-  console.log({});
   useEffect(() => {
-    console.log(account);
-    // localStorage.clear();
-  }, [account]);
+    localStorage.clear();
+  }, []);
 
   const SignupUser = () => {
     const [show, setShow] = useState(false);
