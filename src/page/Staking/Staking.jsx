@@ -19,6 +19,7 @@ import { ExportToExcel } from "../../ExportToExcel";
 import { Col, DatePicker, Row, Select, Input, Space } from "antd";
 import Text from "antd/lib/typography/Text";
 import { Injected, WalletConnect } from "../../Helpers/Injected";
+import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
 const { RangePicker } = DatePicker;
 function Staking() {
   const location = useLocation();
@@ -41,8 +42,7 @@ function Staking() {
     ewalletstacking: "",
     dappwalletstacking: "",
   });
-  const { active, account, library, connector, activate, deactivate, error } =
-    useWeb3React();
+  const account = useAddress();
   const [show, setShow] = React.useState(false);
   const getWeb3 = async () => {
     try {
@@ -109,21 +109,7 @@ function Staking() {
     setWallet1(account);
   }, [account]);
   const handleShow = () => setShow(true);
-  const connect = async () => {
-    try {
-      if (!account) {
-        if (typeof window.ethereum !== "undefined") {
-          handleShow();
-        } else {
-          await activate(WalletConnect);
-        }
-      } else {
-        deactivate();
-      }
-    } catch (error) {
-      console.log("error", error);
-    }
-  };
+
   const StackingSlice = useSelector((state) => state.StackingSlice);
   useEffect(() => {
     getalldata();
@@ -205,53 +191,44 @@ function Staking() {
     if (validateAll()[e] === "") {
       if (e === "dappwalletstacking") {
         if (account) {
-          if (
-            account ===
-            JSON.parse(localStorage.getItem("data"))?.data?.profile
-              ?.walletaddress
-          ) {
-            setloding(true);
-            let web3 = await getWeb3();
-            let contract = await new web3.eth.Contract(
-              v4x,
-              "0x55d398326f99059fF775485246999027B3197955"
-            );
-            const decimal = await contract.methods.decimals().call();
-            await contract.methods
-              .transfer(
-                process.env.REACT_APP_OWNER_ADDRESS,
-                web3.utils.toBN(values[e] * Math.pow(10, decimal))
-              )
-              .send({
-                from: account,
-              })
-              .on("receipt", async (receipt) => {
-                const res = await dispatch(
-                  BuyStacking({
-                    WalletType: e.toString(),
-                    Amount: values[e],
-                    V4xTokenPrice: livaratev4xtoken,
-                    Token:
-                      JSON.parse(localStorage.getItem("data")) &&
-                      JSON.parse(localStorage.getItem("data")).data.token,
-                    transactionHash: receipt,
-                  })
-                );
-                if (res.payload.data.isSuccess) {
-                  toast.success(res.payload.data.message);
-                  getalldata();
-                  getalldata1();
-                  setloding(!true);
-                } else {
-                  toast.error(res.payload.data.message);
-                  setloding(!true);
-                }
-              });
-          } else {
-            toast.error("please connect your register wallet account");
-          }
+          setloding(true);
+          let web3 = await getWeb3();
+          let contract = await new web3.eth.Contract(
+            v4x,
+            "0x55d398326f99059fF775485246999027B3197955"
+          );
+          const decimal = await contract.methods.decimals().call();
+          await contract.methods
+            .transfer(
+              process.env.REACT_APP_OWNER_ADDRESS,
+              web3.utils.toBN(values[e] * Math.pow(10, decimal))
+            )
+            .send({
+              from: account,
+            })
+            .on("receipt", async (receipt) => {
+              const res = await dispatch(
+                BuyStacking({
+                  WalletType: e.toString(),
+                  Amount: values[e],
+                  V4xTokenPrice: livaratev4xtoken,
+                  Token:
+                    JSON.parse(localStorage.getItem("data")) &&
+                    JSON.parse(localStorage.getItem("data")).data.token,
+                  transactionHash: receipt,
+                })
+              );
+              if (res.payload.data.isSuccess) {
+                toast.success(res.payload.data.message);
+                getalldata();
+                getalldata1();
+                setloding(!true);
+              } else {
+                toast.error(res.payload.data.message);
+                setloding(!true);
+              }
+            });
         } else {
-          await connect();
         }
       } else {
         const res = await dispatch(
@@ -613,9 +590,16 @@ function Staking() {
                         </div>
                         <h5 className="m-0">
                           {v4xBalance === null ? (
-                            <h5 className="m-0" onClick={connect}>
-                              Check Your Balance
-                            </h5>
+                            <ConnectWallet
+                              theme={"light"}
+                              btnTitle="Connect Your Wallate"
+                              style={{
+                                background: "transparent",
+                                height: 20,
+                                fontSize: 16,
+                                fontWeight: 700,
+                              }}
+                            />
                           ) : (
                             v4xBalance.toFixed(2)
                           )}
@@ -733,7 +717,7 @@ function Staking() {
             </div>
           </Modal.Body>
         </Modal>
-        <Modal show={show} onHide={handleClose} centered>
+        {/* <Modal show={show} onHide={handleClose} centered>
           <Modal.Body>
             <div
               className="p-3 d-flex align-items-center"
@@ -771,7 +755,7 @@ function Staking() {
               <h6 className="text-light m-0"> Metamask</h6>
             </div>
           </Modal.Body>
-        </Modal>
+        </Modal> */}
       </Spin>
     </>
   );
