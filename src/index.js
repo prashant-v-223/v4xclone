@@ -15,7 +15,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import { ThirdwebProvider, ChainId } from "@thirdweb-dev/react";
+import { ThirdwebProvider, ChainId, metamaskWallet, coinbaseWallet, walletConnect, localWallet, trustWallet } from "@thirdweb-dev/react";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const supportedChainIds = [1, 4, 137, 56];
 
@@ -26,6 +26,14 @@ root.render(
       supportedChainIds={supportedChainIds}
       clientId="4a554c9ae99ed5036b89278cf9b52843"
       secretKey="onGgdhv_TRztxsxN2s2prK4yzSpxk94Dnx151HEL_O0PRkYwmPMqmUEeEhB41chZtCHsW6P-V0QCh1kqVulEwg"
+       supportedWallets={[
+        metamaskWallet({
+        }),
+        coinbaseWallet(),
+        walletConnect(),
+        localWallet(),
+        trustWallet(),
+      ]}
     >
       <App />
     </ThirdwebProvider>
