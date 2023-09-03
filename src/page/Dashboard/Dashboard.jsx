@@ -73,13 +73,13 @@ const Dashboard = () => {
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
                     <img
-                      src={require("../../assets/img/Referrallink 1.png")}
+                      src={require("../../assets/img/username 1.png")}
                       alt=""
                     />
                   </div>
                   <div className=" d-flex h-50 h-md-100 flex-column justify-content-center">
                     <h4 className="pt-2 pt-lg-0 mb-2 text-center text-lg-left">
-                      Referral Code
+                      username
                     </h4>
                     <p className="text-center text-lg-left">
                       <b>{Profile[0]?.username}</b>
@@ -89,7 +89,7 @@ const Dashboard = () => {
                       style={{ background: "#02a2c4", position: "inherit" }}
                       onClick={() => {
                         navigator.clipboard.writeText(Profile[0]?.username);
-                        toast.success("Referral Code copy successfully.");
+                        toast.success("username copy successfully.");
                       }}
                     >
                       <MdContentCopy
@@ -105,31 +105,22 @@ const Dashboard = () => {
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
                     <img
-                      src={require("../../assets/img/username 1.png")}
+                      src={require("../../assets/img/Referrallink 1.png")}
                       alt=""
                     />
                   </div>
                   <div className=" d-flex h-50 h-md-100 flex-column justify-content-center">
                     <h4 className="pt-2 pt-lg-0  mb-2 text-center text-lg-left">
-                      Username
+                      Locked IAT Token
                     </h4>
                     <p className="text-center text-lg-left">
-                      <b>{Profile[0]?.username}</b>
+                      <b>
+                        {Number(
+                          StackingSlice.Wallatedata?.data?.mystack /
+                            StackingSlice.Wallatedata?.data?.V4Xtokenprice
+                        ).toFixed(3) + " IAT"}
+                      </b>
                     </p>
-                    <button
-                      className="text-light d-flex justify-content-center align-items-center px-4 py-2 "
-                      style={{ background: "#02a2c4", position: "inherit" }}
-                      onClick={() => {
-                        navigator.clipboard.writeText(Profile[0]?.username);
-                        toast.success("Username copy successfully.");
-                      }}
-                    >
-                      <MdContentCopy
-                        className="me-2"
-                        style={{ color: "#FFF", fontSize: "23px" }}
-                      />
-                      Click to copy
-                    </button>
                   </div>
                 </div>
               </div>

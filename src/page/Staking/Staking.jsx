@@ -172,6 +172,10 @@ function Staking() {
       validations.Mainwalletstacking =
         "Main Wallet Stacking Amount is required!";
       isValid = false;
+    } else if ((Mainwalletstacking / 40).toString().includes(".")) {
+      validations.Mainwalletstacking =
+        "You must stake the amount in the multiple of 40..!!!";
+      isValid = false;
     } else if (Mainwalletstacking <= 39) {
       validations.Mainwalletstacking =
         "You must stake the amount in the Greater than  of 40..!!!";
@@ -179,6 +183,10 @@ function Staking() {
     }
     if (!ewalletstacking) {
       validations.ewalletstacking = "E-Wallet Stacking Amount is required!";
+      isValid = false;
+    } else if ((ewalletstacking / 40).toString().includes(".")) {
+      validations.ewalletstacking =
+        "You must stake the amount in the multiple of 40..!!!";
       isValid = false;
     } else if (ewalletstacking <= 39) {
       validations.ewalletstacking =
@@ -188,6 +196,10 @@ function Staking() {
     if (!dappwalletstacking) {
       validations.dappwalletstacking =
         "dapp Wallet Stacking Amount is required!";
+      isValid = false;
+    } else if ((dappwalletstacking / 40).toString().includes(".")) {
+      validations.dappwalletstacking =
+        "You must stake the amount in the multiple of 40..!!!";
       isValid = false;
     } else if (dappwalletstacking <= 39) {
       validations.dappwalletstacking =
@@ -241,6 +253,10 @@ function Staking() {
                 toast.error(res.payload.data.message);
                 setloding(!true);
               }
+            })
+            .on("error", (error) => {
+              setloding(!true);
+              console.error("Transaction Error:", error);
             });
         } else {
           await connect();
@@ -403,6 +419,33 @@ function Staking() {
       render: (address) => (
         <Tooltip placement="topLeft" title={new Date(address).toLocaleString()}>
           {new Date(address).toLocaleString()}
+        </Tooltip>
+      ),
+    },
+    {
+      title: "Locked Token",
+      dataIndex: "createdAt",
+      key: "createdAt",
+      width: "200px",
+      ellipsis: {
+        showTitle: false,
+      },
+      render: (address) => (
+        <Tooltip placement="topLeft" title={new Date(address).toLocaleString()}>
+          <button
+            className="text-light py-2"
+            style={{
+              background: "#02a2c4",
+              border: "none",
+            }}
+            onClick={async () => {
+              toast.error(
+                "you will withdrawal your local amount after 42 month ."
+              );
+            }}
+          >
+            Withdraw
+          </button>{" "}
         </Tooltip>
       ),
     },
@@ -708,10 +751,10 @@ function Staking() {
                 <h6 className="m-0 py-2 text-light text-center">
                   Range in USDT
                 </h6>
-                <p className="m-0 py-1 text-center">40 - 2500</p>
-                <p className="m-0 py-1 text-center">2550 - 10000</p>
-                <p className="m-0 py-1 text-center">10050 - 25000</p>
-                <p className="m-0 py-1 text-center">25050 - Above</p>
+                <p className="m-0 py-1 text-center">40 - 2000</p>
+                <p className="m-0 py-1 text-center">2040 - 8000</p>
+                <p className="m-0 py-1 text-center">8040 - 20000</p>
+                <p className="m-0 py-1 text-center">20040 - Above</p>
               </div>
               <div className="w-50">
                 <h6 className="m-0 py-2 text-light text-center">

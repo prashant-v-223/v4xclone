@@ -12,14 +12,19 @@ import Navbar1 from "../../components/Navbar/Navbar";
 import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Checkbox, Spin } from "antd";
+import { FaEdit } from "react-icons/fa";
+
 function Profile() {
   const authSlice = useSelector((state) => state.authSlice);
   const dispatch = useDispatch();
   const navigation = useNavigate();
   const [modal2Open, setModal2Open] = useState(false);
+  const [imagePreviewUrl, setimagePreviewUrl] = useState(
+    "https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true"
+  );
   const [values, setValues] = React.useState({
     Email: "",
-    Emailforgot: JSON.parse(localStorage.getItem("data"))?.data?.profile?.email,
+    Emailforgot: "",
     Password: "",
   });
   const [validations, setValidations] = React.useState({
@@ -27,6 +32,43 @@ function Profile() {
     Emailforgot: "",
     Password: "",
   });
+  const ImgUpload = ({ onChange, src }) => (
+    <div
+      className=""
+      style={{
+        position: "relative",
+        width: "215px",
+        margin: "auto",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+      }}
+    >
+      <label htmlFor="photo-upload" className="custom-file-upload fas">
+        <div className="img-wrap img-upload">
+          <img for="photo-upload" src={src} />
+        </div>
+        <input id="photo-upload" type="file" onChange={onChange} />
+      </label>
+      <div
+        className="text-end pt-4"
+        style={{
+          position: "relative",
+          top: "-80px",
+          left: "-70px",
+          width: "40px",
+          height: "40px",
+          marginLeft: "auto",
+        }}
+      >
+        <FaEdit
+          className="text-light bg-primary p-2"
+          style={{ fontSize: 40, borderRadius: "50%" }}
+        />
+      </div>
+    </div>
+  );
 
   const validateAll = () => {
     const { Email, Password, Emailforgot } = values;
@@ -48,12 +90,9 @@ function Profile() {
     }
 
     if (!Emailforgot) {
-      validations.Emailforgot = "Email is required!";
+      validations.Emailforgot = "Nominee is required!";
     }
 
-    if (Emailforgot && !/\S+@\S+\.\S+/.test(Emailforgot)) {
-      validations.Emailforgot = "Email format must be as example@mail.com!";
-    }
     if (!Password) {
       validations.Password = "Password is required!";
       isValid = false;
@@ -76,7 +115,7 @@ function Profile() {
           name === "Reenterpassword" ? "Confirm Password" : name
         } is required!`;
       } else {
-        message = `Email is required!`;
+        message = `Nominee is required!`;
       }
     }
     if (value && name === "Email" && !/\S+@\S+\.\S+/.test(value)) {
@@ -102,7 +141,7 @@ function Profile() {
       Emailforgot: "",
     };
     if (!Emailforgot) {
-      validations.Emailforgot = "Email is required!";
+      validations.Emailforgot = "Nominee is required!";
     }
     if (Emailforgot && !/\S+@\S+\.\S+/.test(Emailforgot)) {
       validations.Emailforgot = "Email format must be as example@mail.com!";
@@ -139,7 +178,15 @@ function Profile() {
     Emailforgot: EmailforgotVal,
     Password: PasswordVal,
   } = validations;
-
+  const photoUpload = (e) => {
+    e.preventDefault();
+    const reader = new FileReader();
+    const file = e.target.files[0];
+    reader.onloadend = () => {
+      setimagePreviewUrl(reader.result);
+    };
+    reader.readAsDataURL(file);
+  };
   return (
     <>
       <Spin spinning={!authSlice.isLoader}>
@@ -160,6 +207,7 @@ function Profile() {
                 }}
               >
                 <h4 className="text-light px-3 pb-4">My Profile</h4>
+                <ImgUpload onChange={photoUpload} src={imagePreviewUrl} />
                 <div className="row ">
                   <div
                     className="col-12 col-md-8 py-3"
@@ -203,7 +251,6 @@ function Profile() {
                         class="form-control"
                         name="username"
                         placeholder="Wallet address"
-                        de
                         value={
                           JSON.parse(localStorage.getItem("data"))?.data
                             ?.profile?.username
@@ -266,6 +313,32 @@ function Profile() {
                       />
                     </div>
                   </div>
+                </div>{" "}
+                <div
+                  className="row py-3"
+                  style={{
+                    borderTop: "1px solid rgb(112 100 100)",
+                    borderBottom: "1px solid rgb(112 100 100)",
+                  }}
+                >
+                  <div className="col-12">
+                    <div class="inner-addon left-addon">
+                      <img
+                        src={require("../../assets/img/username 1.png")}
+                        alt=""
+                      />
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="Rank"
+                        value={
+                          JSON.parse(localStorage.getItem("data"))?.data
+                            ?.profile?.Nominee
+                        }
+                        disabled
+                      />
+                    </div>
+                  </div>
                 </div>
                 <div className="col-12 pt-5">
                   <button
@@ -276,7 +349,7 @@ function Profile() {
                     }}
                     onClick={() => setModal2Open(true)}
                   >
-                    Change Password
+                    Add Nominee
                   </button>
                 </div>
                 <Modal
@@ -285,20 +358,15 @@ function Profile() {
                   centered
                 >
                   <Modal.Header closeButton>
-                    <Modal.Title>Reset Password</Modal.Title>
+                    <Modal.Title>Add Nominee</Modal.Title>
                   </Modal.Header>
 
                   <Modal.Body>
-                    <p>
-                      Enter the email associated with your account and We will
-                      send an email with instructions to reset your password.
-                    </p>
                     <InputField
                       type="text"
                       name="Emailforgot"
-                      placeholder="Enter e-mail address"
+                      placeholder="Enter Nominee name"
                       value={Emailforgot}
-                      disabled={true}
                       error={EmailforgotVal}
                       icons={<MailFilled />}
                       onChange={handleChange}

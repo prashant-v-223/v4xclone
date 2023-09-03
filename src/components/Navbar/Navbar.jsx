@@ -337,7 +337,7 @@ function Navbar1() {
                     className="ms-2 me-3"
                     style={{ color: "#02a2c4", fontSize: "20px" }}
                   />
-                  Main Withdrawal Report
+                  Main Wallet Report
                 </Dropdown.Item>
                 <Dropdown.Item
                   className="py-2"
@@ -349,9 +349,9 @@ function Navbar1() {
                     className="ms-2 me-3"
                     style={{ color: "#02a2c4", fontSize: "20px" }}
                   />
-                  E-Withdrawal Report
+                  E-Wallet Report
                 </Dropdown.Item>{" "}
-                <Dropdown.Item
+                {/* <Dropdown.Item
                   className="py-2"
                   onClick={() => {
                     navigation("/Withdrdata");
@@ -363,7 +363,7 @@ function Navbar1() {
                     style={{ color: "#02a2c4", fontSize: "20px" }}
                   />
                   Withdraw Details
-                </Dropdown.Item>
+                </Dropdown.Item> */}
                 <Dropdown.Item
                   className="py-2"
                   onClick={() => {
