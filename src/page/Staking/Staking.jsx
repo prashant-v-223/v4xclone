@@ -229,7 +229,7 @@ function Staking() {
                   Token:
                     JSON.parse(localStorage.getItem("data")) &&
                     JSON.parse(localStorage.getItem("data")).data.token,
-                  transactionHash: receipt,
+                  transactionHash: receipt.transactionHash,
                 })
               );
               if (res.payload.data.isSuccess) {
