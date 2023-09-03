@@ -81,7 +81,7 @@ export const HowItWorksInfo = [
     title: "Refer Friends and Family to Earn more",
     img: superfastmatchengine,
     subtita:
-      "You can refer your friends and family on Infinity.AI to get more benifits. Everytime your referral stakes Infinity.AI Token, referrer gets rewards.",
+      "You can refer your friends and family on Infinity.AI to get more benifits. Everytime your referral stakes Infinity.AI Coin, referrer gets rewards.",
   },
   {
     classIco: "icon ti-settings",
@@ -178,16 +178,16 @@ export const timelineInfo = [
     IsTowLi: false,
     IsThreeLi: false,
     IsFourLi: true,
-    TextFourLi1: "Infinity.AI Token Development Over BEP-20 Network",
-    TextFourLi2: "WORLD WIDE Infinity.AI Token WEB LAUNCH FOR OUR USER",
-    TextFourLi3: "Infinity.AI Token MOBILE APPLICATION",
+    TextFourLi1: "Infinity.AI Coin Development Over BEP-20 Network",
+    TextFourLi2: "WORLD WIDE Infinity.AI Coin WEB LAUNCH FOR OUR USER",
+    TextFourLi3: "Infinity.AI Coin MOBILE APPLICATION",
     TextFourLi4:
-      "LISTING OF Infinity.AI Token ON DECENTRALISED EXCHANGE i.e. PANCAKESWAP, DEXTOOLS, NOMICS",
+      "LISTING OF Infinity.AI Coin ON DECENTRALISED EXCHANGE i.e. PANCAKESWAP, DEXTOOLS, NOMICS",
     TextFourLi5:
-      "Infinity.AI Token CEX (CRYPTO EXCHANGE WITH SPOT TRADING, MARKET TRADING LIMIT TRADING, AND P2P)",
+      "Infinity.AI Coin CEX (CRYPTO EXCHANGE WITH SPOT TRADING, MARKET TRADING LIMIT TRADING, AND P2P)",
     TextFourLi6:
-      "Infinity.AI Token LOGO AND SOCIAL MEDIA VERIFICATION ON BSC SCAN & METAMASK  ",
-    TextFourLi7: "Infinity.AI Token BLOCKCHAIN DEVELOPMENT",
+      "Infinity.AI Coin LOGO AND SOCIAL MEDIA VERIFICATION ON BSC SCAN & METAMASK  ",
+    TextFourLi7: "Infinity.AI Coin BLOCKCHAIN DEVELOPMENT",
     img: HomeDemo3RoadmapIcons2,
   },
   {
@@ -196,8 +196,8 @@ export const timelineInfo = [
     date: "Juky-Sep 2023",
     IsSpan: false,
     IsTowLi: true,
-    TextTowLi1: "Infinity.AI Token LISTING ON COINGECKO",
-    TextTowLi2: "Infinity.AI Token META GAMING PLATFORM",
+    TextTowLi1: "Infinity.AI Coin LISTING ON COINGECKO",
+    TextTowLi2: "Infinity.AI Coin META GAMING PLATFORM",
     IsThreeLi: false,
     IsFourLi: false,
     img: HomeDemo3RoadmapIcons3,
@@ -210,7 +210,7 @@ export const timelineInfo = [
     IsTowLi: false,
     IsThreeLi: true,
     TextThreeLi1: "TV & DIGITAL AD TO INCREASE GLOBAL Infinity.AI COMUNITY",
-    TextThreeLi2: "Infinity.AI Token LISTING ON COIN MARKET CAP",
+    TextThreeLi2: "Infinity.AI Coin LISTING ON COIN MARKET CAP",
     IsFourLi: false,
     img: HomeDemo3RoadmapIcons4,
   },
@@ -242,7 +242,7 @@ export const timelineInfo = [
     IsSpan: false,
     IsTowLi: false,
     IsThreeLi: true,
-    TextThreeLi1: "GLOBAL LAUNCH OF Infinity.AI Token DECENTRALISED WALLET",
+    TextThreeLi1: "GLOBAL LAUNCH OF Infinity.AI Coin DECENTRALISED WALLET",
     TextThreeLi2: "NFT MARKETPLACE",
     IsFourLi: false,
     img: HomeDemo3RoadmapIcons6,
@@ -254,8 +254,8 @@ export const timelineInfo = [
     IsSpan: false,
     IsTowLi: false,
     IsThreeLi: true,
-    TextThreeLi1: "Infinity.AI Token MULTI UTILITY APPLICATION FOR INSTANT USE Infinity.AI Token",
-    TextThreeLi2: "LAUNCHING Infinity.AI Token BLOCKCHAIN",
+    TextThreeLi1: "Infinity.AI Coin MULTI UTILITY APPLICATION FOR INSTANT USE Infinity.AI Coin",
+    TextThreeLi2: "LAUNCHING Infinity.AI Coin BLOCKCHAIN",
     IsFourLi: false,
     img: HomeDemo3RoadmapIcons7,
   },
@@ -266,7 +266,7 @@ export const timelineInfo = [
     IsSpan: false,
     IsTowLi: false,
     IsThreeLi: true,
-    TextThreeLi1: "LISTING OF Infinity.AI Token ON BINANCE",
+    TextThreeLi1: "LISTING OF Infinity.AI Coin ON BINANCE",
     IsFourLi: false,
     img: HomeDemo3RoadmapIcons8,
   },
@@ -327,7 +327,7 @@ export const SocialListIco = [
 
 export const FQAInfo = [
   {
-    text: "What is Infinity.AI Token?",
+    text: "What is Infinity.AI Coin?",
     ID: "Q1",
   },
   {
@@ -335,15 +335,15 @@ export const FQAInfo = [
     ID: "Q2",
   },
   {
-    text: "Which Network Infinity.AI Token Operates on?",
+    text: "Which Network Infinity.AI Coin Operates on?",
     ID: "Q3",
   },
   {
-    text: "How Can I Buy Infinity.AI Token?",
+    text: "How Can I Buy Infinity.AI Coin?",
     ID: "Q4",
   },
   {
-    text: "How Can I Trade Infinity.AI Token?",
+    text: "How Can I Trade Infinity.AI Coin?",
     ID: "Q5",
   },
   {

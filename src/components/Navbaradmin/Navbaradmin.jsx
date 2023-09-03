@@ -165,7 +165,7 @@ function Navbar1() {
                   className="ms-2 me-3"
                   style={{ color: "#02a2c4", fontSize: "20px" }}
                 />
-              Infinity.AI Token price
+              Infinity.AI Coin price
             </Nav.Link>
             <Nav.Link
               className="d-flex justify-content-start align-items-center  py-3 text-light"

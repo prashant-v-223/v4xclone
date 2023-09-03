@@ -101,7 +101,7 @@ const SecWelcomeArea = () => {
                           }}
                         >
                           <p className="m-0">
-                            Scan this QR to import <br /> Infinity.AI Token to your
+                            Scan this QR to import <br /> Infinity.AI Coin to your
                             wallet
                           </p>
                         </button>
@@ -140,7 +140,7 @@ const SecWelcomeArea = () => {
                           }}
                         >
                           <p className="m-0 text-center">
-                            Scan this QR to import <br /> Infinity.AI Token to
+                            Scan this QR to import <br /> Infinity.AI Coin to
                             your wallet
                           </p>
                         </button>

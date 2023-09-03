@@ -379,7 +379,7 @@ function Staking() {
       },
     },
     {
-      title: "Infinity.Ai Token Price",
+      title: "Infinity.AI Coin Price",
       dataIndex: "V4xTokenPrice",
       key: "V4xTokenPrice",
       width: "200px",

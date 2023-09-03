@@ -438,7 +438,7 @@ function Login() {
                       >
                         Terms and Conditions
                       </a>
-                      of Infinity.AI Token
+                      of Infinity.AI Coin
                     </p>
                   </div>
                   <p className="">

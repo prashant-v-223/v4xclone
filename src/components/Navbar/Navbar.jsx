@@ -160,7 +160,7 @@ function Navbar1() {
                 className="ms-2 me-3"
                 style={{ color: "#02a2c4", fontSize: "20px" }}
               />
-              Stake Infinity.AI Token
+              Stake Infinity.AI Coin
             </Nav.Link>
             <Nav.Link
               className="d-flex justify-content-start align-items-center  py-3 text-light"
@@ -254,7 +254,7 @@ function Navbar1() {
                       className="ms-2 me-3"
                       style={{ color: "#02a2c4", fontSize: "20px" }}
                     />
-                    Infinity.AI Token Live Price
+                    Infinity.AI Coin Live Price
                   </Dropdown.Item>
                   <Dropdown.Item
                     className="py-2"
@@ -267,7 +267,7 @@ function Navbar1() {
                       className="ms-2 me-3"
                       style={{ color: "#02a2c4", fontSize: "20px" }}
                     />
-                    Transfer Infinity.AI Token
+                    Transfer Infinity.AI Coin
                   </Dropdown.Item>
                   <Dropdown.Item
                     className="py-2"
