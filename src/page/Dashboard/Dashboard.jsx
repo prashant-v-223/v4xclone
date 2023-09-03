@@ -21,6 +21,7 @@ import { Allstacking } from "../../Redux/StackingSlice";
 const Dashboard = () => {
   const location = useLocation();
   const StackingSlice = useSelector((state) => state.WallatedatSlice);
+  const [address, setaddress] = React.useState("");
   const [open, setopen] = React.useState(false);
   const [Alldata, setAlldata] = React.useState([]);
   const [otp, setotp] = React.useState("");
@@ -80,7 +81,9 @@ const Dashboard = () => {
                     <h4 className="pt-2 pt-lg-0 mb-2 text-center text-lg-left">
                       Referral Code
                     </h4>
-                    <p className="text-center text-lg-left"><b>{Profile[0]?.username}</b></p>
+                    <p className="text-center text-lg-left">
+                      <b>{Profile[0]?.username}</b>
+                    </p>
                     <button
                       className="text-light d-flex justify-content-center align-items-center px-4 py-2 "
                       style={{ background: "#02a2c4", position: "inherit" }}
@@ -110,7 +113,9 @@ const Dashboard = () => {
                     <h4 className="pt-2 pt-lg-0  mb-2 text-center text-lg-left">
                       Username
                     </h4>
-                    <p className="text-center text-lg-left"><b>{Profile[0]?.username}</b></p>
+                    <p className="text-center text-lg-left">
+                      <b>{Profile[0]?.username}</b>
+                    </p>
                     <button
                       className="text-light d-flex justify-content-center align-items-center px-4 py-2 "
                       style={{ background: "#02a2c4", position: "inherit" }}
@@ -343,7 +348,7 @@ const Dashboard = () => {
             <Modal show={open} onHide={() => setopen(!open)} centered>
               <Modal.Header closeButton>
                 <Modal.Title>
-                  <h6 className="text-light m-0">ENTER YOUR OTP</h6>
+                  <h6 className="text-light m-0"></h6>
                 </Modal.Title>
               </Modal.Header>
               <Modal.Body>
@@ -351,10 +356,21 @@ const Dashboard = () => {
                   type="number"
                   name="Amount1"
                   value={otp}
-                  placeholder="enter your otp"
+                  placeholder="Enter Your OTP"
                   pattern="[0-9]*"
                   onChange={(e) => {
                     setotp(e.target.value);
+                  }}
+                  style={{ border: "1px solid #fff" }}
+                />
+                <InputField
+                  type="text"
+                  name="Amount1"
+                  value={address}
+                  placeholder="Enter Your Wallate Address"
+                  pattern="[0-9]*"
+                  onChange={(e) => {
+                    setaddress(e.target.value);
                   }}
                   style={{ border: "1px solid #fff" }}
                 />
@@ -362,7 +378,7 @@ const Dashboard = () => {
                   className={" w-100 text-light"}
                   Stake={!false}
                   style={{
-                    background: "#02a2c4",
+                    background: "#1a1a1a",
                     height: 60,
                     border: "none",
                   }}
@@ -372,6 +388,7 @@ const Dashboard = () => {
                     const res = await dispatch(
                       getdappWallatedata1({
                         otp: otp,
+                        walletaddress: address,
                         Amount: 10,
                         Remark: "Airdrop wallate",
                         Token:
