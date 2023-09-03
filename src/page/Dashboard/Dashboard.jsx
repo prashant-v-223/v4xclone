@@ -77,9 +77,10 @@ const Dashboard = () => {
                     />
                   </div>
                   <div className=" d-flex h-50 h-md-100 flex-column justify-content-center">
-                    <h4 className="pt-2 pt-lg-0 pb-4 mb-2 text-center">
+                    <h4 className="pt-2 pt-lg-0 mb-2 text-center text-lg-left">
                       Referral Code
                     </h4>
+                    <p className="text-center text-lg-left"><b>{Profile[0]?.username}</b></p>
                     <button
                       className="text-light d-flex justify-content-center align-items-center px-4 py-2 "
                       style={{ background: "#02a2c4", position: "inherit" }}
@@ -106,9 +107,10 @@ const Dashboard = () => {
                     />
                   </div>
                   <div className=" d-flex h-50 h-md-100 flex-column justify-content-center">
-                    <h4 className="pt-2 pt-lg-0 pb-4 mb-2 text-center">
+                    <h4 className="pt-2 pt-lg-0  mb-2 text-center text-lg-left">
                       Username
                     </h4>
+                    <p className="text-center text-lg-left"><b>{Profile[0]?.username}</b></p>
                     <button
                       className="text-light d-flex justify-content-center align-items-center px-4 py-2 "
                       style={{ background: "#02a2c4", position: "inherit" }}
