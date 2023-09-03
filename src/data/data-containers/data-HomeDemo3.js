@@ -389,7 +389,7 @@ export const TokenText = [
     // img:HomeDemo3TokenIcon1
   },
   {
-    text: "Contract Language : Solidity",
+    text: "Contract Language : BEP 20",
     // img:HomeDemo3TokenIcon1
   },
 ];
