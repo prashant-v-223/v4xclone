@@ -236,7 +236,11 @@ function Withdrawal() {
                         <InputField
                           type="text"
                           name="Walletaddress"
-                          placeholder="IAT Balance in Main Wallet"
+                          placeholder={
+                            Wallet === "Main Wallet"
+                              ? "USDT Balance in Main Wallet"
+                              : "USDT Balance in E-Wallet"
+                          }
                           value={
                             Wallet === "Main Wallet"
                               ? WallatedatSlice.Wallatedata?.data?.data[0]
