@@ -222,7 +222,7 @@ function Withdrawal() {
                           type="number"
                           name="Amount"
                           min={0}
-                          placeholder="Enter Amount of IAT Coin to Transfer"
+                          placeholder="Enter Amount of USDT Coin to Transfer"
                           value={Amount}
                           pattern="[0-9]*"
                           error={AmountVal}
@@ -317,7 +317,12 @@ function Withdrawal() {
                         </div>
                         <div className="px-3 py-2 py-lg-0">
                           <h6 className="m-0 text-light text-center">
-                            {Alldata[0]?.mainWallet} USDT
+                            {Alldata[0]?.mainWallet?.toFixed(4)} USDT ={" "}
+                            {Number(
+                              Alldata[0]?.mainWallet /
+                                WallatedatSlice.Wallatedata?.data?.V4Xtokenprice
+                            )?.toFixed(4) + " "}
+                            {"IAT"}
                           </h6>
                         </div>
                       </div>
@@ -399,7 +404,7 @@ function Withdrawal() {
                     <div className="row py-1">
                       <div className="col-12 col-sm-9 text-light">
                         <label htmlFor="" className="mb-1">
-                          Amount in IAT
+                          <b>Amount in IAT</b>
                         </label>
                         <InputNumber
                           size="large"
