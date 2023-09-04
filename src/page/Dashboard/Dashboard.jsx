@@ -249,7 +249,7 @@ const Dashboard = () => {
                     <h6 className="text-center">
                       {Profile && Profile[0]?.Airdropped} You Transfer coin
                     </h6>
-                    <button
+{/*                     <button
                       className="text-light"
                       style={{
                         background: "#02a2c4",
@@ -275,7 +275,7 @@ const Dashboard = () => {
                       }}
                     >
                       Withdraw
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>
