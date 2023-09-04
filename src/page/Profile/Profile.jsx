@@ -131,7 +131,7 @@ function Profile() {
   };
   const data = async () => {
     let reqOptions = {
-      url: `http://localhost:8080/api/registration/profile:${
+      url: `https://ablcbackend-production-2705.up.railway.app/api/registration/profile:${
         JSON.parse(localStorage.getItem("data")) &&
         JSON.parse(localStorage.getItem("data")).data.token
       }`,
@@ -197,7 +197,7 @@ function Profile() {
         toast.success(res.payload.data.message);
         setModal2Open(!modal2Open);
         let reqOptions = {
-          url: `http://localhost:8080/api/registration/profile:${
+          url: `https://ablcbackend-production-2705.up.railway.app/api/registration/profile:${
             JSON.parse(localStorage.getItem("data1")) &&
             JSON.parse(localStorage.getItem("data1")).data.token
           }`,
