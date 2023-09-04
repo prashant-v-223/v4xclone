@@ -266,7 +266,7 @@ function Withdrawal() {
                       </div>
                     </div>
                   </div>
-                  {/* <div className="Boxcard p-4 my-4">
+                  <div className="Boxcard p-4 my-4">
                     <h6 className="text-light d-flex pb-3">
                       View your transfer reports here
                     </h6>
@@ -283,7 +283,7 @@ function Withdrawal() {
                         navigation("/transfer/income");
                       }}
                     />
-                  </div> */}
+                  </div>
                 </div>
                 <div className="col-12 col-md-6 pb-4 pb-md-0">
                   <div className="Boxcard p-4">
@@ -407,7 +407,7 @@ function Withdrawal() {
                     </div>
                     <div className="row py-1">
                       <div className="col-12 col-sm-9 text-light">
-                        <label htmlFor="" className="mb-1">
+                        <label htmlFor="" className="mb-1 text-light">
                           <b>Amount in IAT</b>
                         </label>
                         <InputNumber
@@ -452,7 +452,7 @@ function Withdrawal() {
                       </div>
                     </div>
                   </div>
-                  {/* <div className="Boxcard p-4 my-4">
+                  <div className="Boxcard p-4 my-4">
                     <h6 className="text-light d-flex pb-3">
                       Withdraw Infinity.AI Coin
                     </h6>
@@ -464,9 +464,12 @@ function Withdrawal() {
                         height: 60,
                         border: "none",
                       }}
+                      onClick={() => {
+                        navigation("/Withdrdata");
+                      }}
                       label={"IAT Main Wallet Withdrawal Report"}
                     />
-                  </div> */}
+                  </div>
                 </div>
               </div>
             </div>

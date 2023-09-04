@@ -49,6 +49,24 @@ export const Foegotpassword = createAsyncThunk(
     }
   }
 );
+export const profileupdate = createAsyncThunk(
+  "auth/Foegotpassword",
+  async (data) => {
+    try {
+      const res = await POST(apiList.profileupdate,
+        {
+          address: data.address,
+          profileimg: data.profileimg,
+          Nominee: data.Nominee,
+        },
+        data.Token
+      );
+      return res;
+    } catch (e) {
+      return e.response;
+    }
+  }
+);
 export const ChangePassword = createAsyncThunk(
   "auth/ChangePassword",
   async (data) => {
@@ -93,6 +111,22 @@ export const CitySlice = createSlice({
         state.isLoader = !false;
       } else {
         state.stateData = action.error;
+        state.isLoader = !false;
+      }
+    }, [profileupdate.fulfilled]: (state, action) => {
+      if (action.payload) {
+        state.isLoader = !false;
+      } else {
+        state.isLoader = !false;
+      }
+    },
+    [profileupdate.pending]: (state, action) => {
+      state.isLoader = false;
+    },
+    [profileupdate.rejected]: (state, action) => {
+      if (action.payload) {
+        state.isLoader = !false;
+      } else {
         state.isLoader = !false;
       }
     },

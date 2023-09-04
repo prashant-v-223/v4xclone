@@ -433,9 +433,9 @@ function Staking() {
       render: (address) => (
         <Tooltip placement="topLeft" title={new Date(address).toLocaleString()}>
           <button
-            className="text-light py-2"
+            className="text-light p-2"
             style={{
-              background: "#02a2c4",
+              background: "#1e1e1e",
               border: "none",
             }}
             onClick={async () => {

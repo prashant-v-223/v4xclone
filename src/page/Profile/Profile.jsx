@@ -4,7 +4,12 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { Modal } from "react-bootstrap";
 import InputField from "../../components/InputField";
-import { Foegotpassword, Signin, Signup } from "../../Redux/authSlice";
+import {
+  Foegotpassword,
+  Signin,
+  Signup,
+  profileupdate,
+} from "../../Redux/authSlice";
 import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
 import { WalletFilled, MailFilled } from "@ant-design/icons";
@@ -13,6 +18,15 @@ import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Checkbox, Spin } from "antd";
 import { FaEdit } from "react-icons/fa";
+import {
+  ref,
+  uploadBytes,
+  getDownloadURL,
+  listAll,
+  list,
+} from "firebase/storage";
+import { storage } from "../../firebase";
+import { v4 } from "uuid";
 
 function Profile() {
   const authSlice = useSelector((state) => state.authSlice);
@@ -20,18 +34,45 @@ function Profile() {
   const navigation = useNavigate();
   const [modal2Open, setModal2Open] = useState(false);
   const [imagePreviewUrl, setimagePreviewUrl] = useState(
-    "https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true"
+    JSON.parse(localStorage.getItem("data1"))?.data?.profile?.profileimg === ""
+      ? "https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true"
+      : JSON.parse(localStorage.getItem("data1"))?.data?.profile?.profileimg
   );
+  const [Data, setData] = useState("");
   const [values, setValues] = React.useState({
     Email: "",
     Emailforgot: "",
+    address: "",
     Password: "",
   });
   const [validations, setValidations] = React.useState({
     Email: "",
     Emailforgot: "",
+    address: "",
     Password: "",
   });
+  const handleChange1 = (info) => {
+    const imageRef = ref(storage, `${info.target.files[0].name + v4()}`);
+    uploadBytes(imageRef, info.target.files[0]).then((snapshot) => {
+      getDownloadURL(snapshot.ref).then(async (url) => {
+        console.log(url);
+        let bodyContent = {
+          profileimg: url,
+        };
+        let headersList = {
+          Accept: "*/*",
+          Authorization: `Bearer ${
+            JSON.parse(localStorage.getItem("data")) &&
+            JSON.parse(localStorage.getItem("data")).data.token
+          }`,
+          "Content-Type": "application/json",
+        };
+        console.log("url", url);
+        setData(url);
+        toast.success("img upload successfully");
+      });
+    });
+  };
   const ImgUpload = ({ onChange, src }) => (
     <div
       className=""
@@ -49,33 +90,19 @@ function Profile() {
         <div className="img-wrap img-upload">
           <img for="photo-upload" src={src} />
         </div>
-        <input id="photo-upload" type="file" onChange={onChange} />
       </label>
-      <div
-        className="text-end pt-4"
-        style={{
-          position: "relative",
-          top: "-80px",
-          left: "-70px",
-          width: "40px",
-          height: "40px",
-          marginLeft: "auto",
-        }}
-      >
-        <FaEdit
-          className="text-light bg-primary p-2"
-          style={{ fontSize: 40, borderRadius: "50%" }}
-        />
-      </div>
     </div>
   );
-
+  useEffect(() => {
+    data();
+  }, []);
   const validateAll = () => {
     const { Email, Password, Emailforgot } = values;
     const validations = {
       Email: "",
       Password: "",
       Emailforgot: "",
+      address: "",
     };
     let isValid = true;
 
@@ -83,9 +110,8 @@ function Profile() {
       validations.Email = "Email is required!";
       isValid = false;
     }
-
-    if (Email && !/\S+@\S+\.\S+/.test(Email)) {
-      validations.Email = "Email format must be as example@mail.com!";
+    if (!address) {
+      validations.address = "Email is required!";
       isValid = false;
     }
 
@@ -103,7 +129,18 @@ function Profile() {
 
     return isValid;
   };
+  const data = async () => {
+    let reqOptions = {
+      url: `http://localhost:8080/api/registration/profile:${
+        JSON.parse(localStorage.getItem("data")) &&
+        JSON.parse(localStorage.getItem("data")).data.token
+      }`,
+      method: "GET",
+    };
 
+    let response = await axios.request(reqOptions);
+    localStorage.setItem("data1", JSON.stringify({ data: response.data }));
+  };
   const validateOne = (e) => {
     const { name } = e.target;
     const value = values[name];
@@ -121,9 +158,6 @@ function Profile() {
     if (value && name === "Email" && !/\S+@\S+\.\S+/.test(value)) {
       message = "Email format must be as example@mail.com!";
     }
-    if (value && name === "Emailforgot" && !/\S+@\S+\.\S+/.test(value)) {
-      message = "Email format must be as example@mail.com!";
-    }
     if (value && name === "Reenterpassword" && value !== values.Password) {
       message = "Passwords must match!";
     }
@@ -139,19 +173,40 @@ function Profile() {
       Email: "",
       Password: "",
       Emailforgot: "",
+      address: "",
     };
     if (!Emailforgot) {
       validations.Emailforgot = "Nominee is required!";
     }
-    if (Emailforgot && !/\S+@\S+\.\S+/.test(Emailforgot)) {
-      validations.Emailforgot = "Email format must be as example@mail.com!";
+    if (!address) {
+      validations.address = "address is required!";
     }
     setValidations(validations);
     if (validations.Emailforgot === "") {
-      setModal2Open(!modal2Open);
-      const res = await dispatch(Foegotpassword({ email: values.Emailforgot }));
+      const res = await dispatch(
+        profileupdate({
+          Nominee: values.Emailforgot,
+          address: values.address,
+          profileimg: Data,
+          Token:
+            JSON.parse(localStorage.getItem("data1")) &&
+            JSON.parse(localStorage.getItem("data1")).data.token,
+        })
+      );
       if (res.payload.data.isSuccess) {
         toast.success(res.payload.data.message);
+        setModal2Open(!modal2Open);
+        let reqOptions = {
+          url: `http://localhost:8080/api/registration/profile:${
+            JSON.parse(localStorage.getItem("data1")) &&
+            JSON.parse(localStorage.getItem("data1")).data.token
+          }`,
+          method: "GET",
+        };
+
+        let response = await axios.request(reqOptions);
+        console.log(response.data);
+        localStorage.setItem("data", JSON.stringify({ data: response.data }));
       } else {
         toast.error(res.payload.data.message);
       }
@@ -172,10 +227,11 @@ function Profile() {
       toast.error(res.payload.data.message);
     }
   };
-  const { Email, Emailforgot, Password } = values;
+  const { Email, Emailforgot, address, Password } = values;
   const {
     Email: EmailVal,
     Emailforgot: EmailforgotVal,
+    address: addressVal,
     Password: PasswordVal,
   } = validations;
   const photoUpload = (e) => {
@@ -227,7 +283,7 @@ function Profile() {
                         name="email"
                         placeholder="Wallet address"
                         value={
-                          JSON.parse(localStorage.getItem("data"))?.data
+                          JSON.parse(localStorage.getItem("data1"))?.data
                             ?.profile?.email
                         }
                         disabled
@@ -252,7 +308,7 @@ function Profile() {
                         name="username"
                         placeholder="Wallet address"
                         value={
-                          JSON.parse(localStorage.getItem("data"))?.data
+                          JSON.parse(localStorage.getItem("data1"))?.data
                             ?.profile?.username
                         }
                         disabled
@@ -279,7 +335,7 @@ function Profile() {
                         name="walletaddress"
                         placeholder="Wallet address"
                         value={
-                          JSON.parse(localStorage.getItem("data"))?.data
+                          JSON.parse(localStorage.getItem("data1"))?.data
                             ?.profile?.walletaddress
                         }
                         disabled
@@ -306,7 +362,7 @@ function Profile() {
                         name="Rank"
                         placeholder="Wallet address"
                         value={
-                          JSON.parse(localStorage.getItem("data"))?.data
+                          JSON.parse(localStorage.getItem("data1"))?.data
                             ?.profile?.Rank
                         }
                         disabled
@@ -332,8 +388,34 @@ function Profile() {
                         class="form-control"
                         name="Rank"
                         value={
-                          JSON.parse(localStorage.getItem("data"))?.data
+                          JSON.parse(localStorage.getItem("data1"))?.data
                             ?.profile?.Nominee
+                        }
+                        disabled
+                      />
+                    </div>
+                  </div>
+                </div>{" "}
+                <div
+                  className="row py-3"
+                  style={{
+                    borderTop: "1px solid rgb(112 100 100)",
+                    borderBottom: "1px solid rgb(112 100 100)",
+                  }}
+                >
+                  <div className="col-12">
+                    <div class="inner-addon left-addon">
+                      <img
+                        src={require("../../assets/img/myteam 1.png")}
+                        alt=""
+                      />
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="Rank"
+                        value={
+                          JSON.parse(localStorage.getItem("data1"))?.data
+                            ?.profile?.address
                         }
                         disabled
                       />
@@ -349,7 +431,7 @@ function Profile() {
                     }}
                     onClick={() => setModal2Open(true)}
                   >
-                    Add Nominee
+                    Edit profile
                   </button>
                 </div>
                 <Modal
@@ -358,7 +440,7 @@ function Profile() {
                   centered
                 >
                   <Modal.Header closeButton>
-                    <Modal.Title>Add Nominee</Modal.Title>
+                    <Modal.Title></Modal.Title>
                   </Modal.Header>
 
                   <Modal.Body>
@@ -368,6 +450,32 @@ function Profile() {
                       placeholder="Enter Nominee name"
                       value={Emailforgot}
                       error={EmailforgotVal}
+                      icons={<MailFilled />}
+                      onChange={handleChange}
+                      onBlur={validateOne}
+                      style={{
+                        border: "1px solid #fff",
+                      }}
+                    />
+                    <p className="m-0 pb-2 text-light">
+                      Add photo ( PNG / JPEG )
+                    </p>
+                    <div class="" style={{ width: 250 }}>
+                      <input
+                        className={`form-control`}
+                        name="img"
+                        type="file"
+                        id="floatingInput"
+                        onChange={(e) => handleChange1(e)}
+                        placeholder="Data.name"
+                      />
+                    </div>
+                    <InputField
+                      type="address"
+                      name="address"
+                      placeholder="Enter address"
+                      value={address}
+                      error={addressVal}
                       icons={<MailFilled />}
                       onChange={handleChange}
                       onBlur={validateOne}
