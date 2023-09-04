@@ -167,7 +167,12 @@ const Dashboard = () => {
             <div className="row px-3 py-3 justify-content-lg-center">
               <div className="col-12 col-lg-3 text-light py-2">
                 <div className="Boxcard p-4 d-block d-lg-flex flex-column  justify-content-space-around align-items-center h-100 ">
-                  <div className="pb-2 pb-lg-0 d-flex  justify-content-center align-items-center h-50 h-md-100">
+                  <div
+                    className="pb-2 pb-lg-0 d-flex  justify-content-center align-items-center h-50 h-md-100"
+                    onClick={() => {
+                      navigation("/Totaltrem");
+                    }}
+                  >
                     <img
                       src={require("../../assets/img/totalteaminvestment 1.png")}
                       alt=""
@@ -175,7 +180,14 @@ const Dashboard = () => {
                     />
                   </div>
                   <div className="d-flex h-50 h-md-100 flex-column justify-content-center">
-                    <h6 className="pt-3 text-center">Team Total Investment</h6>
+                    <h6
+                      className="pt-3 text-center"
+                      onClick={() => {
+                        navigation("/Totaltrem");
+                      }}
+                    >
+                      Team Total Investment
+                    </h6>
                     <h6 className="text-center">
                       {StackingSlice.Wallatedata?.data?.teamtotalstack
                         ? StackingSlice.Wallatedata?.data?.teamtotalstack
@@ -187,7 +199,15 @@ const Dashboard = () => {
               </div>
               <div className="col-12 col-lg-3 text-light py-2">
                 <div className="Boxcard p-4 d-block d-lg-flex flex-column  justify-content-space-around align-items-center h-100 ">
-                  <div className="pb-2 pb-lg-0 d-flex  justify-content-center align-items-center h-50 h-md-100">
+                  <div
+                    className="pb-2 pb-lg-0 d-flex  justify-content-center align-items-center h-50 h-md-100"
+                    style={{
+                      cursor: "pointer",
+                    }}
+                    onClick={() => {
+                      navigation("/daireactterm");
+                    }}
+                  >
                     <img
                       src={require("../../assets/img/Myinvestment 1.png")}
                       alt=""
@@ -195,7 +215,17 @@ const Dashboard = () => {
                     />
                   </div>
                   <div className="d-flex h-50 h-md-100 flex-column justify-content-center">
-                    <h6 className="pt-3 text-center">My Investment</h6>
+                    <h6
+                      className="pt-3 text-center"
+                      style={{
+                        cursor: "pointer",
+                      }}
+                      onClick={() => {
+                        navigation("/daireactterm");
+                      }}
+                    >
+                      My Investment
+                    </h6>
                     <h6 className="text-center">
                       {StackingSlice.Wallatedata?.data?.mystack
                         ? StackingSlice.Wallatedata?.data?.mystack

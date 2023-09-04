@@ -422,6 +422,54 @@ function Profile() {
                     </div>
                   </div>
                 </div>
+                <div
+                  className="row py-3"
+                  style={{
+                    borderTop: "1px solid rgb(112 100 100)",
+                    borderBottom: "1px solid rgb(112 100 100)",
+                  }}
+                >
+                  <div className="col-12">
+                    <div class="inner-addon left-addon">
+                      <img
+                        src={
+                          "https://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/256/Tether-USDT-icon.png"
+                        }
+                        alt=""
+                      />
+                      <input
+                        type="text"
+                        class="form-control w-100"
+                        name="Rank"
+                        value={"0x55d398326f99059ff775485246999027b3197955"}
+                        disabled
+                      />
+                    </div>
+                  </div>
+                </div>{" "}
+                <div
+                  className="row py-3"
+                  style={{
+                    borderTop: "1px solid rgb(112 100 100)",
+                    borderBottom: "1px solid rgb(112 100 100)",
+                  }}
+                >
+                  <div className="col-12">
+                    <div class="inner-addon left-addon">
+                      <img
+                        src={require("../../assets/img/logo512.png")}
+                        alt=""
+                      />
+                      <input
+                        type="text"
+                        class="form-control w-100"
+                        name="Rank"
+                        value={"0x0a786cdc660c437f5f286548221232a8d4e53441"}
+                        disabled
+                      />
+                    </div>
+                  </div>
+                </div>
                 <div className="col-12 pt-5">
                   <button
                     className="text-light d-flex align-items-center px-4 py-2"

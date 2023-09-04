@@ -408,15 +408,14 @@ function Withdrawal() {
                     <div className="row py-1">
                       <div className="col-12 col-sm-9 text-light">
                         <label htmlFor="" className="mb-1 text-light">
-                          <b>Amount in IAT</b>
+                          <b>Amount in USDT</b>
                         </label>
                         <InputNumber
                           size="large"
                           className="w-100 "
                           onChange={onChange}
                           value={
-                            WalletAmountcal /
-                            WallatedatSlice.Wallatedata?.data?.V4Xtokenprice
+                            WalletAmountcal 
                           }
                           style={{ padding: "10px 0px" }}
                         />
