@@ -472,7 +472,7 @@ function Staking() {
                           />
                         </div>
                         <div className="px-3">
-                          <p className="m-0">Infinity.Ai Main wallet Staking</p>
+                          <p className="m-0"> Main wallet Staking</p>
                         </div>
                       </div>
                       <div className="">
@@ -547,7 +547,7 @@ function Staking() {
                           />
                         </div>
                         <div className="px-3">
-                          <p className="m-0">Infinity.Ai E-Wallet Staking</p>
+                          <p className="m-0"> E-Wallet Staking</p>
                         </div>
                       </div>
                       <div className="">
