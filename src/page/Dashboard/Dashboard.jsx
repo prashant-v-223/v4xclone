@@ -69,7 +69,7 @@ const Dashboard = () => {
         <div className="container-fluid blackbg">
           <div className="mainsection ">
             <div className="row px-3  py-3 justify-content-lg-center">
-              <div className="col-12 col-lg-5  text-light py-2">
+              <div className="col-12 col-lg-4  text-light py-2">
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
                     <img
@@ -101,7 +101,39 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-lg-5  text-light py-2">
+                  <div className="col-12 col-lg-4  text-light py-2">
+                <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
+                  <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
+                    <img
+                      src={require("../../assets/img/username 1.png")}
+                      alt=""
+                    />
+                  </div>
+                  <div className=" d-flex h-50 h-md-100 flex-column justify-content-center">
+                    <h4 className="pt-2 pt-lg-0 mb-2 text-center text-lg-left">
+                      Fullname
+                    </h4>
+                    <p className="text-center text-lg-left">
+                      <b>{Profile[0]?.Fullname}</b>
+                    </p>
+                    <button
+                      className="text-light d-flex justify-content-center align-items-center px-4 py-2 "
+                      style={{ background: "#02a2c4", position: "inherit" }}
+                      onClick={() => {
+                        navigator.clipboard.writeText(Profile[0]?.Fullname);
+                        toast.success("Fullname copy successfully.");
+                      }}
+                    >
+                      <MdContentCopy
+                        className="me-2"
+                        style={{ color: "#FFF", fontSize: "23px" }}
+                      />
+                      Click to copy
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-lg-4  text-light py-2">
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
                     <img
