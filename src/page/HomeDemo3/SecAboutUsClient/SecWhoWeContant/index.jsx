@@ -27,7 +27,7 @@ const SecWhoWeContant = () => {
                 color: "#fff !important",
               }}
             >
-              <p data-aos="fade-up m-0">Infinity.AI is  a Secure System</p>
+              <p data-aos="fade-up m-0">Infinity AI is  a Secure System</p>
             </li>
             <li
               style={{
@@ -36,7 +36,7 @@ const SecWhoWeContant = () => {
               }}
             >
               <p data-aos="fade-up m-0">
-                Infinity.AI provide 24/7 Support
+                Infinity AI provide 24/7 Support
               </p>
             </li>
             <li
@@ -46,7 +46,7 @@ const SecWhoWeContant = () => {
               }}
             >
               <p data-aos="fade-up m-0">
-                Infinity.AI Coin Play to earn & Utility Application
+                Infinity AI Coin Play to earn & Utility Application
               </p>
             </li>
             <li
@@ -56,7 +56,7 @@ const SecWhoWeContant = () => {
               }}
             >
               <p data-aos="fade-up m-0">
-                Infinity.AI Coin Entertainment in Metaverse
+                Infinity AI Coin Entertainment in Metaverse
               </p>
             </li>
             <li
@@ -65,7 +65,7 @@ const SecWhoWeContant = () => {
                 color: "#fff !important",
               }}
             >
-              <p data-aos="fade-up m-0">Infinity.AI hotel chain Industry</p>
+              <p data-aos="fade-up m-0">Infinity AI hotel chain Industry</p>
             </li>
             <li
               style={{
@@ -74,7 +74,7 @@ const SecWhoWeContant = () => {
               }}
             >
               <p data-aos="fade-up m-0">
-                Infinity.AI Coin Own Decentralised Wallet to make Crypto
+                Infinity AI Coin Own Decentralised Wallet to make Crypto
                 Transaction More fast, secure & cheaper.
               </p>
             </li>

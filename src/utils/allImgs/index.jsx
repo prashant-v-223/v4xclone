@@ -21,7 +21,7 @@ import HomeDemo1IcoPlatforms6 from "../../assets/img/ico-platforms/6.png"
 
 import HomeDemo1About1 from "../../assets/img/svg/about1.svg"
 
-import HomeDemo1Solution from "../../assets/img/solution.png"
+import HomeDemo1Solution from "../../assets/img/10.png"
 
 import HomeDemo1VideoBg4 from "../../assets/img/bg-img/bg-4.jpg"
 
@@ -65,7 +65,6 @@ import HomeDemo1BlogImg2 from "../../assets/img/blog-img/2.jpg"
 import HomeDemo1BlogImg3 from "../../assets/img/blog-img/3.jpg"
 
 /////////////////  Imgs for HomeDemo2  /////////////////
-
 import HomeDemo2Dollar from "../../assets/img/svg/img-dollar.svg"
 
 import HomeDemo2IcoPlatforms1 from "../../assets/img/ico-platforms/1.png"
@@ -77,7 +76,7 @@ import HomeDemo2IcoPlatforms6 from "../../assets/img/ico-platforms/6.png"
 
 import HomeDemo2About1 from "../../assets/img/svg/about1.svg"
 
-import HomeDemo2Solution from "../../assets/img/solution.png"
+import HomeDemo2Solution from "../../assets/img/10.png"
 
 import HomeDemo2VideoBg4 from "../../assets/img/bg-img/bg-4.jpg"
 
@@ -145,7 +144,7 @@ import HomeDemo3IcoPlatforms6 from "../../assets/img/ico-platforms/6.png"
 
 import HomeDemo3About1 from "../../assets/img/svg/about1.svg"
 
-import HomeDemo3Solution from "../../assets/img/solution.png"
+import HomeDemo3Solution from "../../assets/img/1.png"
 
 import HomeDemo3VideoBg4 from "../../assets/img/bg-img/bg-4.jpg"
 

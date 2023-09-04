@@ -28,7 +28,7 @@ const SecContent = () => {
             <p>Disclaimer</p>
           </a>
           <a href="#about">
-            <p>About Infinity.AI</p>
+            <p>About Infinity AI</p>
           </a>
         </div>
         {/* Content Info */}
@@ -37,7 +37,7 @@ const SecContent = () => {
           data-wow-delay="0.4s"
         >
           <h5>Contact Us</h5>
-          <p>support@Infinity.AI</p>
+          <p>support@Infinity AI</p>
         </div>
       </div>
     </div>

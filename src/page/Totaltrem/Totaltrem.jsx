@@ -284,7 +284,7 @@ function Totaltrempage() {
                 lg={12}
               >
                 <RangePicker size="large" onChange={handleChange1}  onPressEnter={handleChange1}/>
-                <ExportToExcel apiData={Fillter} fileName={"Infinity.AIDirectTeam"} />
+                <ExportToExcel apiData={Fillter} fileName={"Infinity AIDirectTeam"} />
               </Col>
               <div className="col-12 p-2 p-lg-3">
                 <Table
@@ -299,7 +299,7 @@ function Totaltrempage() {
                     current: page,
                     onChange: (page, pageSize) => onTabChange(page, pageSize),
                   }}
-                  title={() => "Infinity.AI Direct Team"}
+                  title={() => "Infinity AI Direct Team"}
                   scroll={{ x: "calc(1450px)" }}
                 />
               </div>

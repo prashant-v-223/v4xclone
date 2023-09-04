@@ -14,11 +14,7 @@
   border: 1px solid #606161;
 }
 .Box {
-  background: linear-gradient(
-    to right,
-    #8c45ff,
-    #02a2c4
-  );
+  background: linear-gradient(to right, #8c45ff, #02a2c4);
   border-radius: 12px;
   padding: 35px 5px;
 }
@@ -93,7 +89,7 @@ input {
 .ant-table-tbody {
   > tr {
     .ant-table-cell {
-      background: #02a2c4!important;
+      background: #02a2c4 !important;
       color: #fff !important;
       border-bottom: 2px solid !important;
       border-color: #323232 !important;
@@ -556,6 +552,12 @@ div.b {
     top: 7px;
     width: 29px;
   }
+  > .imgs {
+    position: absolute;
+    left: 8px;
+    top: 7px;
+    width: 29px;
+  }
   > input {
     background: transparent;
     border: none;
@@ -563,8 +565,24 @@ div.b {
   }
 }
 
+.inner-addon1 {
+  position: relative;
+  margin: 10px;
+  > img {
+    position: absolute;
+    left: 0px;
+    top: -5px;
+    width: 45px;
+  }
+  > input {
+    background: transparent;
+    border: none;
+    color: #fff;
+  }
+}
 /* style icon */
-.inner-addon .glyphicon {
+.inner-addon .glyphicon,
+.inner-addon1 .glyphicon {
   position: absolute;
   padding: 10px;
   pointer-events: none;

@@ -303,7 +303,7 @@ function Daireacttermpage() {
                 lg={12}
               >
                 <RangePicker size="large" onChange={handleChange1} />
-                <ExportToExcel apiData={Fillter} fileName={"MyInfinity.AITeam"} />
+                <ExportToExcel apiData={Fillter} fileName={"MyInfinity AITeam"} />
               </Col>
               <div className="col-12 p-2 p-lg-3">
                 <Table
@@ -318,7 +318,7 @@ function Daireacttermpage() {
                     current: page,
                     onChange: (page, pageSize) => onTabChange(page, pageSize),
                   }}
-                  title={() => "My Infinity.AI Team"}
+                  title={() => "My Infinity AI Team"}
                   scroll={{ x: "calc(1700px)" }}
                 />
               </div>

@@ -5,8 +5,8 @@ const SecOurFeatures = ({ data, imgPhone, Rings }) => {
   return (
     <section className="features section-padding-100">
       <SectionHeading
-        title="Infinity.AI Centralised Exchange"
-        text="Infinity.AI Centralised Exchange is built with superfast trading matching engine, where users can trade their Infinity.AI Coin in Spot, Limit, Market, Stop-Limit features."
+        title="Infinity AI Centralised Exchange"
+        text="Infinity AI Centralised Exchange is built with superfast trading matching engine, where users can trade their Infinity AI Coin in Spot, Limit, Market, Stop-Limit features."
       />
       <div className="container-fluid">
         <div className="row">

@@ -6,8 +6,8 @@ const SecHowItWorks = ({ data, imgPhone }) => {
   return (
     <section className="features section-padding-100-0">
       <SectionHeading
-        title="Features of Infinity.AI Platform"
-        text="Infinity.AI Offers number of benifits to their users and investors, in terms of rewards, returns and security, along with daily withdrawals."
+        title="Features of Infinity AI Platform"
+        text="Infinity AI Offers number of benifits to their users and investors, in terms of rewards, returns and security, along with daily withdrawals."
       />
       <div className="container">
         <div className="row">

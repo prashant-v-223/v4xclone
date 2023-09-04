@@ -54,7 +54,7 @@ const Footer = () => {
                 }}
               >
                 Leave your details below and we’ll contact you to discuss
-                purchasing Infinity.AI .
+                purchasing Infinity AI .
               </p>
             </div>
 
@@ -128,7 +128,7 @@ const Footer = () => {
                   />
                   <label class="custom-control-label" for="customCheck">
                     By submitting this form,I agree to the terms and privacy of
-                    Infinity.AI
+                    Infinity AI
                   </label>
                 </div>
               </div>

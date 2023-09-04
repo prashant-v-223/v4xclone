@@ -160,7 +160,7 @@ function Withdrawal() {
                 <div className="col-12 col-md-6 pb-4 pb-md-0">
                   <div className="Boxcard p-4">
                     <h6 className="text-light d-flex ">
-                      Transfer Infinity.AI Coin
+                      Transfer USDT
                       <img
                         src={require("../../assets/img/Vector (28).png")}
                         alt=""
@@ -179,7 +179,7 @@ function Withdrawal() {
                         <p className="m-0 text-light">
                           You can transfer your USDT to your
                           downline team members. Transfers will be deposited in
-                          Infinity.AI E-Wallet only.
+                          Infinity AI E-Wallet only.
                         </p>
                       </div>
                     </div>
@@ -288,7 +288,7 @@ function Withdrawal() {
                 <div className="col-12 col-md-6 pb-4 pb-md-0">
                   <div className="Boxcard p-4">
                     <h6 className="text-light d-flex ">
-                      Withdraw Infinity.AI Coin
+                      Withdraw Infinity AI Coin
                       <img
                         src={require("../../assets/img/Vector (28).png")}
                         alt=""
@@ -305,8 +305,8 @@ function Withdrawal() {
                       </div>
                       <div className="img-div2">
                         <p className="m-0 text-light">
-                          Infinity.AI Withdrawals are activated after 15days of
-                          your staking. Infinity.AI Coin are released as bonus
+                          Infinity AI Withdrawals are activated after 15days of
+                          your staking. Infinity AI Coin are released as bonus
                           in withdrawal process. You can withdraw your rewards
                           everyday.
                         </p>
@@ -316,7 +316,7 @@ function Withdrawal() {
                       <div className="d-lg-flex justify-content-around">
                         <div className="px-3 py-2 py-lg-0">
                           <h6 className="m-0 text-light text-center">
-                            Infinity.AI Main Wallet Balance
+                            Infinity AI Main Wallet Balance
                           </h6>
                         </div>
                         <div className="px-3 py-2 py-lg-0">

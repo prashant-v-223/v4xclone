@@ -625,7 +625,7 @@ export default Dashboard;
 //                   className="ms-2 me-3"
 //                   style={{ color: "#02a2c4", fontSize: "20px" }}
 //                 />
-//                 My Infinity.AI Team
+//                 My Infinity AI Team
 //               </Nav.Link>
 //               <Nav.Link
 //                 href="#features"
@@ -635,7 +635,7 @@ export default Dashboard;
 //                   className="ms-2 me-3"
 //                   style={{ color: "#02a2c4", fontSize: "20px" }}
 //                 />
-//                 Infinity.AI Direct Team
+//                 Infinity AI Direct Team
 //               </Nav.Link>
 //               <Dropdown>
 //                 <Dropdown.Toggle
@@ -674,7 +674,7 @@ export default Dashboard;
 //               {windowSize.current[0] < 992 && (
 //                 <>
 //                   <button className="Username m-2 py-2 px-3">
-//                     Username : Infinity.AI10019
+//                     Username : Infinity AI10019
 //                   </button>
 //                   <button className="Username m-2 py-2 px-3">
 //                     <FaUserCircle
@@ -696,7 +696,7 @@ export default Dashboard;
 //               <div className="Boxcard p-4">
 //                 <div className="d-flex px-3">
 //                   <div className="w-75">
-//                     <p>Infinity.AI Main Wallet</p>
+//                     <p>Infinity AI Main Wallet</p>
 //                     <h2>10000.00</h2>
 //                   </div>
 //                   <div className="w-25">
@@ -736,7 +736,7 @@ export default Dashboard;
 //               <div className="Boxcard p-4">
 //                 <div className="d-flex px-3">
 //                   <div className="w-75">
-//                     <p>Infinity.AI Main Wallet</p>
+//                     <p>Infinity AI Main Wallet</p>
 //                     <h2>5000.00</h2>
 //                   </div>
 //                   <div className="w-25">
@@ -776,7 +776,7 @@ export default Dashboard;
 //               <div className="Boxcard p-4">
 //                 <div className="d-flex px-3">
 //                   <div className="w-75">
-//                     <p>Infinity.AI Dapp Wallet</p>
+//                     <p>Infinity AI Dapp Wallet</p>
 //                     <h2>2000.00</h2>
 //                   </div>
 //                   <div className="w-25">
@@ -882,7 +882,7 @@ export default Dashboard;
 //                       height={30}
 //                       className="me-3"
 //                     />
-//                     My Infinity.AI Investments
+//                     My Infinity AI Investments
 //                   </div>
 //                   <div className="">
 //                     <h2 className="m-0">35000 $</h2>
@@ -900,7 +900,7 @@ export default Dashboard;
 //                       height={30}
 //                       className="me-3"
 //                     />
-//                     My Infinity.AI Team Investments
+//                     My Infinity AI Team Investments
 //                   </div>
 //                   <div className="">
 //                     <h2 className="m-0">705000 $</h2>
@@ -920,7 +920,7 @@ export default Dashboard;
 //                         />
 //                       </div>
 //                       <div className="">
-//                         <p>My Infinity.AI Team</p>
+//                         <p>My Infinity AI Team</p>
 //                       </div>
 //                     </div>
 //                     <div className="d-flex flex-wrap justify-content-center align-items-center px-2">
@@ -955,7 +955,7 @@ export default Dashboard;
 //                         />
 //                       </div>
 //                       <div className="">
-//                         <p>Infinity.AI Live Rate</p>
+//                         <p>Infinity AI Live Rate</p>
 //                       </div>
 //                     </div>
 //                     <div className="d-flex px-2">

@@ -1,30 +1,20 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { Modal } from "react-bootstrap";
 import InputField from "../../components/InputField";
-import {
-  Foegotpassword,
-  Signin,
-  Signup,
-  profileupdate,
-} from "../../Redux/authSlice";
+import { Signin, profileupdate } from "../../Redux/authSlice";
 import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
-import { WalletFilled, MailFilled } from "@ant-design/icons";
+import { MailFilled } from "@ant-design/icons";
 import Navbar1 from "../../components/Navbar/Navbar";
 import { useSelector } from "react-redux";
-import { useLocation, useNavigate } from "react-router-dom";
-import { Checkbox, Spin } from "antd";
-import { FaEdit } from "react-icons/fa";
-import {
-  ref,
-  uploadBytes,
-  getDownloadURL,
-  listAll,
-  list,
-} from "firebase/storage";
+import { useNavigate } from "react-router-dom";
+import { Spin } from "antd";
+import { AiFillPhone } from "react-icons/ai";
+import { FaUsersCog } from "react-icons/fa";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage } from "../../firebase";
 import { v4 } from "uuid";
 
@@ -34,7 +24,7 @@ function Profile() {
   const navigation = useNavigate();
   const [modal2Open, setModal2Open] = useState(false);
   const [imagePreviewUrl, setimagePreviewUrl] = useState(
-    JSON.parse(localStorage.getItem("data1"))?.data?.profile?.profileimg === ""
+    !JSON.parse(localStorage.getItem("data1"))?.data?.profile?.profileimg
       ? "https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true"
       : JSON.parse(localStorage.getItem("data1"))?.data?.profile?.profileimg
   );
@@ -203,10 +193,10 @@ function Profile() {
           }`,
           method: "GET",
         };
-
         let response = await axios.request(reqOptions);
         console.log(response.data);
-        localStorage.setItem("data", JSON.stringify({ data: response.data }));
+        localStorage.setItem("data1", JSON.stringify({ data: response.data }));
+        window.location.reload(false);
       } else {
         toast.error(res.payload.data.message);
       }
@@ -248,7 +238,7 @@ function Profile() {
       <Spin spinning={!authSlice.isLoader}>
         <Navbar1 />
         <div className="container-fluid blackbg">
-          <div className="mainsection">
+          <div className="mainsection ">
             <div
               className="d-flex justify-content-between align-content-center"
               style={{
@@ -257,16 +247,15 @@ function Profile() {
               }}
             >
               <div
-                className="d-block m-auto w-100"
+                className="d-block m-auto w-100 pt-3 pb-5"
                 style={{
                   maxWidth: "1080px",
                 }}
               >
-                <h4 className="text-light px-3 pb-4">My Profile</h4>
                 <ImgUpload onChange={photoUpload} src={imagePreviewUrl} />
                 <div className="row ">
                   <div
-                    className="col-12 col-md-8 py-3"
+                    className="col-12 col-md-8 py-2"
                     style={{
                       borderTop: "1px solid rgb(112 100 100)",
                       borderBottom: "1px solid rgb(112 100 100)",
@@ -291,7 +280,7 @@ function Profile() {
                     </div>
                   </div>
                   <div
-                    className="col-12 col-md-4 py-3"
+                    className="col-12 col-md-4 py-2"
                     style={{
                       borderTop: "1px solid rgb(112 100 100)",
                       borderBottom: "1px solid rgb(112 100 100)",
@@ -316,8 +305,8 @@ function Profile() {
                     </div>
                   </div>
                 </div>
-                {/* <div
-                  className="row py-3"
+                <div
+                  className="row py-2"
                   style={{
                     borderTop: "1px solid rgb(112 100 100)",
                     borderBottom: "1px solid rgb(112 100 100)",
@@ -325,9 +314,12 @@ function Profile() {
                 >
                   <div className="col-12">
                     <div class="inner-addon left-addon">
-                      <img
-                        src={require("../../assets/img/walletaddress 1.png")}
-                        alt=""
+                      <AiFillPhone
+                        className="imgs"
+                        style={{
+                          fontSize: "35px",
+                          color: "#00c9c4",
+                        }}
                       />
                       <input
                         type="text"
@@ -336,15 +328,15 @@ function Profile() {
                         placeholder="Wallet address"
                         value={
                           JSON.parse(localStorage.getItem("data1"))?.data
-                            ?.profile?.walletaddress
+                            ?.profile?.PhoneNumber
                         }
                         disabled
                       />
                     </div>
                   </div>
-                </div> */}
+                </div>
                 <div
-                  className="row py-3"
+                  className="row py-2"
                   style={{
                     borderTop: "1px solid rgb(112 100 100)",
                     borderBottom: "1px solid rgb(112 100 100)",
@@ -370,60 +362,69 @@ function Profile() {
                     </div>
                   </div>
                 </div>{" "}
-                <div
-                  className="row py-3"
-                  style={{
-                    borderTop: "1px solid rgb(112 100 100)",
-                    borderBottom: "1px solid rgb(112 100 100)",
-                  }}
-                >
-                  <div className="col-12">
-                    <div class="inner-addon left-addon">
-                      <img
-                        src={require("../../assets/img/username 1.png")}
-                        alt=""
-                      />
-                      <input
-                        type="text"
-                        class="form-control"
-                        name="Rank"
-                        value={
-                          JSON.parse(localStorage.getItem("data1"))?.data
-                            ?.profile?.Nominee
-                        }
-                        disabled
-                      />
+                {JSON.parse(localStorage.getItem("data1"))?.data?.profile
+                  ?.Nominee && (
+                  <div
+                    className="row py-2"
+                    style={{
+                      borderTop: "1px solid rgb(112 100 100)",
+                      borderBottom: "1px solid rgb(112 100 100)",
+                    }}
+                  >
+                    <div className="col-12">
+                      <div class="inner-addon left-addon">
+                        <FaUsersCog
+                          className="imgs"
+                          style={{
+                            fontSize: "35px",
+                            color: "#00c9c4",
+                          }}
+                        />
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="Rank"
+                          value={
+                            JSON.parse(localStorage.getItem("data1"))?.data
+                              ?.profile?.Nominee
+                          }
+                          disabled
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>{" "}
-                <div
-                  className="row py-3"
-                  style={{
-                    borderTop: "1px solid rgb(112 100 100)",
-                    borderBottom: "1px solid rgb(112 100 100)",
-                  }}
-                >
-                  <div className="col-12">
-                    <div class="inner-addon left-addon">
-                      <img
-                        src={require("../../assets/img/myteam 1.png")}
-                        alt=""
-                      />
-                      <input
-                        type="text"
-                        class="form-control"
-                        name="Rank"
-                        value={
-                          JSON.parse(localStorage.getItem("data1"))?.data
-                            ?.profile?.address
-                        }
-                        disabled
-                      />
+                )}
+                {JSON.parse(localStorage.getItem("data1"))?.data?.profile
+                  ?.address && (
+                  <div
+                    className="row py-2"
+                    style={{
+                      borderTop: "1px solid rgb(112 100 100)",
+                      borderBottom: "1px solid rgb(112 100 100)",
+                    }}
+                  >
+                    <div className="col-12">
+                      <div class="inner-addon left-addon">
+                        <img
+                          src={require("../../assets/img/myteam 1.png")}
+                          alt=""
+                        />
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="Rank"
+                          value={
+                            JSON.parse(localStorage.getItem("data1"))?.data
+                              ?.profile?.address
+                          }
+                          disabled
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
                 <div
-                  className="row py-3"
+                  className="row py-2"
                   style={{
                     borderTop: "1px solid rgb(112 100 100)",
                     borderBottom: "1px solid rgb(112 100 100)",
@@ -455,10 +456,11 @@ function Profile() {
                   }}
                 >
                   <div className="col-12">
-                    <div class="inner-addon left-addon">
+                    <div class="inner-addon1 left-addon">
                       <img
                         src={require("../../assets/img/infinityiat.io.png")}
                         alt=""
+                        style={{ width: "65px !important" }}
                       />
                       <input
                         type="text"

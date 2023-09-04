@@ -121,7 +121,7 @@ function Ewallate() {
               <Table
                 columns={columns}
                 dataSource={Alldata}
-                title={() => "Infinity.AI Wallet Report"}
+                title={() => "Infinity AI Wallet Report"}
                 scroll={{ x: "calc(500px + 50%)" }}
               />
             </div>
