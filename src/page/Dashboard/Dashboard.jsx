@@ -105,7 +105,7 @@ const Dashboard = () => {
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
                     <img
-                      src={require("../../assets/img/1990e3b7-3504-427d-91dd-969b59e11e5d.jfif")}
+                      src={require("../../assets/img/infinityiat.io.png")}
                       alt=""
                       style={{width:120, hight:120}}
                     />
