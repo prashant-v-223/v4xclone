@@ -230,13 +230,13 @@ const Dashboard = () => {
                       ReferandEarnIncome :
                       {StackingSlice.Wallatedata?.data?.income[0].ReferandEarn?.toFixed(
                         2
-                      )}
-                    </h6>{" "}$
+                      )}$
+                    </h6>
                     <h6 className="text-center text-lg-left">
                       CommunitiesIncome :
                       {StackingSlice.Wallatedata?.data?.income[0].communities?.toFixed(
                         2
-                      )}
+                      )}$
                     </h6>
                     <h6 className="text-center text-lg-left">
                       PassivesIncome :
