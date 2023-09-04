@@ -457,7 +457,7 @@ function Profile() {
                   <div className="col-12">
                     <div class="inner-addon left-addon">
                       <img
-                        src={require("../../assets/img/logo512.png")}
+                        src={require("../../assets/img/1990e3b7-3504-427d-91dd-969b59e11e5d.jfif")}
                         alt=""
                       />
                       <input
