@@ -166,7 +166,7 @@ export const Admintranfor = createAsyncThunk(
   async (data) => {
     console.log(data);
     try {
-      const res = await POST(apiList.admintranfor, {}, data.Token);
+      const res = await GET(apiList.admintranfor, {}, data.Token);
       return res;
     } catch (e) {
       return e.response;
