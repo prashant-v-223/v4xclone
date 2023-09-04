@@ -107,6 +107,7 @@ const Dashboard = () => {
                     <img
                       src={require("../../assets/img/1990e3b7-3504-427d-91dd-969b59e11e5d.jfif")}
                       alt=""
+                      className="img-fluid"
                     />
                   </div>
                   <div className=" d-flex h-50 h-md-100 flex-column justify-content-center">
