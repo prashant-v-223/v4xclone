@@ -60,7 +60,7 @@ export const VerticalSocial = [
   },
   {
     nameIco: "fa fa-instagram",
-    link: "https://instagram.com/Infinity AIinity.ai_coin_official?igshid=YmMyMTA2M2Y=",
+    link: "https://instagram.com/Infinity.AIinity.ai_coin_official?igshid=YmMyMTA2M2Y=",
   },
   {
     nameIco: "fa fa-youtube",
@@ -74,21 +74,21 @@ export const HowItWorksInfo = [
     title: "Limitless Staking and Great Returns",
     img: secure,
     subtita:
-      "Infinity AI Offers number of benifits to their users and investors, in terms of rewards, returns and security, along with daily withdrawals.",
+      "Infinity.AI Offers number of benifits to their users and investors, in terms of rewards, returns and security, along with daily withdrawals.",
   },
   {
     classIco: "icon ti-widget",
     title: "Refer Friends and Family to Earn more",
     img: superfastmatchengine,
     subtita:
-      "You can refer your friends and family on Infinity AI to get more benifits. Everytime your referral stakes Infinity AI Coin, referrer gets rewards.",
+      "You can refer your friends and family on Infinity.AI to get more benifits. Everytime your referral stakes Infinity.AI Coin, referrer gets rewards.",
   },
   {
     classIco: "icon ti-settings",
     title: "Interesting Rewards of Passive Club & Achievement",
     img: userfriendly,
     subtita:
-      "Infinity AI has passive club reward benifit. Where users can make their team business and achieve ranks from manager to ambassador. Every rank will be rewarded with amazing bonuses.",
+      "Infinity.AI has passive club reward benifit. Where users can make their team business and achieve ranks from manager to ambassador. Every rank will be rewarded with amazing bonuses.",
   },
 ];
 
@@ -122,27 +122,27 @@ export const SingleCoolFact = [
 export const service_single_content = [
   {
     img: exchange,
-    title: "Infinity AI Centralised Exchange",
+    title: "Infinity.AI Centralised Exchange",
   },
   {
     img: decentralised,
-    title: "Infinity AI Decentralised Wallet",
+    title: "Infinity.AI Decentralised Wallet",
   },
   {
     img: marketplace,
-    title: "Infinity AI NFT Marketplace ",
+    title: "Infinity.AI NFT Marketplace ",
   },
   {
     img: development,
-    title: "Infinity AI Mobile App",
+    title: "Infinity.AI Mobile App",
   },
   {
     img: blockchain,
-    title: "Infinity AI Blockchain",
+    title: "Infinity.AI Blockchain",
   },
   {
     img: multiutility,
-    title: "Infinity AI Multi-utility App",
+    title: "Infinity.AI Multi-utility App",
   },
 ];
 
@@ -178,16 +178,16 @@ export const timelineInfo = [
     IsTowLi: false,
     IsThreeLi: false,
     IsFourLi: true,
-    TextFourLi1: "Infinity AI Coin Development Over BEP-20 Network",
-    TextFourLi2: "WORLD WIDE Infinity AI Coin WEB LAUNCH FOR OUR USER",
-    TextFourLi3: "Infinity AI Coin MOBILE APPLICATION",
+    TextFourLi1: "Infinity.AI Coin Development Over BEP-20 Network",
+    TextFourLi2: "WORLD WIDE Infinity.AI Coin WEB LAUNCH FOR OUR USER",
+    TextFourLi3: "Infinity.AI Coin MOBILE APPLICATION",
     TextFourLi4:
-      "LISTING OF Infinity AI Coin ON DECENTRALISED EXCHANGE i.e. PANCAKESWAP, DEXTOOLS, NOMICS",
+      "LISTING OF Infinity.AI Coin ON DECENTRALISED EXCHANGE i.e. PANCAKESWAP, DEXTOOLS, NOMICS",
     TextFourLi5:
-      "Infinity AI Coin CEX (CRYPTO EXCHANGE WITH SPOT TRADING, MARKET TRADING LIMIT TRADING, AND P2P)",
+      "Infinity.AI Coin CEX (CRYPTO EXCHANGE WITH SPOT TRADING, MARKET TRADING LIMIT TRADING, AND P2P)",
     TextFourLi6:
-      "Infinity AI Coin LOGO AND SOCIAL MEDIA VERIFICATION ON BSC SCAN & METAMASK  ",
-    TextFourLi7: "Infinity AI Coin BLOCKCHAIN DEVELOPMENT",
+      "Infinity.AI Coin LOGO AND SOCIAL MEDIA VERIFICATION ON BSC SCAN & METAMASK  ",
+    TextFourLi7: "Infinity.AI Coin BLOCKCHAIN DEVELOPMENT",
     img: HomeDemo3RoadmapIcons2,
   },
   {
@@ -196,8 +196,8 @@ export const timelineInfo = [
     date: "Juky-Sep 2023",
     IsSpan: false,
     IsTowLi: true,
-    TextTowLi1: "Infinity AI Coin LISTING ON COINGECKO",
-    TextTowLi2: "Infinity AI Coin META GAMING PLATFORM",
+    TextTowLi1: "Infinity.AI Coin LISTING ON COINGECKO",
+    TextTowLi2: "Infinity.AI Coin META GAMING PLATFORM",
     IsThreeLi: false,
     IsFourLi: false,
     img: HomeDemo3RoadmapIcons3,
@@ -209,8 +209,8 @@ export const timelineInfo = [
     IsSpan: false,
     IsTowLi: false,
     IsThreeLi: true,
-    TextThreeLi1: "TV & DIGITAL AD TO INCREASE GLOBAL Infinity AI COMUNITY",
-    TextThreeLi2: "Infinity AI Coin LISTING ON COIN MARKET CAP",
+    TextThreeLi1: "TV & DIGITAL AD TO INCREASE GLOBAL Infinity.AI COMUNITY",
+    TextThreeLi2: "Infinity.AI Coin LISTING ON COIN MARKET CAP",
     IsFourLi: false,
     img: HomeDemo3RoadmapIcons4,
   },
@@ -242,7 +242,7 @@ export const timelineInfo = [
     IsSpan: false,
     IsTowLi: false,
     IsThreeLi: true,
-    TextThreeLi1: "GLOBAL LAUNCH OF Infinity AI Coin DECENTRALISED WALLET",
+    TextThreeLi1: "GLOBAL LAUNCH OF Infinity.AI Coin DECENTRALISED WALLET",
     TextThreeLi2: "NFT MARKETPLACE",
     IsFourLi: false,
     img: HomeDemo3RoadmapIcons6,
@@ -254,8 +254,8 @@ export const timelineInfo = [
     IsSpan: false,
     IsTowLi: false,
     IsThreeLi: true,
-    TextThreeLi1: "Infinity AI Coin MULTI UTILITY APPLICATION FOR INSTANT USE Infinity AI Coin",
-    TextThreeLi2: "LAUNCHING Infinity AI Coin BLOCKCHAIN",
+    TextThreeLi1: "Infinity.AI Coin MULTI UTILITY APPLICATION FOR INSTANT USE Infinity.AI Coin",
+    TextThreeLi2: "LAUNCHING Infinity.AI Coin BLOCKCHAIN",
     IsFourLi: false,
     img: HomeDemo3RoadmapIcons7,
   },
@@ -266,7 +266,7 @@ export const timelineInfo = [
     IsSpan: false,
     IsTowLi: false,
     IsThreeLi: true,
-    TextThreeLi1: "LISTING OF Infinity AI Coin ON BINANCE",
+    TextThreeLi1: "LISTING OF Infinity.AI Coin ON BINANCE",
     IsFourLi: false,
     img: HomeDemo3RoadmapIcons8,
   },
@@ -299,21 +299,21 @@ export const ServiceBlock = [
     title: " Superfast Matching Engine",
     img: secure,
     subtitle:
-      "Infinity AI Exchange uses sophisticated and superfast matching engine, which helps in executing user trades within seconds and match all the trades precisely.",
+      "Infinity.AI Exchange uses sophisticated and superfast matching engine, which helps in executing user trades within seconds and match all the trades precisely.",
   },
   {
     classIco: "icon ti-widget",
     title: "Optimum security of wallet and assets",
     img: superfastmatchengine,
     subtitle:
-      "You assets stored in Infinity AI wallets are created securely on blockchain. All the assets in your wallets are completely secure. Transactions takes place with multiple security layers.",
+      "You assets stored in Infinity.AI wallets are created securely on blockchain. All the assets in your wallets are completely secure. Transactions takes place with multiple security layers.",
   },
   {
     classIco: "icon ti-settings",
     title: "Easy to use and User friendly",
     img: userfriendly,
     subtitle:
-      "Infinity AI Exchange web app and mobile app is user friendly, where you won't have to face any difficulty to use and trade as a new user. It's easy to use and completely secure.",
+      "Infinity.AI Exchange web app and mobile app is user friendly, where you won't have to face any difficulty to use and trade as a new user. It's easy to use and completely secure.",
   },
 ];
 
@@ -327,23 +327,23 @@ export const SocialListIco = [
 
 export const FQAInfo = [
   {
-    text: "What is Infinity AI Coin?",
+    text: "What is Infinity.AI Coin?",
     ID: "Q1",
   },
   {
-    text: "Which Technology Infinity AI Is Using?",
+    text: "Which Technology Infinity.AI Is Using?",
     ID: "Q2",
   },
   {
-    text: "Which Network Infinity AI Coin Operates on?",
+    text: "Which Network Infinity.AI Coin Operates on?",
     ID: "Q3",
   },
   {
-    text: "How Can I Buy Infinity AI Coin?",
+    text: "How Can I Buy Infinity.AI Coin?",
     ID: "Q4",
   },
   {
-    text: "How Can I Trade Infinity AI Coin?",
+    text: "How Can I Trade Infinity.AI Coin?",
     ID: "Q5",
   },
   {
@@ -373,15 +373,15 @@ export const DocElementTitle = [
 
 export const TokenText = [
   {
-    text: "Infinity AI Total Supply : 21 CR",
+    text: "Infinity.AI Total Supply : 21 CR",
     // img:HomeDemo3TokenIcon1
   },
   {
-    text: "Infinity AI Symbol : IAT COIN",
+    text: "Infinity.AI Symbol : IAT COIN",
     // img:HomeDemo3TokenIcon1
   },
   {
-    text: "Infinity AI Network : Binance Smart Chain",
+    text: "Infinity.AI Network : Binance Smart Chain",
     // img:HomeDemo3TokenIcon1
   },
   {

@@ -6,8 +6,8 @@ const SecDistribution = ({ img, data }) => {
     <section className="token-distribution pt-5 mt-5" id="TOKENOMICS">
       <div className="container mt-5">
         <SectionHeading
-          title="Infinity AI Coinomics"
-          text="Infinity AI Coinomics are pre-decided with the help of crypto counseller and tokenomics expert in order to maintain the stability of the Infinity AI Cryptocurrency."
+          title="Infinity.AI Coinomics"
+          text="Infinity.AI Coinomics are pre-decided with the help of crypto counseller and tokenomics expert in order to maintain the stability of the Infinity.AI Cryptocurrency."
         />
 
         <div className="col-lg-6 col-md-6 col-sm-12">

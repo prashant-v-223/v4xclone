@@ -10,6 +10,7 @@ import {
   getdappWallatedata,
   getdappWallatedata1,
 } from "../../Redux/WallatedatSlice";
+import { FaDollarSign } from "react-icons/fa";
 import { toast } from "react-toastify";
 import Button from "../../components/ButtonField";
 import { Spin } from "antd";
@@ -27,16 +28,13 @@ const Dashboard = () => {
   const [otp, setotp] = React.useState("");
   const [Profile, setProfile] = React.useState({});
   const [wallet, setWallet] = React.useState("");
-  const [v4xBalance, setv4xBalance] = React.useState(null);
-  const [modal2Visible, setModal2Visible] = React.useState(false);
-  const [modal2Visible1, setModal2Visible1] = React.useState(false);
+  const [lockeddate, setlockeddate] = React.useState("");
   const dispatch = useDispatch();
   const navigation = useNavigate();
   useEffect(() => {
     getalldata();
     getalldata1();
   }, []);
-  const flatNumbers = StackingSlice.Wallatedata?.data?.ReffData;
 
   const getalldata1 = async () => {
     const res = await dispatch(
@@ -58,10 +56,15 @@ const Dashboard = () => {
     if (res.payload.data.isSuccess) {
       setProfile(res.payload.data.profile);
       setAlldata(res.payload.data.data);
+      const currentDate = new Date(
+        StackingSlice.Wallatedata?.data?.data[0].createdAt
+      );
+      setlockeddate(currentDate.setMonth(currentDate.getMonth() + 42));
     } else {
       navigation("/");
     }
   };
+
   return (
     <>
       <Spin spinning={!StackingSlice.isLoader}>
@@ -101,7 +104,7 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-                  <div className="col-12 col-lg-4  text-light py-2">
+              <div className="col-12 col-lg-4  text-light py-2">
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
                     <img
@@ -139,7 +142,7 @@ const Dashboard = () => {
                     <img
                       src={require("../../assets/img/infinityiat.io.png")}
                       alt=""
-                      style={{width:120, hight:120}}
+                      style={{ width: 120, hight: 120 }}
                     />
                   </div>
                   <div className=" d-flex h-50 h-md-100 flex-column justify-content-center">
@@ -149,17 +152,20 @@ const Dashboard = () => {
                     <p className="text-center text-lg-left">
                       <b>
                         {Number(
-                          StackingSlice.Wallatedata?.data?.mystack /
-                            StackingSlice.Wallatedata?.data?.V4Xtokenprice
+                          StackingSlice.Wallatedata?.data?.profile[0]
+                            ?.lockamount
                         ).toFixed(3) + " IAT"}
                       </b>
+                    </p>
+                    <p className="text-center">
+                      {"Release Data: " + new Date(lockeddate).toDateString()}
                     </p>
                   </div>
                 </div>
               </div>
             </div>
             <div className="row px-3  py-3 justify-content-lg-center">
-              <div className="col-12 col-lg-5 text-light py-2">
+              <div className="col-12 col-lg-4 text-light py-2">
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100 ">
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
                     <img
@@ -178,7 +184,7 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-lg-5  text-light py-2">
+              <div className="col-12 col-lg-4  text-light py-2">
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
                     <img
@@ -196,16 +202,64 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
+              <div className="col-12 col-lg-4  text-light py-2">
+                <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
+                  <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
+                    <FaDollarSign
+                      className="ms-2 me-3"
+                      style={{ color: "#02a2c4", fontSize: "55px" }}
+                    />
+                  </div>
+                  <div className=" d-flex h-50 h-md-100 flex-column justify-content-center">
+                    <h4 className="pt-2 pt-lg-0 pb-4 mb-2 text-center text-lg-left">
+                      Total Income
+                    </h4>
+                    <h6 className="text-center text-lg-left">
+                      StakingBonusIncome :
+                      {StackingSlice.Wallatedata?.data?.income[0].StakingBonusIncome?.toFixed(
+                        2
+                      )}
+                    </h6>
+                    <h6 className="text-center text-lg-left">
+                      ReferandEarnIncome :
+                      {StackingSlice.Wallatedata?.data?.income[0].ReferandEarn?.toFixed(
+                        2
+                      )}
+                    </h6>{" "}
+                    <h6 className="text-center text-lg-left">
+                      CommunitiesIncome :
+                      {StackingSlice.Wallatedata?.data?.income[0].communities?.toFixed(
+                        2
+                      )}
+                    </h6>
+                    <h6 className="text-center text-lg-left">
+                      PassivesIncome :
+                      {StackingSlice.Wallatedata?.data?.income[0].passives?.toFixed(
+                        2
+                      )}
+                    </h6>
+                    <h6 className="text-center text-lg-left">
+                      AchivementsIncome :
+                      {StackingSlice.Wallatedata?.data?.income[0].achivements?.toFixed(
+                        2
+                      )}
+                    </h6>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="row px-3 py-3 justify-content-lg-center">
               <div className="col-12 col-lg-3 text-light py-2">
-                <div className="Boxcard p-4 d-block d-lg-flex flex-column  justify-content-space-around align-items-center h-100 ">
-                  <div
-                    className="pb-2 pb-lg-0 d-flex  justify-content-center align-items-center h-50 h-md-100"
-                    onClick={() => {
-                      navigation("/Totaltrem");
-                    }}
-                  >
+                <div
+                  className="Boxcard p-4 d-block d-lg-flex flex-column  justify-content-space-around align-items-center h-100 "
+                  style={{
+                    cursor: "pointer",
+                  }}
+                  onClick={() => {
+                    navigation("/Totaltrem");
+                  }}
+                >
+                  <div className="pb-2 pb-lg-0 d-flex  justify-content-center align-items-center h-50 h-md-100">
                     <img
                       src={require("../../assets/img/totalteaminvestment 1.png")}
                       alt=""
@@ -213,14 +267,7 @@ const Dashboard = () => {
                     />
                   </div>
                   <div className="d-flex h-50 h-md-100 flex-column justify-content-center">
-                    <h6
-                      className="pt-3 text-center"
-                      onClick={() => {
-                        navigation("/Totaltrem");
-                      }}
-                    >
-                      Team Total Investment
-                    </h6>
+                    <h6 className="pt-3 text-center">Team Total Investment</h6>
                     <h6 className="text-center">
                       {StackingSlice.Wallatedata?.data?.teamtotalstack
                         ? StackingSlice.Wallatedata?.data?.teamtotalstack
@@ -231,16 +278,16 @@ const Dashboard = () => {
                 </div>
               </div>
               <div className="col-12 col-lg-3 text-light py-2">
-                <div className="Boxcard p-4 d-block d-lg-flex flex-column  justify-content-space-around align-items-center h-100 ">
-                  <div
-                    className="pb-2 pb-lg-0 d-flex  justify-content-center align-items-center h-50 h-md-100"
-                    style={{
-                      cursor: "pointer",
-                    }}
-                    onClick={() => {
-                      navigation("/daireactterm");
-                    }}
-                  >
+                <div
+                  className="Boxcard p-4 d-block d-lg-flex flex-column  justify-content-space-around align-items-center h-100 "
+                  style={{
+                    cursor: "pointer",
+                  }}
+                  onClick={() => {
+                    navigation("/daireactterm");
+                  }}
+                >
+                  <div className="pb-2 pb-lg-0 d-flex  justify-content-center align-items-center h-50 h-md-100">
                     <img
                       src={require("../../assets/img/Myinvestment 1.png")}
                       alt=""
@@ -248,17 +295,7 @@ const Dashboard = () => {
                     />
                   </div>
                   <div className="d-flex h-50 h-md-100 flex-column justify-content-center">
-                    <h6
-                      className="pt-3 text-center"
-                      style={{
-                        cursor: "pointer",
-                      }}
-                      onClick={() => {
-                        navigation("/daireactterm");
-                      }}
-                    >
-                      My Investment
-                    </h6>
+                    <h6 className="pt-3 text-center">My Investment</h6>
                     <h6 className="text-center">
                       {StackingSlice.Wallatedata?.data?.mystack
                         ? StackingSlice.Wallatedata?.data?.mystack
@@ -280,9 +317,12 @@ const Dashboard = () => {
                   <div className="d-flex h-50 h-md-100 flex-column justify-content-center">
                     <h6 className="pt-0 text-center">Airdrop Coins</h6>
                     <h6 className="text-center">
-                      {StackingSlice.Wallatedata?.data?.mystack>120 ? Profile[0]?.Airdropped:0} USDT
+                      {StackingSlice.Wallatedata?.data?.mystack > 120
+                        ? Profile[0]?.Airdropped
+                        : 0}{" "}
+                      USDT
                     </h6>
-{/*                     <button
+                    {/*                     <button
                       className="text-light"
                       style={{
                         background: "#02a2c4",
@@ -625,7 +665,7 @@ export default Dashboard;
 //                   className="ms-2 me-3"
 //                   style={{ color: "#02a2c4", fontSize: "20px" }}
 //                 />
-//                 My Infinity AI Team
+//                 My Infinity.AI Team
 //               </Nav.Link>
 //               <Nav.Link
 //                 href="#features"
@@ -635,7 +675,7 @@ export default Dashboard;
 //                   className="ms-2 me-3"
 //                   style={{ color: "#02a2c4", fontSize: "20px" }}
 //                 />
-//                 Infinity AI Direct Team
+//                 Infinity.AI Direct Team
 //               </Nav.Link>
 //               <Dropdown>
 //                 <Dropdown.Toggle
@@ -674,7 +714,7 @@ export default Dashboard;
 //               {windowSize.current[0] < 992 && (
 //                 <>
 //                   <button className="Username m-2 py-2 px-3">
-//                     Username : Infinity AI10019
+//                     Username : Infinity.AI10019
 //                   </button>
 //                   <button className="Username m-2 py-2 px-3">
 //                     <FaUserCircle
@@ -696,7 +736,7 @@ export default Dashboard;
 //               <div className="Boxcard p-4">
 //                 <div className="d-flex px-3">
 //                   <div className="w-75">
-//                     <p>Infinity AI Main Wallet</p>
+//                     <p>Infinity.AI Main Wallet</p>
 //                     <h2>10000.00</h2>
 //                   </div>
 //                   <div className="w-25">
@@ -736,7 +776,7 @@ export default Dashboard;
 //               <div className="Boxcard p-4">
 //                 <div className="d-flex px-3">
 //                   <div className="w-75">
-//                     <p>Infinity AI Main Wallet</p>
+//                     <p>Infinity.AI Main Wallet</p>
 //                     <h2>5000.00</h2>
 //                   </div>
 //                   <div className="w-25">
@@ -776,7 +816,7 @@ export default Dashboard;
 //               <div className="Boxcard p-4">
 //                 <div className="d-flex px-3">
 //                   <div className="w-75">
-//                     <p>Infinity AI Dapp Wallet</p>
+//                     <p>Infinity.AI Dapp Wallet</p>
 //                     <h2>2000.00</h2>
 //                   </div>
 //                   <div className="w-25">
@@ -882,7 +922,7 @@ export default Dashboard;
 //                       height={30}
 //                       className="me-3"
 //                     />
-//                     My Infinity AI Investments
+//                     My Infinity.AI Investments
 //                   </div>
 //                   <div className="">
 //                     <h2 className="m-0">35000 $</h2>
@@ -900,7 +940,7 @@ export default Dashboard;
 //                       height={30}
 //                       className="me-3"
 //                     />
-//                     My Infinity AI Team Investments
+//                     My Infinity.AI Team Investments
 //                   </div>
 //                   <div className="">
 //                     <h2 className="m-0">705000 $</h2>
@@ -920,7 +960,7 @@ export default Dashboard;
 //                         />
 //                       </div>
 //                       <div className="">
-//                         <p>My Infinity AI Team</p>
+//                         <p>My Infinity.AI Team</p>
 //                       </div>
 //                     </div>
 //                     <div className="d-flex flex-wrap justify-content-center align-items-center px-2">
@@ -955,7 +995,7 @@ export default Dashboard;
 //                         />
 //                       </div>
 //                       <div className="">
-//                         <p>Infinity AI Live Rate</p>
+//                         <p>Infinity.AI Live Rate</p>
 //                       </div>
 //                     </div>
 //                     <div className="d-flex px-2">

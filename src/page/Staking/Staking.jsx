@@ -219,67 +219,46 @@ function Staking() {
         if (account) {
           setloding(true);
           let web3 = await getWeb3();
-          // let contract = await new web3.eth.Contract(
-          //   v4x,
-          //   "0x55d398326f99059fF775485246999027B3197955"
-          // );
-          // const decimal = await contract.methods.decimals().call();
-          // await contract.methods
-          //   .transfer(
-          //     process.env.REACT_APP_OWNER_ADDRESS,
-          //     web3.utils.toBN(values[e] * Math.pow(10, decimal))
-          //   )
-          //   .send({
-          //     from: account,
-          //   })
-          //   .on("receipt", async (receipt) => {
-          //     const res = await dispatch(
-          //       BuyStacking({
-          //         WalletType: e.toString(),
-          //         Amount: values[e],
-          //         V4xTokenPrice: livaratev4xtoken,
-          //         Token:
-          //           JSON.parse(localStorage.getItem("data")) &&
-          //           JSON.parse(localStorage.getItem("data")).data.token,
-          //         transactionHash: receipt.transactionHash,
-          //       })
-          //     );
-          //     if (res.payload.data.isSuccess) {
-          //       toast.success(res.payload.data.message);
-          //       getalldata();
-          //       getalldata1();
-          //       setloding(!true);
-          //     } else {
-          //       toast.error(res.payload.data.message);
-          //       setloding(!true);
-          //     }
-          //   })
-          //   .on("error", (error) => {
-          //     setloding(!true);
-          //     console.error("Transaction Error:", error);
-          //   });
-          const recipientAddress = process.env.REACT_APP_OWNER_ADDRESS; // Replace with the recipient's Ethereum address
-          const amountToSend = web3.utils.toWei("100", "ether"); // Replace '100' with the amount you want to send
-          const usdtContractAddress =
-            "0x55d398326f99059fF775485246999027B3197955"; // Replace with the actual USDT contract address
-          const usdtContract = new web3.eth.Contract(v4x, usdtContractAddress);
-
-          web3.eth.sendTransaction(
-            {
-              to: usdtContractAddress,
-              from: account, // Replace with your Ethereum address
-              data: usdtContract.methods
-                .transfer(recipientAddress, amountToSend)
-                .encodeABI(),
-            },
-            (error, txHash) => {
-              if (!error) {
-                console.log("Transaction Hash:", txHash);
-              } else {
-                console.error("Error sending transaction:", error);
-              }
-            }
+          let contract = await new web3.eth.Contract(
+            v4x,
+            "0x55d398326f99059fF775485246999027B3197955"
           );
+          const decimal = await contract.methods.decimals().call();
+          await contract.methods
+            .transfer(
+              process.env.REACT_APP_OWNER_ADDRESS,
+              web3.utils.toBN(values[e] * Math.pow(10, decimal))
+            )
+            .send({
+              from: account,
+              gasPrice: web3.utils.toWei("5", "gwei"), // Set gas price to 5 Gwei (adjust as needed)
+            })
+            .on("receipt", async (receipt) => {
+              const res = await dispatch(
+                BuyStacking({
+                  WalletType: e.toString(),
+                  Amount: values[e],
+                  V4xTokenPrice: livaratev4xtoken,
+                  Token:
+                    JSON.parse(localStorage.getItem("data")) &&
+                    JSON.parse(localStorage.getItem("data")).data.token,
+                  transactionHash: receipt.transactionHash,
+                })
+              );
+              if (res.payload.data.isSuccess) {
+                toast.success(res.payload.data.message);
+                getalldata();
+                getalldata1();
+                setloding(!true);
+              } else {
+                toast.error(res.payload.data.message);
+                setloding(!true);
+              }
+            })
+            .on("error", (error) => {
+              setloding(!true);
+              console.error("Transaction Error:", error);
+            });
         } else {
           await connect();
         }
@@ -445,7 +424,24 @@ function Staking() {
       ),
     },
     {
-      title: "Locked Token",
+      title: "Locked Token Amount",
+      dataIndex: "createdAt",
+      key: "createdAt",
+      width: "200px",
+      ellipsis: {
+        showTitle: false,
+      },
+      render: (text, record, index) => (
+        <Tooltip
+          placement="topLeft"
+          title={record.Amount / record.V4xTokenPrice}
+        >
+          {record.Amount / record.V4xTokenPrice}
+        </Tooltip>
+      ),
+    },
+    {
+      title: "Locked Token Withdraw",
       dataIndex: "createdAt",
       key: "createdAt",
       width: "200px",

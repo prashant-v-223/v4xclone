@@ -68,7 +68,7 @@ const Header = () => {
                         href="#UpcomingProjects"
                         style={{ fontWeight: 900, fontSize: "11px" }}
                       >
-                        Infinity AI.Project
+                        Infinity.AI.Project
                       </a>
                     </li>
                     <li>

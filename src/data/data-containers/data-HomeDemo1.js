@@ -79,7 +79,7 @@ export const SingleCoolFact = [
 export const service_single_content = [
     {
         img:HomeDemo1Services1,
-        title:'Infinity AI Centralised Exchange'
+        title:'Infinity.AI Centralised Exchange'
     },
     {
         img:HomeDemo1Services2,
@@ -135,17 +135,17 @@ export const ServiceBlock = [
     {
         classIco:"icon ti-mobile",
         title:"Limitless Staking and Great Returns",
-        subtita:'Infinity AI Offers number of benifits to their users and investors, in terms of rewards, returns and security, along with daily withdrawals.'
+        subtita:'Infinity.AI Offers number of benifits to their users and investors, in terms of rewards, returns and security, along with daily withdrawals.'
     },
     {
         classIco:"icon ti-widget",
         title:"Refer Friends and Family to Earn more",
-        subtita:'You can refer your friends and family on Infinity AI to get more benifits. Everytime your referral stakes Infinity AI Coin, referrer gets rewards.'
+        subtita:'You can refer your friends and family on Infinity.AI to get more benifits. Everytime your referral stakes Infinity.AI Coin, referrer gets rewards.'
     },
     {
         classIco:"icon ti-settings",
         title:"Interesting Rewards of Passive Club & Achievement",
-        subtita:'Infinity AI has passive club reward benifit. Where users can make their team business and achieve ranks from manager to ambassador. Every rank will be rewarded with amazing bonuses.'
+        subtita:'Infinity.AI has passive club reward benifit. Where users can make their team business and achieve ranks from manager to ambassador. Every rank will be rewarded with amazing bonuses.'
     },
 ]
 
