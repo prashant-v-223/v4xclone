@@ -24,7 +24,7 @@ function Profile() {
   const navigation = useNavigate();
   const [modal2Open, setModal2Open] = useState(false);
   const [imagePreviewUrl, setimagePreviewUrl] = useState(
-    !JSON.parse(localStorage.getItem("data1"))?.data?.profile?.profileimg
+    !JSON.parse(localStorage.getItem("data1"))?.data?.profile?.profileimg 
       ? "https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true"
       : JSON.parse(localStorage.getItem("data1"))?.data?.profile?.profileimg
   );
@@ -32,6 +32,7 @@ function Profile() {
   const [values, setValues] = React.useState({
     Email: "",
     Emailforgot: "",
+    walletaddress: "",
     address: "",
     Password: "",
   });
@@ -39,6 +40,7 @@ function Profile() {
     Email: "",
     Emailforgot: "",
     address: "",
+    walletaddress: "",
     Password: "",
   });
   const handleChange1 = (info) => {
@@ -87,10 +89,11 @@ function Profile() {
     data();
   }, []);
   const validateAll = () => {
-    const { Email, Password, Emailforgot } = values;
+    const { Email, Password, Emailforgot, walletaddress } = values;
     const validations = {
       Email: "",
       Password: "",
+      walletaddress: "",
       Emailforgot: "",
       address: "",
     };
@@ -102,6 +105,10 @@ function Profile() {
     }
     if (!address) {
       validations.address = "Email is required!";
+      isValid = false;
+    }
+    if (!address) {
+      validations.walletaddress = "walletaddress is required!";
       isValid = false;
     }
 
@@ -164,12 +171,17 @@ function Profile() {
       Password: "",
       Emailforgot: "",
       address: "",
+      walletaddress: "",
     };
+    const { Email, Password, Emailforgot, walletaddress } = values;
     if (!Emailforgot) {
       validations.Emailforgot = "Nominee is required!";
     }
     if (!address) {
       validations.address = "address is required!";
+    }
+    if (!walletaddress) {
+      validations.walletaddress = "walletaddress is required!";
     }
     setValidations(validations);
     if (validations.Emailforgot === "") {
@@ -177,6 +189,7 @@ function Profile() {
         profileupdate({
           Nominee: values.Emailforgot,
           address: values.address,
+          walletaddress: values.walletaddress,
           profileimg: Data,
           Token:
             JSON.parse(localStorage.getItem("data1")) &&
@@ -217,11 +230,12 @@ function Profile() {
       toast.error(res.payload.data.message);
     }
   };
-  const { Email, Emailforgot, address, Password } = values;
+  const { Email, Emailforgot, address, Password, walletaddress } = values;
   const {
     Email: EmailVal,
     Emailforgot: EmailforgotVal,
     address: addressVal,
+    walletaddress: walletaddressVal,
     Password: PasswordVal,
   } = validations;
   const photoUpload = (e) => {
@@ -305,6 +319,36 @@ function Profile() {
                     </div>
                   </div>
                 </div>
+                {JSON.parse(localStorage.getItem("data1"))?.data?.profile
+                  ?.walletaddress && (
+                  <div
+                    className="row py-3"
+                    style={{
+                      borderTop: "1px solid rgb(112 100 100)",
+                      borderBottom: "1px solid rgb(112 100 100)",
+                    }}
+                  >
+                    <div className="col-12">
+                      <div class="inner-addon left-addon">
+                        <img
+                          src={require("../../assets/img/walletaddress 1.png")}
+                          alt=""
+                        />
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="walletaddress"
+                          placeholder="Wallet address"
+                          value={
+                            JSON.parse(localStorage.getItem("data1"))?.data
+                              ?.profile?.walletaddress
+                          }
+                          disabled
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
                 <div
                   className="row py-2"
                   style={{
@@ -423,7 +467,7 @@ function Profile() {
                     </div>
                   </div>
                 )}
-                <div
+                {/* <div
                   className="row py-2"
                   style={{
                     borderTop: "1px solid rgb(112 100 100)",
@@ -471,7 +515,7 @@ function Profile() {
                       />
                     </div>
                   </div>
-                </div>
+                </div> */}
                 <div className="col-12 pt-5">
                   <button
                     className="text-light d-flex align-items-center px-4 py-2"
@@ -494,6 +538,19 @@ function Profile() {
                   </Modal.Header>
 
                   <Modal.Body>
+                    <InputField
+                      type="text"
+                      name="walletaddress"
+                      placeholder="Enter your walletaddress"
+                      value={walletaddress}
+                      error={walletaddressVal}
+                      icons={<MailFilled />}
+                      onChange={handleChange}
+                      onBlur={validateOne}
+                      style={{
+                        border: "1px solid #fff",
+                      }}
+                    />
                     <InputField
                       type="text"
                       name="Emailforgot"

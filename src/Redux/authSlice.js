@@ -57,6 +57,7 @@ export const profileupdate = createAsyncThunk(
         {
           address: data.address,
           profileimg: data.profileimg,
+          walletaddress: data.walletaddress,
           Nominee: data.Nominee,
         },
         data.Token
