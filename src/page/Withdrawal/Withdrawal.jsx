@@ -177,7 +177,7 @@ function Withdrawal() {
                       </div>
                       <div className="img-div2">
                         <p className="m-0 text-light">
-                          You can transfer your Infinity.AI wallet coins to your
+                          You can transfer your USDT to your
                           downline team members. Transfers will be deposited in
                           Infinity.AI E-Wallet only.
                         </p>
