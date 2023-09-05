@@ -24,7 +24,7 @@ function Profile() {
   const navigation = useNavigate();
   const [modal2Open, setModal2Open] = useState(false);
   const [imagePreviewUrl, setimagePreviewUrl] = useState(
-    !JSON.parse(localStorage.getItem("data"))?.data?.profile?.profileimg 
+    !JSON.parse(localStorage.getItem("data"))?.data?.profile?.profileimg
       ? "https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true"
       : JSON.parse(localStorage.getItem("data"))?.data?.profile?.profileimg
   );
@@ -541,7 +541,7 @@ function Profile() {
                     <InputField
                       type="text"
                       name="walletaddress"
-                      placeholder="Enter your walletaddress"
+                      placeholder="Enter your USDT- BEP20  Walletaddress"
                       value={walletaddress}
                       error={walletaddressVal}
                       icons={<MailFilled />}
