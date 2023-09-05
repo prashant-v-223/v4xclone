@@ -165,7 +165,15 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="row px-3  py-3 justify-content-lg-center">
-              <div className="col-12 col-lg-4 text-light py-2">
+              <div
+                className="col-12 col-lg-4 text-light py-2"
+                style={{
+                  cursor: "pointer",
+                }}
+                onClick={() => {
+                  navigation("/Totaltrem");
+                }}
+              >
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100 ">
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
                     <img
@@ -173,7 +181,15 @@ const Dashboard = () => {
                       alt=""
                     />
                   </div>
-                  <div className=" d-flex h-50 h-md-100 flex-column justify-content-center">
+                  <div
+                    className=" d-flex h-50 h-md-100 flex-column justify-content-center"
+                    style={{
+                      cursor: "pointer",
+                    }}
+                    onClick={() => {
+                      navigation("/Totaltrem");
+                    }}
+                  >
                     <h4 className="pt-2 pt-lg-0 pb-4 mb-2 text-center text-lg-left">
                       My Team
                     </h4>
@@ -184,7 +200,16 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-lg-4  text-light py-2">
+              <div
+                className="col-12 col-lg-4 text-light py-2"
+                style={{
+                  cursor: "pointer",
+                }}
+                onClick={() => {
+                  navigation("/daireactterm");
+                }}
+              >
+                {" "}
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
                     <img
@@ -202,7 +227,15 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-lg-4  text-light py-2">
+              <div
+                className="col-12 col-lg-4  text-light py-2"
+                style={{
+                  cursor: "pointer",
+                }}
+                onClick={() => {
+                  navigation("/mian/Withdrawal");
+                }}
+              >
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
                   <div
                     className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100"
@@ -224,31 +257,36 @@ const Dashboard = () => {
                       StakingBonusIncome :
                       {StackingSlice.Wallatedata?.data?.income[0].StakingBonusIncome?.toFixed(
                         2
-                      )}$
+                      )}
+                      $
                     </h6>
                     <h6 className="text-center text-lg-left">
                       ReferandEarnIncome :
                       {StackingSlice.Wallatedata?.data?.income[0].ReferandEarn?.toFixed(
                         2
-                      )}$
+                      )}
+                      $
                     </h6>
                     <h6 className="text-center text-lg-left">
                       CommunitiesIncome :
                       {StackingSlice.Wallatedata?.data?.income[0].communities?.toFixed(
                         2
-                      )}$
+                      )}
+                      $
                     </h6>
                     <h6 className="text-center text-lg-left">
                       PassivesIncome :
                       {StackingSlice.Wallatedata?.data?.income[0].passives?.toFixed(
                         2
-                      )}$
+                      )}
+                      $
                     </h6>
                     <h6 className="text-center text-lg-left">
                       AchivementsIncome :
                       {StackingSlice.Wallatedata?.data?.income[0].achivements?.toFixed(
                         2
-                      )}$
+                      )}
+                      $
                     </h6>
                   </div>
                 </div>
@@ -262,7 +300,7 @@ const Dashboard = () => {
                     cursor: "pointer",
                   }}
                   onClick={() => {
-                    navigation("/Totaltrem");
+                    navigation("/mian/Withdrawal");
                   }}
                 >
                   <div className="pb-2 pb-lg-0 d-flex  justify-content-center align-items-center h-50 h-md-100">
@@ -290,7 +328,7 @@ const Dashboard = () => {
                     cursor: "pointer",
                   }}
                   onClick={() => {
-                    navigation("/daireactterm");
+                    navigation("/mian/Withdrawal");
                   }}
                 >
                   <div className="pb-2 pb-lg-0 d-flex  justify-content-center align-items-center h-50 h-md-100">

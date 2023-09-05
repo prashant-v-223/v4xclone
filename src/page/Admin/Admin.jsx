@@ -151,6 +151,21 @@ function Admin() {
       ),
     },
     {
+      title: "Fullname",
+      dataIndex: "Fullname",
+      key: "Fullname",
+      width: "190px",
+      sorter: (a, b) => a.Fullname.length - b.Fullname.length,
+      ellipsis: {
+        showTitle: false,
+      },
+      render: (address) => (
+        <Tooltip placement="topLeft" title={address}>
+          {address}
+        </Tooltip>
+      ),
+    },
+    {
       title: "Direct SponserId",
       dataIndex: "refferalBy",
       key: "refferalBy",

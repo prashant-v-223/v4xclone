@@ -131,6 +131,19 @@ function Totaltrempage() {
           {address}
         </Tooltip>
       ),
+    },  {
+      title: "Totaltrem",
+      dataIndex: "Totaltrem",
+      key: "Totaltrem",
+      sorter: (a, b) => a.Totaltrem.length - b.Totaltrem.length,
+      ellipsis: {
+        showTitle: false,
+      },
+      render: (address) => (
+        <Tooltip placement="topLeft" title={address}>
+          {address}
+        </Tooltip>
+      ),
     },
     {
       title: "StatUs",

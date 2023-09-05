@@ -124,6 +124,20 @@ function Daireacttermpage() {
       ),
     },
     {
+      title: "Fullname",
+      dataIndex: "Fullname",
+      key: "Fullname",
+      sorter: (a, b) => a.Fullname.length - b.Fullname.length,
+      ellipsis: {
+        showTitle: false,
+      },
+      render: (address) => (
+        <Tooltip placement="topLeft" title={address}>
+          {address}
+        </Tooltip>
+      ),
+    },
+    {
       title: "Direct SponserId",
       dataIndex: "refferalBy",
       key: "refferalBy",
@@ -303,7 +317,10 @@ function Daireacttermpage() {
                 lg={12}
               >
                 <RangePicker size="large" onChange={handleChange1} />
-                <ExportToExcel apiData={Fillter} fileName={"MyInfinity.AITeam"} />
+                <ExportToExcel
+                  apiData={Fillter}
+                  fileName={"MyInfinity.AITeam"}
+                />
               </Col>
               <div className="col-12 p-2 p-lg-3">
                 <Table
