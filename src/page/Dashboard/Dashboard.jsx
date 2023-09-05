@@ -239,7 +239,6 @@ const Dashboard = () => {
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
                   <div
                     className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100"
-                    style={{ width: "40%" }}
                   >
                     <FaDollarSign
                       className="ms-2 me-3"
@@ -248,46 +247,45 @@ const Dashboard = () => {
                   </div>
                   <div
                     className=" d-flex h-50 h-md-100 flex-column justify-content-center"
-                    style={{ width: "60%" }}
                   >
                     <h4 className="pt-2 pt-lg-0 pb-4 mb-2 text-center text-lg-left">
                       Total Income
                     </h4>
-                    <h6 className="text-center text-lg-left">
+                    <p className="text-center text-lg-left m-0">
                       StakingBonusIncome :
                       {StackingSlice.Wallatedata?.data?.income[0]?.StakingBonusIncome?.toFixed(
                         2
                       )}
                       $
-                    </h6>
-                    <h6 className="text-center text-lg-left">
+                    </p>
+                    <p className="text-center text-lg-left m-0">
                       ReferandEarnIncome :
                       {StackingSlice.Wallatedata?.data?.income[0]?.ReferandEarn?.toFixed(
                         2
                       )}
                       $
-                    </h6>
-                    <h6 className="text-center text-lg-left">
+                    </p>
+                    <p className="text-center text-lg-left m-0">
                       CommunitiesIncome :
                       {StackingSlice.Wallatedata?.data?.income[0]?.communities?.toFixed(
                         2
                       )}
                       $
-                    </h6>
-                    <h6 className="text-center text-lg-left">
+                    </p>
+                    <p className="text-center text-lg-left m-0">
                       PassivesIncome :
                       {StackingSlice.Wallatedata?.data?.income[0]?.passives?.toFixed(
                         2
                       )}
                       $
-                    </h6>
-                    <h6 className="text-center text-lg-left">
+                    </p>
+                    <p className="text-center text-lg-left m-0">
                       AchivementsIncome :
                       {StackingSlice.Wallatedata?.data?.income[0]?.achivements?.toFixed(
                         2
                       )}
                       $
-                    </h6>
+                    </p>
                   </div>
                 </div>
               </div>
