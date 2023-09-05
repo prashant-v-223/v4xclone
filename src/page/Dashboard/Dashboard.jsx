@@ -255,35 +255,35 @@ const Dashboard = () => {
                     </h4>
                     <h6 className="text-center text-lg-left">
                       StakingBonusIncome :
-                      {StackingSlice.Wallatedata?.data?.income[0].StakingBonusIncome?.toFixed(
+                      {StackingSlice.Wallatedata?.data?.income[0]?.StakingBonusIncome?.toFixed(
                         2
                       )}
                       $
                     </h6>
                     <h6 className="text-center text-lg-left">
                       ReferandEarnIncome :
-                      {StackingSlice.Wallatedata?.data?.income[0].ReferandEarn?.toFixed(
+                      {StackingSlice.Wallatedata?.data?.income[0]?.ReferandEarn?.toFixed(
                         2
                       )}
                       $
                     </h6>
                     <h6 className="text-center text-lg-left">
                       CommunitiesIncome :
-                      {StackingSlice.Wallatedata?.data?.income[0].communities?.toFixed(
+                      {StackingSlice.Wallatedata?.data?.income[0]?.communities?.toFixed(
                         2
                       )}
                       $
                     </h6>
                     <h6 className="text-center text-lg-left">
                       PassivesIncome :
-                      {StackingSlice.Wallatedata?.data?.income[0].passives?.toFixed(
+                      {StackingSlice.Wallatedata?.data?.income[0]?.passives?.toFixed(
                         2
                       )}
                       $
                     </h6>
                     <h6 className="text-center text-lg-left">
                       AchivementsIncome :
-                      {StackingSlice.Wallatedata?.data?.income[0].achivements?.toFixed(
+                      {StackingSlice.Wallatedata?.data?.income[0]?.achivements?.toFixed(
                         2
                       )}
                       $
