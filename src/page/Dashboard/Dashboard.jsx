@@ -240,11 +240,11 @@ const Dashboard = () => {
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
                     <FaDollarSign
                       className="ms-2 me-3"
-                      style={{ color: "#02a2c4", fontSize: "55px" }}
+                      style={{ color: "#02a2c4", fontSize: "61px" }}
                     />
                   </div>
                   <div className=" d-flex h-50 h-md-100 flex-column justify-content-center">
-                    <h4 className="pt-2 pt-lg-0 pb-4 mb-2 text-center text-lg-left">
+                    <h4 className="pt-2 pt-lg-0 mb-2 text-center text-lg-left">
                       Total Income
                     </h4>
                     <p className="text-center text-lg-left m-0">
