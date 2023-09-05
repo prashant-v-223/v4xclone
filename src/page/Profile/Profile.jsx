@@ -24,9 +24,9 @@ function Profile() {
   const navigation = useNavigate();
   const [modal2Open, setModal2Open] = useState(false);
   const [imagePreviewUrl, setimagePreviewUrl] = useState(
-    !JSON.parse(localStorage.getItem("data1"))?.data?.profile?.profileimg 
+    !JSON.parse(localStorage.getItem("data"))?.data?.profile?.profileimg 
       ? "https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true"
-      : JSON.parse(localStorage.getItem("data1"))?.data?.profile?.profileimg
+      : JSON.parse(localStorage.getItem("data"))?.data?.profile?.profileimg
   );
   const [Data, setData] = useState("");
   const [values, setValues] = React.useState({
@@ -136,7 +136,7 @@ function Profile() {
     };
 
     let response = await axios.request(reqOptions);
-    localStorage.setItem("data1", JSON.stringify({ data: response.data }));
+    localStorage.setItem("data", JSON.stringify({ data: response.data }));
   };
   const validateOne = (e) => {
     const { name } = e.target;
@@ -208,7 +208,7 @@ function Profile() {
         };
         let response = await axios.request(reqOptions);
         console.log(response.data);
-        localStorage.setItem("data1", JSON.stringify({ data: response.data }));
+        localStorage.setItem("data", JSON.stringify({ data: response.data }));
         window.location.reload(false);
       } else {
         toast.error(res.payload.data.message);
@@ -286,7 +286,7 @@ function Profile() {
                         name="email"
                         placeholder="Wallet address"
                         value={
-                          JSON.parse(localStorage.getItem("data1"))?.data
+                          JSON.parse(localStorage.getItem("data"))?.data
                             ?.profile?.email
                         }
                         disabled
@@ -319,7 +319,7 @@ function Profile() {
                     </div>
                   </div>
                 </div>
-                {JSON.parse(localStorage.getItem("data1"))?.data?.profile
+                {JSON.parse(localStorage.getItem("data"))?.data?.profile
                   ?.walletaddress && (
                   <div
                     className="row py-3"
@@ -340,7 +340,7 @@ function Profile() {
                           name="walletaddress"
                           placeholder="Wallet address"
                           value={
-                            JSON.parse(localStorage.getItem("data1"))?.data
+                            JSON.parse(localStorage.getItem("data"))?.data
                               ?.profile?.walletaddress
                           }
                           disabled
@@ -371,7 +371,7 @@ function Profile() {
                         name="walletaddress"
                         placeholder="Wallet address"
                         value={
-                          JSON.parse(localStorage.getItem("data1"))?.data
+                          JSON.parse(localStorage.getItem("data"))?.data
                             ?.profile?.PhoneNumber
                         }
                         disabled
@@ -398,7 +398,7 @@ function Profile() {
                         name="Rank"
                         placeholder="Wallet address"
                         value={
-                          JSON.parse(localStorage.getItem("data1"))?.data
+                          JSON.parse(localStorage.getItem("data"))?.data
                             ?.profile?.Rank
                         }
                         disabled
@@ -406,7 +406,7 @@ function Profile() {
                     </div>
                   </div>
                 </div>{" "}
-                {JSON.parse(localStorage.getItem("data1"))?.data?.profile
+                {JSON.parse(localStorage.getItem("data"))?.data?.profile
                   ?.Nominee && (
                   <div
                     className="row py-2"
@@ -429,7 +429,7 @@ function Profile() {
                           class="form-control"
                           name="Rank"
                           value={
-                            JSON.parse(localStorage.getItem("data1"))?.data
+                            JSON.parse(localStorage.getItem("data"))?.data
                               ?.profile?.Nominee
                           }
                           disabled
@@ -438,7 +438,7 @@ function Profile() {
                     </div>
                   </div>
                 )}
-                {JSON.parse(localStorage.getItem("data1"))?.data?.profile
+                {JSON.parse(localStorage.getItem("data"))?.data?.profile
                   ?.address && (
                   <div
                     className="row py-2"
@@ -458,7 +458,7 @@ function Profile() {
                           class="form-control"
                           name="Rank"
                           value={
-                            JSON.parse(localStorage.getItem("data1"))?.data
+                            JSON.parse(localStorage.getItem("data"))?.data
                               ?.profile?.address
                           }
                           disabled
