@@ -237,17 +237,13 @@ const Dashboard = () => {
                 }}
               >
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
-                  <div
-                    className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100"
-                  >
+                  <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
                     <FaDollarSign
                       className="ms-2 me-3"
                       style={{ color: "#02a2c4", fontSize: "55px" }}
                     />
                   </div>
-                  <div
-                    className=" d-flex h-50 h-md-100 flex-column justify-content-center"
-                  >
+                  <div className=" d-flex h-50 h-md-100 flex-column justify-content-center">
                     <h4 className="pt-2 pt-lg-0 pb-4 mb-2 text-center text-lg-left">
                       Total Income
                     </h4>
@@ -364,33 +360,35 @@ const Dashboard = () => {
                         : 0}{" "}
                       USDT
                     </h6>
-                    {/*                     <button
-                      className="text-light"
-                      style={{
-                        background: "#02a2c4",
-                        height: 60,
-                        border: "none",
-                      }}
-                      onClick={async () => {
-                        const res = await dispatch(
-                          getdappWallatedata({
-                            Token:
-                              JSON.parse(localStorage.getItem("data")) &&
-                              JSON.parse(localStorage.getItem("data")).data
-                                .token,
-                          })
-                        );
-                        if (res.payload.data.isSuccess) {
-                          toast.success(res.payload.data.message);
-                          setotp("");
-                          setopen(!false);
-                        } else {
-                          toast.error(res.payload.data.message);
-                        }
-                      }}
-                    >
-                      Withdraw
-                    </button> */}
+                    {StackingSlice.Wallatedata?.data?.mystack > 120 && (
+                      <button
+                        className="text-light"
+                        style={{
+                          background: "#02a2c4",
+                          height: 60,
+                          border: "none",
+                        }}
+                        onClick={async () => {
+                          const res = await dispatch(
+                            getdappWallatedata({
+                              Token:
+                                JSON.parse(localStorage.getItem("data")) &&
+                                JSON.parse(localStorage.getItem("data")).data
+                                  .token,
+                            })
+                          );
+                          if (res.payload.data.isSuccess) {
+                            toast.success(res.payload.data.message);
+                            setotp("");
+                            setopen(!false);
+                          } else {
+                            toast.error(res.payload.data.message);
+                          }
+                        }}
+                      >
+                        Withdraw
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>
