@@ -71,7 +71,7 @@ const Dashboard = () => {
         <Navbar />
         <div className="container-fluid blackbg">
           <div className="mainsection ">
-            <div class="d-flex justify-content-between py-3 px-4"> <h4 class="pt-2 pt-lg-0 mb-2 text-center text-lg-left text-light">Laval : {Profile[0]?.leval}</h4> <h4 class="pt-2 pt-lg-0 mb-2 text-center text-lg-left text-light">Rank : {Profile[0]?.Rank}</h4> </div>
+            <div class="d-flex justify-content-between py-3 px-4"> <h5 class="pt-2 pt-lg-0 mb-2 text-center text-lg-left text-light">Laval : {Profile[0]?.leval}</h5> <h5 class="pt-2 pt-lg-0 mb-2 text-center text-lg-left text-light">Rank : {Profile[0]?.Rank}</h5> </div>
               <div className="row px-3  py-3 justify-content-lg-center">
               <div className="col-12 col-lg-4  text-light py-2">
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
