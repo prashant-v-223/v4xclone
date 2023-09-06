@@ -32,19 +32,9 @@ const Dashboard = () => {
   const dispatch = useDispatch();
   const navigation = useNavigate();
   useEffect(() => {
-      getalldata();
-      getalldata1();
+    getalldata();
   }, [lockeddate]);
 
-  const getalldata1 = async () => {
-    const res = await dispatch(
-      Allstacking({
-        Token:
-          JSON.parse(localStorage.getItem("data")) &&
-          JSON.parse(localStorage.getItem("data")).data.token,
-      })
-    );
-  };
   const getalldata = async () => {
     const res = await dispatch(
       Wallatedata({
@@ -56,11 +46,14 @@ const Dashboard = () => {
     if (res.payload.data.isSuccess) {
       setProfile(res.payload.data.profile);
       setAlldata(res.payload.data.data);
-      const currentDate = new Date(
-        StackingSlice.Wallatedata?.data?.data[0].createdAt
+    
+      await setlockeddate(
+        new Date(StackingSlice.Wallatedata?.data?.data[0].createdAt).setMonth(
+          new Date(
+            StackingSlice.Wallatedata?.data?.data[0].createdAt
+          ).getMonth() + 42
+        )
       );
-      console.log(currentDate.setMonth(currentDate.getMonth() + 42));
-      setlockeddate(currentDate.setMonth(currentDate.getMonth() + 42));
     } else {
       navigation("/");
     }
