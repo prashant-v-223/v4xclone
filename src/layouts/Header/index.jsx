@@ -35,7 +35,12 @@ const Header = () => {
               id="dreamNav"
             >
               <a className="nav-brand" href="#">
-                <img src={Logo} alt="logo" className="img-fluid" width={100} />
+                <img
+                  src={require("../../assets/img/Logo.png")}
+                  alt="logo"
+                  className="img-fluid"
+                  width={100}
+                />
               </a>
               <div className="classy-navbar-toggler">
                 <span className="navbarToggler" onClick={addActiveClass}>

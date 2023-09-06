@@ -22,34 +22,7 @@ const SecFAQ_Timeline = ({ FQAInfo, DocElementTitle }) => {
                 data-aos="fade-up"
               >
                 <div class="accordion" id="accordionExample">
-                  <div class="accordion-item py-3">
-                    <h2 class="accordion-header mt-0" id="headingOne">
-                      <button
-                        class="accordion-button"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne"
-                        aria-expanded="true"
-                        aria-controls="collapseOne"
-                      >
-                        What is Infinity AI Coin?
-                      </button>
-                    </h2>
-                    <div
-                      id="collapseOne"
-                      class="accordion-collapse collapse show"
-                      aria-labelledby="headingOne"
-                      data-bs-parent="#accordionExample"
-                    >
-                      <div class="accordion-body">
-                        <strong>Infinity AI Coin</strong>
-                        IS VICTORY FOR EXTREME. THIS CRYPTOCURRENCY WAS
-                        SYMBOLIZED AS Infinity AI Coin. <strong>Infinity AIinity.ai COIN</strong>IS ON
-                        BSCSCAN WITH BEP 20 NETWORK. THIS CRYPTOCURRENCY IS
-                        ACCEPTABLE IN BUSD/USDT.
-                      </div>
-                    </div>
-                  </div>
+               
                   <div class="accordion-item py-3">
                     <h2 class="accordion-header" id="headingTwo">
                       <button
@@ -70,7 +43,7 @@ const SecFAQ_Timeline = ({ FQAInfo, DocElementTitle }) => {
                       data-bs-parent="#accordionExample"
                     >
                       <div class="accordion-body">
-                        <strong>Infinity AI Coin</strong> IS TOTALLY DECENTRALIZED AND
+                        <strong>Infinity AI Token</strong> IS TOTALLY DECENTRALIZED AND
                         WORK THROUGH THE SMART CONTRACT WHERE NO INDIVIDUAL OR
                         GROUP OR ANY ADMIN INVOLVED. THIS PLATFORM IS HIGHLY
                         SECURE BECAUSE IT IS MADE THROUGH THE PROCESS OF
@@ -100,8 +73,8 @@ const SecFAQ_Timeline = ({ FQAInfo, DocElementTitle }) => {
                       <div class="accordion-body">
                         {" "}
                         YES, WE DO HAVE A WHITEPAPER WHERE ANYONE CAN HAVE A
-                        BRIEF IDEA ABOUT<strong>Infinity AI Coin</strong> THE{" "}
-                        <strong>Infinity AI Coin</strong> WHITEPAPER IS EXPLAINED IN
+                        BRIEF IDEA ABOUT<strong>Infinity AI Token</strong> THE{" "}
+                        <strong>Infinity AI Token</strong> WHITEPAPER IS EXPLAINED IN
                         DETAIL ABOUT THE WHOLE PROJECT AS WELL AS THE UPCOMING
                         FEATURES AND PROVISIONS.
                       </div>
@@ -153,7 +126,7 @@ const SecFAQ_Timeline = ({ FQAInfo, DocElementTitle }) => {
                     >
                       <div class="accordion-body">
                         YES, WE DO HAVE A REFERRAL PROGRAM WHERE A USER CAN
-                        EASILY EARN REWARD BY BUILDING THE Infinity AI Coin COMMUNITY.
+                        EASILY EARN REWARD BY BUILDING THE Infinity AI Token COMMUNITY.
                       </div>
                     </div>
                   </div>

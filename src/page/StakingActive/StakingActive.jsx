@@ -66,6 +66,20 @@ function StakingActive() {
       ),
     },
     {
+      title: "Fullname",
+      dataIndex: "Fullname",
+      key: "Fullname",
+      ellipsis: {
+        showTitle: false,
+      },
+      width: "230px",
+      render: (text, record, index) => (
+        <Tooltip placement="topLeft" title={record?.result?.email}>
+          {record?.result?.Fullname}
+        </Tooltip>
+      ),
+    },
+    {
       title: "WalletType",
       dataIndex: "walletaddress",
       key: "walletaddress",
@@ -222,7 +236,7 @@ function StakingActive() {
               columns={columns}
               dataSource={Alldata}
               bordered={true}
-              title={() => "Withdraw Report"}
+              title={() => "Staking Report"}
               scroll={{ x: "1500px " }}
               pagination={{
                 defaultPageSize: 10,

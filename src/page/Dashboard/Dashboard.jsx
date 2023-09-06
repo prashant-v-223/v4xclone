@@ -148,7 +148,7 @@ const Dashboard = () => {
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
                     <img
-                      src={require("../../assets/img/2ffc87ac-289d-4ae5-a0c6-4eb76ed22960.jpg")}
+                      src={require("../../assets/img/infinityiat.io.png")}
                       alt=""
                       style={{ width: 120, hight: 120 }}
                     />
@@ -245,14 +245,14 @@ const Dashboard = () => {
                 }}
               >
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
-                  <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
+                  <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-md-100">
                     <FaDollarSign
                       className="ms-2 me-3"
                       style={{ color: "#02a2c4", fontSize: "61px" }}
                     />
                   </div>
-                  <div className=" d-flex h-50 h-md-100 flex-column justify-content-center">
-                    <h4 className="pt-2 pt-lg-0 mb-2 text-center text-lg-left">
+                  <div className=" d-flex h-50 h-md-100 flex-column justify-content-center ">
+                    <h4 className="pt-5 mt-3 mt-lg-3 pt-lg-0 mb-2 text-center text-lg-left">
                       Total Income
                     </h4>
                     <p className="text-center text-lg-left m-0">

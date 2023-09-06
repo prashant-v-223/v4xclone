@@ -131,14 +131,30 @@ function Totaltrempage() {
           {address}
         </Tooltip>
       ),
-    },  {
-      title: "Totaltrem",
-      dataIndex: "Totaltrem",
-      key: "Totaltrem",
-      sorter: (a, b) => a.Totaltrem.length - b.Totaltrem.length,
+    },
+    {
+      title: "Fullname",
+      dataIndex: "Fullname",
+      key: "Fullname",
+      sorter: (a, b) => a.Fullname.length - b.Fullname.length,
       ellipsis: {
         showTitle: false,
       },
+      render: (address) => (
+        <Tooltip placement="topLeft" title={address}>
+          {address}
+        </Tooltip>
+      ),
+    },
+    {
+      title: "Direct SponserId",
+      dataIndex: "refferalBy",
+      key: "refferalBy",
+      sorter: (a, b) => a.username.slice(3, -1) - b.username.slice(3, -1),
+      ellipsis: {
+        showTitle: false,
+      },
+      width: "150px",
       render: (address) => (
         <Tooltip placement="topLeft" title={address}>
           {address}
@@ -296,7 +312,11 @@ function Totaltrempage() {
                 xs={24}
                 lg={12}
               >
-                <RangePicker size="large" onChange={handleChange1}  onPressEnter={handleChange1}/>
+                <RangePicker
+                  size="large"
+                  onChange={handleChange1}
+                  onPressEnter={handleChange1}
+                />
               </Col>
               <div className="col-12 p-2 p-lg-3">
                 <Table
