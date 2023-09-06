@@ -321,12 +321,7 @@ function Withdrawal() {
                         </div>
                         <div className="px-3 py-2 py-lg-0">
                           <h6 className="m-0 text-light text-center">
-                            {Alldata[0]?.mainWallet?.toFixed(4)} USDT ={" "}
-                            {Number(
-                              Alldata[0]?.mainWallet /
-                                WallatedatSlice.Wallatedata?.data?.V4Xtokenprice
-                            )?.toFixed(4) + " "}
-                            {"IAT"}
+                            {Alldata[0]?.mainWallet?.toFixed(4)} USDT 
                           </h6>
                         </div>
                       </div>
