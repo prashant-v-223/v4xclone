@@ -396,7 +396,7 @@ function Staking() {
       },
     },
     {
-      title: "Infinity.AI Coin Price",
+      title: "Infinity AI Coin Price",
       dataIndex: "V4xTokenPrice",
       key: "V4xTokenPrice",
       width: "200px",
@@ -776,7 +776,7 @@ function Staking() {
           <Modal.Body>
             <p>
               Your % return will be calculated based on amount of tokens staked.
-              You can see the Infinity.Ai slab details below.
+              You can see the Infinity AI slab details below.
             </p>
             <div className="d-flex">
               <div className="w-50">

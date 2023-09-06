@@ -331,7 +331,7 @@ function Daireacttermpage() {
                     current: page,
                     onChange: (page, pageSize) => onTabChange(page, pageSize),
                   }}
-                  title={() => "My Infinity.AI Team"}
+                  title={() => "My Infinity AI Team"}
                   scroll={{ x: "calc(1700px)" }}
                 />
               </div>

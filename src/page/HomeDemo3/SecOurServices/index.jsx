@@ -8,8 +8,8 @@ const SecOurServices = ({data}) => {
         <div className="container">
             
             <SectionHeading
-                title='Infinity.AI Upcoming Projects '
-                text='Infinity.AI has always been focusing on bringing more and more useful utilities and applications for our users. Some of our upcoming products are listed below.'
+                title='Infinity AI Upcoming Projects '
+                text='Infinity AI has always been focusing on bringing more and more useful utilities and applications for our users. Some of our upcoming products are listed below.'
             />
                 
 

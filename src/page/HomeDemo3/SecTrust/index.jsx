@@ -8,8 +8,8 @@ const SecTrust = ({data}) => {
     <section className="trust-section section-padding-100">
 
         <SectionHeading
-            title='Infinity.AI Is certified and Audited'
-            text='Smart contracts and codes on which Infinity.AI platform runs are completely secure and audited. Smart Contracts are audited by Techrate.'
+            title='Infinity AI Is certified and Audited'
+            text='Smart contracts and codes on which Infinity AI platform runs are completely secure and audited. Smart Contracts are audited by Techrate.'
         />
 
         <div className="container">

@@ -173,7 +173,7 @@ function Navbar1() {
                 className="ms-2 me-3"
                 style={{ color: "#02a2c4", fontSize: "20px" }}
               />
-              My Infinity.AI Team
+              My Infinity AI Team
             </Nav.Link>
             <Nav.Link
               className="d-flex justify-content-start align-items-center  py-3 text-light"
@@ -186,7 +186,7 @@ function Navbar1() {
                 className="ms-2 me-3"
                 style={{ color: "#02a2c4", fontSize: "20px" }}
               />
-              Infinity.AI Direct Team
+              Infinity AI Direct Team
             </Nav.Link>
             {Profile?.Roll === "admin" && (
               <Dropdown>
@@ -306,7 +306,7 @@ function Navbar1() {
                       className="ms-2 me-3"
                       style={{ color: "#02a2c4", fontSize: "20px" }}
                     />
-                    Infinity.AI Support Details
+                    Infinity AI Support Details
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
@@ -398,7 +398,7 @@ function Navbar1() {
                     className="ms-2 me-3"
                     style={{ color: "#02a2c4", fontSize: "20px" }}
                   />
-                  Infinity.AI Community Reward
+                  Infinity AI Community Reward
                 </Dropdown.Item>{" "}
                 <Dropdown.Item
                   className="py-2 "
@@ -410,7 +410,7 @@ function Navbar1() {
                     className="ms-2 me-3"
                     style={{ color: "#45F4FF", fontSize: "20px" }}
                   />
-                  Infinity.AI passive club reward
+                  Infinity AI passive club reward
                 </Dropdown.Item>
                 <Dropdown.Item
                   className="py-2"
@@ -422,7 +422,7 @@ function Navbar1() {
                     className="ms-2 me-3"
                     style={{ color: "#02a2c4", fontSize: "20px" }}
                   />
-                  Infinity.AI Achievement Reward
+                  Infinity AI Achievement Reward
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>

@@ -42,13 +42,13 @@ const SecWelcomeArea = () => {
                   </div>
                 </div>
                 <h1>
-                  World's Topmost Digital Cryptocurrency Infinity.AI Is here
+                  World's Topmost Digital Cryptocurrency Infinity AI Is here
                 </h1>
                 <p style={{ fontSize: "13px", color: "rgb(1, 231, 254)" }}>
                   <b>
-                    Infinity.AI is a web3 platform which is focused Infinity.AI
+                    Infinity AI is a web3 platform which is focused Infinity AI
                     Coin Blockchain, Decentralised Wallet, NFT Marketplace, P2E
-                    Gaming, Infinity.AI Centralised Exchange & Multi-utility
+                    Gaming, Infinity AI Centralised Exchange & Multi-utility
                     Applications.
                   </b>
                 </p>
@@ -101,7 +101,7 @@ const SecWelcomeArea = () => {
                           }}
                         >
                           <p className="m-0">
-                            Scan this QR to import <br /> Infinity.AI Coin to your
+                            Scan this QR to import <br /> Infinity AI Coin to your
                             wallet
                           </p>
                         </button>
@@ -140,7 +140,7 @@ const SecWelcomeArea = () => {
                           }}
                         >
                           <p className="m-0 text-center">
-                            Scan this QR to import <br /> Infinity.AI Coin to
+                            Scan this QR to import <br /> Infinity AI Coin to
                             your wallet
                           </p>
                         </button>

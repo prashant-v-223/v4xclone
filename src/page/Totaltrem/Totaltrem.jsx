@@ -311,7 +311,7 @@ function Totaltrempage() {
                     current: page,
                     onChange: (page, pageSize) => onTabChange(page, pageSize),
                   }}
-                  title={() => "Infinity.AI Direct Team"}
+                  title={() => "Infinity AI Direct Team"}
                   scroll={{ x: "calc(1450px)" }}
                 />
               </div>
