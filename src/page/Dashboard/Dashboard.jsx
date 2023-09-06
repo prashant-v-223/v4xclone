@@ -71,8 +71,15 @@ const Dashboard = () => {
         <Navbar />
         <div className="container-fluid blackbg">
           <div className="mainsection ">
-            <div class="d-flex justify-content-between py-3 px-4"> <h5 class="pt-2 pt-lg-0 mb-2 text-center text-lg-left text-light">Laval : {Profile[0]?.leval}</h5> <h5 class="pt-2 pt-lg-0 mb-2 text-center text-lg-left text-light">Rank : {Profile[0]?.Rank}</h5> </div>
-              <div className="row px-3  py-3 justify-content-lg-center">
+            <div class="d-flex justify-content-between py-3 px-4">
+              <h5 class="pt-2 pt-lg-0 mb-2 text-center text-lg-left text-light">
+                Laval : {Profile[0]?.leval}
+              </h5>{" "}
+              <h5 class="pt-2 pt-lg-0 mb-2 text-center text-lg-left text-light">
+                Rank : {Profile[0]?.Rank}
+              </h5>{" "}
+            </div>
+            <div className="row px-3  pb-3 justify-content-lg-center">
               <div className="col-12 col-lg-4  text-light py-2">
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
@@ -141,7 +148,7 @@ const Dashboard = () => {
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
                     <img
-                      src={require("../../assets/img/infinityiat.io.png")}
+                      src={require("../../assets/img/2ffc87ac-289d-4ae5-a0c6-4eb76ed22960.jpg")}
                       alt=""
                       style={{ width: 120, hight: 120 }}
                     />
@@ -165,7 +172,7 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="row px-3  py-3 justify-content-lg-center">
+            <div className="row px-3  pb-3 justify-content-lg-center">
               <div
                 className="col-12 col-lg-4 text-light py-2"
                 style={{
@@ -249,35 +256,35 @@ const Dashboard = () => {
                       Total Income
                     </h4>
                     <p className="text-center text-lg-left m-0">
-                      StakingBonusIncome :
-                      {StackingSlice.Wallatedata?.data?.income[0]?.StakingBonusIncome?.toFixed(
-                        2
-                      )}
-                      $
-                    </p>
-                    <p className="text-center text-lg-left m-0">
-                      ReferandEarnIncome :
+                      Referral & Earn :
                       {StackingSlice.Wallatedata?.data?.income[0]?.ReferandEarn?.toFixed(
                         2
                       )}
                       $
                     </p>
                     <p className="text-center text-lg-left m-0">
-                      CommunitiesIncome :
+                      Staking Bonus :
+                      {StackingSlice.Wallatedata?.data?.income[0]?.StakingBonusIncome?.toFixed(
+                        2
+                      )}
+                      $
+                    </p>
+                    <p className="text-center text-lg-left m-0">
+                      Community reward :
                       {StackingSlice.Wallatedata?.data?.income[0]?.communities?.toFixed(
                         2
                       )}
                       $
                     </p>
                     <p className="text-center text-lg-left m-0">
-                      PassivesIncome :
+                      Passive club reward :
                       {StackingSlice.Wallatedata?.data?.income[0]?.passives?.toFixed(
                         2
                       )}
                       $
                     </p>
                     <p className="text-center text-lg-left m-0">
-                      AchivementsIncome :
+                      Achievement reward :
                       {StackingSlice.Wallatedata?.data?.income[0]?.achivements?.toFixed(
                         2
                       )}

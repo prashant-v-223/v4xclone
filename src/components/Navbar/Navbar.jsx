@@ -342,7 +342,7 @@ function Navbar1() {
                 <Dropdown.Item
                   className="py-2"
                   onClick={() => {
-                    navigation("/V4X/Withdrawal");
+                    navigation("/IAT/Withdrawal");
                   }}
                 >
                   <FaDollarSign

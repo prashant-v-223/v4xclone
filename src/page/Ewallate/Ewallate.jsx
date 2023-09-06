@@ -2,10 +2,14 @@ import React, { useEffect, useState } from "react";
 import Navbar1 from "../../components/Navbar/Navbar";
 import { Spin, Table, Tooltip } from "antd";
 import { useDispatch, useSelector } from "react-redux";
+import { Col, DatePicker, Row, Select, Input, Space } from "antd";
+import Text from "antd/lib/typography/Text";
 import { Mainwallate123, Wallet123 } from "../../Redux/Mainwallate";
 
+const { RangePicker } = DatePicker;
 function Ewallate() {
   const [Alldata, setAlldata] = useState([]);
+  const [Fillter, setFillter] = React.useState([]);
   const dispatch = useDispatch();
   useEffect(() => {
     getalldata();
@@ -111,16 +115,80 @@ function Ewallate() {
       ),
     },
   ];
+  const handleChange1 = async (value) => {
+    if (value) {
+      var startDate = new Date(value[0]).getTime();
+      var endDate = new Date(value[1]).getTime();
+      var resultProductData = Alldata.filter((a) => {
+        return (
+          new Date(a.createdAt).getTime() >= new Date(startDate) &&
+          new Date(a.createdAt).getTime() <= new Date(endDate)
+        );
+      });
+      setFillter(resultProductData);
+    } else {
+      const res = await dispatch(
+        Mainwallate123({
+          Token:
+            JSON.parse(localStorage.getItem("data")) &&
+            JSON.parse(localStorage.getItem("data")).data.token,
+        })
+      );
+      setAlldata(res.payload.data.data);
+      setFillter(res.payload.data.data);
+    }
+  };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    if (value !== "") {
+      let data = Alldata.filter((truck) => {
+        return (
+          truck?.createdAt
+            .toString()
+            .toLowerCase()
+            .match(value.toLowerCase()) ||
+          truck?.Amount.toString().toLowerCase().match(value.toLowerCase()) ||
+          truck?.Note.toString().toLowerCase().match(value.toLowerCase()) ||
+          truck?.Usernameby.toString().toLowerCase().match(value.toLowerCase())
+        );
+      });
+      setFillter(data);
+    } else {
+      getalldata();
+    }
+  };
   return (
     <div>
       <Navbar1 />
       <div className="container-fluid blackbg">
         <div className="mainsection">
           <div className="row p-4">
+            <Col className="px-3" xs={24} lg={12}>
+              <div className="">
+                <Text>Source</Text>
+                <br />
+                <Input
+                  showSearch
+                  style={{ width: "100%", maxWidth: "300px" }}
+                  placeholder="Search"
+                  className="mb-4"
+                  name="serch"
+                  onChange={handleChange}
+                />
+              </div>
+            </Col>
+            <Col
+              className="px-3 d-flex  justify-content-end align-items-center py-3"
+              xs={24}
+              lg={12}
+            >
+              <RangePicker size="large" onChange={handleChange1} />
+            </Col>
             <div className="col-12 p-2 p-lg-3">
               <Table
                 columns={columns}
-                dataSource={Alldata}
+                bordered={true}
+                dataSource={Fillter}
                 title={() => "Infinity.AI Wallet Report"}
                 scroll={{ x: "calc(500px + 50%)" }}
               />

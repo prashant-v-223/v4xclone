@@ -502,7 +502,7 @@ function Profile() {
                   <div className="col-12">
                     <div class="inner-addon1 left-addon">
                       <img
-                        src={require("../../assets/img/infinityiat.io.png")}
+                        src={require("../../assets/img/2ffc87ac-289d-4ae5-a0c6-4eb76ed22960.jpg")}
                         alt=""
                         style={{ width: "65px !important" }}
                       />

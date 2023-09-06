@@ -158,10 +158,6 @@ function Achievementpage() {
                 lg={12}
               >
                 <RangePicker size="large" onChange={handleChange1} />
-                <ExportToExcel
-                  apiData={Fillter}
-                  fileName={"AchievementBonusDetails"}
-                />
               </Col>
               <div className="col-12 p-2 p-lg-3 pt-lg-0">
                 <Table

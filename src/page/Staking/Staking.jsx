@@ -468,6 +468,12 @@ function Staking() {
       ),
     },
   ];
+  let multiplesOf40 = [];
+
+  let limit = 20040;
+  for (let i = 40; i <= limit; i += 40) {
+    multiplesOf40.push(i);
+  }
 
   const livaratev4xtoken = StackingSlice?.data?.data?.V4Xtokenprice;
   return (
@@ -524,20 +530,23 @@ function Staking() {
                       </div>
                     </div>
                     <h6 className="pt-3 ps-1">Amount in USDT</h6>
-                    <InputField
-                      type="number"
+                    <select
+                      id="numberSelector"
+                      className="ant-input w-100"
                       name="Mainwalletstacking"
-                      placeholder="Wallet address"
-                      value={values.Mainwalletstacking}
-                      error={validations.Mainwalletstacking}
                       onChange={handleChange}
-                      min={40}
-                      defaultValue={40}
-                      step={40}
-                      style={{
-                        border: "1px solid #fff",
-                      }}
-                    />
+                    >
+                      {multiplesOf40.map((option, index) => (
+                        <option
+                          className="text-dark"
+                          key={index}
+                          value={option}
+                        >
+                          {isNaN(option) ? option : option}
+                        </option>
+                      ))}
+                    </select>
+                    <p>{validations.Mainwalletstacking}</p>
                     <div className=" mt-3 d-flex align-items-center">
                       <Button
                         className={" w-100 text-light"}
@@ -597,21 +606,22 @@ function Staking() {
                       </div>
                     </div>
                     <h6 className="pt-3 ps-1">Amount in USDT</h6>
-                    <InputField
-                      type="number"
+                    <select
+                      id="numberSelector"
+                      className="ant-input w-100"
                       name="ewalletstacking"
-                      placeholder="Wallet address"
-                      value={values.ewalletstacking}
-                      error={validations.ewalletstacking}
                       onChange={handleChange}
-                      min={40}
-                      defaultValue={40}
-                      step={40}
-                      style={{
-                        border: "1px solid #fff",
-                      }}
-                    />
-
+                    >
+                      {multiplesOf40.map((option, index) => (
+                        <option
+                          className="text-dark"
+                          key={index}
+                          value={option}
+                        >
+                          {isNaN(option) ? option : option}
+                        </option>
+                      ))}
+                    </select>
                     <div className=" mt-3 d-flex align-items-center">
                       <Button
                         className={" w-100 text-light"}
@@ -676,20 +686,22 @@ function Staking() {
                       </div>
                     </div>
                     <h6 className="pt-3 ps-1">Amount in USDT</h6>
-                    <InputField
-                      type="number"
+                    <select
+                      id="numberSelector"
                       name="dappwalletstacking"
-                      placeholder="Wallet address"
-                      value={values.dappwalletstacking}
-                      error={validations.dappwalletstacking}
+                      className="ant-input w-100"
                       onChange={handleChange}
-                      min={40}
-                      defaultValue={40}
-                      step={40}
-                      style={{
-                        border: "1px solid #fff",
-                      }}
-                    />
+                    >
+                      {multiplesOf40.map((option, index) => (
+                        <option
+                          className="text-dark"
+                          key={index}
+                          value={option}
+                        >
+                          {isNaN(option) ? option : option}
+                        </option>
+                      ))}
+                    </select>
                     <div className=" mt-3 d-flex align-items-center">
                       <Button
                         className={" w-100 text-light"}
@@ -729,10 +741,6 @@ function Staking() {
                   lg={12}
                 >
                   <RangePicker size="large" onChange={handleChange2} />
-                  <ExportToExcel
-                    apiData={Fillter}
-                    fileName={"StakingDetails"}
-                  />
                 </Col>
                 <Table
                   columns={columns}
