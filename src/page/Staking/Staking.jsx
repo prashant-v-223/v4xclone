@@ -542,7 +542,9 @@ function Staking() {
                           key={index}
                           value={option}
                         >
-                          {isNaN(option) ? option : option}
+                          {isNaN(option)
+                            ? option + "  " + "USDT"
+                            : option + "  " + "USDT"}
                         </option>
                       ))}
                     </select>
@@ -618,7 +620,9 @@ function Staking() {
                           key={index}
                           value={option}
                         >
-                          {isNaN(option) ? option : option}
+                          {isNaN(option)
+                            ? option + "  " + "USDT"
+                            : option + "  " + "USDT"}
                         </option>
                       ))}
                     </select>
@@ -698,7 +702,9 @@ function Staking() {
                           key={index}
                           value={option}
                         >
-                          {isNaN(option) ? option : option}
+                          {isNaN(option)
+                            ? option + "  " + "USDT"
+                            : option + "  " + "USDT"}
                         </option>
                       ))}
                     </select>
