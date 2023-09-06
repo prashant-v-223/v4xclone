@@ -32,9 +32,9 @@ const Dashboard = () => {
   const dispatch = useDispatch();
   const navigation = useNavigate();
   useEffect(() => {
-    getalldata();
-    getalldata1();
-  }, []);
+      getalldata();
+      getalldata1();
+  }, [lockeddate]);
 
   const getalldata1 = async () => {
     const res = await dispatch(
@@ -59,6 +59,7 @@ const Dashboard = () => {
       const currentDate = new Date(
         StackingSlice.Wallatedata?.data?.data[0].createdAt
       );
+      console.log(currentDate.setMonth(currentDate.getMonth() + 42));
       setlockeddate(currentDate.setMonth(currentDate.getMonth() + 42));
     } else {
       navigation("/");
