@@ -39,7 +39,7 @@ const Dashboard = () => {
       })
     );
     if (res.payload.data.isSuccess) {
-      setProfile(JSON.parse(localStorage.getItem("data"))["data"]["profile"]);
+      setProfile(res.payload.data.profile);
     } else {
       navigation("/");
     }
@@ -53,10 +53,10 @@ const Dashboard = () => {
           <div className="mainsection ">
             <div class="d-flex justify-content-between py-3 px-4">
               <h5 class="pt-2 pt-lg-0 mb-2 text-center text-lg-left text-light">
-                Laval : {Profile?.leval}
+                Laval : {Profile[0]?.leval}
               </h5>{" "}
               <h5 class="pt-2 pt-lg-0 mb-2 text-center text-lg-left text-light">
-                Rank : {Profile?.Rank}
+                Rank : {Profile[0]?.Rank}
               </h5>{" "}
             </div>
             <div className="row px-3  pb-3 justify-content-lg-center">
@@ -73,13 +73,13 @@ const Dashboard = () => {
                       username
                     </h4>
                     <p className="text-center text-lg-left">
-                      <b>{Profile?.username}</b>
+                      <b>{Profile[0]?.username}</b>
                     </p>
                     <button
                       className="text-light d-flex justify-content-center align-items-center px-4 py-2 "
                       style={{ background: "#02a2c4", position: "inherit" }}
                       onClick={() => {
-                        navigator.clipboard.writeText(Profile?.username);
+                        navigator.clipboard.writeText(Profile[0]?.username);
                         toast.success("username copy successfully.");
                       }}
                     >
@@ -105,13 +105,13 @@ const Dashboard = () => {
                       Fullname
                     </h4>
                     <p className="text-center text-lg-left">
-                      <b>{Profile?.Fullname}</b>
+                      <b>{Profile[0]?.Fullname}</b>
                     </p>
                     <button
                       className="text-light d-flex justify-content-center align-items-center px-4 py-2 "
                       style={{ background: "#02a2c4", position: "inherit" }}
                       onClick={() => {
-                        navigator.clipboard.writeText(Profile?.Fullname);
+                        navigator.clipboard.writeText(Profile[0]?.Fullname);
                         toast.success("Fullname copy successfully.");
                       }}
                     >
@@ -140,7 +140,8 @@ const Dashboard = () => {
                     <p className="text-center text-lg-left">
                       <b>
                         {Number(
-                          StackingSlice.Wallatedata?.data?.lockamount
+                          StackingSlice.Wallatedata?.data?.profile[0]
+                            ?.lockamount
                         ).toFixed(3) + " IAT"}
                       </b>
                     </p>
@@ -344,7 +345,7 @@ const Dashboard = () => {
                     <h6 className="pt-0 text-center">Airdrop Coins</h6>
                     <h6 className="text-center">
                       {StackingSlice.Wallatedata?.data?.mystack > 120
-                        ? Profile?.Airdropped
+                        ? Profile[0]?.Airdropped
                         : 0}{" "}
                       USDT
                     </h6>
@@ -427,7 +428,7 @@ const Dashboard = () => {
                             fontSize: 18,
                           }}
                         >
-                          {Profile && Profile?.username}
+                          {Profile && Profile[0]?.username}
                         </h6>
                       </div>
                     }

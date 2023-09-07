@@ -119,7 +119,7 @@ function Ewallate() {
     if (value) {
       var startDate = new Date(value[0]).getTime();
       var endDate = new Date(value[1]).getTime();
-      var resultProductData = Alldata.filter((a) => {
+      var resultProductData = Fillter.filter((a) => {
         return (
           new Date(a.createdAt).getTime() >= new Date(startDate) &&
           new Date(a.createdAt).getTime() <= new Date(endDate)
@@ -128,7 +128,7 @@ function Ewallate() {
       setFillter(resultProductData);
     } else {
       const res = await dispatch(
-        Mainwallate123({
+        Wallet123({
           Token:
             JSON.parse(localStorage.getItem("data")) &&
             JSON.parse(localStorage.getItem("data")).data.token,
@@ -141,7 +141,7 @@ function Ewallate() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (value !== "") {
-      let data = Alldata.filter((truck) => {
+      let data = Fillter.filter((truck) => {
         return (
           truck?.createdAt
             .toString()
