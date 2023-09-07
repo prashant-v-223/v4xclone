@@ -18,22 +18,17 @@ import { Tree, TreeNode } from "react-organizational-chart";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Modal } from "react-bootstrap";
-import { Allstacking } from "../../Redux/StackingSlice";
 const Dashboard = () => {
-  const location = useLocation();
   const StackingSlice = useSelector((state) => state.WallatedatSlice);
   const [address, setaddress] = React.useState("");
   const [open, setopen] = React.useState(false);
-  const [Alldata, setAlldata] = React.useState([]);
   const [otp, setotp] = React.useState("");
   const [Profile, setProfile] = React.useState({});
-  const [wallet, setWallet] = React.useState("");
-  const [lockeddate, setlockeddate] = React.useState("");
   const dispatch = useDispatch();
   const navigation = useNavigate();
   useEffect(() => {
     getalldata();
-  }, [lockeddate]);
+  }, []);
 
   const getalldata = async () => {
     const res = await dispatch(
@@ -44,16 +39,7 @@ const Dashboard = () => {
       })
     );
     if (res.payload.data.isSuccess) {
-      setProfile(res.payload.data.profile);
-      setAlldata(res.payload.data.data);
-
-      await setlockeddate(
-        new Date(StackingSlice.Wallatedata?.data?.data[0].createdAt).setMonth(
-          new Date(
-            StackingSlice.Wallatedata?.data?.data[0].createdAt
-          ).getMonth() + 42
-        )
-      );
+      setProfile(JSON.parse(localStorage.getItem("data"))["data"]["profile"]);
     } else {
       navigation("/");
     }
@@ -67,10 +53,10 @@ const Dashboard = () => {
           <div className="mainsection ">
             <div class="d-flex justify-content-between py-3 px-4">
               <h5 class="pt-2 pt-lg-0 mb-2 text-center text-lg-left text-light">
-                Laval : {Profile[0]?.leval}
+                Laval : {Profile?.leval}
               </h5>{" "}
               <h5 class="pt-2 pt-lg-0 mb-2 text-center text-lg-left text-light">
-                Rank : {Profile[0]?.Rank}
+                Rank : {Profile?.Rank}
               </h5>{" "}
             </div>
             <div className="row px-3  pb-3 justify-content-lg-center">
@@ -87,13 +73,13 @@ const Dashboard = () => {
                       username
                     </h4>
                     <p className="text-center text-lg-left">
-                      <b>{Profile[0]?.username}</b>
+                      <b>{Profile?.username}</b>
                     </p>
                     <button
                       className="text-light d-flex justify-content-center align-items-center px-4 py-2 "
                       style={{ background: "#02a2c4", position: "inherit" }}
                       onClick={() => {
-                        navigator.clipboard.writeText(Profile[0]?.username);
+                        navigator.clipboard.writeText(Profile?.username);
                         toast.success("username copy successfully.");
                       }}
                     >
@@ -119,13 +105,13 @@ const Dashboard = () => {
                       Fullname
                     </h4>
                     <p className="text-center text-lg-left">
-                      <b>{Profile[0]?.Fullname}</b>
+                      <b>{Profile?.Fullname}</b>
                     </p>
                     <button
                       className="text-light d-flex justify-content-center align-items-center px-4 py-2 "
                       style={{ background: "#02a2c4", position: "inherit" }}
                       onClick={() => {
-                        navigator.clipboard.writeText(Profile[0]?.Fullname);
+                        navigator.clipboard.writeText(Profile?.Fullname);
                         toast.success("Fullname copy successfully.");
                       }}
                     >
@@ -154,13 +140,13 @@ const Dashboard = () => {
                     <p className="text-center text-lg-left">
                       <b>
                         {Number(
-                          StackingSlice.Wallatedata?.data?.profile[0]
-                            ?.lockamount
+                          StackingSlice.Wallatedata?.data?.lockamount
                         ).toFixed(3) + " IAT"}
                       </b>
                     </p>
                     <p className="text-center">
-                      {"Release Data: " + new Date(lockeddate).toDateString()}
+                      {"Release Data: " +
+                        StackingSlice.Wallatedata?.data?.lockeddate}
                     </p>
                   </div>
                 </div>
@@ -358,7 +344,7 @@ const Dashboard = () => {
                     <h6 className="pt-0 text-center">Airdrop Coins</h6>
                     <h6 className="text-center">
                       {StackingSlice.Wallatedata?.data?.mystack > 120
-                        ? Profile[0]?.Airdropped
+                        ? Profile?.Airdropped
                         : 0}{" "}
                       USDT
                     </h6>
@@ -441,7 +427,7 @@ const Dashboard = () => {
                             fontSize: 18,
                           }}
                         >
-                          {Profile && Profile[0]?.username}
+                          {Profile && Profile?.username}
                         </h6>
                       </div>
                     }

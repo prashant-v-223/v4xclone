@@ -22,7 +22,7 @@ function Ewallate() {
           JSON.parse(localStorage.getItem("data")).data.token,
       })
     );
-    setAlldata(res.payload.data.data);
+    setFillter(res.payload.data.data);
   };
   const columns = [
     {
