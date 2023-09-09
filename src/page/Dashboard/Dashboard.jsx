@@ -343,12 +343,12 @@ const Dashboard = () => {
                   <div className="d-flex h-50 h-md-100 flex-column justify-content-center">
                     <h6 className="pt-0 text-center">Airdrop Coins</h6>
                     <h6 className="text-center">
-                      {StackingSlice.Wallatedata?.data?.mystack > 120
+                      {StackingSlice.Wallatedata?.data?.mystack >= 120
                         ? Profile[0]?.Airdropped
                         : 0}{" "}
                       USDT
                     </h6>
-                    {StackingSlice.Wallatedata?.data?.mystack > 120 && (
+                    {StackingSlice.Wallatedata?.data?.mystack >= 120 && (
                       <button
                         className="text-light"
                         style={{
