@@ -73,6 +73,7 @@ const Dashboard = () => {
                       username
                     </h4>
                     <p className="text-center text-lg-left">
+                      <b>Hi,{Profile[0]?.Fullname}</b> <br />
                       <b>{Profile[0]?.username}</b>
                     </p>
                     <button
@@ -81,38 +82,6 @@ const Dashboard = () => {
                       onClick={() => {
                         navigator.clipboard.writeText(Profile[0]?.username);
                         toast.success("username copy successfully.");
-                      }}
-                    >
-                      <MdContentCopy
-                        className="me-2"
-                        style={{ color: "#FFF", fontSize: "23px" }}
-                      />
-                      Click to copy
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className="col-12 col-lg-4  text-light py-2">
-                <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
-                  <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
-                    <img
-                      src={require("../../assets/img/username 1.png")}
-                      alt=""
-                    />
-                  </div>
-                  <div className=" d-flex h-50 h-md-100 flex-column justify-content-center">
-                    <h4 className="pt-2 pt-lg-0 mb-2 text-center text-lg-left">
-                      Fullname
-                    </h4>
-                    <p className="text-center text-lg-left">
-                      <b>{Profile[0]?.Fullname}</b>
-                    </p>
-                    <button
-                      className="text-light d-flex justify-content-center align-items-center px-4 py-2 "
-                      style={{ background: "#02a2c4", position: "inherit" }}
-                      onClick={() => {
-                        navigator.clipboard.writeText(Profile[0]?.Fullname);
-                        toast.success("Fullname copy successfully.");
                       }}
                     >
                       <MdContentCopy
@@ -145,10 +114,30 @@ const Dashboard = () => {
                         ).toFixed(3) + " IAT"}
                       </b>
                     </p>
-                    <p className="text-center">
+                    <p className="text-center text-lg-left">
                       {"Release Data: " +
                         StackingSlice.Wallatedata?.data?.lockeddate}
                     </p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-lg-4 text-light py-2">
+                <div className="Boxcard p-4 d-block d-lg-flex flex-column  justify-content-space-around align-items-center h-100 ">
+                  <div className="pb-2 pb-lg-0 d-flex  justify-content-center align-items-center h-50 h-md-100">
+                    <img
+                      src={require("../../assets/img/increase.png")}
+                      alt=""
+                      className="img-fluid"
+                      width={75}
+                    />
+                  </div>
+                  <div className="d-flex h-50 h-md-100 flex-column justify-content-center">
+                    <h6 className="pt-3 text-center">
+                      Current Infinity Ai Token Live price
+                    </h6>
+                    <h6 className="text-center">
+                      {StackingSlice.Wallatedata?.data?.V4Xtokenprice}$
+                    </h6>
                   </div>
                 </div>
               </div>
@@ -226,7 +215,7 @@ const Dashboard = () => {
                 }}
               >
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
-                  <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-md-100">
+                  <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-25 h-md-100">
                     <FaDollarSign
                       className="ms-2 me-3"
                       style={{ color: "#02a2c4", fontSize: "61px" }}
@@ -234,49 +223,59 @@ const Dashboard = () => {
                   </div>
                   <div className=" d-flex h-50 h-md-100 flex-column justify-content-center ">
                     <h4 className="pt-5 mt-3 mt-lg-3 pt-lg-0 mb-2 text-center text-lg-left">
-                      Total Income
+                      Income Details
                     </h4>
-                    <p className="text-center text-lg-left m-0">
-                      Referral & Earn :
-                      {StackingSlice.Wallatedata?.data?.income[0]?.ReferandEarn?.toFixed(
-                        2
-                      )}
-                      $
+                    <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
+                      <p className=" m-0">Referral & Earn :</p>
+                      <p className=" m-0">
+                        {StackingSlice.Wallatedata?.data?.income[0]?.ReferandEarn?.toFixed(
+                          2
+                        )}
+                        $
+                      </p>
                     </p>
-                    <p className="text-center text-lg-left m-0">
-                      Staking Bonus :
-                      {StackingSlice.Wallatedata?.data?.income[0]?.StakingBonusIncome?.toFixed(
-                        2
-                      )}
-                      $
+                    <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start">
+                      <p className=" m-0"> Staking Bonus :</p>
+                      <p className=" m-0">
+                        {StackingSlice.Wallatedata?.data?.income[0]?.StakingBonusIncome?.toFixed(
+                          2
+                        )}
+                        $
+                      </p>
                     </p>
-                    <p className="text-center text-lg-left m-0">
-                      Community reward :
-                      {StackingSlice.Wallatedata?.data?.income[0]?.communities?.toFixed(
-                        2
-                      )}
-                      $
+                    <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
+                      <p className=" m-0">Community reward :</p>
+                      <p className=" m-0">
+                        {StackingSlice.Wallatedata?.data?.income[0]?.communities?.toFixed(
+                          2
+                        )}
+                        $
+                      </p>
                     </p>
-                    <p className="text-center text-lg-left m-0">
-                      Passive club reward :
-                      {StackingSlice.Wallatedata?.data?.income[0]?.passives?.toFixed(
-                        2
-                      )}
-                      $
+                    <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
+                      <p className=" m-0">Passive club reward :</p>
+                      <p className=" m-0">
+                        {StackingSlice.Wallatedata?.data?.income[0]?.passives?.toFixed(
+                          2
+                        )}
+                        $
+                      </p>
                     </p>
-                    <p className="text-center text-lg-left m-0">
-                      Achievement reward :
-                      {StackingSlice.Wallatedata?.data?.income[0]?.achivements?.toFixed(
-                        2
-                      )}
-                      $
+                    <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
+                      <p className=" m-0"> Achievement reward :</p>
+                      <p className=" m-0">
+                        {StackingSlice.Wallatedata?.data?.income[0]?.achivements?.toFixed(
+                          2
+                        )}
+                        $
+                      </p>
                     </p>
                   </div>
                 </div>
               </div>
             </div>
             <div className="row px-3 py-3 justify-content-lg-center">
-              <div className="col-12 col-lg-3 text-light py-2">
+              <div className="col-12 col-lg-4 text-light py-2">
                 <div
                   className="Boxcard p-4 d-block d-lg-flex flex-column  justify-content-space-around align-items-center h-100 "
                   style={{
@@ -304,7 +303,7 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-lg-3 text-light py-2">
+              <div className="col-12 col-lg-4 text-light py-2">
                 <div
                   className="Boxcard p-4 d-block d-lg-flex flex-column  justify-content-space-around align-items-center h-100 "
                   style={{
@@ -332,7 +331,7 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-lg-3 text-light py-2">
+              <div className="col-12 col-lg-4 text-light py-2">
                 <div className="Boxcard p-4 d-block d-lg-flex flex-column  justify-content-space-around align-items-center h-100 ">
                   <div className="pb-2 pb-lg-0 d-flex  justify-content-center align-items-center h-50 h-md-100">
                     <img
@@ -378,26 +377,6 @@ const Dashboard = () => {
                         Withdraw
                       </button>
                     )}
-                  </div>
-                </div>
-              </div>
-              <div className="col-12 col-lg-3 text-light py-2">
-                <div className="Boxcard p-4 d-block d-lg-flex flex-column  justify-content-space-around align-items-center h-100 ">
-                  <div className="pb-2 pb-lg-0 d-flex  justify-content-center align-items-center h-50 h-md-100">
-                    <img
-                      src={require("../../assets/img/increase.png")}
-                      alt=""
-                      className="img-fluid"
-                      width={75}
-                    />
-                  </div>
-                  <div className="d-flex h-50 h-md-100 flex-column justify-content-center">
-                    <h6 className="pt-3 text-center">
-                      Current Infinity Ai Token Live price
-                    </h6>
-                    <h6 className="text-center">
-                      {StackingSlice.Wallatedata?.data?.V4Xtokenprice}$
-                    </h6>
                   </div>
                 </div>
               </div>
