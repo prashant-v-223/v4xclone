@@ -267,6 +267,7 @@ function Staking() {
         }
       } else {
         setopen1(!open1);
+        setotp("");
         setWalletType(e);
         let headersList = {
           Accept: "*/*",
