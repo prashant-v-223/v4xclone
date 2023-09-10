@@ -266,6 +266,7 @@ function Staking() {
           await connect();
         }
       } else {
+        setopen1(!open1);
         setWalletType(e);
         let headersList = {
           Accept: "*/*",
@@ -283,7 +284,6 @@ function Staking() {
 
         let response = await axios.request(reqOptions);
         console.log(response.data);
-        setopen1(!open1);
       }
     }
   };
