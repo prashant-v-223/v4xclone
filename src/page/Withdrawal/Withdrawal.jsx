@@ -130,6 +130,8 @@ function Withdrawal() {
   const handleSubmit = async (e) => {
     console.log(validateAll());
     if (validateAll().Amount === "" && validateAll().Username === "") {
+      setopen1(!open1);
+      setotp("");
       let headersList = {
         Accept: "*/*",
         Authorization: `${
@@ -145,8 +147,6 @@ function Withdrawal() {
       };
       
       let response = await axios.request(reqOptions); 
-      console.log(response.data);
-      setopen1(!open1);
       // const res = await dispatch(
       //   tranferotpsend({
       //     Token:
