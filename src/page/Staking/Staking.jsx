@@ -14,11 +14,11 @@ import { Modal } from "react-bootstrap";
 import { useWeb3React } from "@web3-react/core";
 import Web3 from "web3";
 import v4x from "../../Helpers/v4x.json";
-import bep20Abi from "../../Helpers/bep20Abi.json";
-import { ExportToExcel } from "../../ExportToExcel";
 import { Col, DatePicker, Row, Select, Input, Space } from "antd";
 import Text from "antd/lib/typography/Text";
 import { Injected, WalletConnect } from "../../Helpers/Injected";
+import axios from "axios";
+import { apiList } from "../../Redux/api";
 const { RangePicker } = DatePicker;
 function Staking() {
   const location = useLocation();
@@ -28,7 +28,10 @@ function Staking() {
   const [Wallet1, setWallet1] = React.useState("");
   const [Alldata, setAlldata] = React.useState([]);
   const [loding, setloding] = React.useState(!true);
+  const [WalletType, setWalletType] = React.useState("");
   const [Fillter, setFillter] = React.useState([]);
+  const [open1, setopen1] = React.useState(false);
+  const [otp, setotp] = React.useState("");
   const [page, setpage] = React.useState(1);
   const [pageSize, setpageSize] = React.useState(10);
   const [values, setValues] = React.useState({
@@ -263,30 +266,25 @@ function Staking() {
           await connect();
         }
       } else {
-        const res = await dispatch(
-          BuyStacking({
-            WalletType: e.toString(),
-            Amount: values[e],
-            V4xTokenPrice: livaratev4xtoken,
-            Token:
-              JSON.parse(localStorage.getItem("data")) &&
-              JSON.parse(localStorage.getItem("data")).data.token,
-          })
-        );
-        if (res.payload.data.isSuccess) {
-          toast.success(res.payload.data.message);
-          getalldata();
-          getalldata1();
-        } else {
-          toast.error(res.payload.data.message);
-          getalldata();
-        }
+        setWalletType(e);
+        let headersList = {
+          Accept: "*/*",
+          Authorization: `${
+            JSON.parse(localStorage.getItem("data")) &&
+            JSON.parse(localStorage.getItem("data")).data.token
+          }`,
+        };
+
+        let reqOptions = {
+          url: apiList.tranferotpsend,
+          method: "GET",
+          headers: headersList,
+        };
+
+        let response = await axios.request(reqOptions);
+        console.log(response.data);
+        setopen1(!open1);
       }
-      setValidations({
-        Mainwalletstacking: "",
-        ewalletstacking: "",
-        dappwalletstacking: "",
-      });
     }
   };
   const handleChange = (e) => {
@@ -768,6 +766,65 @@ function Staking() {
             </div>
           </div>
         )}
+
+        <Modal show={open1} onHide={() => setopen1(!open1)} centered>
+          <Modal.Header closeButton>
+            <Modal.Title>
+              <h6 className="text-light m-0"></h6>
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <InputField
+              type="number"
+              name="Amount1"
+              value={otp}
+              placeholder="Enter Your OTP"
+              pattern="[0-9]*"
+              onChange={(e) => {
+                setotp(e.target.value);
+              }}
+              style={{ border: "1px solid #fff" }}
+            />
+            <Button
+              className={" w-100 text-light"}
+              Stake={!false}
+              style={{
+                background: "#1a1a1a",
+                height: 60,
+                border: "none",
+              }}
+              label={"Submit"}
+              onClick={async () => {
+                console.log(otp);
+                setopen1(!open1);
+                const res = await dispatch(
+                  BuyStacking({
+                    WalletType: WalletType.toString(),
+                    Amount: values[WalletType],
+                    otp: otp,
+                    V4xTokenPrice: livaratev4xtoken,
+                    Token:
+                      JSON.parse(localStorage.getItem("data")) &&
+                      JSON.parse(localStorage.getItem("data")).data.token,
+                  })
+                );
+                if (res.payload.data.isSuccess) {
+                  toast.success(res.payload.data.message);
+                  getalldata();
+                  getalldata1();
+                } else {
+                  toast.error(res.payload.data.message);
+                  getalldata();
+                }
+                setValidations({
+                  Mainwalletstacking: "",
+                  ewalletstacking: "",
+                  dappwalletstacking: "",
+                });
+              }}
+            />
+          </Modal.Body>
+        </Modal>
         <Modal show={modal2Open} onHide={() => setModal2Open(false)} centered>
           <Modal.Header closeButton>
             <Modal.Title>Slab Details</Modal.Title>

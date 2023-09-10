@@ -10,6 +10,7 @@ export const BuyStacking = createAsyncThunk(
         {
           WalletType: data.WalletType,
           Amount: data.Amount,
+          otp: data.otp,
           V4XTokenPrice: data.V4XTokenPrice,
           transactionHash: data?.transactionHash,
         },

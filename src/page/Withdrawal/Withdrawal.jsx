@@ -17,8 +17,8 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import Web3 from "web3";
 import CreatableSelect from "react-select/creatable";
-import bep20Abi from "../../Helpers/bep20Abi.json";
-
+import { apiList } from "../../Redux/api";
+import axios from "axios";
 function Withdrawal() {
   const navigation = useNavigate();
   const WallatedatSlice = useSelector((state) => state.WallatedatSlice);
@@ -26,6 +26,7 @@ function Withdrawal() {
   const [Profile, setProfile] = React.useState({});
   const [Wallet, setWallet] = React.useState("Main Wallet");
   const [open, setopen] = React.useState(false);
+  const [open1, setopen1] = React.useState(false);
   const [otp, setotp] = React.useState("");
   const [address, setaddress] = React.useState("");
   const [WalletAmountcal, setWalletAmountcal] = React.useState(0);
@@ -129,23 +130,38 @@ function Withdrawal() {
   const handleSubmit = async (e) => {
     console.log(validateAll());
     if (validateAll().Amount === "" && validateAll().Username === "") {
-      const res = await dispatch(
-        Transferdata({
-          Username: Username,
-          Username1: Username1.toString(),
-          Wallet: Wallet,
-          Amount: Amount,
-          Token:
-            JSON.parse(localStorage.getItem("data")) &&
-            JSON.parse(localStorage.getItem("data")).data.token,
-        })
-      );
-      if (res.payload.data.isSuccess) {
-        toast.success(res.payload.data.message);
-        getalldata();
-      } else {
-        toast.error(res.payload.data.message);
-      }
+      let headersList = {
+        Accept: "*/*",
+        Authorization: `${
+          JSON.parse(localStorage.getItem("data")) &&
+          JSON.parse(localStorage.getItem("data")).data.token
+        }`,
+      };
+
+      let reqOptions = {
+        url: apiList.tranferotpsend,
+        method: "GET",
+        headers: headersList,
+      };
+      
+      let response = await axios.request(reqOptions); 
+      console.log(response.data);
+      setopen1(!open1);
+      // const res = await dispatch(
+      //   tranferotpsend({
+      //     Token:
+      //       JSON.parse(localStorage.getItem("data")) &&
+      //       JSON.parse(localStorage.getItem("data")).data
+      //         .token,
+      //   })
+      // );
+      // if (res.payload.data.isSuccess) {
+      //   setotp("");
+      //   toast.success(res.payload.data.message);
+      //   setopen1(!open1);
+      // } else {
+      //   toast.error(res.payload.data.message);
+  
     }
   };
 
@@ -305,9 +321,9 @@ function Withdrawal() {
                       </div>
                       <div className="img-div2">
                         <p className="m-0 text-light">
-                          USDT  Withdrawals are activated after 15days of
-                          your staking. USDT Token are released as bonus
-                          in withdrawal process. You can withdraw your rewards
+                          USDT Withdrawals are activated after 15days of your
+                          staking. USDT Token are released as bonus in
+                          withdrawal process. You can withdraw your rewards
                           everyday.
                         </p>
                       </div>
@@ -321,7 +337,7 @@ function Withdrawal() {
                         </div>
                         <div className="px-3 py-2 py-lg-0">
                           <h6 className="m-0 text-light text-center">
-                            {Alldata[0]?.mainWallet?.toFixed(4)} USDT 
+                            {Alldata[0]?.mainWallet?.toFixed(4)} USDT
                           </h6>
                         </div>
                       </div>
@@ -409,9 +425,7 @@ function Withdrawal() {
                           size="large"
                           className="w-100 "
                           onChange={onChange}
-                          value={
-                            WalletAmountcal 
-                          }
+                          value={WalletAmountcal}
                           style={{ padding: "10px 0px" }}
                         />
                       </div>
@@ -447,9 +461,7 @@ function Withdrawal() {
                     </div>
                   </div>
                   <div className="Boxcard p-4 my-4">
-                    <h6 className="text-light d-flex pb-3">
-                      Withdraw USDT
-                    </h6>
+                    <h6 className="text-light d-flex pb-3">Withdraw USDT</h6>
                     <Button
                       className={" w-100 text-light"}
                       Stake={!false}
@@ -469,7 +481,58 @@ function Withdrawal() {
             </div>
           </div>
         </>
-
+        <Modal show={open1} onHide={() => setopen1(!open1)} centered>
+          <Modal.Header closeButton>
+            <Modal.Title>
+              <h6 className="text-light m-0"></h6>
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <InputField
+              type="number"
+              name="Amount1"
+              value={otp}
+              placeholder="Enter Your OTP"
+              pattern="[0-9]*"
+              onChange={(e) => {
+                setotp(e.target.value);
+              }}
+              style={{ border: "1px solid #fff" }}
+              onBlur={validateOne}
+            />
+            <Button
+              className={" w-100 text-light"}
+              Stake={!false}
+              style={{
+                background: "#1a1a1a",
+                height: 60,
+                border: "none",
+              }}
+              label={"Submit"}
+              onClick={async () => {
+                const res = await dispatch(
+                  Transferdata({
+                    Username: Username,
+                    otp: otp,
+                    Username1: Username1.toString(),
+                    Wallet: Wallet,
+                    Amount: Amount,
+                    Token:
+                      JSON.parse(localStorage.getItem("data")) &&
+                      JSON.parse(localStorage.getItem("data")).data.token,
+                  })
+                );
+                if (res.payload.data.isSuccess) {
+                  setopen1(!open1);
+                  toast.success(res.payload.data.message);
+                  getalldata();
+                } else {
+                  toast.error(res.payload.data.message);
+                }
+              }}
+            />
+          </Modal.Body>
+        </Modal>
         <Modal show={open} onHide={() => setopen(!open)} centered>
           <Modal.Header closeButton>
             <Modal.Title>

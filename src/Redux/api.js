@@ -1,4 +1,5 @@
-const baseURL = process.env.REACT_APP_API_URL;
+// const baseURL = process.env.REACT_APP_API_URL;
+const baseURL = "http://localhost:8080/";
 export const apiList = {
   Signup: baseURL + "api/registration/signUp",
   Signin: baseURL + "api/registration/signIn",
@@ -13,6 +14,7 @@ export const apiList = {
   allstacking: baseURL + "api/user/allstacking",
   gelUserWallate: baseURL + "api/user/gelUserWallate",
   getwallateblance: baseURL + "api/Withdraw/stackingbouns",
+  tranferotpsend: baseURL + "api/Withdraw/tranferotpsend",
   Stackingbouns: baseURL + "api/staking/stackingbouns",
   transfercoin: baseURL + "api/user/transfercoin",
   Communityincome: baseURL + "api/user/Community/Building/income",
