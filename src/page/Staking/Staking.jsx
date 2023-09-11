@@ -768,8 +768,8 @@ function Staking() {
           </div>
         )}
 
-        <Modal show={open1} onHide={() => setopen1(!open1)} centered>
-          <Modal.Header closeButton>
+        <Modal show={open1} centered>
+          <Modal.Header >
             <Modal.Title>
               <h6 className="text-light m-0"></h6>
             </Modal.Title>
@@ -827,7 +827,7 @@ function Staking() {
           </Modal.Body>
         </Modal>
         <Modal show={modal2Open} onHide={() => setModal2Open(false)} centered>
-          <Modal.Header closeButton>
+          <Modal.Header >
             <Modal.Title>Slab Details</Modal.Title>
           </Modal.Header>
 

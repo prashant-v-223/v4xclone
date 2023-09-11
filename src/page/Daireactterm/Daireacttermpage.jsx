@@ -101,11 +101,14 @@ function Daireacttermpage() {
       ellipsis: {
         showTitle: false,
       },
-      width: "150px",
+      width: "300px",
       sorter: (a, b) => a.username.slice(3, -1) - b.username.slice(3, -1),
-      render: (address) => (
-        <Tooltip placement="topLeft" title={address}>
-          {address}
+      render: (text, record, index) => (
+        <Tooltip
+          placement="topLeft"
+          title={record.username + `(${record.Fullname})`}
+        >
+          {record.username + "  " + `(${record.Fullname})`}
         </Tooltip>
       ),
     },
@@ -114,20 +117,6 @@ function Daireacttermpage() {
       dataIndex: "email",
       key: "email",
       sorter: (a, b) => a.email.length - b.email.length,
-      ellipsis: {
-        showTitle: false,
-      },
-      render: (address) => (
-        <Tooltip placement="topLeft" title={address}>
-          {address}
-        </Tooltip>
-      ),
-    },
-    {
-      title: "Fullname",
-      dataIndex: "Fullname",
-      key: "Fullname",
-      sorter: (a, b) => a.Fullname.length - b.Fullname.length,
       ellipsis: {
         showTitle: false,
       },

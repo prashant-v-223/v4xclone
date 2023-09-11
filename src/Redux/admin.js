@@ -180,7 +180,7 @@ export const AdminsendAmount = createAsyncThunk(
     try {
       const res = await POST(
         apiList.adminsensamount,
-        { price: data.price, username: data.username },
+        { price: data.price, username: data.username, Walletname: data.Walletname },
         data.Token
       );
       return res;

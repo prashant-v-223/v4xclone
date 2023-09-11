@@ -127,11 +127,14 @@ function Admin() {
       ellipsis: {
         showTitle: false,
       },
-      minwidth: "200px",
+      width: "300px",
       sorter: (a, b) => a.username.slice(3, -1) - b.username.slice(3, -1),
-      render: (address) => (
-        <Tooltip placement="topLeft" title={address}>
-          {address}
+      render: (text, record, index) => (
+        <Tooltip
+          placement="topLeft"
+          title={record.username + `(${record.Fullname})`}
+        >
+          {record.username + `(${record.Fullname})`}
         </Tooltip>
       ),
     },
@@ -144,21 +147,6 @@ function Admin() {
       },
       width: "300px",
       sorter: (a, b) => a.email.length - b.email.length,
-      render: (address) => (
-        <Tooltip placement="topLeft" title={address}>
-          {address}
-        </Tooltip>
-      ),
-    },
-    {
-      title: "Fullname",
-      dataIndex: "Fullname",
-      key: "Fullname",
-      width: "190px",
-      sorter: (a, b) => a.Fullname.length - b.Fullname.length,
-      ellipsis: {
-        showTitle: false,
-      },
       render: (address) => (
         <Tooltip placement="topLeft" title={address}>
           {address}

@@ -758,7 +758,7 @@ function Login() {
                 onHide={() => setModal2Open(false)}
                 centered
               >
-                <Modal.Header closeButton>
+                <Modal.Header >
                   <Modal.Title>Reset Password</Modal.Title>
                 </Modal.Header>
 

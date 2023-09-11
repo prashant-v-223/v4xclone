@@ -533,7 +533,7 @@ function Profile() {
                   onHide={() => setModal2Open(false)}
                   centered
                 >
-                  <Modal.Header closeButton>
+                  <Modal.Header >
                     <Modal.Title></Modal.Title>
                   </Modal.Header>
 

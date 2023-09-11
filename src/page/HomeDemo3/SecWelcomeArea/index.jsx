@@ -115,7 +115,7 @@ const SecWelcomeArea = () => {
                     }}
                     centered
                   >
-                    <Modal.Header closeButton></Modal.Header>
+                    <Modal.Header ></Modal.Header>
                     <Modal.Body>
                       <div className="AA">
                         <img

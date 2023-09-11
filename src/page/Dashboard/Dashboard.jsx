@@ -226,6 +226,15 @@ const Dashboard = () => {
                       Income Details
                     </h4>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
+                      <p className=" m-0">Airdrop Coins :</p>
+                      <p className=" m-0">
+                        {StackingSlice.Wallatedata?.data?.mystack >= 120
+                          ? (10).toFixed(2)
+                          : 0}
+                        $
+                      </p>
+                    </p>
+                    <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
                       <p className=" m-0">Referral & Earn :</p>
                       <p className=" m-0">
                         {StackingSlice.Wallatedata?.data?.income[0]?.ReferandEarn?.toFixed(
@@ -233,15 +242,7 @@ const Dashboard = () => {
                         )}
                         $
                       </p>
-                    </p>                  <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
-                      <p className=" m-0">Airdrop Coins :</p>
-                      <p className=" m-0">
-                        {   {StackingSlice.Wallatedata?.data?.mystack >= 120
-                        ? Profile[0]?.Airdropped
-                        : 0}}
-                        $
-                      </p>
-                    </p>
+                    </p>{" "}
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start">
                       <p className=" m-0"> Staking Bonus :</p>
                       <p className=" m-0">
@@ -456,7 +457,7 @@ const Dashboard = () => {
             </div>
 
             <Modal show={open} onHide={() => setopen(!open)} centered>
-              <Modal.Header closeButton>
+              <Modal.Header >
                 <Modal.Title>
                   <h6 className="text-light m-0"></h6>
                 </Modal.Title>

@@ -47,13 +47,13 @@ function Withdrawal() {
   });
   const [validations, setValidations] = React.useState({
     Amount: "",
-    Username: "",
+    username: "",
   });
-  const { Amount, Amount1 } = values;
+  const { Amount, Amount1, username } = values;
   const {
     Amount: AmountVal,
     Amount1: Amount1val,
-    Username: UsernameVal,
+    username: UsernameVal,
   } = validations;
   const validateOne = (e) => {
     const { name } = e.target;
@@ -89,21 +89,16 @@ function Withdrawal() {
   const onChange = (value) => {
     setWallet(value);
   };
-  const onChange1 = (value) => {
-    console.log(value);
-    setUsername(value["value"]);
-    setUsername1(value["label"]);
-  };
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
   };
   const validateAll = () => {
-    const { Amount, Amount1 } = values;
+    const { Amount, Amount1, username } = values;
     const validations = {
       Amount: "",
       Amount1: "",
-      Username: "",
+      username: "",
     };
     let isValid = true;
 
@@ -117,8 +112,8 @@ function Withdrawal() {
     } else if (Amount1 > 50) {
       validations.Amount1 = "Amount is not valid required!";
     }
-    if (!Username) {
-      validations.Username = "Username is required!";
+    if (!username) {
+      validations.username = "Username is required!";
       isValid = false;
     }
     if (!isValid) {
@@ -129,7 +124,7 @@ function Withdrawal() {
 
   const handleSubmit = async (e) => {
     console.log(validateAll());
-    if (validateAll().Amount === "" && validateAll().Username === "") {
+    if (validateAll().Amount === "" && validateAll().username === "") {
       setopen1(!open1);
       setotp("");
       let headersList = {
@@ -145,8 +140,8 @@ function Withdrawal() {
         method: "GET",
         headers: headersList,
       };
-      
-      let response = await axios.request(reqOptions); 
+
+      let response = await axios.request(reqOptions);
       // const res = await dispatch(
       //   tranferotpsend({
       //     Token:
@@ -161,7 +156,6 @@ function Withdrawal() {
       //   setopen1(!open1);
       // } else {
       //   toast.error(res.payload.data.message);
-  
     }
   };
 
@@ -220,11 +214,14 @@ function Withdrawal() {
                       </div>
                       <div className="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center w-100  py-2">
                         <div className="w-100">
-                          <CreatableSelect
-                            isClearable
-                            options={refurserdata}
-                            placeholder="User name"
-                            onChange={onChange1}
+                          <InputField
+                            type="text"
+                            name="username"
+                            placeholder="Enter username"
+                            value={values.username}
+                            onChange={(e) => {
+                              handleChange(e);
+                            }}
                           />
                         </div>
                         <div className="w-100">
@@ -481,8 +478,8 @@ function Withdrawal() {
             </div>
           </div>
         </>
-        <Modal show={open1} onHide={() => setopen1(!open1)} centered>
-          <Modal.Header closeButton>
+        <Modal show={open1} centered>
+          <Modal.Header>
             <Modal.Title>
               <h6 className="text-light m-0"></h6>
             </Modal.Title>
@@ -512,9 +509,8 @@ function Withdrawal() {
               onClick={async () => {
                 const res = await dispatch(
                   Transferdata({
-                    Username: Username,
+                    Username: username,
                     otp: otp,
-                    Username1: Username1.toString(),
                     Wallet: Wallet,
                     Amount: Amount,
                     Token:
@@ -533,8 +529,8 @@ function Withdrawal() {
             />
           </Modal.Body>
         </Modal>
-        <Modal show={open} onHide={() => setopen(!open)} centered>
-          <Modal.Header closeButton>
+        <Modal show={open} centered>
+          <Modal.Header>
             <Modal.Title>
               <h6 className="text-light m-0"></h6>
             </Modal.Title>
