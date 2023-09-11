@@ -233,6 +233,14 @@ const Dashboard = () => {
                         )}
                         $
                       </p>
+                    </p>                  <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
+                      <p className=" m-0">Airdrop Coins :</p>
+                      <p className=" m-0">
+                        {   {StackingSlice.Wallatedata?.data?.mystack >= 120
+                        ? Profile[0]?.Airdropped
+                        : 0}}
+                        $
+                      </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start">
                       <p className=" m-0"> Staking Bonus :</p>
