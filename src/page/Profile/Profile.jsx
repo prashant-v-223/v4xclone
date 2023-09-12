@@ -192,8 +192,8 @@ function Profile() {
           walletaddress: values.walletaddress,
           profileimg: Data,
           Token:
-            JSON.parse(localStorage.getItem("data1")) &&
-            JSON.parse(localStorage.getItem("data1")).data.token,
+            JSON.parse(localStorage.getItem("data")) &&
+            JSON.parse(localStorage.getItem("data")).data.token,
         })
       );
       if (res.payload.data.isSuccess) {
@@ -201,8 +201,8 @@ function Profile() {
         setModal2Open(!modal2Open);
         let reqOptions = {
           url: `https://ablcbackend-production-2705.up.railway.app/api/registration/profile:${
-            JSON.parse(localStorage.getItem("data1")) &&
-            JSON.parse(localStorage.getItem("data1")).data.token
+            JSON.parse(localStorage.getItem("data")) &&
+            JSON.parse(localStorage.getItem("data")).data.token
           }`,
           method: "GET",
         };
