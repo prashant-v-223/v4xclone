@@ -190,7 +190,7 @@ function Mainwallate() {
               <div className="col-12 p-2 p-lg-3">
                 <Table
                   columns={columns}
-                  dataSource={Fillter?.reverse()}
+                  dataSource={Fillter}
                   bordered={true}
                   title={() => "Main Wallet Report"}
                   scroll={{ x: "calc(1500px)" }}
