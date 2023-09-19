@@ -288,7 +288,7 @@ function Daireacttermpage() {
                       },
                       {
                         value: "COMMUNITY ⭐TRUST",
-                        label: "COMMUNITY TRUST",
+                        label: "TRUST",
                       },
                       {
                         value: "CORE TEAM",
