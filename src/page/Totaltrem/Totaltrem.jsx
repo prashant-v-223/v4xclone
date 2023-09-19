@@ -284,7 +284,7 @@ function Totaltrempage() {
                       },
                       {
                         value: "COMMUNITY ⭐TRUST",
-                        label: "COMMUNITY TRUST",
+                        label: "TRUST",
                       },
                       {
                         value: "CORE TEAM",
