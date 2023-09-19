@@ -52,7 +52,7 @@ function Passivepage() {
       ellipsis: {
         showTitle: false,
       },
-      width: "180px",
+      width: "340px",
       render: (address) => (
         <Tooltip placement="topLeft" title={address}>
           {address}

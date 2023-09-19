@@ -54,13 +54,13 @@ function TransferRepors() {
       ),
     },
     {
-            title: "To User Name",
+      title: "To User Name",
       dataIndex: "username",
       key: "username",
       ellipsis: {
         showTitle: false,
       },
-      minwidth: "200px",
+      width: "340px",
       render: (address) => (
         <Tooltip placement="topLeft" title={address[0]?.username}>
           {address[0]?.username}
@@ -91,7 +91,7 @@ function TransferRepors() {
       },
       render: (address) => (
         <Tooltip placement="topLeft" title={new Date(address).toLocaleString()}>
-        {new Date(address).toLocaleString()}
+          {new Date(address).toLocaleString()}
         </Tooltip>
       ),
     },
@@ -160,7 +160,7 @@ function TransferRepors() {
       },
       render: (address) => (
         <Tooltip placement="topLeft" title={new Date(address).toLocaleString()}>
-        {new Date(address).toLocaleString()}
+          {new Date(address).toLocaleString()}
         </Tooltip>
       ),
     },

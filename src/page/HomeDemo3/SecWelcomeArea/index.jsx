@@ -152,7 +152,7 @@ const SecWelcomeArea = () => {
             </div>
             <div className="col-12 col-lg-6 col-md-12 d-none d-lg-block ">
               {/* <div className="main-ilustration"></div> */}
-              <div class="banner-img ps-4 py-5">
+              <div className="banner-img ps-4 py-5">
                 <img
                   decoding="async"
                   src="https://themes.templatescoder.com/cryptoz/wp/demo-01/wp-content/uploads/2023/02/banner-img.svg"

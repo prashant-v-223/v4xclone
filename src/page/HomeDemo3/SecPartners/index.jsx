@@ -7,116 +7,116 @@ const SecPartners = ({ data }) => {
         title="Infinity AI Partners"
         text="We have some of our faithful partners in the cryptocurrency market, who has been getting benifits of Infinity AI digital platforms and services."
       />
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="partner-box">
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div className="partner-box">
               <img
                 src={require("../../../assets/img/partners/METAMASK.png")}
                 alt=""
-                class="center-bock  px-5 px-md-3"
+                className="center-bock  px-5 px-md-3"
               />
             </div>
           </div>{" "}
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="partner-box">
+          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div className="partner-box">
               <img
                 src={require("../../../assets/img/partners/NOMICS.png")}
                 alt=""
-                class="center-bock  px-5 px-md-3"
+                className="center-bock  px-5 px-md-3"
               />
             </div>
           </div>{" "}
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="partner-box">
+          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div className="partner-box">
               <img
                 src={require("../../../assets/img/partners/PANCAKESWAP.png")}
                 alt=""
-                class="center-bock  px-5 px-md-3"
+                className="center-bock  px-5 px-md-3"
               />
             </div>
           </div>{" "}
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="partner-box">
+          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div className="partner-box">
               <img
                 src={require("../../../assets/img/partners/TRUST.png")}
                 alt=""
-                class="center-bock  px-5 px-md-3"
+                className="center-bock  px-5 px-md-3"
               />
             </div>
           </div>{" "}
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="partner-box">
+          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div className="partner-box">
               <img
                 src={require("../../../assets/img/partners/UNISWAP_.png")}
                 alt=""
-                class="center-bock  px-5 px-md-3"
+                className="center-bock  px-5 px-md-3"
               />
             </div>
           </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="partner-box">
+          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div className="partner-box">
               <img
                 src={require("../../../assets/img/partners/UNISWAP.png")}
                 alt=""
-                class="center-bock  px-5 px-md-3"
+                className="center-bock  px-5 px-md-3"
               />
             </div>
           </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="partner-box d-flex justify-content-center align-content-center">
+          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div className="partner-box d-flex justify-content-center align-content-center">
               <img
                 src={require("../../../assets/img/partners/WalletConnect.13798276a43e02957131.png")}
                 alt=""
-                class="center-bock  w-25"
+                className="center-bock  w-25"
               />
               <h5 className=" m-0 d-flex align-items-center text-light">
                 <b>WalletConnect</b>
               </h5>
             </div>
           </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="partner-box">
+          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div className="partner-box">
               <img
                 src={require("../../../assets/img/partners/BSCSCAN.png")}
                 alt=""
-                class="center-bock  px-5 px-md-3"
+                className="center-bock  px-5 px-md-3"
               />
             </div>
           </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="partner-box">
+          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div className="partner-box">
               <img
                 src={require("../../../assets/img/partners/cmm logo.png")}
                 alt=""
-                class="center-bock  px-5 px-md-3"
+                className="center-bock  px-5 px-md-3"
               />
             </div>
           </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="partner-box">
+          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div className="partner-box">
               <img
                 src={require("../../../assets/img/partners/COINGECKO.png")}
                 alt=""
-                class="center-bock  px-5 px-md-3"
+                className="center-bock  px-5 px-md-3"
               />
             </div>
           </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="partner-box">
+          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div className="partner-box">
               <img
                 src={require("../../../assets/img/partners/COINSTORE.png")}
                 alt=""
-                class="center-bock  px-5 px-md-3"
+                className="center-bock  px-5 px-md-3"
               />
             </div>
           </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="partner-box">
+          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div className="partner-box">
               <img
                 src={require("../../../assets/img/partners/DEXSCREENER.png")}
                 alt=""
-                class="center-bock  px-5 px-md-3"
+                className="center-bock  px-5 px-md-3"
               />
             </div>
           </div>

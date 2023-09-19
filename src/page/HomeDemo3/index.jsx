@@ -504,7 +504,7 @@ function Homepage3() {
                       <h3 className="text-start text-light pb-4">
                         Buy Infinity AI Token
                       </h3>
-                      <div class="awc_inpt">
+                      <div className="awc_inpt">
                         <input
                           type="text"
                           name="purchasedAmount"
@@ -516,7 +516,7 @@ function Homepage3() {
                           }}
                           onBlur={validateOne}
                         />
-                        <span class="awc_coin d-flex justify-content-center align-items-center">
+                        <span className="awc_coin d-flex justify-content-center align-items-center">
                           <img
                             src="https://firebasestorage.googleapis.com/v0/b/svdxv-xcv.appspot.com/o/4687%201.png?alt=media&token=6920cb6a-ab79-437f-802c-7a8b76e0bc7b"
                             width={35}
@@ -539,7 +539,7 @@ function Homepage3() {
                           }}
                         />
                       </div>
-                      <div class="awc_inpt">
+                      <div className="awc_inpt">
                         <input
                           type="text"
                           value={values.purchasedAmount / Amount}
@@ -548,7 +548,7 @@ function Homepage3() {
                           onChange={handleChange}
                           onBlur={validateOne}
                         />
-                        <span class="awc_coin d-flex justify-content-center align-items-center">
+                        <span className="awc_coin d-flex justify-content-center align-items-center">
                           <img
                             src={require("../../assets/img/icon.png")}
                             width={35}
@@ -757,7 +757,7 @@ function Homepage3() {
               </div>
             </Modal.Body>
           </Modal>
-          <div class="footer-bottom-content-copy">
+          <div className="footer-bottom-content-copy">
             <p
               className="text-center m-0 py-2 px-4"
               style={{ borderTop: "1px solid #fff", fontSize: 12 }}

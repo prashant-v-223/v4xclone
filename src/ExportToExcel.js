@@ -23,7 +23,7 @@ export const ExportToExcel = ({ apiData, fileName }) => {
     <button
       onClick={(e) => exportToCSV(apiData, fileName)}
       className="btn ms-3"
-      style={{ padding: "15px 16px", background: "#02a2c4", border: "none" }}
+      style={{ padding: "15px 16px", background: "#389AE4", border: "none" }}
     >
       Export
     </button>

@@ -46,9 +46,9 @@ import Withdrdatadata1 from "./page/Admin/Withdrdatadata1";
 const Spinner = () => {
   return (
     <div className="body">
-      <div class="spinner-box">
-        <div class="circle-border">
-          <div class="circle-core"></div>
+      <div className="spinner-box">
+        <div className="circle-border">
+          <div className="circle-core"></div>
         </div>
       </div>
     </div>

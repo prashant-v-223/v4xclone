@@ -47,7 +47,7 @@ function Navbar1() {
         <div className="">
           <BiLogInCircle
             className="mx-3"
-            style={{ color: "#02a2c4", fontSize: "28px", cursor: "pointer" }}
+            style={{ color: "#389AE4", fontSize: "28px", cursor: "pointer" }}
             onClick={() => {
               navigation("/");
             }}
@@ -55,7 +55,7 @@ function Navbar1() {
           <button className="Username m-2 py-2 px-3">
             <FaUserCircle
               className="me-2"
-              style={{ color: "#02a2c4", fontSize: "23px" }}
+              style={{ color: "#389AE4", fontSize: "23px" }}
             />
             Profile:Admin
           </button>
@@ -80,12 +80,12 @@ function Navbar1() {
         <div className="p-1">
               <MdNotificationsActive
                 className="mx-1 mx-lg-3"
-                style={{ color: "#02a2c4", fontSize: "28px" }}
+                style={{ color: "#389AE4", fontSize: "28px" }}
               />
               <BiLogInCircle
                 className="mx-1 mx-lg-3"
                 style={{
-                  color: "#02a2c4",
+                  color: "#389AE4",
                   fontSize: "28px",
                   cursor: "pointer",
                 }}
@@ -97,7 +97,7 @@ function Navbar1() {
             aria-controls="basic-navbar-nav"
             className="mx-2 mx-lg-3"
           >
-            <BiMenu style={{ color: "#02a2c4", fontSize: "28px" }} />
+            <BiMenu style={{ color: "#389AE4", fontSize: "28px" }} />
           </Navbar.Toggle>
         </div>
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -111,7 +111,7 @@ function Navbar1() {
             >
               <MdDashboard
                 className="ms-2 me-3"
-                style={{ color: "#02a2c4", fontSize: "20px" }}
+                style={{ color: "#389AE4", fontSize: "20px" }}
               />
               User All Details
             </Nav.Link>
@@ -124,7 +124,7 @@ function Navbar1() {
             >
               <TiArrowRepeatOutline
                 className="ms-2 me-3"
-                style={{ color: "#02a2c4", fontSize: "20px" }}
+                style={{ color: "#389AE4", fontSize: "20px" }}
               />
               Wallet Transfer Report
             </Nav.Link>
@@ -137,7 +137,7 @@ function Navbar1() {
             >
               <RiCoinsFill
                 className="ms-2 me-3"
-                style={{ color: "#02a2c4", fontSize: "20px" }}
+                style={{ color: "#389AE4", fontSize: "20px" }}
               />
               withdraw details
             </Nav.Link>
@@ -150,7 +150,7 @@ function Navbar1() {
             >
               <FaUsers
                 className="ms-2 me-3"
-                style={{ color: "#02a2c4", fontSize: "20px" }}
+                style={{ color: "#389AE4", fontSize: "20px" }}
               />
               All user income
             </Nav.Link>
@@ -163,7 +163,7 @@ function Navbar1() {
             >
                <FaDollarSign
                   className="ms-2 me-3"
-                  style={{ color: "#02a2c4", fontSize: "20px" }}
+                  style={{ color: "#389AE4", fontSize: "20px" }}
                 />
               Infinity AI Token price
             </Nav.Link>
@@ -176,7 +176,7 @@ function Navbar1() {
             >
               <FaUserFriends
                 className="ms-2 me-3"
-                style={{ color: "#02a2c4", fontSize: "20px" }}
+                style={{ color: "#389AE4", fontSize: "20px" }}
               />
               Coins Tranfor
             </Nav.Link>
@@ -189,7 +189,7 @@ function Navbar1() {
             >
               <MdSupportAgent
                 className="ms-2 me-3"
-                style={{ color: "#02a2c4", fontSize: "20px" }}
+                style={{ color: "#389AE4", fontSize: "20px" }}
               />
               Support
             </Nav.Link>
@@ -201,7 +201,7 @@ function Navbar1() {
                 <button className="Username m-2 py-2 px-3">
                   <FaUserCircle
                     className="me-2"
-                    style={{ color: "#02a2c4", fontSize: "23px" }}
+                    style={{ color: "#389AE4", fontSize: "23px" }}
                   />
                   Profile
                 </button>

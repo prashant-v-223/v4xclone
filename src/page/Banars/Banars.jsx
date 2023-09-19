@@ -145,7 +145,7 @@ function Banars() {
               <p className="m-0 pb-2 text-light">
                 Add photo / Attachment ( PNG / JPEG )
               </p>
-              <div class="" style={{ width: 250 }}>
+              <div className="" style={{ width: 250 }}>
                 <input
                   className={`form-control`}
                   name="img"

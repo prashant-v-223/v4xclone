@@ -553,7 +553,7 @@ function Staking() {
                         className={" w-100 text-light"}
                         Stake={false}
                         style={{
-                          background: "#02a2c4",
+                          background: "#389AE4",
                           height: 52,
                           border: "none",
                         }}
@@ -630,7 +630,7 @@ function Staking() {
                         className={" w-100 text-light"}
                         Stake={false}
                         style={{
-                          background: "#02a2c4",
+                          background: "#389AE4",
                           height: 52,
                           border: "none",
                         }}
@@ -712,7 +712,7 @@ function Staking() {
                         className={" w-100 text-light"}
                         Stake={false}
                         style={{
-                          background: "#02a2c4",
+                          background: "#389AE4",
                           height: 52,
                           border: "none",
                         }}

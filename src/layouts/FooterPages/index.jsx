@@ -35,13 +35,13 @@ const Footer = () => {
       {/* <SecContact /> */}
 
       <div className="" id="contact">
-        <div class="Contact_us">
-          <div class="container py-5">
-            <div class="contact_us_title mt-4">
+        <div className="Contact_us">
+          <div className="container py-5">
+            <div className="contact_us_title mt-4">
               <h3 className="py-5">
-                <span class="call_icon">
+                <span className="call_icon">
                   <i
-                    class="fa fa-phone"
+                    className="fa fa-phone"
                     aria-hidden="true"
                     style={{ fontSize: "50px" }}
                   ></i>{" "}
@@ -58,9 +58,9 @@ const Footer = () => {
               </p>
             </div>
 
-            <div class="contact_form">
-              <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-4">
+            <div className="contact_form">
+              <div className="row justify-content-center">
+                <div className="col-lg-4 col-md-4">
                   <input
                     type="text"
                     placeholder="Name"
@@ -70,7 +70,7 @@ const Footer = () => {
                   />
                 </div>
 
-                <div class="col-lg-4 col-md-4">
+                <div className="col-lg-4 col-md-4">
                   <input
                     type="text"
                     placeholder="Mobile number"
@@ -80,7 +80,7 @@ const Footer = () => {
                   />
                 </div>
 
-                <div class="col-lg-4 col-md-4">
+                <div className="col-lg-4 col-md-4">
                   <input
                     type="text"
                     placeholder="Description / suggestion"
@@ -90,7 +90,7 @@ const Footer = () => {
                   />
                 </div>
 
-                <div class="col-lg-4 col-md-4">
+                <div className="col-lg-4 col-md-4">
                   <select
                     onChange={(e) => {
                       setTimetocontact(e.target.value);
@@ -103,7 +103,7 @@ const Footer = () => {
                   </select>
                 </div>
 
-                <div class="col-lg-4 col-md-4">
+                <div className="col-lg-4 col-md-4">
                   <select
                     onChange={(e) => {
                       setbudget(e.target.value);
@@ -120,20 +120,20 @@ const Footer = () => {
               </div>
 
               <div>
-                <div class="custom-control custom-checkbox">
+                <div className="custom-control custom-checkbox">
                   <input
                     type="checkbox"
-                    class="custom-control-input"
+                    className="custom-control-input"
                     id="customCheck"
                   />
-                  <label class="custom-control-label" for="customCheck">
+                  <label className="custom-control-label" for="customCheck">
                     By submitting this form,I agree to the terms and privacy of
                     Infinity AI
                   </label>
                 </div>
               </div>
 
-              <div class="submit_btn_contact">
+              <div className="submit_btn_contact">
                 <button
                   onClick={() => {
                     sendEmail();

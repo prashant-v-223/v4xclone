@@ -21,12 +21,12 @@ const SecFAQ_Timeline = ({ FQAInfo, DocElementTitle }) => {
                 id="accordionFourLeft"
                 data-aos="fade-up"
               >
-                <div class="accordion" id="accordionExample">
+                <div className="accordion" id="accordionExample">
                
-                  <div class="accordion-item py-3">
-                    <h2 class="accordion-header" id="headingTwo">
+                  <div className="accordion-item py-3">
+                    <h2 className="accordion-header" id="headingTwo">
                       <button
-                        class="accordion-button collapsed"
+                        className="accordion-button collapsed"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseTwo"
@@ -38,11 +38,11 @@ const SecFAQ_Timeline = ({ FQAInfo, DocElementTitle }) => {
                     </h2>
                     <div
                       id="collapseTwo"
-                      class="accordion-collapse collapse"
+                      className="accordion-collapse collapse"
                       aria-labelledby="headingTwo"
                       data-bs-parent="#accordionExample"
                     >
-                      <div class="accordion-body">
+                      <div className="accordion-body">
                         <strong>Infinity AI Token</strong> IS TOTALLY DECENTRALIZED AND
                         WORK THROUGH THE SMART CONTRACT WHERE NO INDIVIDUAL OR
                         GROUP OR ANY ADMIN INVOLVED. THIS PLATFORM IS HIGHLY
@@ -51,10 +51,10 @@ const SecFAQ_Timeline = ({ FQAInfo, DocElementTitle }) => {
                       </div>
                     </div>
                   </div>
-                  <div class="accordion-item py-3">
-                    <h2 class="accordion-header" id="headingThree">
+                  <div className="accordion-item py-3">
+                    <h2 className="accordion-header" id="headingThree">
                       <button
-                        class="accordion-button collapsed"
+                        className="accordion-button collapsed"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseThree"
@@ -66,11 +66,11 @@ const SecFAQ_Timeline = ({ FQAInfo, DocElementTitle }) => {
                     </h2>
                     <div
                       id="collapseThree"
-                      class="accordion-collapse collapse"
+                      className="accordion-collapse collapse"
                       aria-labelledby="headingThree"
                       data-bs-parent="#accordionExample"
                     >
-                      <div class="accordion-body">
+                      <div className="accordion-body">
                         {" "}
                         YES, WE DO HAVE A WHITEPAPER WHERE ANYONE CAN HAVE A
                         BRIEF IDEA ABOUT<strong>Infinity AI Token</strong> THE{" "}
@@ -80,10 +80,10 @@ const SecFAQ_Timeline = ({ FQAInfo, DocElementTitle }) => {
                       </div>
                     </div>
                   </div>
-                  <div class="accordion-item py-3">
-                    <h2 class="accordion-header" id="headingThree1">
+                  <div className="accordion-item py-3">
+                    <h2 className="accordion-header" id="headingThree1">
                       <button
-                        class="accordion-button collapsed"
+                        className="accordion-button collapsed"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseThree1"
@@ -95,20 +95,20 @@ const SecFAQ_Timeline = ({ FQAInfo, DocElementTitle }) => {
                     </h2>
                     <div
                       id="collapseThree1"
-                      class="accordion-collapse collapse"
+                      className="accordion-collapse collapse"
                       aria-labelledby="headingThree1"
                       data-bs-parent="#accordionExample"
                     >
-                      <div class="accordion-body">
+                      <div className="accordion-body">
                         YES, WE DO HAVE STAKING PROGRAM WHERE A USER GETS RETURN
                         DAILY AND ITS START WITH REASONABLE AMOUNT.
                       </div>
                     </div>
                   </div>
-                  <div class="accordion-item py-3">
-                    <h2 class="accordion-header" id="headingThree122">
+                  <div className="accordion-item py-3">
+                    <h2 className="accordion-header" id="headingThree122">
                       <button
-                        class="accordion-button collapsed"
+                        className="accordion-button collapsed"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseThree122"
@@ -120,11 +120,11 @@ const SecFAQ_Timeline = ({ FQAInfo, DocElementTitle }) => {
                     </h2>
                     <div
                       id="collapseThree122"
-                      class="accordion-collapse collapse"
+                      className="accordion-collapse collapse"
                       aria-labelledby="headingThree122"
                       data-bs-parent="#accordionExample"
                     >
-                      <div class="accordion-body">
+                      <div className="accordion-body">
                         YES, WE DO HAVE A REFERRAL PROGRAM WHERE A USER CAN
                         EASILY EARN REWARD BY BUILDING THE Infinity AI Token COMMUNITY.
                       </div>

@@ -104,7 +104,7 @@ function Support() {
                         <Form>
                           <div className="row">
                             <div className="col-12">
-                              <div class="form-floating mb-2">
+                              <div className="form-floating mb-2">
                                 <textarea
                                   className={`form-control ${
                                     errors.Password && "was-validated"
@@ -136,7 +136,7 @@ function Support() {
                               <p className="m-0 pb-2 text-light">
                                 Add photo / Attachment ( PNG / JPEG )
                               </p>
-                              <div class="" style={{ width: 250 }}>
+                              <div className="" style={{ width: 250 }}>
                                 <input
                                   className={`form-control`}
                                   name="img"

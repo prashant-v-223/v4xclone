@@ -127,7 +127,7 @@ function Admin() {
       ellipsis: {
         showTitle: false,
       },
-      width: "300px",
+      width: "340px",
       sorter: (a, b) => a.username.slice(3, -1) - b.username.slice(3, -1),
       render: (text, record, index) => (
         <Tooltip

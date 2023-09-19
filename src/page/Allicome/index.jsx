@@ -53,7 +53,7 @@ function Allicome() {
       ellipsis: {
         showTitle: false,
       },
-      width: "180px",
+      width: "340px",
       render: (text, record, index) => (
         <Tooltip
           placement="topLeft"

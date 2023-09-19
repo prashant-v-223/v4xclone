@@ -24,7 +24,7 @@ const SecIco = ({ logo }) => {
                 <i className="fa fa-facebook" aria-hidden="true" />
               </a>
               <a href="">
-                <i class="fa fa-telegram" aria-hidden="true"></i>
+                <i className="fa fa-telegram" aria-hidden="true"></i>
               </a>
               <a href="">
                 <i className="fa fa-twitter" aria-hidden="true" />

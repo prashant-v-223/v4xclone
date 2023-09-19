@@ -53,6 +53,7 @@ function LavalincomeRepors() {
       ellipsis: {
         showTitle: false,
       },
+      width: "340px",
       render: (address) => (
         <Tooltip placement="topLeft" title={address}>
           {address}

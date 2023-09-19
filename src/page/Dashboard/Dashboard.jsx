@@ -51,11 +51,11 @@ const Dashboard = () => {
         <Navbar />
         <div className="container-fluid blackbg">
           <div className="mainsection ">
-            <div class="d-flex justify-content-between py-3 px-4">
-              <h5 class="pt-2 pt-lg-0 mb-2 text-center text-lg-left text-light">
+            <div className="d-flex justify-content-between py-3 px-4">
+              <h5 className="pt-2 pt-lg-0 mb-2 text-center text-lg-left text-light">
                 Laval : {Profile[0]?.leval}
               </h5>{" "}
-              <h5 class="pt-2 pt-lg-0 mb-2 text-center text-lg-left text-light">
+              <h5 className="pt-2 pt-lg-0 mb-2 text-center text-lg-left text-light">
                 Rank : {Profile[0]?.Rank}
               </h5>{" "}
             </div>
@@ -64,7 +64,7 @@ const Dashboard = () => {
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
                     <img
-                      src={require("../../assets/img/username 1.png")}
+                      src={require("../../assets/img/solar_user-bold (1).png")}
                       alt=""
                     />
                   </div>
@@ -78,7 +78,7 @@ const Dashboard = () => {
                     </p>
                     <button
                       className="text-light d-flex justify-content-center align-items-center px-4 py-2 "
-                      style={{ background: "#02a2c4", position: "inherit" }}
+                      style={{ background: "#389AE4", position: "inherit" }}
                       onClick={() => {
                         navigator.clipboard.writeText(Profile[0]?.username);
                         toast.success("username copy successfully.");
@@ -125,10 +125,10 @@ const Dashboard = () => {
                 <div className="Boxcard p-4 d-block d-lg-flex flex-column  justify-content-space-around align-items-center h-100 ">
                   <div className="pb-2 pb-lg-0 d-flex  justify-content-center align-items-center h-50 h-md-100">
                     <img
-                      src={require("../../assets/img/increase.png")}
+                      src={require("../../assets/img/SvgjsPath1210 (2).png")}
                       alt=""
                       className="img-fluid"
-                      width={75}
+                      width={175}
                     />
                   </div>
                   <div className="d-flex h-50 h-md-100 flex-column justify-content-center">
@@ -155,8 +155,9 @@ const Dashboard = () => {
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100 ">
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
                     <img
-                      src={require("../../assets/img/myteam 1.png")}
+                      src={require("../../assets/img/Vector (74).png")}
                       alt=""
+                      width={80}
                     />
                   </div>
                   <div
@@ -191,8 +192,9 @@ const Dashboard = () => {
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-50 h-md-100">
                     <img
-                      src={require("../../assets/img/totalteam 1.png")}
+                      src={require("../../assets/img/game-icons_team-idea.png")}
                       alt=""
+                      width={80}
                     />
                   </div>
                   <div className=" d-flex h-50 h-md-100 flex-column justify-content-center">
@@ -218,14 +220,14 @@ const Dashboard = () => {
                   <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-25 h-md-100">
                     <FaDollarSign
                       className="ms-2 me-3"
-                      style={{ color: "#02a2c4", fontSize: "61px" }}
+                      style={{ color: "#389AE4", fontSize: "61px" }}
                     />
                   </div>
                   <div className=" d-flex h-50 h-md-100 flex-column justify-content-center ">
-                    <h4 className="pt-5 mt-3 mt-lg-3 pt-lg-0 mb-2 text-center text-lg-left">
+                    {/* <h4 className="pt-5 mt-3 mt-lg-3 pt-lg-0 pb-md-4 mb-md-2 text-center text-lg-left">
                       Income Details
-                    </h4>
-                    <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
+                    </h4> */}
+                    <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0 ">
                       <p className=" m-0">Airdrop Coins :</p>
                       <p className=" m-0">
                         {StackingSlice.Wallatedata?.data?.mystack >= 120
@@ -242,7 +244,7 @@ const Dashboard = () => {
                         )}
                         $
                       </p>
-                    </p>{" "}
+                    </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start">
                       <p className=" m-0"> Staking Bonus :</p>
                       <p className=" m-0">
@@ -285,16 +287,8 @@ const Dashboard = () => {
             </div>
             <div className="row px-3 py-3 justify-content-lg-center">
               <div className="col-12 col-lg-4 text-light py-2">
-                <div
-                  className="Boxcard p-4 d-block d-lg-flex flex-column  justify-content-space-around align-items-center h-100 "
-                  style={{
-                    cursor: "pointer",
-                  }}
-                  onClick={() => {
-                    navigation("/mian/Withdrawal");
-                  }}
-                >
-                  <div className="pb-2 pb-lg-0 d-flex  justify-content-center align-items-center h-50 h-md-100">
+                <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
+                  <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-25 h-md-100">
                     <img
                       src={require("../../assets/img/totalteaminvestment 1.png")}
                       alt=""
@@ -302,13 +296,47 @@ const Dashboard = () => {
                     />
                   </div>
                   <div className="d-flex h-50 h-md-100 flex-column justify-content-center">
-                    <h6 className="pt-3 text-center">Team Total Investment</h6>
-                    <h6 className="text-center">
-                      {StackingSlice.Wallatedata?.data?.teamtotalstack
-                        ? StackingSlice.Wallatedata?.data?.teamtotalstack
-                        : 0}
-                      $
-                    </h6>
+                    <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0 pt-4 pt-md-0">
+                      <p className=" m-0">Active AI Team :</p>
+                      <p className=" m-0">
+                        {
+                          StackingSlice.Wallatedata?.data?.aggregatedUserData
+                            .refers_to1Size
+                        }
+                      </p>
+                    </p>
+                    <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
+                      <p className=" m-0">Date of registration :</p>
+                      <p className=" m-0">
+                        {new Date(
+                          StackingSlice.Wallatedata?.data?.profile[0].createdAt
+                        ).toDateString()}
+                      </p>
+                    </p>
+                    <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start">
+                      <p className=" m-0"> Date Activation :</p>
+                      <p className=" m-0">
+                        {new Date(
+                          StackingSlice.Wallatedata?.data?.activedate
+                        ).toDateString()}
+                      </p>
+                    </p>
+                    <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
+                      <p className=" m-0">Today Business :</p>
+                      <p className=" m-0">
+                        {
+                          StackingSlice.Wallatedata?.data?.aggregatedUserData
+                            ?.todaymyteam
+                        }
+                        $
+                      </p>
+                    </p>
+                    <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
+                      <p className=" m-0">Total Business :</p>
+                      <p className=" m-0">
+                        {StackingSlice.Wallatedata?.data?.teamtotalstack}$
+                      </p>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -324,9 +352,9 @@ const Dashboard = () => {
                 >
                   <div className="pb-2 pb-lg-0 d-flex  justify-content-center align-items-center h-50 h-md-100">
                     <img
-                      src={require("../../assets/img/Myinvestment 1.png")}
+                      src={require("../../assets/img/bxs_badge-dollar.png")}
                       alt=""
-                      className="img-fluid"
+                      width={80}
                     />
                   </div>
                   <div className="d-flex h-50 h-md-100 flex-column justify-content-center">
@@ -344,7 +372,7 @@ const Dashboard = () => {
                 <div className="Boxcard p-4 d-block d-lg-flex flex-column  justify-content-space-around align-items-center h-100 ">
                   <div className="pb-2 pb-lg-0 d-flex  justify-content-center align-items-center h-50 h-md-100">
                     <img
-                      src={require("../../assets/img/airdroptokens 1.png")}
+                      src={require("../../assets/img/Group (6).png")}
                       alt=""
                       className="img-fluid"
                     />
@@ -361,7 +389,7 @@ const Dashboard = () => {
                       <button
                         className="text-light"
                         style={{
-                          background: "#02a2c4",
+                          background: "#389AE4",
                           height: 60,
                           border: "none",
                         }}
@@ -403,11 +431,10 @@ const Dashboard = () => {
                     lineBorderRadius={"10px"}
                     label={
                       <div className="d-flex justify-content-center align-items-center my-2">
-                        <FaUserAlt
-                          style={{
-                            color: "#fff",
-                            fontSize: 22,
-                          }}
+                        <img
+                          src={require("../../assets/img/solar_user-bold (1).png")}
+                          alt=""
+                          width={70}
                         />
                         <h6
                           className="my-0 mx-3"
@@ -429,11 +456,10 @@ const Dashboard = () => {
                               <TreeNode
                                 label={
                                   <div className="d-flex justify-content-center align-items-center my-2">
-                                    <FaUserAlt
-                                      style={{
-                                        color: "#fff",
-                                        fontSize: 22,
-                                      }}
+                                    <img
+                                      src={require("../../assets/img/solar_user-bold (1).png")}
+                                      alt=""
+                                      width={50}
                                     />
                                     <h6
                                       className="my-0 mx-3"
@@ -457,7 +483,7 @@ const Dashboard = () => {
             </div>
 
             <Modal show={open} onHide={() => setopen(!open)} centered>
-              <Modal.Header >
+              <Modal.Header>
                 <Modal.Title>
                   <h6 className="text-light m-0"></h6>
                 </Modal.Title>

@@ -275,14 +275,14 @@ function Profile() {
                       borderBottom: "1px solid rgb(112 100 100)",
                     }}
                   >
-                    <div class="inner-addon left-addon">
+                    <div className="inner-addon left-addon">
                       <img
                         src={require("../../assets/img/Vector (32).png")}
                         alt=""
                       />
                       <input
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         name="email"
                         placeholder="Wallet address"
                         value={
@@ -300,14 +300,14 @@ function Profile() {
                       borderBottom: "1px solid rgb(112 100 100)",
                     }}
                   >
-                    <div class="inner-addon left-addon">
+                    <div className="inner-addon left-addon">
                       <img
                         src={require("../../assets/img/username 1.png")}
                         alt=""
                       />
                       <input
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         name="username"
                         placeholder="Wallet address"
                         value={
@@ -329,14 +329,14 @@ function Profile() {
                     }}
                   >
                     <div className="col-12">
-                      <div class="inner-addon left-addon">
+                      <div className="inner-addon left-addon">
                         <img
                           src={require("../../assets/img/walletaddress 1.png")}
                           alt=""
                         />
                         <input
                           type="text"
-                          class="form-control"
+                          className="form-control"
                           name="walletaddress"
                           placeholder="Wallet address"
                           value={
@@ -357,7 +357,7 @@ function Profile() {
                   }}
                 >
                   <div className="col-12">
-                    <div class="inner-addon left-addon">
+                    <div className="inner-addon left-addon">
                       <AiFillPhone
                         className="imgs"
                         style={{
@@ -367,7 +367,7 @@ function Profile() {
                       />
                       <input
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         name="walletaddress"
                         placeholder="Wallet address"
                         value={
@@ -387,14 +387,14 @@ function Profile() {
                   }}
                 >
                   <div className="col-12">
-                    <div class="inner-addon left-addon">
+                    <div className="inner-addon left-addon">
                       <img
                         src={require("../../assets/img/Vector (33).png")}
                         alt=""
                       />
                       <input
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         name="Rank"
                         placeholder="Wallet address"
                         value={
@@ -416,7 +416,7 @@ function Profile() {
                     }}
                   >
                     <div className="col-12">
-                      <div class="inner-addon left-addon">
+                      <div className="inner-addon left-addon">
                         <FaUsersCog
                           className="imgs"
                           style={{
@@ -426,7 +426,7 @@ function Profile() {
                         />
                         <input
                           type="text"
-                          class="form-control"
+                          className="form-control"
                           name="Rank"
                           value={
                             JSON.parse(localStorage.getItem("data"))?.data
@@ -448,14 +448,14 @@ function Profile() {
                     }}
                   >
                     <div className="col-12">
-                      <div class="inner-addon left-addon">
+                      <div className="inner-addon left-addon">
                         <img
                           src={require("../../assets/img/myteam 1.png")}
                           alt=""
                         />
                         <input
                           type="text"
-                          class="form-control"
+                          className="form-control"
                           name="Rank"
                           value={
                             JSON.parse(localStorage.getItem("data"))?.data
@@ -475,7 +475,7 @@ function Profile() {
                   }}
                 >
                   <div className="col-12">
-                    <div class="inner-addon left-addon">
+                    <div className="inner-addon left-addon">
                       <img
                         src={
                           "https://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/256/Tether-USDT-icon.png"
@@ -484,7 +484,7 @@ function Profile() {
                       />
                       <input
                         type="text"
-                        class="form-control w-100"
+                        className="form-control w-100"
                         name="Rank"
                         value={"0x55d398326f99059ff775485246999027b3197955"}
                         disabled
@@ -500,7 +500,7 @@ function Profile() {
                   }}
                 >
                   <div className="col-12">
-                    <div class="inner-addon1 left-addon">
+                    <div className="inner-addon1 left-addon">
                       <img
                         src={require("../../assets/img/2ffc87ac-289d-4ae5-a0c6-4eb76ed22960.jpg")}
                         alt=""
@@ -508,7 +508,7 @@ function Profile() {
                       />
                       <input
                         type="text"
-                        class="form-control w-100"
+                        className="form-control w-100"
                         name="Rank"
                         value={"0x0a786cdc660c437f5f286548221232a8d4e53441"}
                         disabled
@@ -567,7 +567,7 @@ function Profile() {
                     <p className="m-0 pb-2 text-light">
                       Add photo ( PNG / JPEG )
                     </p>
-                    <div class="" style={{ width: 250 }}>
+                    <div className="" style={{ width: 250 }}>
                       <input
                         className={`form-control`}
                         name="img"

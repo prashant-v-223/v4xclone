@@ -269,7 +269,7 @@ function Withdrawal() {
                           className={" w-100 text-light"}
                           Stake={!false}
                           style={{
-                            background: "#02a2c4",
+                            background: "#389AE4",
                             height: 60,
                             border: "none",
                           }}
@@ -287,7 +287,7 @@ function Withdrawal() {
                       className={" w-100 text-light my-2"}
                       Stake={!false}
                       style={{
-                        background: "#02a2c4",
+                        background: "#389AE4",
                         height: 60,
                         border: "none",
                       }}
@@ -431,7 +431,7 @@ function Withdrawal() {
                           className={" w-100 text-light"}
                           Stake={!false}
                           style={{
-                            background: "#02a2c4",
+                            background: "#389AE4",
                             height: 65,
                             border: "none",
                           }}
@@ -463,7 +463,7 @@ function Withdrawal() {
                       className={" w-100 text-light"}
                       Stake={!false}
                       style={{
-                        background: "#02a2c4",
+                        background: "#389AE4",
                         height: 60,
                         border: "none",
                       }}

@@ -22,9 +22,9 @@ function PreloaderContainer() {
         />
       </Helmet>
       <div id="preloader">
-        <div class="spinner-box">
-          <div class="circle-border">
-            <div class="circle-core"></div>
+        <div className="spinner-box">
+          <div className="circle-border">
+            <div className="circle-core"></div>
           </div>
         </div>
       </div>
