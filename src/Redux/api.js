@@ -1,5 +1,4 @@
-// const baseURL = process.env.REACT_APP_API_URL;
-const baseURL = "http://localhost:8080/";
+const baseURL = process.env.REACT_APP_API_URL;
 export const apiList = {
   Signup: baseURL + "api/registration/signUp",
   Signin: baseURL + "api/registration/signIn",
