@@ -27,7 +27,7 @@ const Dashboard = () => {
   const [Profile, setProfile] = React.useState({});
   const dispatch = useDispatch();
   const navigation = useNavigate();
-  const [Alldata, setAlldata] = React.useState([]);
+  const [Alldata, setAlldata] = React.useState(0);
   useEffect(() => {
     getalldata();
     getalldata1();
@@ -51,6 +51,8 @@ const Dashboard = () => {
         );
       }
     );
+    console.log("resultProductData", resultProductData.length);
+    setAlldata(resultProductData.length);
     totalAmount = res?.payload?.data.ReffData[0]?.referBY
       .filter((a) => {
         return (
@@ -60,9 +62,6 @@ const Dashboard = () => {
         );
       })
       .reduce((acc, curr) => acc + curr.mystack, 0);
-
-    console.log(resultProductData);
-    setAlldata(resultProductData.length);
   };
   const getalldata = async () => {
     const res = await dispatch(
@@ -359,7 +358,7 @@ const Dashboard = () => {
                         Today Active AI Team :
                       </p>
                       <p className=" m-0" style={{ fontSize: "13px" }}>
-                        {Alldata ? Alldata : 0}
+                        {Alldata}
                       </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
