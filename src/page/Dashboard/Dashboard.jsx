@@ -18,7 +18,7 @@ import { Tree, TreeNode } from "react-organizational-chart";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Modal } from "react-bootstrap";
-import {daireactteam} from "../../Redux/daireactteam";
+import { daireactteam } from "../../Redux/daireactteam";
 const Dashboard = () => {
   const StackingSlice = useSelector((state) => state.WallatedatSlice);
   const [address, setaddress] = React.useState("");
@@ -41,13 +41,25 @@ const Dashboard = () => {
           JSON.parse(localStorage.getItem("data")).data.token,
       })
     );
-    var resultProductData = res?.payload?.data.ReffData[0]?.referBY.filter((a) => {
-      console.log(new Date(a.createdAt).toLocaleDateString());
-      return (
-        a.mystack >= 40 &&
-        new Date(a.createdAt).toLocaleDateString() == new Date().toLocaleDateString()
-      );
-    });
+    var resultProductData = res?.payload?.data.ReffData[0]?.referBY.filter(
+      (a) => {
+        return (
+          a.mystack >= 40 &&
+          new Date(a.createdAt).toLocaleDateString() ==
+            new Date().toLocaleDateString()
+        );
+      }
+    );
+    const totalAmount = res?.payload?.data.ReffData[0]?.referBY
+      .filter((a) => {
+        return (
+          a.mystack >= 40 &&
+          new Date(a.createdAt).toLocaleDateString() ===
+            new Date().toLocaleDateString()
+        );
+      })
+      .reduce((acc, curr) => acc + curr.mystack, 0);
+
     console.log(resultProductData);
     setAlldata(resultProductData.length);
   };
@@ -248,8 +260,10 @@ const Dashboard = () => {
                       Income Details
                     </h4> */}
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0 pt-5 pt-md-0 ">
-                      <p className=" m-0" style={{fontSize:"13px"}}>Airdrop Coins :</p>
-                      <p className=" m-0" style={{fontSize:"13px"}}>
+                      <p className=" m-0" style={{ fontSize: "13px" }}>
+                        Airdrop Coins :
+                      </p>
+                      <p className=" m-0" style={{ fontSize: "13px" }}>
                         {StackingSlice.Wallatedata?.data?.mystack >= 120
                           ? (10).toFixed(2)
                           : 0}
@@ -257,8 +271,10 @@ const Dashboard = () => {
                       </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
-                      <p className=" m-0" style={{fontSize:"13px"}}>Referral & Earn :</p>
-                      <p className=" m-0" style={{fontSize:"13px"}}>
+                      <p className=" m-0" style={{ fontSize: "13px" }}>
+                        Referral & Earn :
+                      </p>
+                      <p className=" m-0" style={{ fontSize: "13px" }}>
                         {StackingSlice.Wallatedata?.data?.income[0]?.ReferandEarn?.toFixed(
                           2
                         )}
@@ -266,8 +282,11 @@ const Dashboard = () => {
                       </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start">
-                      <p className=" m-0" style={{fontSize:"13px"}}> Staking Bonus :</p>
-                      <p className=" m-0" style={{fontSize:"13px"}}>
+                      <p className=" m-0" style={{ fontSize: "13px" }}>
+                        {" "}
+                        Staking Bonus :
+                      </p>
+                      <p className=" m-0" style={{ fontSize: "13px" }}>
                         {StackingSlice.Wallatedata?.data?.income[0]?.StakingBonusIncome?.toFixed(
                           2
                         )}
@@ -275,8 +294,10 @@ const Dashboard = () => {
                       </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
-                      <p className=" m-0" style={{fontSize:"13px"}}>Community reward :</p>
-                      <p className=" m-0" style={{fontSize:"13px"}}>
+                      <p className=" m-0" style={{ fontSize: "13px" }}>
+                        Community reward :
+                      </p>
+                      <p className=" m-0" style={{ fontSize: "13px" }}>
                         {StackingSlice.Wallatedata?.data?.income[0]?.communities?.toFixed(
                           2
                         )}
@@ -284,8 +305,10 @@ const Dashboard = () => {
                       </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
-                      <p className=" m-0" style={{fontSize:"13px"}}>Passive club reward :</p>
-                      <p className=" m-0" style={{fontSize:"13px"}}>
+                      <p className=" m-0" style={{ fontSize: "13px" }}>
+                        Passive club reward :
+                      </p>
+                      <p className=" m-0" style={{ fontSize: "13px" }}>
                         {StackingSlice.Wallatedata?.data?.income[0]?.passives?.toFixed(
                           2
                         )}
@@ -293,8 +316,11 @@ const Dashboard = () => {
                       </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
-                      <p className=" m-0" style={{fontSize:"13px"}}> Achievement reward :</p>
-                      <p className=" m-0" style={{fontSize:"13px"}}>
+                      <p className=" m-0" style={{ fontSize: "13px" }}>
+                        {" "}
+                        Achievement reward :
+                      </p>
+                      <p className=" m-0" style={{ fontSize: "13px" }}>
                         {StackingSlice.Wallatedata?.data?.income[0]?.achivements?.toFixed(
                           2
                         )}
@@ -317,50 +343,58 @@ const Dashboard = () => {
                   </div>
                   <div className="d-flex h-50 h-md-100 flex-column justify-content-center">
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0 pt-5 pt-md-0">
-                      <p className=" m-0" style={{fontSize:"13px"}}>Active AI Team :</p>
-                      <p className=" m-0" style={{fontSize:"13px"}}>
+                      <p className=" m-0" style={{ fontSize: "13px" }}>
+                        Active AI Team :
+                      </p>
+                      <p className=" m-0" style={{ fontSize: "13px" }}>
                         {
                           StackingSlice.Wallatedata?.data?.aggregatedUserData
                             .refers_to1Size
                         }
                       </p>
-                    </p>   <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0 pt-md-0">
-                      <p className=" m-0" style={{fontSize:"13px"}}>Today Active AI Team :</p>
-                      <p className=" m-0" style={{fontSize:"13px"}}>
-                        {
-                          Alldata?Alldata:0
-                        }
+                    </p>{" "}
+                    <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0 pt-md-0">
+                      <p className=" m-0" style={{ fontSize: "13px" }}>
+                        Today Active AI Team :
+                      </p>
+                      <p className=" m-0" style={{ fontSize: "13px" }}>
+                        {Alldata ? Alldata : 0}
                       </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
-                      <p className=" m-0" style={{fontSize:"13px"}}>Date of registration :</p>
-                      <p className=" m-0" style={{fontSize:"13px"}}>
+                      <p className=" m-0" style={{ fontSize: "13px" }}>
+                        Date of registration :
+                      </p>
+                      <p className=" m-0" style={{ fontSize: "13px" }}>
                         {new Date(
                           StackingSlice.Wallatedata?.data?.profile[0].createdAt
                         ).toDateString()}
                       </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start">
-                      <p className=" m-0" style={{fontSize:"13px"}}> Date Activation :</p>
-                      <p className=" m-0" style={{fontSize:"13px"}}>
+                      <p className=" m-0" style={{ fontSize: "13px" }}>
+                        {" "}
+                        Date Activation :
+                      </p>
+                      <p className=" m-0" style={{ fontSize: "13px" }}>
                         {new Date(
                           StackingSlice.Wallatedata?.data?.activedate
                         ).toDateString()}
                       </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
-                      <p className=" m-0" style={{fontSize:"13px"}}>Today Business :</p>
-                      <p className=" m-0" style={{fontSize:"13px"}}>
-                        {
-                          StackingSlice.Wallatedata?.data?.aggregatedUserData
-                            ?.todaymyteam
-                        }
-                        $
+                      <p className=" m-0" style={{ fontSize: "13px" }}>
+                        Today Business :
+                      </p>
+                      <p className=" m-0" style={{ fontSize: "13px" }}>
+                        {totalAmount}$
                       </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
-                      <p className=" m-0" style={{fontSize:"13px"}}>Total Business :</p>
-                      <p className=" m-0" style={{fontSize:"13px"}}>
+                      <p className=" m-0" style={{ fontSize: "13px" }}>
+                        Total Business :
+                      </p>
+                      <p className=" m-0" style={{ fontSize: "13px" }}>
                         {StackingSlice.Wallatedata?.data?.teamtotalstack}$
                       </p>
                     </p>
