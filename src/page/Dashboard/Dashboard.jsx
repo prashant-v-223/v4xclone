@@ -304,6 +304,14 @@ const Dashboard = () => {
                             .refers_to1Size
                         }
                       </p>
+                    </p>   <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0 pt-4 pt-md-0">
+                      <p className=" m-0">Today Active AI Team :</p>
+                      <p className=" m-0">
+                        {
+                          StackingSlice.Wallatedata?.data?.aggregatedUserData
+                            .todayrefers_to1Size
+                        }
+                      </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
                       <p className=" m-0">Date of registration :</p>
