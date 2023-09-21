@@ -18,6 +18,7 @@ import { Tree, TreeNode } from "react-organizational-chart";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Modal } from "react-bootstrap";
+import {daireactteam} from "../../Redux/daireactteam";
 const Dashboard = () => {
   const StackingSlice = useSelector((state) => state.WallatedatSlice);
   const [address, setaddress] = React.useState("");
@@ -26,10 +27,30 @@ const Dashboard = () => {
   const [Profile, setProfile] = React.useState({});
   const dispatch = useDispatch();
   const navigation = useNavigate();
+  const [Alldata, setAlldata] = React.useState([]);
   useEffect(() => {
     getalldata();
+    getalldata1();
   }, []);
-
+  const getalldata1 = async () => {
+    const res = await dispatch(
+      daireactteam({
+        serch: "",
+        Token:
+          JSON.parse(localStorage.getItem("data")) &&
+          JSON.parse(localStorage.getItem("data")).data.token,
+      })
+    );
+    var resultProductData = res?.payload?.data.ReffData[0]?.referBY.filter((a) => {
+      console.log(new Date(a.createdAt).toLocaleDateString());
+      return (
+        a.mystack >= 40 &&
+        new Date(a.createdAt).toLocaleDateString() == new Date().toLocaleDateString()
+      );
+    });
+    console.log(resultProductData);
+    setAlldata(resultProductData.length);
+  };
   const getalldata = async () => {
     const res = await dispatch(
       Wallatedata({
@@ -44,7 +65,6 @@ const Dashboard = () => {
       navigation("/");
     }
   };
-
   return (
     <>
       <Spin spinning={!StackingSlice.isLoader}>
@@ -227,9 +247,9 @@ const Dashboard = () => {
                     {/* <h4 className="pt-5 mt-3 mt-lg-3 pt-lg-0 pb-md-4 mb-md-2 text-center text-lg-left">
                       Income Details
                     </h4> */}
-                    <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0 ">
-                      <p className=" m-0">Airdrop Coins :</p>
-                      <p className=" m-0">
+                    <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0 pt-5 pt-md-0 ">
+                      <p className=" m-0" style={{fontSize:"13px"}}>Airdrop Coins :</p>
+                      <p className=" m-0" style={{fontSize:"13px"}}>
                         {StackingSlice.Wallatedata?.data?.mystack >= 120
                           ? (10).toFixed(2)
                           : 0}
@@ -237,8 +257,8 @@ const Dashboard = () => {
                       </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
-                      <p className=" m-0">Referral & Earn :</p>
-                      <p className=" m-0">
+                      <p className=" m-0" style={{fontSize:"13px"}}>Referral & Earn :</p>
+                      <p className=" m-0" style={{fontSize:"13px"}}>
                         {StackingSlice.Wallatedata?.data?.income[0]?.ReferandEarn?.toFixed(
                           2
                         )}
@@ -246,8 +266,8 @@ const Dashboard = () => {
                       </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start">
-                      <p className=" m-0"> Staking Bonus :</p>
-                      <p className=" m-0">
+                      <p className=" m-0" style={{fontSize:"13px"}}> Staking Bonus :</p>
+                      <p className=" m-0" style={{fontSize:"13px"}}>
                         {StackingSlice.Wallatedata?.data?.income[0]?.StakingBonusIncome?.toFixed(
                           2
                         )}
@@ -255,8 +275,8 @@ const Dashboard = () => {
                       </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
-                      <p className=" m-0">Community reward :</p>
-                      <p className=" m-0">
+                      <p className=" m-0" style={{fontSize:"13px"}}>Community reward :</p>
+                      <p className=" m-0" style={{fontSize:"13px"}}>
                         {StackingSlice.Wallatedata?.data?.income[0]?.communities?.toFixed(
                           2
                         )}
@@ -264,8 +284,8 @@ const Dashboard = () => {
                       </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
-                      <p className=" m-0">Passive club reward :</p>
-                      <p className=" m-0">
+                      <p className=" m-0" style={{fontSize:"13px"}}>Passive club reward :</p>
+                      <p className=" m-0" style={{fontSize:"13px"}}>
                         {StackingSlice.Wallatedata?.data?.income[0]?.passives?.toFixed(
                           2
                         )}
@@ -273,8 +293,8 @@ const Dashboard = () => {
                       </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
-                      <p className=" m-0"> Achievement reward :</p>
-                      <p className=" m-0">
+                      <p className=" m-0" style={{fontSize:"13px"}}> Achievement reward :</p>
+                      <p className=" m-0" style={{fontSize:"13px"}}>
                         {StackingSlice.Wallatedata?.data?.income[0]?.achivements?.toFixed(
                           2
                         )}
@@ -296,42 +316,41 @@ const Dashboard = () => {
                     />
                   </div>
                   <div className="d-flex h-50 h-md-100 flex-column justify-content-center">
-                    <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0 pt-4 pt-md-0">
-                      <p className=" m-0">Active AI Team :</p>
-                      <p className=" m-0">
+                    <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0 pt-5 pt-md-0">
+                      <p className=" m-0" style={{fontSize:"13px"}}>Active AI Team :</p>
+                      <p className=" m-0" style={{fontSize:"13px"}}>
                         {
                           StackingSlice.Wallatedata?.data?.aggregatedUserData
                             .refers_to1Size
                         }
                       </p>
-                    </p>   <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0 pt-4 pt-md-0">
-                      <p className=" m-0">Today Active AI Team :</p>
-                      <p className=" m-0">
+                    </p>   <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0 pt-md-0">
+                      <p className=" m-0" style={{fontSize:"13px"}}>Today Active AI Team :</p>
+                      <p className=" m-0" style={{fontSize:"13px"}}>
                         {
-                          StackingSlice.Wallatedata?.data?.aggregatedUserData
-                            .todayrefers_to1Size
+                          Alldata?Alldata:0
                         }
                       </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
-                      <p className=" m-0">Date of registration :</p>
-                      <p className=" m-0">
+                      <p className=" m-0" style={{fontSize:"13px"}}>Date of registration :</p>
+                      <p className=" m-0" style={{fontSize:"13px"}}>
                         {new Date(
                           StackingSlice.Wallatedata?.data?.profile[0].createdAt
                         ).toDateString()}
                       </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start">
-                      <p className=" m-0"> Date Activation :</p>
-                      <p className=" m-0">
+                      <p className=" m-0" style={{fontSize:"13px"}}> Date Activation :</p>
+                      <p className=" m-0" style={{fontSize:"13px"}}>
                         {new Date(
                           StackingSlice.Wallatedata?.data?.activedate
                         ).toDateString()}
                       </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
-                      <p className=" m-0">Today Business :</p>
-                      <p className=" m-0">
+                      <p className=" m-0" style={{fontSize:"13px"}}>Today Business :</p>
+                      <p className=" m-0" style={{fontSize:"13px"}}>
                         {
                           StackingSlice.Wallatedata?.data?.aggregatedUserData
                             ?.todaymyteam
@@ -340,8 +359,8 @@ const Dashboard = () => {
                       </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
-                      <p className=" m-0">Total Business :</p>
-                      <p className=" m-0">
+                      <p className=" m-0" style={{fontSize:"13px"}}>Total Business :</p>
+                      <p className=" m-0" style={{fontSize:"13px"}}>
                         {StackingSlice.Wallatedata?.data?.teamtotalstack}$
                       </p>
                     </p>
