@@ -28,11 +28,11 @@ const Dashboard = () => {
   const dispatch = useDispatch();
   const navigation = useNavigate();
   const [Alldata, setAlldata] = React.useState(0);
+  const [FILLTER, setFILLTER] = React.useState([]);
   useEffect(() => {
     getalldata();
     getalldata1();
   }, []);
-  const totalAmount = 0;
   const getalldata1 = async () => {
     const res = await dispatch(
       daireactteam({
@@ -42,6 +42,7 @@ const Dashboard = () => {
           JSON.parse(localStorage.getItem("data")).data.token,
       })
     );
+    setFILLTER(res?.payload?.data.ReffData[0]?.referBY);
     var resultProductData = res?.payload?.data.ReffData[0]?.referBY.filter(
       (a) => {
         return (
@@ -51,17 +52,7 @@ const Dashboard = () => {
         );
       }
     );
-    console.log("resultProductData", resultProductData.length);
     setAlldata(resultProductData.length);
-    totalAmount = res?.payload?.data.ReffData[0]?.referBY
-      .filter((a) => {
-        return (
-          a.mystack >= 40 &&
-          new Date(a.createdAt).toLocaleDateString() ===
-            new Date().toLocaleDateString()
-        );
-      })
-      .reduce((acc, curr) => acc + curr.mystack, 0);
   };
   const getalldata = async () => {
     const res = await dispatch(
@@ -387,7 +378,11 @@ const Dashboard = () => {
                         Today Business :
                       </p>
                       <p className=" m-0" style={{ fontSize: "13px" }}>
-                        {totalAmount}$
+                        {
+                          StackingSlice.Wallatedata?.data?.aggregatedUserData
+                            ?.todaymyteam
+                        }
+                        $
                       </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
