@@ -14,7 +14,7 @@
   border: 1px solid #606161;
 }
 .Box {
-  background: linear-gradient(to right, #8c45ff, #389AE4);
+  background: linear-gradient(to right, #8c45ff, #389ae4);
   border-radius: 12px;
   padding: 35px 5px;
 }
@@ -89,7 +89,7 @@ input {
 .ant-table-tbody {
   > tr {
     .ant-table-cell {
-      background: #389AE4 !important;
+      background: #389ae4 !important;
       color: #fff !important;
       border-bottom: 2px solid !important;
       border-color: #323232 !important;
@@ -121,7 +121,7 @@ input {
   color: #fff !important;
 }
 .ant-pagination-item-link {
-  background: #389AE4 !important;
+  background: #389ae4 !important;
   color: #fff !important;
   display: flex !important;
   justify-content: center;
@@ -160,14 +160,14 @@ input {
   text-transform: uppercase;
 }
 .accordion-header {
-  background: #389AE4 !important;
+  background: #389ae4 !important;
   border: none !important;
   outline: none !important;
   > button {
     border: none !important;
     outline: none !important;
     padding: 16px !important;
-    background: #389AE4 !important;
+    background: #389ae4 !important;
   }
 }
 .accordion-body {
@@ -350,7 +350,9 @@ li {
 }
 .css-1vs3jbz {
   list-style-type: none !important;
+  flex: none !important;
 }
+
 :where(.css-dev-only-do-not-override-mxhywb).ant-table-wrapper
   .ant-table.ant-table-bordered
   > .ant-table-container
@@ -537,8 +539,10 @@ div.b {
   padding-bottom: 15px;
   max-width: 223px !important;
 }
-.css-10bmnxi {
+.Boxcard ul {
   width: 100% !important;
+  flex: none !important; 
+  justify-content: center;
 }
 .css-4h8rul {
   display: block !important;
@@ -642,7 +646,4 @@ div.b {
   100% {
     top: 0;
   }
-}
-.icon:hover > path {
-  fill: #ff5733;
 }

@@ -32,6 +32,7 @@ const Dashboard = () => {
     getalldata();
     getalldata1();
   }, []);
+  const totalAmount = 0;
   const getalldata1 = async () => {
     const res = await dispatch(
       daireactteam({
@@ -50,7 +51,7 @@ const Dashboard = () => {
         );
       }
     );
-    const totalAmount = res?.payload?.data.ReffData[0]?.referBY
+    totalAmount = res?.payload?.data.ReffData[0]?.referBY
       .filter((a) => {
         return (
           a.mystack >= 40 &&
