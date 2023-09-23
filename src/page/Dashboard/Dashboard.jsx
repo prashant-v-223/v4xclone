@@ -28,7 +28,7 @@ const Dashboard = () => {
   const dispatch = useDispatch();
   const navigation = useNavigate();
   const [Alldata, setAlldata] = React.useState(0);
-  const [FILLTER, setFILLTER] = React.useState([]);
+  const [todaystack, settodaystack] = React.useState(0);
   useEffect(() => {
     getalldata();
     getalldata1();
@@ -42,7 +42,6 @@ const Dashboard = () => {
           JSON.parse(localStorage.getItem("data")).data.token,
       })
     );
-    setFILLTER(res?.payload?.data.ReffData[0]?.referBY);
     var resultProductData = res?.payload?.data.ReffData[0]?.referBY.filter(
       (a) => {
         return (
@@ -52,8 +51,23 @@ const Dashboard = () => {
         );
       }
     );
+    var resultProductData1 = res?.payload?.data.ReffData[0]?.referBY;
+
+    // Filter the data for today's date
+    var today = new Date().toLocaleDateString();
+    var todayStackAmount = 0;
+    
+    if (resultProductData1) {
+      todayStackAmount = resultProductData1
+        .filter((a) => new Date(a.createdAt).toLocaleDateString() === today)
+        .reduce((total, a) => total + a.mystack , 0);
+    }
+    
+    console.log("todayStackAmount",todayStackAmount)
+    settodaystack(todayStackAmount)
     setAlldata(resultProductData.length);
   };
+  console.log("todaystack",todaystack);
   const getalldata = async () => {
     const res = await dispatch(
       Wallatedata({
@@ -379,8 +393,7 @@ const Dashboard = () => {
                       </p>
                       <p className=" m-0" style={{ fontSize: "13px" }}>
                         {
-                          StackingSlice.Wallatedata?.data?.aggregatedUserData
-                            ?.todaymyteam
+                          todaystack
                         }
                         $
                       </p>
