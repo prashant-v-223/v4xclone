@@ -51,23 +51,9 @@ const Dashboard = () => {
         );
       }
     );
-    var resultProductData1 = res?.payload?.data.ReffData[0]?.referBY;
-
-    // Filter the data for today's date
-    var today = new Date().toLocaleDateString();
-    var todayStackAmount = 0;
-    
-    if (resultProductData1) {
-      todayStackAmount = resultProductData1
-        .filter((a) => new Date(a.createdAt).toLocaleDateString() === today)
-        .reduce((total, a) => total + a.mystack , 0);
-    }
-    
-    console.log("todayStackAmount",todayStackAmount)
-    settodaystack(todayStackAmount)
     setAlldata(resultProductData.length);
   };
-  console.log("todaystack",todaystack);
+  console.log("todaystack", todaystack);
   const getalldata = async () => {
     const res = await dispatch(
       Wallatedata({
@@ -392,10 +378,7 @@ const Dashboard = () => {
                         Today Business :
                       </p>
                       <p className=" m-0" style={{ fontSize: "13px" }}>
-                        {
-                          todaystack
-                        }
-                        $
+                        {StackingSlice.Wallatedata?.data?.todayStackAmount}$
                       </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
