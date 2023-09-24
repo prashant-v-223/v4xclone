@@ -82,8 +82,11 @@ function Adminwithdraw_details() {
       },
       width: "230px",
       render: (text, record, index) => (
-        <Tooltip placement="topLeft" title={record.username}>
-          {record.username}
+        <Tooltip
+          placement="topLeft"
+          title={`${record.username}(${record.Fullname})`}
+        >
+          {`${record.username}(${record.Fullname})`}
         </Tooltip>
       ),
     },
@@ -136,6 +139,7 @@ function Adminwithdraw_details() {
       ellipsis: {
         showTitle: false,
       },
+      width: "230px",
       render: (text, record, index) => (
         <Tooltip placement="topLeft" title={record.Note}>
           {record.Admincharges}
@@ -278,4 +282,3 @@ function Adminwithdraw_details() {
 }
 
 export default Adminwithdraw_details;
-
