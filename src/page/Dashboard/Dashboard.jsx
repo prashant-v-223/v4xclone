@@ -172,7 +172,7 @@ const Dashboard = () => {
                   cursor: "pointer",
                 }}
                 onClick={() => {
-                  navigation("/Totaltrem");
+                  navigation("/daireactterm");
                 }}
               >
                 <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100 ">
@@ -520,7 +520,7 @@ const Dashboard = () => {
                                         fontSize: 18,
                                       }}
                                     >
-                                      {e.username}
+                                      {`${e.username}(${e?.Fullname)`}
                                     </h6>
                                   </div>
                                 }
