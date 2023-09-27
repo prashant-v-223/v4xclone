@@ -68,21 +68,18 @@ export const Adminwallateblock = createAsyncThunk(
     }
   }
 );
-export const userRemove = createAsyncThunk(
-  "asd/asdad",
-  async (data) => {
-    try {
-      const res = await POST(
-        apiList.userRemove,
-        { usename: data.usename, note: data.note },
-        data.Token
-      );
-      return res;
-    } catch (e) {
-      return e.response;
-    }
+export const userRemove = createAsyncThunk("asd/asdad", async (data) => {
+  try {
+    const res = await POST(
+      apiList.userRemove,
+      { usename: data.usename, note: data.note },
+      data.Token
+    );
+    return res;
+  } catch (e) {
+    return e.response;
   }
-);
+});
 export const Adminprice = createAsyncThunk(
   "adminprice/adminprice",
   async (data) => {
@@ -153,8 +150,15 @@ export const Withdrdatadata12 = createAsyncThunk(
   async (data) => {
     console.log(data);
     try {
-      const res = await POST(apiList.Withdrdatadata,
-        { _id: data._id, transactionshsh: data.transactionshsh }, data.Token);
+      const res = await POST(
+        apiList.Withdrdatadata,
+        {
+          _id: data._id,
+          transactionshsh: data.transactionshsh,
+          note: data.note,
+        },
+        data.Token
+      );
       return res;
     } catch (e) {
       return e.response;
@@ -180,7 +184,11 @@ export const AdminsendAmount = createAsyncThunk(
     try {
       const res = await POST(
         apiList.adminsensamount,
-        { price: data.price, username: data.username, Walletname: data.Walletname },
+        {
+          price: data.price,
+          username: data.username,
+          Walletname: data.Walletname,
+        },
         data.Token
       );
       return res;
@@ -251,7 +259,8 @@ export const AdminuserdataSlice = createSlice({
         state.Wallatedata = action.error;
         state.isLoader = !false;
       }
-    }, [Withdrdatadatauser.fulfilled]: (state, action) => {
+    },
+    [Withdrdatadatauser.fulfilled]: (state, action) => {
       if (action.payload) {
         state.Wallatedata = action.payload;
         state.isLoader = !false;
