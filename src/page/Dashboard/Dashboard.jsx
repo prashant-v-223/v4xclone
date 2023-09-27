@@ -188,9 +188,6 @@ const Dashboard = () => {
                     style={{
                       cursor: "pointer",
                     }}
-                    onClick={() => {
-                      navigation("/Totaltrem");
-                    }}
                   >
                     <h4 className="pt-2 pt-lg-0 pb-4 mb-2 text-center text-lg-left">
                       My Team
@@ -208,7 +205,7 @@ const Dashboard = () => {
                   cursor: "pointer",
                 }}
                 onClick={() => {
-                  navigation("/daireactterm");
+                  navigation("/Totaltrem");
                 }}
               >
                 {" "}
