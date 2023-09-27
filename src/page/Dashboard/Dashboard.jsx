@@ -495,7 +495,8 @@ const Dashboard = () => {
                             fontSize: 18,
                           }}
                         >
-                          {Profile && Profile[0]?.username}
+                          {Profile &&  
+                                      `${ Profile[0].username}(${ Profile[0]?.Fullname})`}
                         </h6>
                       </div>
                     }
@@ -520,7 +521,7 @@ const Dashboard = () => {
                                         fontSize: 18,
                                       }}
                                     >
-                                      {`${e.username}(${e?.Fullname)`}
+                                      {`${e.username}(${e?.Fullname})`}
                                     </h6>
                                   </div>
                                 }
