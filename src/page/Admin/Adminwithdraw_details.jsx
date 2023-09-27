@@ -203,7 +203,7 @@ function Adminwithdraw_details() {
             record.transactionshsh === "no"
               ? "d-none"
               : record.transactionshsh === "yes"
-              ? ""
+              ?"d-none"
               : ""
           }
         >
