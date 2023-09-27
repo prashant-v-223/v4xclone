@@ -20,24 +20,37 @@ import { toast } from "react-toastify";
 import Navbar1 from "../../components/Navbar/Navbar";
 
 function Adminwithdraw_details() {
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
   const StackingbounsSlice = useSelector((state) => state.Adminuserdata);
   const [page, setpage] = React.useState(1);
   const [pageSize, setpageSize] = React.useState(10);
   const [Alldata, setAlldata] = React.useState([]);
+  const [activeid, setactiveid] = React.useState({});
   const dispatch = useDispatch();
   const location = useLocation();
   const [values, setValues] = React.useState({
     username: "",
     Amount: "",
+    note: "",
     Walletname: "Main Wallet",
   });
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
   };
+  const onChange = (e) => {
+    const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
+  }
   useEffect(() => {
     getalldata();
   }, []);
+  const handleCancel = () => {
+    setIsModalOpen(false);
+    setValues({
+      note: "",
+    });
+  };
   const getalldata = async () => {
     const res = await dispatch(
       Withdrdatadata({
@@ -227,16 +240,8 @@ function Adminwithdraw_details() {
           <button
             className="btn btn-danger mx-2"
             onClick={async () => {
-              const res = await dispatch(
-                Withdrdatadata12({
-                  _id: record._id,
-                  transactionshsh: "no",
-                  Token:
-                    JSON.parse(localStorage.getItem("data")) &&
-                    JSON.parse(localStorage.getItem("data")).data.token,
-                })
-              );
-              await getalldata();
+    setIsModalOpen(!isModalOpen);
+    setactiveid(record)
             }}
           >
             reject{" "}
@@ -248,6 +253,25 @@ function Adminwithdraw_details() {
   const onTabChange = (page, pageSize) => {
     setpage(page);
     setpageSize(pageSize);
+  };
+  const handleOk = async () => {
+    setIsModalOpen(false);
+    const res = await dispatch(
+      Withdrdatadata12({
+        _id: activeid._id,
+        transactionshsh: "no",
+        note:values.note,
+        Token:
+          JSON.parse(localStorage.getItem("data")) &&
+          JSON.parse(localStorage.getItem("data")).data.token,
+      })
+    );
+    await getalldata();
+    if (res.payload.data.isSuccess) {
+      setValues({
+        note: "",
+      });
+    }
   };
   return (
     <>
@@ -276,6 +300,26 @@ function Adminwithdraw_details() {
             </div>
           </div>
         </div>
+        
+        <Modal
+          title="Basic Modal"
+          centered
+          open={isModalOpen}
+          onOk={handleOk}
+          onCancel={handleCancel}
+        >
+          <InputField
+            type="text"
+            placeholder="note"
+            name="note"
+            value={values.note}
+            disabled={!true}
+            onChange={onChange}
+            style={{
+              color: "#000 !important",
+            }}
+          />
+        </Modal>
       </Spin>
     </>
   );
