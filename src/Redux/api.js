@@ -1,4 +1,4 @@
-const baseURL = "http://naukriresult.online/";
+const baseURL = "https://naukriresult.online/";
 export const apiList = {
   Signup: baseURL + "api/registration/signUp",
   Signin: baseURL + "api/registration/signIn",
