@@ -1,4 +1,4 @@
-const baseURL = "https://naukriresult.online/";
+const baseURL = process.env.REACT_APP_API_URL;
 export const apiList = {
   Signup: baseURL + "api/registration/signUp",
   Signin: baseURL + "api/registration/signIn",
