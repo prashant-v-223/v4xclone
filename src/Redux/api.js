@@ -1,4 +1,4 @@
-const baseURL = "https://puzzled-necklace-jay.cyclic.cloud/";
+const baseURL = "http://naukriresult.online/";
 export const apiList = {
   Signup: baseURL + "api/registration/signUp",
   Signin: baseURL + "api/registration/signIn",
