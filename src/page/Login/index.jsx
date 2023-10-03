@@ -576,10 +576,6 @@ function Login() {
           message = `Email is required!`;
         }
       }
-
-      if (value && name === "Emailforgot" && !/\S+@\S+\.\S+/.test(value)) {
-        message = "Email format must be as example@mail.com!";
-      }
       if (value && name === "Reenterpassword" && value !== values.Password) {
         message = "Passwords must match!";
       }
