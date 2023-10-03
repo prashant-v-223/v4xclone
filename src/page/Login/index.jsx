@@ -595,9 +595,6 @@ function Login() {
       if (!Emailforgot) {
         validations.Emailforgot = "Email is required!";
       }
-      if (Emailforgot && !/\S+@\S+\.\S+/.test(Emailforgot)) {
-        validations.Emailforgot = "Email format must be as example@mail.com!";
-      }
       setValidations(validations);
       if (validations.Emailforgot === "") {
         const res = await dispatch(
