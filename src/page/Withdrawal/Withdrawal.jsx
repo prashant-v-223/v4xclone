@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import InputField from "../../components/InputField";
 import Button from "../../components/ButtonField";
-import "./Withdrawal.scss";
+import "./Withdrawal.css";
 import { HiArrowsRightLeft } from "react-icons/hi2";
 import { InputNumber, Select, Spin } from "antd";
 import { useDispatch, useSelector } from "react-redux";
@@ -481,7 +481,7 @@ function Withdrawal() {
         <Modal show={open1} centered>
           <Modal.Header>
             <Modal.Title>
-              <h6 className="text-light m-0"></h6>
+              <h6 className="text-light m-0">Enter Otp</h6>
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -507,6 +507,7 @@ function Withdrawal() {
               }}
               label={"Submit"}
               onClick={async () => {
+                setopen1(!open1);
                 const res = await dispatch(
                   Transferdata({
                     Username: username,
@@ -532,7 +533,7 @@ function Withdrawal() {
         <Modal show={open} centered>
           <Modal.Header>
             <Modal.Title>
-              <h6 className="text-light m-0"></h6>
+              <h6 className="text-light m-0">Enter Otp</h6>
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -563,6 +564,7 @@ function Withdrawal() {
             <Button
               className={" w-100 text-light"}
               Stake={!false}
+              // disabled={}
               style={{
                 background: "#1a1a1a",
                 height: 60,

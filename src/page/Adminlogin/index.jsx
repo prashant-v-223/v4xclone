@@ -18,7 +18,7 @@ import { adminSignin } from "../../Redux/authSlice";
 import { toast } from "react-toastify";
 import { Spin } from "antd";
 import { useLocation, useNavigate } from "react-router-dom";
-import "./Login.scss";
+import "./Login.css";
 function Adminlogin() {
   const location = useLocation();
   const dispatch = useDispatch();

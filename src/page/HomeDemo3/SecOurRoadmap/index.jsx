@@ -1,6 +1,6 @@
 import SectionHeading from "../../../components/SectionHeading";
 import Timeline from "./Timeline";
-import "../../../assets/css/Demo3/roadmap3.scss";
+import "../../../assets/css/Demo3/roadmap3.css";
 
 const SecOurRoadmap = ({ data, img }) => {
   return (

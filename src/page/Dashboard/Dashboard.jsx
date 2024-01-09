@@ -1,4 +1,4 @@
-import "./Dashboard.scss";
+import "./Dashboard.css";
 import Navbar from "../../components/Navbar/Navbar";
 import { MdContentCopy } from "react-icons/md";
 import { FaUserAlt, FaUsers } from "react-icons/fa";

@@ -1,4 +1,4 @@
-import "../../../../assets/css/Demo3/ServiceArea3.scss";
+import "../../../../assets/css/Demo3/ServiceArea3.css";
 const Content = ({ img, title }) => {
   return (
     <div className="col-12 col-sm-6 col-lg-4" data-aos="fade-up">

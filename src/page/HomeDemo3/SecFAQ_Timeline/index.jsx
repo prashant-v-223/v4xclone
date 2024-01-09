@@ -2,7 +2,7 @@ import SectionHeading from "../../../components/SectionHeading";
 import SingleFAQArea from "./SingleFAQArea";
 import IcoCounter from "./IcoCounter";
 import IcoDocs from "./IcoDocs";
-import "../../../assets/css/Demo3/FAQ3.scss";
+import "../../../assets/css/Demo3/FAQ3.css";
 
 const SecFAQ_Timeline = ({ FQAInfo, DocElementTitle }) => {
   return (

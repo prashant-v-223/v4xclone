@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./App.scss";
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Web3ReactProvider } from "@web3-react/core";
 import Web3 from "web3";

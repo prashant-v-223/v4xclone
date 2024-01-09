@@ -10,7 +10,7 @@ import {
   list,
 } from "firebase/storage";
 import { storage } from "../../firebase";
-import { v4 } from "uuid";
+import { v4 } from 'uuid';
 import axios from "axios";
 import { Button, Table, Tooltip } from "antd";
 

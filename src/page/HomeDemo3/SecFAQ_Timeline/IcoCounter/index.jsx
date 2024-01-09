@@ -1,7 +1,7 @@
 import {useEffect} from "react"
 // import { SlideCountdown } from 'react-fancy-countdown';
 import { Line } from 'rc-progress';
-import "../../../../page/HomeDemo3/style/_welcomeArea3.scss";
+import "../../../../page/HomeDemo3/style/_welcomeArea3.css";
 // C:\Users\ASUS\Desktop\ABLC--2\frantend\src\
 import "../../../../assets/css/General.css";
 const IcoCounter = () => {

@@ -1,7 +1,7 @@
 import { Input } from "antd";
 import moment from "moment/moment";
 import React from "react";
-import "./InputField.scss";
+import "./InputField.css";
 const index = (props) => {
   const {
     value,

@@ -1,5 +1,5 @@
 import SectionHeading from "../../../components/SectionHeading";
-import "../../../assets/css/Demo3/features3.scss";
+import "../../../assets/css/Demo3/features3.css";
 
 const SecHowItWorks = ({ data, imgPhone }) => {
   console.log(data);

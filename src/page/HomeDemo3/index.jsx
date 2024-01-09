@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "./style/HomeDemo3.scss";
+import "./style/HomeDemo3.css";
 import { Modal } from "react-bootstrap";
 import Web3 from "web3";
 import { Injected, WalletConnect } from "../../Helpers/Injected";

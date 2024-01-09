@@ -1,4 +1,4 @@
-import "../../../assets/css/Demo3/demo-video3.scss";
+import "../../../assets/css/Demo3/demo-video3.css";
 const Li_A = ({ nameIco, links }) => (
   <li>
     <a href={links} target="_blank">

@@ -1,5 +1,5 @@
 import "../../../../assets/css/Demo3/subscribe3.css";
-import "../../../../assets/css/Demo3/Contact3.scss";
+import "../../../../assets/css/Demo3/Contact3.css";
 
 const SecGroup = () => {
 

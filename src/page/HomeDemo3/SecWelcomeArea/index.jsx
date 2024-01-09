@@ -1,4 +1,4 @@
-import "../../../assets/css/Demo3/welcomeArea3.scss";
+import "../../../assets/css/Demo3/welcomeArea3.css";
 import { Modal } from "react-bootstrap";
 import React from "react";
 import imgs from "../../../assets/img/3e623efe-4542-4228-a0a5-e48a3ab01f1c.jpg";

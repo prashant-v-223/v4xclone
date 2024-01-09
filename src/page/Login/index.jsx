@@ -22,7 +22,7 @@ import bep20Abi from "../../Helpers/bep20Abi.json";
 //   useSignIn,
 // } from "@walletconnect/modal-auth-react";
 import { useLocation, useNavigate } from "react-router-dom";
-import "./Login.scss";
+import "./Login.css";
 import Web3 from "web3";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";

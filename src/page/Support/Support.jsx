@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import * as yup from "yup";
 import { Formik, Form } from "formik";
-import "./support.scss";
+import "./support.css";
 import {
   ref,
   uploadBytes,

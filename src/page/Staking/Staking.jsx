@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { Spin, Table, Tooltip } from "antd";
 import Navbar from "../../components/Navbar/Navbar";
 import Button from "../../components/ButtonField";
-import "./Staking.scss";
+import "./Staking.css";
 import drop from "../../assets/img/Vector (25).svg";
 import { Allstacking, BuyStacking } from "../../Redux/StackingSlice";
 import { useDispatch, useSelector } from "react-redux";

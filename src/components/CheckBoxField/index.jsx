@@ -1,6 +1,6 @@
 import { Checkbox } from "antd";
 import React from "react";
-import "./CheckBoxField.scss";
+import "./CheckBoxField.css";
 const index = ({ label, name, onChange, value, disabled }) => {
   return (
     <div className="form-check checkbox-lg">

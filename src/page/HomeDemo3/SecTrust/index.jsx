@@ -1,6 +1,6 @@
 import SectionHeading from '../../../components/SectionHeading'
 import SecSingleCoolFact from './SecSingleCoolFact'
-import "../../../assets/css/Demo3/trust-section3.scss";
+import "../../../assets/css/Demo3/trust-section3.css";
 
 const SecTrust = ({data}) => {
 
