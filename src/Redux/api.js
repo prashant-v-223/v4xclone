@@ -1,4 +1,4 @@
-const baseURL = process.env.REACT_APP_API_URL;
+const baseURL = https://62.72.56.101/;
 export const apiList = {
   Signup: baseURL + "api/registration/signUp",
   Signin: baseURL + "api/registration/signIn",
