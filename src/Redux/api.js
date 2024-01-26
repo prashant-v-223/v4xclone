@@ -1,4 +1,4 @@
-const baseURL = https://62.72.56.101/;
+const baseURL = https://njn-ev7u.onrender.com/;
 export const apiList = {
   Signup: baseURL + "api/registration/signUp",
   Signin: baseURL + "api/registration/signIn",
