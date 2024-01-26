@@ -1,4 +1,4 @@
-const baseURL = process.env.REACT_APP_API_URL;
+const baseURL = "https://njn-ev7u.onrender.com/"
 export const apiList = {
   Signup: baseURL + "api/registration/signUp",
   Signin: baseURL + "api/registration/signIn",
