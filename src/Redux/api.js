@@ -1,5 +1,5 @@
 const baseURL = "https://njn-ev7u.onrender.com/"
-export const apiList = {
+export const apiList = { 
   Signup: baseURL + "api/registration/signUp",
   Signin: baseURL + "api/registration/signIn",
   adminSignin: baseURL + "api/admin/signIn",
