@@ -1,4 +1,4 @@
-const baseURL = "https://njn-ev7u.onrender.com/"
+const baseURL = "https://api.infinityiat.io/"
 export const apiList = { 
   Signup: baseURL + "api/registration/signUp",
   Signin: baseURL + "api/registration/signIn",
