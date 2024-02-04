@@ -437,21 +437,24 @@ function Withdrawal() {
                           }}
                           label={"Withdraw "}
                           onClick={async () => {
-                            const res = await dispatch(
-                              getdappWallatedata({
-                                Token:
-                                  JSON.parse(localStorage.getItem("data")) &&
-                                  JSON.parse(localStorage.getItem("data")).data
-                                    .token,
-                              })
+                            toast.error(
+                              "Withdrawals halted temporarily for software update.                            "
                             );
-                            if (res.payload.data.isSuccess) {
-                              setotp("");
-                              toast.success(res.payload.data.message);
-                              setopen(!false);
-                            } else {
-                              toast.error(res.payload.data.message);
-                            }
+                            // const res = await dispatch(
+                            //   getdappWallatedata({
+                            //     Token:
+                            //       JSON.parse(localStorage.getItem("data")) &&
+                            //       JSON.parse(localStorage.getItem("data")).data
+                            //         .token,
+                            //   })
+                            // );
+                            // if (res.payload.data.isSuccess) {
+                            //   setotp("");
+                            //   toast.success(res.payload.data.message);
+                            //   setopen(!false);
+                            // } else {
+                            //   toast.error(res.payload.data.message);
+                            // }
                           }}
                         />
                       </div>
