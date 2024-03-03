@@ -465,7 +465,86 @@ const Dashboard = () => {
                     )}
                   </div>
                 </div>
-              </div>
+              </div>{" "}
+              {StackingSlice.Wallatedata?.data?.profile[0].Roll === "admin" && (
+                <div className="col-12 col-lg-4 text-light py-2">
+                  <div className="Boxcard p-4 d-block d-lg-flex  justify-content-space-around align-items-center h-100">
+                    <div className=" pb-2 pb-lg-0  d-flex  justify-content-center align-items-center h-25 h-md-100">
+                      <img
+                        src={require("../../assets/img/totalteaminvestment 1.png")}
+                        alt=""
+                        className="img-fluid"
+                      />
+                    </div>
+                    <div className="d-flex h-50 h-md-100 flex-column justify-content-center">
+                      <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0 pt-5 pt-md-0">
+                        <p className=" m-0" style={{ fontSize: "13px" }}>
+                          Today Staking :
+                        </p>
+                        <p className=" m-0" style={{ fontSize: "13px" }}>
+                          {StackingSlice.Wallatedata?.data?.todayStakingData1
+                            .length > 0
+                            ? StackingSlice.Wallatedata?.data
+                                ?.todayStakingData1[0]?.totalAmount
+                            : 0}
+                          $
+                        </p>
+                      </p>{" "}
+                      <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0 pt-md-0">
+                        <p className=" m-0" style={{ fontSize: "13px" }}>
+                          Today Reff :
+                        </p>
+                        <p className=" m-0" style={{ fontSize: "13px" }}>
+                          {StackingSlice.Wallatedata?.data?.todayReff.length > 0
+                            ? StackingSlice.Wallatedata?.data?.todayReff[0]
+                                ?.totalAmount
+                            : 0}
+                          $
+                        </p>
+                      </p>
+                      <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0 pt-md-0">
+                        <p className=" m-0" style={{ fontSize: "13px" }}>
+                          Today Community :
+                        </p>
+                        <p className=" m-0" style={{ fontSize: "13px" }}>
+                          {StackingSlice.Wallatedata?.data?.todayCommunitymodal
+                            .length > 0
+                            ? StackingSlice.Wallatedata?.data
+                                ?.todayCommunitymodal[0]?.totalAmount
+                            : 0}
+                          $
+                        </p>
+                      </p>{" "}
+                      <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0 pt-md-0">
+                        <p className=" m-0" style={{ fontSize: "13px" }}>
+                          Today Achivement :
+                        </p>
+                        <p className=" m-0" style={{ fontSize: "13px" }}>
+                          {StackingSlice.Wallatedata?.data
+                            ?.todayAchivementsmodal.length > 0
+                            ? StackingSlice.Wallatedata?.data
+                                ?.todayAchivementsmodal[0]?.totalAmount
+                            : 0}
+                          $
+                        </p>
+                      </p>
+                      <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0 pt-md-0">
+                        <p className=" m-0" style={{ fontSize: "13px" }}>
+                          Today passives :
+                        </p>
+                        <p className=" m-0" style={{ fontSize: "13px" }}>
+                          {StackingSlice.Wallatedata?.data?.todaypassives
+                            .length > 0
+                            ? StackingSlice.Wallatedata?.data?.todaypassives[0]
+                                ?.totalAmount
+                            : 0}
+                            $
+                        </p>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
             <div className="row">
               <div className="col-12 text-light py-2 px-4">
@@ -492,7 +571,8 @@ const Dashboard = () => {
                             fontSize: 18,
                           }}
                         >
-                          {Profile && `${Profile[0]?.username} (${Profile[0]?.Fullname})`}
+                          {Profile &&
+                            `${Profile[0]?.username} (${Profile[0]?.Fullname})`}
                         </h6>
                       </div>
                     }
