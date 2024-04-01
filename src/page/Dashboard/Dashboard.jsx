@@ -375,7 +375,7 @@ const Dashboard = () => {
                         Today Business :
                       </p>
                       <p className=" m-0" style={{ fontSize: "13px" }}>
-                        {StackingSlice.Wallatedata?.data?.todayStackAmount}$
+                        {StackingSlice.Wallatedata?.data?.aggregatedUserData.todaymystack}$
                       </p>
                     </p>
                     <p className="text-center text-lg-left m-0 d-flex justify-content-between justify-content-lg-start m-0">
