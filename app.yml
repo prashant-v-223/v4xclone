@@ -1,0 +1,7 @@
+apps:
+  - name: ablcbackend1
+    restart_delay: 100
+    script: npm start
+    autorestart: true
+    env:
+      NODE_ENV: development
